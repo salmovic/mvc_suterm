@@ -1,0 +1,1 @@
+Directorio que almacena los plugins para las vistas.
