@@ -2,16 +2,6 @@
 <html lang="es">
 <head>
 <?php include HTML_DIR.'/overall/head.inc' ?>
-<!-- NProgress -->
-<link href="views/vendors/nprogress/nprogress.css" rel="stylesheet">
-
-<!-- Datatables -->
-    <link href="views/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="views/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
-    <link href="views/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
-    <link href="views/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
-    <link href="views/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
-
 </head>
 <body class="nav-md">
 			<?php include 'html/overall/container_base_head.php'; ?>
@@ -213,30 +203,7 @@
 
 				<?php include 'html/overall/container_base_footer.php'; ?>
 
-    <!-- FastClick -->
-    <script src="views/vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="views/vendors/nprogress/nprogress.js"></script>
-    <!-- jQuery Smart Wizard -->
-    <script src="views/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
-		<!-- validator -->
-    <script src="views/vendors/validator/validator.js"></script>
-		<!-- Datatables -->
-    <script src="views/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="views/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-    <script src="views/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="views/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-    <script src="views/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
-    <script src="views/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="views/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="views/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-    <script src="views/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-    <script src="views/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="views/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-    <script src="views/vendors/datatables.net-scroller/js/datatables.scroller.min.js"></script>
-    <script src="views/vendors/jszip/dist/jszip.min.js"></script>
-    <script src="views/vendors/pdfmake/build/pdfmake.min.js"></script>
-    <script src="views/vendors/pdfmake/build/vfs_fonts.js"></script>
+  
 
 		<!-- jQuery Smart Wizard -->
 <script>

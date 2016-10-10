@@ -1,63 +1,11 @@
-<?php require_once '../../logica/departamentos.php';
-	$dep =new Departamentos();
-	$depall = $dep ->getDepartamentos();
-	if (isset($_POST['token'])) {
-		echo $dep->setDepartamentos();
-	}
- ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<?php include '../common/head.inc' ?>
-<!-- NProgress -->
-<link href="vendors/nprogress/nprogress.css" rel="stylesheet">
-
-<!-- Datatables -->
-    <link href="vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
-    <link href="vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
-    <link href="vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
-    <link href="vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+<?php include HTML_DIR.'/overall/head.inc' ?>
 
 </head>
 <body class="nav-md">
-    <div class="container body">
-      <div class="main_container">
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a href="../views/index.php" class="site_title"><i class="fa fa-home"></i> <span>SUTERM</span></a>
-            </div>
-
-            <div class="clearfix"></div>
-
-            <!-- menu profile quick info -->
-            <div class="profile">
-              <div class="profile_pic">
-                <img src="../../images/img.jpg" alt="..." class="img-circle profile_img">
-              </div>
-              <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
-              </div>
-            </div>
-            <!-- /menu profile quick info -->
-            <br />
-
-            <!-- sidebar menu -->
-            <?php include '../common/sidebar_menu.inc'; ?>
-            <!-- /sidebar menu -->
-
-            <!-- /menu footer buttons -->
-        		<?php include '../common/menu_footer_buttons.inc'; ?>
-            <!-- /menu footer buttons -->
-          </div>
-        </div>
-
-        <!-- top navigation -->
-        <?php include '../common/top_navigation.inc'; ?>
-        <!-- /top navigation -->
-
+			<?php include 'html/overall/container_base_head.php'; ?>
         <!-- page content -->
 				<div class="right_col" role="main">
           <div class="">
@@ -204,38 +152,8 @@
         </div>
         <!-- /page content -->
 
-				<!-- /footer content -->
-				<?php include '../common/content_footer.inc'; ?>
-				<!-- /footer content -->
-      </div>
-    </div>
-		<?php include '../common/footer.inc'; ?>
-    <!-- FastClick -->
-    <script src="vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="vendors/nprogress/nprogress.js"></script>
-    <!-- jQuery Smart Wizard -->
-    <script src="vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
-		<!-- validator -->
-    <script src="vendors/validator/validator.js"></script>
-		<!-- Datatables -->
-    <script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-    <script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-    <script src="vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
-    <script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-    <script src="vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-    <script src="vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-    <script src="vendors/datatables.net-scroller/js/datatables.scroller.min.js"></script>
-    <script src="vendors/jszip/dist/jszip.min.js"></script>
-    <script src="vendors/pdfmake/build/pdfmake.min.js"></script>
-    <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
-
-		<!-- jQuery Smart Wizard -->
+				<?php include 'html/overall/container_base_footer.php'; ?>
+				<!-- script all -->
 <script>
 	$(document).ready(function() {
 		$('#wizard').smartWizard({

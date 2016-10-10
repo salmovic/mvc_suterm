@@ -1,3 +1,3 @@
 <?php
-include 'html/index/delegado_add.php';
+	include 'html/index/delegado.php';
 ?>

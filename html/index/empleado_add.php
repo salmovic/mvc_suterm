@@ -1,57 +1,10 @@
-<?php
-require_once '../../logica/categorias.php';
-require_once '../../logica/centro_trabajo.php';
-require_once '../../logica/departamentos.php';
-$cat = new Categorias();
-$ct = new CentroTrabajo();
-$dep = new Departamentos();
-
- ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<?php include '../common/head.inc' ?>
-<!-- NProgress -->
-<link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+<?php include HTML_DIR.'/overall/head.inc' ?>
 </head>
 <body class="nav-md">
-    <div class="container body">
-      <div class="main_container">
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a href="../views/index.php" class="site_title"><i class="fa fa-home"></i> <span>SUTERM</span></a>
-            </div>
-
-            <div class="clearfix"></div>
-
-            <!-- menu profile quick info -->
-            <div class="profile">
-              <div class="profile_pic">
-                <img src="../../images/img.jpg" alt="..." class="img-circle profile_img">
-              </div>
-              <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
-              </div>
-            </div>
-            <!-- /menu profile quick info -->
-            <br />
-
-            <!-- sidebar menu -->
-            <?php include '../common/sidebar_menu.inc'; ?>
-            <!-- /sidebar menu -->
-
-            <!-- /menu footer buttons -->
-        		<?php include '../common/menu_footer_buttons.inc'; ?>
-            <!-- /menu footer buttons -->
-          </div>
-        </div>
-
-        <!-- top navigation -->
-        <?php include '../common/top_navigation.inc'; ?>
-        <!-- /top navigation -->
-
+	<?php include 'html/overall/container_base_head.php'; ?>
         <!-- page content -->
 				<div class="right_col" role="main">
           <div class="">
@@ -390,13 +343,13 @@ $dep = new Departamentos();
 															<div class="col-md-6 col-sm-6 col-xs-12">
 			                          <select class="form-control"  class="form-control has-feedback-left" name="id_categoria">
 																	<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-																	<option value="">--Seleccione una categoria--</option>
-																	<?php $allCat=$cat->getCategorias();
-																		foreach ($allCat as $dts)
-																		{
+																	<!-- <option value="">--Seleccione una categoria--</option>
+																	<?php //$allCat=$cat->getCategorias();
+																		// foreach ($allCat as $dts)
+																		// {
 																	?>
-			                            <option value="<?php echo $dts->id_categorias; ?>"><?php echo $dts->categoria; ?></option>
-																	<?php }; ?>
+			                            <option value="<?php //echo $dts->id_categorias; ?>"><?php //echo $dts->categoria; ?></option>
+																	<?php //}; ?> -->
 			                          </select>
 
 		                        </div>
@@ -408,12 +361,12 @@ $dep = new Departamentos();
 			                          <select class="form-control"  class="form-control has-feedback-left" name="id_centro_trabajo">
 																	<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 																	<option value="">--Seleccione un Centro de Trabajo--</option>
-																	<?php $allCt=$ct->getCentroTrabajo();
-																		foreach ($allCt as $dts)
-																		{
+																	<?php //$allCt=$ct->getCentroTrabajo();
+																		// foreach ($allCt as $dts)
+																		// {
 																	?>
-			                            <option value="<?php echo $dts->id_centro_trabajo; ?>"><?php echo $dts->nombre; ?></option>
-																	<?php }; ?>
+			                            <option value="<?php //echo $dts->id_centro_trabajo; ?>"><?php //echo $dts->nombre; ?></option>
+																	<?php //}; ?>
 			                          </select>
 		                        </div>
 		                      </div>
@@ -424,12 +377,12 @@ $dep = new Departamentos();
 			                          <select class="form-control"  class="form-control has-feedback-left" name="id_departamento">
 																	<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 																	<option value="">--Seleccione un departamento--</option>
-																	<?php $allDep=$dep->getDepartamentos();
-																		foreach ($allDep as $dts)
-																		{
+																	<?php //$allDep=$dep->getDepartamentos();
+																		// foreach ($allDep as $dts)
+																		// {
 																	?>
-			                            <option value="<?php echo $dts->id_departamento; ?>"><?php echo $dts->nombre; ?></option>
-																	<?php }; ?>
+			                            <option value="<?php //echo $dts->id_departamento; ?>"><?php //echo $dts->nombre; ?></option>
+																	<?php //}; ?>
 			                          </select>
 		                        </div>
 		                      </div>
@@ -485,31 +438,15 @@ $dep = new Departamentos();
         </div>
         <!-- /page content -->
 
-				<!-- /footer content -->
-				<?php include '../common/content_footer.inc'; ?>
-				<!-- /footer content -->
-      </div>
-    </div>
-		<?php include '../common/footer.inc'; ?>
-    <!-- FastClick -->
-    <script src="vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="vendors/nprogress/nprogress.js"></script>
-    <!-- jQuery Smart Wizard -->
-    <script src="vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
-		<!-- bootstrap-daterangepicker -->
-    <script src="../js/datepicker/moment.min.js"></script>
-    <script src="../js/datepicker/daterangepicker.js"></script>
-		<!-- validator -->
-    <script src="vendors/validator/validator.js"></script>
-		<!-- bootstrap-daterangepicker -->
+				<?php include 'html/overall/container_base_footer.php'; ?>
+
 		<script>
-			$(document).ready(function() {
-				$('.calendario').daterangepicker({
-					singleDatePicker: true,
-					showDropdowns: true
-		    });
-			});
+			// $(document).ready(function() {
+			// 	$('.calendario').daterangepicker({
+			// 		singleDatePicker: true,
+			// 		showDropdowns: true
+		  //   });
+			// });
 		</script>
 		<!-- /bootstrap-daterangepicker -->
 <script>

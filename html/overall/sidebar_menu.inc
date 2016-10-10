@@ -9,9 +9,9 @@
 			</li>
 			<li><a><i class="fa fa-user"></i> Empleado <span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
-					<li><a href="javascript:void(0);" >Agregar</a></li>
-					<li><a href="<?php echo HTML_DIR; ?>views/empleado_update.php">Acutalizar</a></li>
-					<li><a href="<?php echo HTML_DIR; ?>views/base.php">Buscar</a></li>
+					<li><a href="javascript:void(0);" id="addempleado">Agregar</a></li>
+					<li><a href="javascript:void(0);" id="updateempleado">Acutalizar</a></li>
+					<li><a href="javascript:void(0);">Buscar</a></li>
 				</ul>
 			</li>
 			<li><a><i class="fa fa-desktop"></i> Delegados <span class="fa fa-chevron-down"></span></a>
@@ -33,15 +33,15 @@
 		<ul class="nav side-menu">
 			<li><a><i class="fa fa-bug"></i> Centro de trabajo <span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
-					<li><a  href="javascript:void(0);" id="centrab">Configuración</a></li>
+					<li><a  href="javascript:void(0);" id="centroTrabajo">Configuración</a></li>
 				</ul>
 			</li>
 		</ul>
 		<ul class="nav side-menu">
 			<li><a><i class="fa fa-bug"></i> Departamentos <span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
-					<li><a href="<?php echo HTML_DIR; ?>views/departamentos.php">E-commerce</a></li>
-					<li><a href="<?php echo HTML_DIR; ?>views/tipo_permiso.php">Tipo de permiso</a></li>
+					<li><a href="javascript:void(0);" id="departamento">Departamento</a></li>
+					<li><a href="javascript:void(0);" id="">Centro de Trabajo</a></li>
 				</ul>
 			</li>
 		</ul>

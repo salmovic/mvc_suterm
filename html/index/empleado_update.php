@@ -1,47 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<?php include '../common/head.inc' ?>
-<!-- NProgress -->
-<link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+<?php include HTML_DIR.'/overall/head.inc' ?>
 </head>
 <body class="nav-md">
-    <div class="container body">
-      <div class="main_container">
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a href="../views/index.php" class="site_title"><i class="fa fa-home"></i> <span>SUTERM</span></a>
-            </div>
-
-            <div class="clearfix"></div>
-
-            <!-- menu profile quick info -->
-            <div class="profile">
-              <div class="profile_pic">
-                <img src="../../images/img.jpg" alt="..." class="img-circle profile_img">
-              </div>
-              <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
-              </div>
-            </div>
-            <!-- /menu profile quick info -->
-            <br />
-
-            <!-- sidebar menu -->
-            <?php include '../common/sidebar_menu.inc'; ?>
-            <!-- /sidebar menu -->
-
-            <!-- /menu footer buttons -->
-        		<?php include '../common/menu_footer_buttons.inc'; ?>
-            <!-- /menu footer buttons -->
-          </div>
-        </div>
-
-        <!-- top navigation -->
-        <?php include '../common/top_navigation.inc'; ?>
-        <!-- /top navigation -->
+			<?php include 'html/overall/container_base_head.php'; ?>
 
         <!-- page content -->
 				<div class="right_col" role="main">
@@ -415,21 +378,8 @@
         </div>
         <!-- /page content -->
 
-				<!-- /footer content -->
-				<?php include '../common/content_footer.inc'; ?>
-				<!-- /footer content -->
-      </div>
-    </div>
-		<?php include '../common/footer.inc'; ?>
-    <!-- FastClick -->
-    <script src="vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="vendors/nprogress/nprogress.js"></script>
-    <!-- jQuery Smart Wizard -->
-    <script src="vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
-		<!-- jQuery Smart Wizard -->
-		<!-- validator -->
-    <script src="vendors/validator/validator.js"></script>
+ <?php include 'html/overall/container_base_footer.php'; ?>
+
 <script>
 	$(document).ready(function() {
 		$('#wizard').smartWizard({
