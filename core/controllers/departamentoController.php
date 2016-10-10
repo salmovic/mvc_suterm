@@ -1,3 +1,3 @@
 <?php
-include 'html/index/departamentos.php';
+include 'html/departamentos/departamentos.php';
  ?>

@@ -1,3 +1,3 @@
 <?php
-include 'html/index/centro_trabajo.php';
+include 'html/centro_trabajo/centro_trabajo.php';
 ?>

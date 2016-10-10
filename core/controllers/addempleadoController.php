@@ -1,3 +1,3 @@
 <?php
-include HTML_DIR.'index/empleado_add.php';
+include HTML_DIR.'empleados/empleado_add.php';
  ?>

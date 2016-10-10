@@ -3,7 +3,16 @@
 NUCLEO DE LA APLICACION llamamos a todos los recursos de la aplicacion
 */
 
-// Se definen las constantes
+// Definizion de la zona horaria
+date_default_timezone_set('America/Mexico_City');
+
+/*
+Constatnes de la conexion a la Base de datos
+*/
+define('DB_HOST','localhost');
+define('DB_USER','root');
+define('DB_PASS','');
+define('DB_NAME','ocrendbb');
 
 // ruta raiz
 define('HTML_DIR','html/');

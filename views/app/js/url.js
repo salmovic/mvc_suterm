@@ -19,6 +19,8 @@ $(document).ready(function()
 	_url( '#addempleado', '?views=addempleado' );
 	_url( '#updateempleado', '?views=updateempleado' );
 
+	//Centor trabajo
+	_url('#centrab','?views=centrotrabajo');
 	//funcion url
 	function _url( id, url )
 	{

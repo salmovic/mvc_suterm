@@ -1,3 +1,3 @@
 <?php
-include('html/index/categoria.php');
+include('html/categorias/categoria.php');
 ?>

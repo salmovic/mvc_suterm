@@ -106,7 +106,6 @@
                         </tr>
                       </thead>
                       <tbody>
-
                         <tr>
 													<td>
 														hola1
@@ -122,7 +121,6 @@
 														<a href="#" data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></a>
 													</td>
                         </tr>
-
                       </tbody>
                     </table>
                   </div>
