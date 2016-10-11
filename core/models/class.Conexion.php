@@ -1,27 +1,34 @@
 <?php
-class Conexion extends mysqli
+class Conexion
 {
-	public function __construct()
-	{
-		parent::__construct(DB_HOST,DB_USER,DB_PASS,DB_NAME);
-		$this->connect_errno ? die('Ocurrio un error en la conexion a la base de datos.'):null;
-		$this->set_charset('utf8');
-	}
-	
-	public function rows($query)
-	{
-		return mysqli_num_rows($query);
-	}
-
-	public function liberar($query);
-	{
-		return mysqli_free_result($query)
-	}
-
-	public function recorrer($query)
-	{
-		return mysqli_fetch_array($query);
-	}
-
+		protected $con;
+		/*
+		*Establece la conexion a la base de datos
+		*/
+		protected function setConexion()
+		{
+			$this->con = new mysqli(
+									DB_HOST,
+									DB_USER,
+									DB_PASS,
+									DB_NAME
+								);
+			$this->setNames();
+			return $this->con;
+		}
+		/*
+	 * Establecer cotejamiento utf8
+	 */
+	 private function setNames()
+	 {
+			 return $this->con->set_charset('utf8');
+	 }
+	 /*
+	 *Cerrar la conexion
+	 */
+	 protected function unsetConexion()
+	 {
+		 $this->con->close();
+	 }
 }
 ?>

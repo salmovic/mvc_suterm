@@ -41,7 +41,7 @@
                   </div>
                   <div class="x_content">
 										<!-- form -->
-										<form class="form-horizontal form-label-left" novalidate method="post">
+										<form class="form-horizontal form-label-left" novalidate id="frmcat">
 											<!-- Numro plaza -->
 											<div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="no_plaza">Numero Plaza <span class="required">*</span>
@@ -119,7 +119,7 @@
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
                           <button type="submit" class="btn btn-primary">Cancel</button>
-                          <button id="send" type="submit" class="btn btn-success">Submit</button>
+                          <button type="submit" class="btn btn-success" id="enviar">Enviar</button>
                         </div>
                       </div>
                     </form>
@@ -203,7 +203,8 @@
 
 				<?php include 'html/overall/container_base_footer.php'; ?>
 
-  
+				<script src="views/app/js/categorias/categorias.js"></script>
+
 
 		<!-- jQuery Smart Wizard -->
 <script>
