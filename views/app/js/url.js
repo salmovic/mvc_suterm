@@ -21,6 +21,9 @@ $(document).ready(function()
 
 	//Centor trabajo
 	_url('#centrab','?views=centrotrabajo');
+
+
+
 	//funcion url
 	function _url( id, url )
 	{

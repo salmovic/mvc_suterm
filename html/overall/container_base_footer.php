@@ -37,6 +37,7 @@
 <script src="views/vendors/jszip/dist/jszip.min.js"></script>
 <script src="views/vendors/pdfmake/build/pdfmake.min.js"></script>
 <script src="views/vendors/pdfmake/build/vfs_fonts.js"></script>
+
 <!-- Custom Theme Scripts -->
 <script src="views/build/js/custom.min.js"></script>
 <!-- funciones generales -->

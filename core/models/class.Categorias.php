@@ -48,5 +48,28 @@ class Categorias extends Connection
 
 		return $arreglo;
 	}
+ /*
+	* Obtener una categoria por id
+	*/
+	public function getCategoriasById($id)
+	{
+		$sql = "SELECT
+		id_categorias, no_plaza, categoria, plaza_actual, grupo_organico,
+			 nivel_desempenio, nivel_remuneracion, grupo_nivel, plan_carrera
+							FROM categorias WHERE id_categorias={$id}";
+
+		 $this->setConnection();
+
+		 $datos = $this->con->query( $sql );
+			$arreglo = array();
+			while ( $reg= $datos->fetch_object() )
+			{
+					$arreglo[] = $reg;
+			}
+
+			$this->unsetConnection();
+
+			return $arreglo;
+	}
 }
  ?>

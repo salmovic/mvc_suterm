@@ -35,4 +35,4 @@ require('core/models/class.Categorias.php');
 Inicializando variables de clase global
 */
 $categoria = new Categorias();
- ?>
+?>

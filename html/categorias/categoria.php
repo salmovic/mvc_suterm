@@ -28,6 +28,7 @@
             <div class="row">
 
               <div class="col-md-12 col-sm-12 col-xs-12">
+								<!-- Panel Categorias -->
 								<div class="x_panel">
                   <div class="x_title">
                     <h2>Agregar Categoria </h2>
@@ -126,7 +127,7 @@
 										<!-- End form -->
                   </div>
                 </div>
-								<!-- Panel Categorias -->
+								<!-- Panel Lista Categorias -->
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Lista de Categorías </h2>
@@ -171,8 +172,13 @@
 													<td><?php echo $dts->grupo_nivel; ?></td>
                           <td><?php echo $dts->plan_carrera; ?></td>
 													<td>
-														<a href="#" data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-success"><i class="fa fa-trash"></i></a>
-														<a href="#" data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+														<a href="javascript:void(0);" class="btn btn-info btn-lg"
+														data-toggle="modal" data-target="#myModal"
+														onclick="carga_ajax(<?php echo $dts->id_categorias; ?>,'ajax.php?mode=update_cat','myModal');"
+														 class="btn btn-success"><i class="fa fa-pencil"></i></a>														
+														<a href="javascript:void(0);" class="btn btn-info btn-lg" data-target="#myModal"
+														 data-placement="top" title="Eliminar"
+														><i class="fa fa-trash"></i></a>
 													</td>
                         </tr>
 												<?php } ?>
@@ -180,22 +186,20 @@
                     </table>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
         </div>
         <!-- /page content -->
-				<!-- Modal -->
-				<!-- Modal -->
-				<div id="modal">
-				</div>
-				<!-- End Modal -->
+				<!-- modal -->
+				<div id="myModal" class="modal fade" role="dialog">
 
+					</div>
+				<!-- end modal -->
 				<?php include 'html/overall/container_base_footer.php'; ?>
 
 				<script src="views/app/js/categorias/categorias.js"></script>
-
-
 		<!-- jQuery Smart Wizard -->
 <script>
 	$(document).ready(function() {

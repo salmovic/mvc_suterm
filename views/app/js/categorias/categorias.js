@@ -31,13 +31,5 @@ $(document).ready(function(){
 		    timeout: 10000
 		});
 
-});
-
-// Agregar titulo al pasar por el mouse
-		$('#up_cat').click(function(){
-			$('#btn').attr("data-toggle","tooltip");
-			$('#btn').removeAttr("data-placement");
-			$('#btn').removeAttr("title");
-			});
-
+	});	
 });
