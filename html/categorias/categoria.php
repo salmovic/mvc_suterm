@@ -156,23 +156,26 @@
                         </tr>
                       </thead>
                       <tbody>
-
+												<?php
+													$allCat= $categoria->getCategorias();
+													foreach ($allCat as $dts) {
+												 ?>
                         <tr>
-                          <td><?php echo '$dts->id_categorias;' ?></td>
-													<td><?php echo '$dts->no_plaza;' ?></td>
-                          <td><?php echo '$dts->categoria;' ?></td>
-                          <td><?php echo '$dts->plaza_actual;' ?></td>
-													<td><?php echo '$dts->grupo_organico;' ?></td>
-													<td><?php echo '$dts->nivel_desempenio;' ?></td>
-                          <td><?php echo '$dts->nivel_remuneracion;' ?></td>
-													<td><?php echo '$dts->grupo_nivel;' ?></td>
-                          <td><?php echo '$dts->plan_carrera;' ?></td>
+                          <td><?php echo $dts->id_categorias; ?></td>
+													<td><?php echo $dts->no_plaza; ?></td>
+                          <td><?php echo $dts->categoria; ?></td>
+                          <td><?php echo $dts->plaza_actual; ?></td>
+													<td><?php echo $dts->grupo_organico; ?></td>
+													<td><?php echo $dts->nivel_desempenio; ?></td>
+                          <td><?php echo $dts->nivel_remuneracion; ?></td>
+													<td><?php echo $dts->grupo_nivel; ?></td>
+                          <td><?php echo $dts->plan_carrera; ?></td>
 													<td>
-														<a href="javascript:void(0);" data-toggle="modal" data-target="#modal" onclick="carga_ajax('i','modal','../modulos/categorias.php');" data-toggle="tooltip" data-placement="top" title="Editar" class="btn btn-success"><i class="fa fa-edit"></i></a>
+														<a href="#" data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-success"><i class="fa fa-trash"></i></a>
 														<a href="#" data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></a>
 													</td>
                         </tr>
-
+												<?php } ?>
                       </tbody>
                     </table>
                   </div>
@@ -183,21 +186,8 @@
         </div>
         <!-- /page content -->
 				<!-- Modal -->
-				<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-				  <div class="modal-dialog" role="document">
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				        <h4 class="modal-title" id="myModalLabel">Modal Normal</h4>
-				      </div>
-				      <div class="modal-body">
-				        Texto #manosenelcodigo Normal
-				      </div>
-				      <div class="modal-footer">
-						<h4>Pie de Pagina</h4>
-				      </div>
-				    </div>
-				  </div>
+				<!-- Modal -->
+				<div id="modal">
 				</div>
 				<!-- End Modal -->
 

@@ -2,8 +2,9 @@
 // Se encarga de manipular todas las peticiones Ajax
 if($_POST){
 	require('core/core.php');
+
 	switch (isset($_GET['mode']) ? $_GET['mode'] : null) {
-    case 'categori':
+    case 'categoria':
       require('core/bin/ajax/categorias/addcategorias.php');
     break;
     case 'reg':
@@ -17,7 +18,6 @@ if($_POST){
     break;
   }
 }else{
-	echo 'No';
-	exit;
+	header('location: index.php');
 }
  ?>

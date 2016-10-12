@@ -1,11 +1,11 @@
 <?php
-class Conexion
+class Connection
 {
 		protected $con;
 		/*
 		*Establece la conexion a la base de datos
 		*/
-		protected function setConexion()
+		protected function setConnection()
 		{
 			$this->con = new mysqli(
 									DB_HOST,
@@ -26,7 +26,7 @@ class Conexion
 	 /*
 	 *Cerrar la conexion
 	 */
-	 protected function unsetConexion()
+	 protected function unsetConnection()
 	 {
 		 $this->con->close();
 	 }

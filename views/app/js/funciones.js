@@ -1,7 +1,7 @@
 // funcion que permite cargar los modulos.
 function carga_ajax( id,div,url )
 	{
-		// alert(id);
+		// alert(url);
 		$.post
 		(
 			url,

@@ -11,6 +11,7 @@ date_default_timezone_set('America/Mexico_City');
 /*
 CONSTANTES DE LA BASE DE DATOS
 */
+
 define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASS','');
@@ -27,7 +28,11 @@ define('APP_URL', 'http://localhost/mvc_suterm/');
 /*
 Estrcuctura requerida
 */
-require_once('core/models/class.Conexion.php');
-require('core/models/categorias/class.Categorias.php');
+require_once('core/models/class.Connection.php');
+require('core/models/class.Categorias.php');
 
+/*
+Inicializando variables de clase global
+*/
+$categoria = new Categorias();
  ?>

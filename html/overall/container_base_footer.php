@@ -13,8 +13,6 @@
 <script src="views/vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="views/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- funciones generales -->
-<script src="views/app/js/url.js"></script>
 <!-- FastClick -->
 <script src="views/vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
@@ -41,3 +39,7 @@
 <script src="views/vendors/pdfmake/build/vfs_fonts.js"></script>
 <!-- Custom Theme Scripts -->
 <script src="views/build/js/custom.min.js"></script>
+<!-- funciones generales -->
+<script src="views/app/js/url.js"></script>
+<!-- funciones -->
+<script src="views/app/js/funciones.js"></script>

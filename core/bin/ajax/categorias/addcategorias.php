@@ -1,7 +1,6 @@
 <?php
 	if ($_POST['no_plaza']!='') {
-		$cat = new Categorias();
-		echo $cat -> setCategorias();
+		echo $categoria -> setCategorias();
 	}else
 	echo 2;
 ?>
