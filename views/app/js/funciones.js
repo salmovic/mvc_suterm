@@ -16,17 +16,15 @@ function carga_ajax( id,url,div )
 /**
 * Configuracion de valores predetermindos de alertify
 */
-function reset () {
+function resetAlertify () {
 	$("#toggleCSS").attr("href", "views/build/alertify/themes/alertify.default.css");
 	alertify.set({
 		labels : {
 			ok     : "Aceptar",
 			cancel : "Cancelar"
 		},
-		delay : 5000,
+		delay : 3000,
 		buttonReverse : false,
 		buttonFocus   : "ok"
 	});
-	alertify.alert('Hola soy un alerta');
 }
-reset();

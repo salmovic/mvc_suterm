@@ -7,11 +7,14 @@ if($_POST){
     case 'categoria':
       require('core/bin/ajax/categorias/addcategorias.php');
     break;
-    case 'mod_act_cat':
+    case 'mod_update_cat':
 			require('html/categorias/modal_update.php');
     break;
-		case 'mod_del_cat':
-			require('html/categorias/modal_del.php');
+		case 'delete_cat':
+			require('core/bin/ajax/categorias/delcategorias.php');
+    break;
+		case 'refresh_cat':
+			require('html/categorias/refresh_categoria.php');
     break;
 		/* end Categoria*/
     case 'lostpass':

@@ -12,16 +12,6 @@
               <div class="title_left">
                 <h3>Categorías</h3>
               </div>
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                              <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
-              </div>
             </div>
             <div class="clearfix"></div>
 
@@ -116,7 +106,7 @@
 												</div>
 											</div>
 											<!-- token -->
-											<input type="hidden" name="token" value="ok">
+											<input type="hidden" name="token" value="setcat">
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
                           <button type="submit" class="btn btn-primary">Cancel</button>
@@ -141,7 +131,7 @@
                   </div>
 
 									<div class="x_content">
-                    <table id="datatable" class="table table-striped table-bordered">
+                    <table id="tb_categoria" class="table table-striped table-bordered">
                       <thead>
                         <tr>
                           <th>ID</th>
@@ -172,10 +162,11 @@
 													<td><?php echo $dts->grupo_nivel; ?></td>
                           <td><?php echo $dts->plan_carrera; ?></td>
 													<td align="center">
-													 <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal" onclick="carga_ajax(<?php echo $dts->id_categorias; ?>,'ajax.php?mode=mod_act_cat','myModal');"
+													 <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal" onclick="carga_ajax(<?php echo $dts->id_categorias; ?>,'ajax.php?mode=mod_update_cat','myModal');"
 														 data-toggle="tooltip" data-placement="top" title="Editar" class="btn btn-success"><i class="fa fa-edit"></i></a>
-														 <a href="javascript:void(0);" data-toggle="modal" data-target="#delCat" onclick="carga_ajax(<?php echo $dts->id_categorias; ?>,'ajax.php?mode=mod_del_cat','delCat');"
-														 	data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+
+															<a href="javascript:void(0);" data-toggle="modal" onclick="elimiarCat(<?php echo $dts->id_categorias; ?>);"
+ 														 	data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></a>
 													</td>
                         </tr>
 												<?php } ?>
@@ -195,11 +186,11 @@
 				<!-- end modal -->
 				<!-- modal actualizar-->
 				<div id="delCat" class="modal fade" role="dialog">
-
 				</div>
 				<!-- end modal -->
-				<?php include 'html/overall/container_base_footer.php'; ?>
 
+				<?php include 'html/overall/container_base_footer.php'; ?>
+				<!-- Script Categorias -->
 				<script src="views/app/js/categorias/categorias.js"></script>
 		<!-- jQuery Smart Wizard -->
 <script>

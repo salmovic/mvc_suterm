@@ -6,7 +6,6 @@ if (isset($_POST['token']))
 	$tipoPerm -> setTipoPermiso();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>

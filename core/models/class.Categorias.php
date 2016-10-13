@@ -7,23 +7,38 @@ class Categorias extends Connection
 	/**
 	* Establecer una nueva categoria
 	*/
+
 	public function setCategorias()
 	{
-		$sql = "INSERT INTO
-						categorias(id_categorias, no_plaza, categoria, plaza_actual, grupo_organico,
-			 			nivel_desempenio, nivel_remuneracion, grupo_nivel, plan_carrera)
-						VALUES
-						(0,'{$_POST['no_plaza']}','{$_POST['categoria']}','{$_POST['plaza_actual']}','{$_POST['grupo_organico']}',
-						'{$_POST['nivel_desempenio']}','{$_POST['nivel_remuneracion']}','{$_POST['grupo_nivel']}','{$_POST['plan_carrera']}')";
-
+		/*establecer conexion con la BD*/
 		$this->setConnection();
 
+		/*Escapando caracteres espciales*/
+		$no_plaza = $this-> con-> real_escape_string($_POST['no_plaza']);
+		$categoria = $this-> con-> real_escape_string($_POST['categoria']);
+		$plaza_actual = $this-> con-> real_escape_string($_POST['plaza_actual']);
+		$grupo_organico = $this-> con-> real_escape_string($_POST['grupo_organico']);
+		$nivel_desempenio = $this-> con-> real_escape_string($_POST['nivel_desempenio']);
+		$nivel_remuneracion = $this-> con-> real_escape_string($_POST['nivel_remuneracion']);
+		$grupo_nivel = $this-> con-> real_escape_string($_POST['grupo_nivel']);
+		$plan_carrera = $this-> con-> real_escape_string($_POST['plan_carrera']);
+
+		/*Sentencia sql*/
+		$sql = "INSERT INTO
+			categorias(id_categorias, no_plaza, categoria, plaza_actual, grupo_organico,
+				 nivel_desempenio, nivel_remuneracion, grupo_nivel, plan_carrera)
+				 	VALUES
+			(0,'{$no_plaza}','{$categoria}','{$plaza_actual}','{$grupo_organico}',
+			'{$nivel_desempenio}','{$nivel_remuneracion}','{$grupo_nivel}','{$plan_carrera}');";
+
+		/*Ejecuta la sentencia sql*/
 		$exit = $this->con->query( $sql );
 
+		/*Cerrar la conexion conexion con la BD*/
 		$this->unsetConnection();
 
+		/*Devuelve el estado de la consulta*/
 		return $exit;
-
 	}
 	/**
 	*Obtener todas las categorias
@@ -50,13 +65,14 @@ class Categorias extends Connection
 	}
  /*
 	* Obtener una categoria por id
+	* @param id_categorias
 	*/
-	public function getCategoriasById($id)
+	public function getCategoriasById( $id )
 	{
 		$sql = "SELECT
 		id_categorias, no_plaza, categoria, plaza_actual, grupo_organico,
 			 nivel_desempenio, nivel_remuneracion, grupo_nivel, plan_carrera
-							FROM categorias WHERE id_categorias={$id}";
+							FROM categorias WHERE id_categorias={$id} LIMIT 1";
 
 		 $this->setConnection();
 
@@ -70,6 +86,31 @@ class Categorias extends Connection
 			$this->unsetConnection();
 
 			return $arreglo;
+	}
+	/*
+	* Actualizar categorias
+	* @param id_categorias
+	*/
+	public function updateCategorias()
+	{
+		$sql = "";
+	}
+	/*
+	* Eliminar una categoria
+	* @param id_categorias
+	*/
+	public function deleteCategorias( $id )
+	{
+		$sql = "DELETE FROM
+								categorias
+								 	 WHERE id_categorias = {$id};";
+		$this->setConnection();
+
+		$exito = $this-> con ->query($sql);
+
+		$this-> unsetConnection();
+
+		return $exito;
 	}
 }
  ?>
