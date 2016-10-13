@@ -3,12 +3,17 @@
 if($_POST){
 	require('core/core.php');
 	switch (isset($_GET['mode']) ? $_GET['mode'] : null) {
+		/*Categoria*/
     case 'categoria':
       require('core/bin/ajax/categorias/addcategorias.php');
     break;
-    case 'update_cat':
-			require('core/bin/ajax/categorias/update_cat.php');
+    case 'mod_act_cat':
+			require('html/categorias/modal_update.php');
     break;
+		case 'mod_del_cat':
+			require('html/categorias/modal_del.php');
+    break;
+		/* end Categoria*/
     case 'lostpass':
       require('core/bin/ajax/goLostpass.php');
     break;

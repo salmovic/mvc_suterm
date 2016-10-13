@@ -37,10 +37,11 @@
 <script src="views/vendors/jszip/dist/jszip.min.js"></script>
 <script src="views/vendors/pdfmake/build/pdfmake.min.js"></script>
 <script src="views/vendors/pdfmake/build/vfs_fonts.js"></script>
-
+<!-- Alertify -->
+<script src="views/build/alertify/lib/alertify.min.js"></script>
 <!-- Custom Theme Scripts -->
 <script src="views/build/js/custom.min.js"></script>
-<!-- funciones generales -->
+<!-- funciones rutas -->
 <script src="views/app/js/url.js"></script>
-<!-- funciones -->
+<!-- funciones generales-->
 <script src="views/app/js/funciones.js"></script>

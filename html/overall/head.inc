@@ -20,6 +20,9 @@
 		    <link href="views/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
 		    <link href="views/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
 		    <link href="views/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+		<!-- Alertify -->
+		<link rel="stylesheet" href="views/build/alertify/themes/alertify.core.css" />
+		<link rel="stylesheet" href="views/build/alertify/themes/alertify.default.css" id="toggleCSS" />
 
     <!-- Custom Theme Style -->
     <link href="views/build/css/custom.min.css" rel="stylesheet">

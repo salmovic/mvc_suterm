@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="themes/alertify.core.css" />
+	<link rel="stylesheet" href="themes/alertify.default.css" id="toggleCSS" />
+</head>
+<body>
+	<ul>
+		<li><a href="#" id="uno">uno</a></li>
+		<li><a href="#" id="dos">dos</a></li>
+	</ul>
+<script src="lib/jquery.js"></script>
+<script src="lib/alertify.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		reset();
+		function reset () {
+			$("#toggleCSS").attr("href", "themes/alertify.default.css");
+			alertify.set({
+				labels : {
+					ok     : "Aceptar",
+					cancel : "Cancelar"
+				},
+				delay : 5000,
+				buttonReverse : false,
+				buttonFocus   : "ok"
+			});
+		}
+		var uno = $('#uno');
+		var dos = $('#dos');
+		uno.on('click',function(){
+			alertify.alert('Hola soy una alerta');
+		});
+		dos.on('click',function(){
+			alertify.alert('Hola soy una alerta');
+		});
+	});
+</script>
+</body>
+</html>

@@ -153,7 +153,7 @@
 													<th>Niv. Remuneración</th>
 													<th>Grupo Nivel</th>
 													<th>Plan de Carrera</th>
-													<th>Operaciones</th>
+													<th>Actualizar / Eliminar</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -171,14 +171,11 @@
                           <td><?php echo $dts->nivel_remuneracion; ?></td>
 													<td><?php echo $dts->grupo_nivel; ?></td>
                           <td><?php echo $dts->plan_carrera; ?></td>
-													<td>
-														<a href="javascript:void(0);" class="btn btn-info btn-lg"
-														data-toggle="modal" data-target="#myModal"
-														onclick="carga_ajax(<?php echo $dts->id_categorias; ?>,'ajax.php?mode=update_cat','myModal');"
-														 class="btn btn-success"><i class="fa fa-pencil"></i></a>														
-														<a href="javascript:void(0);" class="btn btn-info btn-lg" data-target="#myModal"
-														 data-placement="top" title="Eliminar"
-														><i class="fa fa-trash"></i></a>
+													<td align="center">
+													 <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal" onclick="carga_ajax(<?php echo $dts->id_categorias; ?>,'ajax.php?mode=mod_act_cat','myModal');"
+														 data-toggle="tooltip" data-placement="top" title="Editar" class="btn btn-success"><i class="fa fa-edit"></i></a>
+														 <a href="javascript:void(0);" data-toggle="modal" data-target="#delCat" onclick="carga_ajax(<?php echo $dts->id_categorias; ?>,'ajax.php?mode=mod_del_cat','delCat');"
+														 	data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></a>
 													</td>
                         </tr>
 												<?php } ?>
@@ -192,10 +189,14 @@
           </div>
         </div>
         <!-- /page content -->
-				<!-- modal -->
+				<!-- modal actualizar-->
 				<div id="myModal" class="modal fade" role="dialog">
+				 </div>
+				<!-- end modal -->
+				<!-- modal actualizar-->
+				<div id="delCat" class="modal fade" role="dialog">
 
-					</div>
+				</div>
 				<!-- end modal -->
 				<?php include 'html/overall/container_base_footer.php'; ?>
 
