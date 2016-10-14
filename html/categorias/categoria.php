@@ -109,8 +109,8 @@
 											<input type="hidden" name="token" value="setcat">
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
-                          <button type="submit" class="btn btn-primary">Cancel</button>
-                          <button type="submit" class="btn btn-success" id="enviar">Enviar</button>
+                          <button type="button" onclick="resetForm('frmcat');" class="btn btn-primary">Cancel</button>
+                          <button type="submit" class="btn btn-success" id="enviar_cat">Enviar</button>
                         </div>
                       </div>
                     </form>
@@ -174,7 +174,6 @@
                     </table>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>

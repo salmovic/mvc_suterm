@@ -28,3 +28,11 @@ function resetAlertify () {
 		buttonFocus   : "ok"
 	});
 }
+/*
+* Resetear un formulario
+* @param id formulario
+*/
+function resetForm(id)
+{
+	document.getElementById(id).reset();
+}

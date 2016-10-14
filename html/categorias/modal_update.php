@@ -10,7 +10,7 @@ $myCat=$categoria->getCategoriasById($_POST['id']);
 		 </div>
 		 <div class="modal-body">
 			 <!-- form -->
-	 		<form class="form-horizontal form-label-left" novalidate id="frmcat">
+	 		<form class="form-horizontal form-label-left" novalidate id="frmcat_update">
 	 			<!-- Id Categoria -->
 	 			<div class="form-group">
 	 				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="id_categorias">ID categoria <span class="required">*</span>
@@ -25,7 +25,7 @@ $myCat=$categoria->getCategoriasById($_POST['id']);
 	 				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="no_plaza">Numero Plaza <span class="required">*</span>
 	 				</label>
 	 				<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-	 					<input type="text" class="form-control has-feedback-left" id="no_plaza" name="no_plaza" value="<?php echo $myCat[0]->no_plaza; ?>">
+	 					<input type="text" class="form-control has-feedback-left" id="no_plaza" name="no_plaza" value="<?php echo $myCat[0]->no_plaza; ?>"  autofocus>
 	 					<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 	 				</div>
 	 			</div>
@@ -93,11 +93,11 @@ $myCat=$categoria->getCategoriasById($_POST['id']);
 	 				</div>
 	 			</div>
 	 			<!-- token -->
-	 			<input type="hidden" name="token" value="ok">
+	 			<input type="hidden" name="token" value="updatecat">
 	 			<div class="form-group">
 	 				<div class="col-md-6 col-md-offset-3">
-	 					<button type="submit" class="btn btn-primary" data-dismiss="modal" >Cancel</button>
-	 					<button type="submit" class="btn btn-success" id="enviar">Enviar</button>
+	 					<button type="submit" class="btn btn-primary" data-dismiss="modal" >Salir</button>
+	 					<input type="submit" class="btn btn-success" id="updatecat" value="Enviar">
 	 				</div>
 	 			</div>
 	 		</form>
@@ -108,3 +108,35 @@ $myCat=$categoria->getCategoriasById($_POST['id']);
 		 </div>
 	 </div>
  </div>
+ <script type="text/javascript">
+ /*Actualizar categorias*/
+ $('#updatecat').on('click',function(e)
+ {
+	 e.preventDefault();
+	 $.ajax({
+			 //ruta archivo php
+			 url: 'ajax.php?mode=update_cat',
+			 type: 'post',
+			 data:$('#frmcat_update').serialize(),
+			 success: function(respuesta) {
+				 console.log(respuesta);
+				 if(respuesta==1){
+					 alertify.success('Muy bien');
+					carga_ajax(null,'ajax.php?mode=refresh_cat','tb_categoria');
+
+				 }else{
+					 alertify.error("No se pudo actualizar");
+				 }
+			 },
+			 //ejecuta cuando hay un error en la peticion
+			 error: function(jqXHR,estado,error) {
+					 alertify.error('Ocurrio un error '+error);
+			 },
+			 //ejecuta al completar exitosamente la peticion
+			 complete: function(jqXHR,estado) {
+
+			 },
+			 timeout: 10000
+	 });
+ });
+ </script>

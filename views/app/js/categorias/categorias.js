@@ -1,12 +1,13 @@
 $(document).ready(function(){
 	/*Establecer valores alertify español*/
 	resetAlertify();
-//Enviar formulario
-	$('#enviar').on('click',function(e)	{
-		//deshabilitar el envio por default
+/*
+* Enviar formualario categoria
+*/
+	$('#enviar_cat').on('click',function(e)
+	{
 		e.preventDefault();
 		$.ajax({
-		    //antes de que se envie la peticion
 		    beforeSend: function() {
 		        // $("#status").html('<span class="glyphicon glyphicon-hourglass label-success"></span>');
 		    },
@@ -27,24 +28,29 @@ $(document).ready(function(){
 		    },
 		    //ejecuta cuando hay un error en la peticion
 		    error: function(jqXHR,estado,error) {
-		        // $("#status").html('<span class="glyphicon glyphicon-remove-circle label-warning"></span>');
 		        alertify.error("Ocurrio un erro inesperado "+error);
 		    },
 		    //ejecuta al completar exitosamente la peticion
-		    complete: function(jqXHR,estado) {
-
-		    },
+		    complete: function(jqXHR,estado){},
 		    timeout: 10000
 		});
+	});
 
+	/*
+	* Actualizar datos
+	*/
+	$('#frmcat_update').on('click',function(){
+		alertify.alert('OK');
 	});
 
 });
 /*
 * Funcion que permite eliminar una categoria
 */
-function elimiarCat(id){
-	alertify.confirm("Esta seguro que desea eliminar", function (e) {
+function elimiarCat(id)
+{
+	alertify.confirm("Esta seguro que desea eliminar", function (e)
+	{
     if (e) {
 			$.ajax({
 			    //ruta archivo php
@@ -61,17 +67,14 @@ function elimiarCat(id){
 			    },
 			    //ejecuta cuando hay un error en la peticion
 			    error: function(jqXHR,estado,error) {
-			        // $("#status").html('<span class="glyphicon glyphicon-remove-circle label-warning"></span>');
 			        alertify.error('Ocurrio un error '+error);
 			    },
 			    //ejecuta al completar exitosamente la peticion
-			    complete: function(jqXHR,estado) {
-			        console.log("complete "+estado);
-			    },
+			    complete: function(jqXHR,estado) {},
 			    timeout: 10000
 			});
     } else {
         alertify.error("No quiso elimiar "+id);
     }
-});
+	});
 }
