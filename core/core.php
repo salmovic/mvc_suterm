@@ -30,9 +30,11 @@ Estrcuctura requerida
 */
 require_once('core/models/class.Connection.php');
 require('core/models/class.Categorias.php');
+require('core/models/class.CentroTrabajo.php');
 
 /*
 Inicializando variables de clase global
 */
 $categoria = new Categorias();
+$centroTrabajo = new CentroTrabajo();
 ?>

@@ -131,7 +131,7 @@
                   </div>
 
 									<div class="x_content">
-                    <table id="tb_categoria" class="table table-striped table-bordered">
+                    <table class="table table-striped table-bordered">
                       <thead>
                         <tr>
                           <th>ID</th>
@@ -146,7 +146,7 @@
 													<th>Actualizar / Eliminar</th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody id="tb_categoria">
 												<?php
 													$allCat= $categoria->getCategorias();
 													foreach ($allCat as $dts) {

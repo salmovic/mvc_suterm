@@ -1,19 +1,3 @@
-<table id="tb_categoria" class="table table-striped table-bordered">
-	<thead>
-		<tr>
-			<th>ID</th>
-			<th>No. de Plaza</th>
-			<th>Categoría</th>
-			<th>Plaza Actual</th>
-			<th>Grupo Organico</th>
-			<th>Niv. Desempeño</th>
-			<th>Niv. Remuneración</th>
-			<th>Grupo Nivel</th>
-			<th>Plan de Carrera</th>
-			<th>Actualizar / Eliminar</th>
-		</tr>
-	</thead>
-	<tbody>
 		<?php
 			$allCat= $categoria->getCategorias();
 			foreach ($allCat as $dts) {
@@ -37,5 +21,3 @@
 			</td>
 		</tr>
 		<?php } ?>
-	</tbody>
-</table>

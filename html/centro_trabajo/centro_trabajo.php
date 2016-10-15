@@ -4,8 +4,8 @@
 <?php include HTML_DIR.'/overall/head.inc' ?>
 </head>
 <body class="nav-md">
+
 			<?php include 'html/overall/container_base_head.php'; ?>
-        <!-- page content -->
 
         <!-- page content -->
 				<div class="right_col" role="main">
@@ -13,7 +13,7 @@
             <div class="page-title">
               <div class="title_left">
                 <h3>Centro de Trabajo</h3>
-              </div>              
+              </div>
             </div>
             <div class="clearfix"></div>
 
@@ -32,8 +32,17 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-										<!-- form -->
-										<form class="form-horizontal form-label-left" novalidate method="post">
+										<!-- formulario  -->
+										<form class="form-horizontal form-label-left" novalidate method="post" id="frmCenTrabajo">
+											<!-- Nomnbre -->
+											<div class="form-group">
+												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="id_centro_trabajo">Id Centro de Trabajo<span class="required">*</span>
+												</label>
+												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
+													<input type="text" class="form-control has-feedback-left" id="id_centro_trabajo" name="id_centro_trabajo" placeholder="Numero de plaza">
+													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+												</div>
+											</div>
 											<!-- Nomnbre -->
 											<div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Nombre Centro de Trabajo<span class="required">*</span>
@@ -89,12 +98,12 @@
 												</div>
 											</div>
 											<!-- token -->
-											<input type="hidden" name="token" value="ok">
+											<input type="hidden" name="token" value="set_centrab">
 											<!-- Botones -->
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
-                          <button type="submit" class="btn btn-primary">Cancel</button>
-                          <button id="send" type="submit" class="btn btn-success">Submit</button>
+                          <button type="button" class="btn btn-primary" onclick="resetForm('frmCenTrabajo');">Cancelar</button>
+                          <button id="setCenTrab" type="submit" class="btn btn-success">Enviar</button>
                         </div>
                       </div>
                     </form>
@@ -115,7 +124,7 @@
                   </div>
 
 									<div class="x_content">
-                    <table id="datatable" class="table table-striped table-bordered">
+                    <table class="table table-striped table-bordered">
                       <thead>
                         <tr>
                           <th>ID</th>
@@ -128,8 +137,10 @@
 													<th>Operaciones</th>
                         </tr>
                       </thead>
-                      <tbody>
-												<?php foreach ($allCt as $dts)
+                      <tbody id="refresh_centrab">
+												<?php
+												$allCt = $centroTrabajo->getCentroTrabajo();
+												foreach ($allCt as $dts)
 												{
 												?>
                         <tr>
@@ -142,7 +153,7 @@
                           <td><?php echo $dts->telefono; ?></td>
 													<td align="center">
 														<a href="javascript:void(0);" data-toggle="modal" data-target="#editar" data-toggle="tooltip" data-placement="top" title="Editar" class="btn btn-success"><i class="fa fa-edit"></i></a>
-														<a href="javascript:void(0);" data-toggle="modal" data-target="#alert" data-toggle="tooltip" data-placement="top" title="Editar" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+														<a href="javascript:void(0);" data-toggle="modal" onclick="delCenTrab(<?php echo $dts->id_centro_trabajo; ?>)" data-toggle="tooltip" data-placement="top" title="Editar" class="btn btn-danger"><i class="fa fa-trash"></i></a>
 													</td>
                         </tr>
 												<?php }; ?>
@@ -158,96 +169,7 @@
 				<!-- Actualizar Centro de Trabajo -->
 				<!-- Modal -->
 			<div class="modal fade" id="editar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<h4 class="modal-title" id="myModalLabel">Actualizar Datos</h4>
-						</div>
-						<div class="modal-body">
-							<!-- form -->
-							<form class="form-horizontal form-label-left" novalidate method="post">
-								<!-- ID -->
 
-								<div class="form-group">
-									<label class="control-label col-md-3 col-sm-3 col-xs-12" for="id">ID<span class="required">*</span>
-									</label>
-									<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-										<input type="text" class="form-control has-feedback-left" id="id" name="id" value="<?php echo $dts->id_centro_trabajo; ?>">
-										<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-									</div>
-								</div>
-								<!-- Nomnbre -->
-								<div class="form-group">
-									<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Nombre Centro de Trabajo<span class="required">*</span>
-									</label>
-									<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-										<input type="text" class="form-control has-feedback-left" id="nombre" name="nombre" placeholder="Numero de plaza">
-										<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-									</div>
-								</div>
-								<!-- Domicilio -->
-								<div class="form-group">
-									<label class="control-label col-md-3 col-sm-3 col-xs-12" for="domicilio">Domicilio<span class="required">*</span>
-									</label>
-									<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-										<input type="text" class="form-control has-feedback-left" id="domicilio" name="domicilio" placeholder="Eje. Profesionista">
-										<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-									</div>
-								</div>
-								<!-- Código Postal -->
-								<div class="form-group">
-									<label class="control-label col-md-3 col-sm-3 col-xs-12" for="codigo_postal">Código Postal<span class="required">*</span>
-									</label>
-									<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-										<input type="text" class="form-control has-feedback-left" id="codigo_postal" name="codigo_postal" placeholder="Plaza Actual">
-										<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-									</div>
-								</div>
-								<!-- Municipio -->
-								<div class="form-group">
-									<label class="control-label col-md-3 col-sm-3 col-xs-12" for="municipio">Municipio<span class="required">*</span>
-									</label>
-									<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-										<input type="text" class="form-control has-feedback-left" id="municipio" name="municipio" placeholder="Grupo Organico">
-										<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-									</div>
-								</div>
-								<!-- Entidad Federativa -->
-								<div class="form-group">
-									<label class="control-label col-md-3 col-sm-3 col-xs-12" for="entidad_fed">Entidad Federativa<span class="required">*</span>
-									</label>
-									<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-										<input type="text" class="form-control has-feedback-left" id="entidad_fed" name="entidad_fed" placeholder="Nivel de desempeño">
-										<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-									</div>
-								</div>
-								<!-- Numero de telefono -->
-								<div class="form-group">
-									<label class="control-label col-md-3 col-sm-3 col-xs-12" for="telefono">Telefono<span class="required">*</span>
-									</label>
-									<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-										<input type="text" class="form-control has-feedback-left" id="telefono" name="telefono" placeholder="Nivel de remuneración">
-										<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-									</div>
-								</div>
-								<!-- token -->
-								<input type="hidden" name="token_up" value="ok">
-								<!-- Botones -->
-								<div class="form-group">
-									<div class="col-md-6 col-md-offset-3">
-										<button class="btn btn-primary">Cancel</button>
-										<button id="send" type="submit" class="btn btn-success">Submit</button>
-									</div>
-								</div>
-							</form>
-							<!-- End form -->
-						</div>
-						<div class="modal-footer">
-					<h4>Pie de Pagina</h4>
-						</div>
-					</div>
-				</div>
 			</div>
 				<!-- end modal -->
 
@@ -275,9 +197,10 @@
 				</div>
 				<!-- end modal -->
 
-
 		<?php include 'html/overall/container_base_footer.php'; ?>
 
+		<!-- funciones centro de trabajo -->
+		<script src="views/app/js/centro_trabajo/centro_trabajo.js"></script>
 
 		<!-- jQuery Smart Wizard -->
 <script>

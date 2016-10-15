@@ -35,14 +35,6 @@ $(document).ready(function(){
 		    timeout: 10000
 		});
 	});
-
-	/*
-	* Actualizar datos
-	*/
-	$('#frmcat_update').on('click',function(){
-		alertify.alert('OK');
-	});
-
 });
 /*
 * Funcion que permite eliminar una categoria

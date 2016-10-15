@@ -26,12 +26,24 @@ if($_POST){
 		case 'refresh_cat':
 			require('core/bin/ajax/categorias/refresh_categoria.php');
     break;
-		/*************
-		*  *
-		*************/
 
+		/*******************
+		* RUTA CEN_TRABAJO *
+		*******************/
+		/*Create cen_trab*/
+		case 'set_centrab':
+		require('core/bin/ajax/centro_trabajo/centro_trabajo.php');
+		break;
+		/*Eliminar centro de trabajo*/
+		case 'del_centrab':
+		require('core/bin/ajax/centro_trabajo/del_centrab.php');
+		break;
+		/*refrescar tabala*/
+		case 'refresh_centrab':
+			require('core/bin/ajax/centro_trabajo/refresh_ct.php');
+		break;
     default:
-      header('location: index.php');
+      echo "ruta no especificada.";
     break;
   }
 }else
