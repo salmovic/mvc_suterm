@@ -152,7 +152,8 @@
 													<td><?php echo $dts->entidad_fed; ?></td>
                           <td><?php echo $dts->telefono; ?></td>
 													<td align="center">
-														<a href="javascript:void(0);" data-toggle="modal" data-target="#editar" data-toggle="tooltip" data-placement="top" title="Editar" class="btn btn-success"><i class="fa fa-edit"></i></a>
+														<a href="javascript:void(0);" data-toggle="modal" data-target="#up_centrab" onclick="carga_ajax(<?php echo $dts->id_centro_trabajo; ?>,'ajax.php?mode=modalcentrab','up_centrab');"
+ 														 data-toggle="tooltip" data-placement="top" title="Editar" class="btn btn-success"><i class="fa fa-edit"></i></a>
 														<a href="javascript:void(0);" data-toggle="modal" onclick="delCenTrab(<?php echo $dts->id_centro_trabajo; ?>)" data-toggle="tooltip" data-placement="top" title="Editar" class="btn btn-danger"><i class="fa fa-trash"></i></a>
 													</td>
                         </tr>
@@ -168,35 +169,9 @@
         <!-- /page content -->
 				<!-- Actualizar Centro de Trabajo -->
 				<!-- Modal -->
-			<div class="modal fade" id="editar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-
-			</div>
+				<div id="up_centrab" class="modal fade" role="dialog">
+				 </div>
 				<!-- end modal -->
-
-				<!-- Mensaje alerta -->
-				<div class="modal fade" id="alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<h4 class="modal-title" id="myModalLabel">¿Desea aumentar su salario?</h4>
-						</div>
-						<div class="modal-body">
-							<!-- form -->
-							<div align="center">
-								<button type="button" name="button" class="btn btn-default">No</button>
-								<button type="submit" name="button" class="btn btn-success">Eliminar</button>
-							</div>
-							<!-- End form -->
-						</div>
-						<div class="modal-footer">
-					<h4>Pie de Pagina</h4>
-						</div>
-					</div>
-				</div>
-				</div>
-				<!-- end modal -->
-
 		<?php include 'html/overall/container_base_footer.php'; ?>
 
 		<!-- funciones centro de trabajo -->

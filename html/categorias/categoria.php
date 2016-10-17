@@ -183,10 +183,7 @@
 				<div id="myModal" class="modal fade" role="dialog">
 				 </div>
 				<!-- end modal -->
-				<!-- modal actualizar-->
-				<div id="delCat" class="modal fade" role="dialog">
-				</div>
-				<!-- end modal -->
+
 
 				<?php include 'html/overall/container_base_footer.php'; ?>
 				<!-- Script Categorias -->

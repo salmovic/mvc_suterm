@@ -57,6 +57,60 @@ class CentroTrabajo extends Connection
 
 		return $arreglo;
 	}
+	/**
+	* Obtener un centro de trabajo por Id
+	*/
+	public function getCentroTrabajoById( $id )
+	{
+		$sql = "SELECT
+					id_centro_trabajo, nombre, domicilio, codigo_postal, municipio, entidad_fed, telefono
+					FROM centro_de_trabajo
+					WHERE id_centro_trabajo={$id}
+					LIMIT 1";
+
+		$this->setConnection();
+
+		$datos = $this->con->query( $sql );
+
+		$arreglo = array();
+		while ( $reg= $datos->fetch_object() )
+		{
+				$arreglo[] = $reg;
+		}
+
+		$this-> unsetConnection();
+
+		return $arreglo;
+	}
+	/*
+	* Actualizar un Cntro de trabajo
+	*/
+	public function updateCentroTrabajo()
+	{
+		/*conection open*/
+		$this->setConnection();
+
+		/*Escapendo caracteres especiales*/
+		$id_centrab = $_POST['id_centro_trabajo'];
+		 $nombre = $this->con->real_escape_string($_POST['nombre']);
+		 $domicilio = $this->con->real_escape_string($_POST['domicilio']);
+		 $codigo_postal = $this->con->real_escape_string($_POST['codigo_postal']);
+		 $municipio = $this->con->real_escape_string($_POST['municipio']);
+		 $entidad_fed = $this->con->real_escape_string($_POST['entidad_fed']);
+		 $telefono = $this->con->real_escape_string($_POST['telefono']);
+
+		/*Sentencia sql*/
+		 $sql ="UPDATE centro_de_trabajo SET nombre='{$nombre}',domicilio='{$domicilio}',
+		 codigo_postal='{$codigo_postal}',municipio='{$municipio}',entidad_fed='{$entidad_fed}',telefono='{$telefono}'
+		 WHERE id_centro_trabajo={$id_centrab}";
+
+		$exito = $this->con->query( $sql );
+
+		/*Cerrar conexion*/
+		$this-> unsetConnection();
+
+		return $exito;
+	}
 	/*Delete centro trabajo*/
 	public function deleteCentroTrabajo($id)
 	{

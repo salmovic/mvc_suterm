@@ -28,8 +28,9 @@ if($_POST){
     break;
 
 		/*******************
-		* RUTA CEN_TRABAJO *
+		* RUTA CENtro_TRABAJO *
 		*******************/
+
 		/*Create cen_trab*/
 		case 'set_centrab':
 		require('core/bin/ajax/centro_trabajo/centro_trabajo.php');
@@ -42,6 +43,15 @@ if($_POST){
 		case 'refresh_centrab':
 			require('core/bin/ajax/centro_trabajo/refresh_ct.php');
 		break;
+		/*cargar modal update*/
+		case 'modalcentrab':
+			require('html/centro_trabajo/update_ct.php');
+		break;
+		case 'updatecentrab':
+		require('core/bin/ajax/centro_trabajo/centro_trabajo.php');
+		break;
+
+
     default:
       echo "ruta no especificada.";
     break;
