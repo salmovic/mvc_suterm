@@ -15,7 +15,7 @@ $(document).ready(function()
 				success: function(respuesta) {
 					if(respuesta==1){
 						alertify.success("Se cargó correctamente");
-						carga_ajax(null,'ajax.php?mode=refresh_depto','refresh_depto');
+						carga_ajax(null,'ajax.php?mode=refresh_depto','tb_depto');
 					}else{
 						alertify.error("No se pudo cargar "+respuesta);
 					}
@@ -48,7 +48,7 @@ function eliminarDepto( id )
 						console.log(respuesta);
 						if(respuesta==1){
 							alertify.success("Se cargó correctamente");
-						 carga_ajax(null,'ajax.php?mode=refresh_depto','refresh_depto');
+						 carga_ajax(null,'ajax.php?mode=refresh_depto','tb_depto');
 						}else{
 							alertify.error("No se pudo cargar "+respuesta);
 						}

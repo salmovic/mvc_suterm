@@ -88,7 +88,7 @@ $depto=$departamento->getDepartamentosById($_POST['id']);
  			 console.log(respuesta);
  			 if(respuesta==1){
  				 alertify.success('Muy bien');
- 			// 	carga_ajax(null,'ajax.php?mode=refresh_centrab','refresh_centrab');
+ 				carga_ajax(null,'ajax.php?mode=refresh_depto','tb_depto');
 
  			 }else{
  				 alertify.error("No se pudo actualizar");
