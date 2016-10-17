@@ -73,7 +73,7 @@ class CentroTrabajo extends Connection
 		$datos = $this->con->query( $sql );
 
 		$arreglo = array();
-		while ( $reg= $datos->fetch_object() )
+		while ( $reg=$datos->fetch_object() )
 		{
 				$arreglo[] = $reg;
 		}

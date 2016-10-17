@@ -31,10 +31,12 @@ Estrcuctura requerida
 require_once('core/models/class.Connection.php');
 require('core/models/class.Categorias.php');
 require('core/models/class.CentroTrabajo.php');
+require('core/models/class.Departamentos.php');
 
 /*
 Inicializando variables de clase global
 */
 $categoria = new Categorias();
 $centroTrabajo = new CentroTrabajo();
+$departamento = new Departamentos();
 ?>

@@ -12,7 +12,7 @@
             <div class="page-title">
               <div class="title_left">
                 <h3>Departamentos</h3>
-              </div>              
+              </div>
             </div>
             <div class="clearfix"></div>
 
@@ -32,7 +32,7 @@
                   </div>
                   <div class="x_content">
 										<!-- form -->
-										<form class="form-horizontal form-label-left" novalidate method="post">
+										<form class="form-horizontal form-label-left" novalidate method="post" id="frmDepartamento">
 											<!-- id departamente -->
 											<div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="id_departamento">No. Departamento<span class="required">*</span>
@@ -79,18 +79,21 @@
 												</div>
 											</div>
 											<!-- token -->
-											<input type="hidden" name="token" value="ok">
+											<input type="hidden" name="token" value="set_departamento">
 											<!-- Botones -->
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
-                          <button type="submit" class="btn btn-primary">Cancel</button>
-                          <button id="send" type="submit" class="btn btn-success">Submit</button>
+                          <button type="button" class="btn btn-primary" onclick="resetForm('frmDepartamento');">Cancel</button>
+                          <button id="setDepartamentos" type="submit" class="btn btn-success">Submit</button>
                         </div>
                       </div>
                     </form>
 										<!-- End form -->
                   </div>
                 </div>
+
+									<!-- TE QUIERO MUCHO MI AMOR  -->
+
 								<!-- Panel Categorias -->
                 <div class="x_panel">
                   <div class="x_title">
@@ -105,7 +108,7 @@
                   </div>
 
 									<div class="x_content">
-                    <table id="datatable" class="table table-striped table-bordered">
+                    <table class="table table-striped table-bordered">
                       <thead>
                         <tr>
                           <th>ID</th>
@@ -116,8 +119,10 @@
 													<th>Operaciones</th>
                         </tr>
                       </thead>
-                      <tbody>
-												<?php foreach ($depall as $dts)
+                      <tbody id="tb_depto">
+												<?php
+												$allDep = $departamento->getDepartamentos();
+												foreach ($allDep as $dts)
 												{
 											 ?>
                         <tr>
@@ -127,8 +132,13 @@
 													<td><?php echo $dts->extencion; ?></td>
                           <td><?php echo $dts->telefono; ?></td>
 													<td align="center">
-														<a href="#" data-toggle="tooltip" data-placement="top" title="Editar" class="btn btn-success"><i class="fa fa-edit"></i></a>
-														<a href="#" data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+
+														<a href="javascript:void(0);" data-toggle="modal" data-target="#updateDepto" onclick="carga_ajax(<?php echo $dts->id_departamento; ?>,'ajax.php?mode=modaldpto','updateDepto');"
+															data-toggle="tooltip" data-placement="top" title="Editar" class="btn btn-success"><i class="fa fa-edit"></i></a>
+
+															 <a href="javascript:void(0);" data-toggle="modal" onclick="eliminarDepto(<?php echo $dts->id_departamento; ?>);"
+															 data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+
 													</td>
                         </tr>
 												<?php }; ?>
@@ -141,9 +151,14 @@
           </div>
         </div>
         <!-- /page content -->
+				<!-- modal update -->
+				<div id="updateDepto" class="modal fade" role="dialog">
 
+				</div>
 				<?php include 'html/overall/container_base_footer.php'; ?>
 				<!-- script all -->
+				<script src="views/app/js/departamentos/departamentos.js"></script>
+
 <script>
 	$(document).ready(function() {
 		$('#wizard').smartWizard({

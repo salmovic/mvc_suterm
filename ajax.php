@@ -28,7 +28,7 @@ if($_POST){
     break;
 
 		/*******************
-		* RUTA CENtro_TRABAJO *
+		* RUTA CENTRO_TRABAJO *
 		*******************/
 
 		/*Create cen_trab*/
@@ -51,6 +51,22 @@ if($_POST){
 		require('core/bin/ajax/centro_trabajo/centro_trabajo.php');
 		break;
 
+		/*******************
+		* RUTA DEPARTAMENTO *
+		*******************/
+		case 'departamento':
+		require('core/bin/ajax/departamento/departamento.php');
+		break;
+		/*Cargar modal update*/
+		case 'modaldpto':
+			require('html/departamentos/update_dep.php');
+		break;
+		case'deldepto':
+			require('core/bin/ajax/departamento/deldepartamento.php');
+		break;
+		case 'refresh_depto':
+		require('core/bin/ajax/departamento/refresh_depto.php');
+		break;
 
     default:
       echo "ruta no especificada.";

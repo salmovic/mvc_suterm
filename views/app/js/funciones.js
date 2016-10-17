@@ -2,7 +2,8 @@
 *Funcion que permite cargar ventanas modales con ajax
 */
 function carga_ajax( id,url,div )
-{	
+{
+	console.log(id+' '+url+' '+div);
 	$.post
 	(
 		url,
