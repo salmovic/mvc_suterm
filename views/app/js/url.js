@@ -27,8 +27,9 @@ $(document).ready(function()
 	//funcion url
 	function _url( id, url )
 	{
-		$(id).on('click',function()
+		$(id).on('click',function( e )
 		{
+			  e.preventDefault();
 				$(location).attr('href',url);
 		});
 	}

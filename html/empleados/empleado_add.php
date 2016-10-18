@@ -427,16 +427,10 @@
         </div>
         <!-- /page content -->
 
-				<?php include 'html/overall/container_base_footer.php'; ?>
+<?php include 'html/overall/container_base_footer.php'; ?>
+<script src="views/build/datepicker/moment.min.js"></script>
+<script src="views/build/datepicker/daterangepicker.js"></script>
 
-		<script>
-			// $(document).ready(function() {
-			// 	$('.calendario').daterangepicker({
-			// 		singleDatePicker: true,
-			// 		showDropdowns: true
-		  //   });
-			// });
-		</script>
 		<!-- /bootstrap-daterangepicker -->
 <script>
 	$(document).ready(function() {
@@ -481,9 +475,13 @@
 </script>
 <!-- /jQuery Smart Wizard -->
 
-<!-- validator -->
-
-    <!-- /validator -->
-
+<script>
+	$(document).ready(function() {
+		$('.calendario').daterangepicker({
+			singleDatePicker: true,
+			showDropdowns: true
+		});
+	});
+</script>
 </body>
 </html>

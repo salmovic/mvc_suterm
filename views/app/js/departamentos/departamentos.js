@@ -32,6 +32,7 @@ $(document).ready(function()
 });
 function eliminarDepto( id )
 {
+	
 	alertify.confirm("Está seguro de desea eliminar id="+id,function(e){
 		if( e )
 		{

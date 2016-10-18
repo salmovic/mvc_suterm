@@ -13,11 +13,11 @@
 			<td><?php echo $dts->grupo_nivel; ?></td>
 			<td><?php echo $dts->plan_carrera; ?></td>
 			<td align="center">
-			 <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal" onclick="carga_ajax(<?php echo $dts->id_categorias; ?>,'ajax.php?mode=mod_update_cat','myModal');"
-				 data-toggle="tooltip" data-placement="top" title="Editar" class="btn btn-success"><i class="fa fa-edit"></i></a>
+				<button type="button" data-toggle="modal" data-target="#myModal" onclick="carga_ajax(<?php echo $dts->id_categorias; ?>,'ajax.php?mode=mod_update_cat','myModal');"
+				title="Editar" class="btn btn-success"> <i class="fa fa-edit"></i> </button>
 
-					<a href="javascript:void(0);" data-toggle="modal" onclick="elimiarCat(<?php echo $dts->id_categorias; ?>);"
-					data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+				 <button type="button" onclick="elimiarCat(<?php echo $dts->id_categorias; ?>);"
+					title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></button>
 			</td>
 		</tr>
 		<?php } ?>
