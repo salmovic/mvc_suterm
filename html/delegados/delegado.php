@@ -11,8 +11,8 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Agregar Empleado</h3>
-              </div>              
+                <h3>Agregar Delegado</h3>
+              </div>
             </div>
             <div class="clearfix"></div>
 
@@ -33,7 +33,7 @@
                   </div>
                   <div class="x_content">
 										<!-- formulario -->
-										<form class="form-horizontal form-label-left" novalidate method="post">
+										<form class="form-horizontal form-label-left" novalidate method="post" id="frmDeleg">
 											<!--rpe Empleado -->
 											<div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="rpe">Empleado<span class="required">*</span>
@@ -42,6 +42,12 @@
                           <select class="form-control"  class="form-control has-feedback-left" name="rpe_delegado">
 														<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 														<option value="-1">--Seleccione un empleado--</option>
+														<?php
+														 $allEmp = $empleado->getEmpleados();
+														 foreach ($allEmp as $dts) {
+														?>
+														<option value="<?php echo $dts->rpe_empleado; ?>"><?php echo $dts->nombre." ".$dts->apellidos; ?></option>
+														<?php } ?>
 
                           </select>
                         </div>
@@ -57,9 +63,9 @@
 											</div>
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
-													<input type="hidden" name="token" value="ok">
-                          <button type="submit" class="btn btn-primary">Cancel</button>
-                          <button id="send" type="submit" class="btn btn-success">Submit</button>
+													<input type="hidden" name="token" value="setdeleg">
+                          <button type="button" class="btn btn-primary" onclick="resetForm('frmDeleg');">Cancel</button>
+                          <button id="setdeleg" type="submit" class="btn btn-success">Submit</button>
                         </div>
                       </div>
                     </form>
@@ -85,7 +91,7 @@
                     <h3>Delegados</h3>
 										<div class="ln_solid"></div>
 
-                    <table id="datatable" class="table table-striped table-bordered">
+                    <table class="table table-striped table-bordered">
                       <thead>
                         <tr>
                           <th>RPE</th>
@@ -94,22 +100,25 @@
                           <th>Operacion</th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody id="tb_deleg">
+												<?php
+												$allDelg = $delegado->getDelegados();
+												foreach ($allDelg as $dts) {
+												 ?>
                         <tr>
-													<td>
-														hola1
-													</td>
-													<td>
-														hl2
-													</td>
-													<td>
-														g23
-													</td>
+													<td><?php echo $dts->id_delegado; ?></td>
+													<td><?php echo $dts->nombre; ?></td>
+													<td><?php echo $dts->descripcion; ?></td>
 													<td align="center">
-														<a href="#" data-toggle="tooltip" data-placement="top" title="Editar" class="btn btn-success"><i class="fa fa-edit"></i></a>
-														<a href="#" data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+														<a href="javascript:void(0);" data-toggle="modal" data-target="#modaldeleg" onclick="carga_ajax(<?php echo $dts->id_delegado; ?>,'ajax.php?mode=modaldeleg','modaldeleg');"
+															data-toggle="tooltip" data-placement="top" title="Editar" class="btn btn-success"><i class="fa fa-edit"></i></a>
+
+															 <a href="javascript:void(0);" data-toggle="modal" onclick="eliminarDelegado(<?php echo $dts->id_delegado; ?>);"
+															 data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+													 </td>
 													</td>
                         </tr>
+												<?php }; ?>
                       </tbody>
                     </table>
                   </div>
@@ -119,9 +128,13 @@
           </div>
         </div>
         <!-- /page content -->
+				<!-- update del -->
+				<div id="modaldeleg" class="modal fade" role="dialog">
+
+				</div>
 
 	 <?php include 'html/overall/container_base_footer.php'; ?>
-
+	 <script src="views/app/js/delegado/delegado.js"></script>
 
 
 		<!-- jQuery Smart Wizard -->

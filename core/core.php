@@ -32,6 +32,8 @@ require_once('core/models/class.Connection.php');
 require('core/models/class.Categorias.php');
 require('core/models/class.CentroTrabajo.php');
 require('core/models/class.Departamentos.php');
+require('core/models/class.Empleado.php');
+require('core/models/class.Delegado.php');
 
 /*
 Inicializando variables de clase global
@@ -39,4 +41,6 @@ Inicializando variables de clase global
 $categoria = new Categorias();
 $centroTrabajo = new CentroTrabajo();
 $departamento = new Departamentos();
+$empleado = new Empleado();
+$delegado = new Delegado();
 ?>

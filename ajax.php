@@ -68,6 +68,23 @@ if($_POST){
 		require('core/bin/ajax/departamento/refresh_depto.php');
 		break;
 
+		/*****************
+		* RUTA DELEGADOS *
+		*****************/
+
+		case 'delegado':
+			require('core/bin/ajax/delegado/delegado.php');
+		break;
+		case 'modaldeleg':
+		  require('html/delegados/updelegado.php');
+		break;
+		case 'deldeleg':
+			require('core/bin/ajax/delegado/deldelegado.php');
+		break;
+		case 'refresh_deleg':
+			require('core/bin/ajax/delegado/refresh.php');
+		break;
+
     default:
       echo "ruta no especificada.";
     break;
