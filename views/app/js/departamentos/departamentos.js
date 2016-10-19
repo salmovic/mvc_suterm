@@ -32,7 +32,7 @@ $(document).ready(function()
 });
 function eliminarDepto( id )
 {
-	
+
 	alertify.confirm("Está seguro de desea eliminar id="+id,function(e){
 		if( e )
 		{
@@ -45,8 +45,7 @@ function eliminarDepto( id )
 					//envio de datos
 					data:"id="+id,
 					//suscectible
-					success: function(respuesta) {
-						console.log(respuesta);
+					success: function(respuesta) {						
 						if(respuesta==1){
 							alertify.success("Se cargó correctamente");
 						 carga_ajax(null,'ajax.php?mode=refresh_depto','tb_depto');

@@ -57,7 +57,7 @@
 											<!-- Datos Generales -->
                       <div id="step-11">
                         <h2 class="StepTitle">Paso 1 | Datos Generales</h2>
-												<form class="form-horizontal form-label-left empleado" method="post">
+												<form class="form-horizontal form-label-left set_empleado" method="post">
 													<div class="ln_solid"></div>
 													<!-- rpe -->
 		                      <div class="item form-group">
@@ -117,7 +117,6 @@
 													<!-- fecha nacimiento -->
 													<div class="item form-group">
 														 <label for="fecha_nacimiento" class="control-label col-md-3">Fecha de Nacimiento</label>
-														 </label>
 	                            <div class="controls">
 	                              <div class="col-md-6 col-sm-6 col-xs-12">
 	                                <input type="text" class="form-control has-feedback-left calendario" id="calendario" placeholder="Fecha de Nacimiento" aria-describedby="inputSuccess2Status4" name="fecha_nacimiento">
@@ -153,7 +152,7 @@
 											<!-- Datos personales y familiar -->
 											<div id="step-22">
                         <h2 class="StepTitle">Paso 2 | Datos Personales y familiar</h2>
-												<form class="form-horizontal form-label-left empleado" novalidate method="post">
+												<form class="form-horizontal form-label-left set_empleado" novalidate method="post">
 													<div class="ln_solid"></div>
 													<!-- Domicilio -->
 		                      <div class="item form-group">
@@ -248,7 +247,6 @@
 													<!-- nacimiento conyugue -->
 													<div class="item form-group">
 														 <label for="fecha_nac_conyugue" class="control-label col-md-3">Fecha Nacimiento Conyugye</label>
-														 </label>
 	                            <div class="controls">
 	                              <div class="col-md-6 col-sm-6 col-xs-12">
 	                                <input type="text" class="form-control has-feedback-left calendario" id="calendario" placeholder="Fecha de Nacimiento" aria-describedby="inputSuccess2Status4" name="fecha_nac_conyugue">
@@ -271,7 +269,7 @@
 											<!-- Datos ref empresa -->
 											<div id="step-33">
                         <h2 class="StepTitle">Paso 3 | Datos asociadas a la empresa</h2>
-												<form class="form-horizontal form-label-left empleado" method="post">
+												<form class="form-horizontal form-label-left set_empleado" method="post">
 													<div class="ln_solid"></div>
 
 													<!-- tipo de contrato -->
@@ -286,7 +284,6 @@
 													<!-- Fecha ingreso empresa -->
 													<div class="item form-group">
 														 <label for="fecha_ingreso_empresa" class="control-label col-md-3">Fecha de Ingreso Empresa</label>
-														 </label>
 	                            <div class="controls">
 	                              <div class="col-md-6 col-sm-6 col-xs-12">
 	                                <input type="text" class="form-control has-feedback-left calendario" id="calendario" placeholder="Fecha de Nacimiento" aria-describedby="inputSuccess2Status4" name="fecha_ingreso_empresa">
@@ -298,7 +295,6 @@
 													<!-- Fecha ingreso suterm -->
 													<div class="item form-group">
 														 <label for="fecha_ingreso_suterm" class="control-label col-md-3">Fecha de Ingreso SUTERM</label>
-														 </label>
 	                            <div class="controls">
 	                              <div class="col-md-6 col-sm-6 col-xs-12">
 	                                <input type="text" class="form-control has-feedback-left calendario" name="fecha_ingreso_suterm" id="calendario" placeholder="Fecha de Nacimiento" aria-describedby="inputSuccess2Status4">
@@ -310,7 +306,6 @@
 													<!-- Fecha ingreso empresa sector elctrico-->
 													<div class="item form-group">
 														 <label for="fecha_ing_sector_electrico" class="control-label col-md-3">Fecha de Ingreso Sector Electrico</label>
-														 </label>
 	                            <div class="controls">
 	                              <div class="col-md-6 col-sm-6 col-xs-12">
 	                                <input type="text" class="form-control has-feedback-left calendario" id="calendario" placeholder="Fecha de Nacimiento" aria-describedby="inputSuccess2Status4" name="fecha_ing_sector_electrico">
@@ -330,32 +325,30 @@
 													<div class="item form-group">
 		                        <label for="id_categoria" class="control-label col-md-3">Categoria</label>
 															<div class="col-md-6 col-sm-6 col-xs-12">
-			                          <select class="form-control"  class="form-control has-feedback-left" name="id_categoria">
-																	<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-																	<!-- <option value="">--Seleccione una categoria--</option>
-																	<?php //$allCat=$cat->getCategorias();
-																		// foreach ($allCat as $dts)
-																		// {
-																	?>
-			                            <option value="<?php //echo $dts->id_categorias; ?>"><?php //echo $dts->categoria; ?></option>
-																	<?php //}; ?> -->
-			                          </select>
+			                          <select class="form-control"  name="id_categoria">
 
+																	 <option value="">--Seleccione una categoria--</option>
+																	<?php $allCat=$categoria->getCategorias();
+																		foreach ($allCat as $dts)
+																		{
+																	?>
+			                            <option value="<?php echo $dts->id_categorias; ?>"><?php echo $dts->categoria; ?></option>
+																	<?php }; ?>
+			                          </select>
 		                        </div>
 		                      </div>
 													<!-- id centro trabajo -->
 													<div class="item form-group">
 		                        <label for="id_centro_trabajo" class="control-label col-md-3">Centro de Trabajo</label>
 															<div class="col-md-6 col-sm-6 col-xs-12">
-			                          <select class="form-control"  class="form-control has-feedback-left" name="id_centro_trabajo">
-																	<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+			                          <select class="form-control"  name="id_centro_trabajo">
 																	<option value="">--Seleccione un Centro de Trabajo--</option>
-																	<?php //$allCt=$ct->getCentroTrabajo();
-																		// foreach ($allCt as $dts)
-																		// {
+																	<?php $allCt=$centroTrabajo->getCentroTrabajo();
+																		foreach ($allCt as $dts)
+																		{
 																	?>
-			                            <option value="<?php //echo $dts->id_centro_trabajo; ?>"><?php //echo $dts->nombre; ?></option>
-																	<?php //}; ?>
+			                            <option value="<?php echo $dts->id_centro_trabajo; ?>"> <?php echo $dts->nombre; ?></option>
+																	<?php }; ?>
 			                          </select>
 		                        </div>
 		                      </div>
@@ -363,15 +356,15 @@
 													<div class="item form-group">
 		                        <label for="id_departamento" class="control-label col-md-3">Departamentos</label>
 															<div class="col-md-6 col-sm-6 col-xs-12">
-			                          <select class="form-control"  class="form-control has-feedback-left" name="id_departamento">
-																	<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+			                          <select class="form-control"  name="id_departamento">
+
 																	<option value="">--Seleccione un departamento--</option>
-																	<?php //$allDep=$dep->getDepartamentos();
-																		// foreach ($allDep as $dts)
-																		// {
+																	<?php $allDep=$departamento->getDepartamentos();
+																		foreach ($allDep as $dts)
+																		{
 																	?>
-			                            <option value="<?php //echo $dts->id_departamento; ?>"><?php //echo $dts->nombre; ?></option>
-																	<?php //}; ?>
+			                            <option value="<?php echo $dts->id_departamento; ?>"><?php echo $dts->nombre; ?></option>
+																	<?php }; ?>
 			                          </select>
 		                        </div>
 		                      </div>
@@ -382,7 +375,7 @@
 											<!-- Datos Escolares -->
 											<div id="step-44">
                         <h2 class="StepTitle">Paso 4 | Datos Progesionales</h2>
-												<form class="form-horizontal form-label-left empleado" method="post">
+												<form class="form-horizontal form-label-left set_empleado" method="post">
 													<div class="ln_solid"></div>
 													<!-- nivel escolaridad -->
 													<div class="item form-group">
@@ -413,7 +406,7 @@
 		                        </div>
 		                      </div>
 													<!-- Token -->
-													<input type="hidden" name="token" value="ok">
+													<input type="hidden" name="token" value="setempleado">
 			                    <div class="ln_solid"></div>
 												</form>
                       </div>
@@ -426,62 +419,44 @@
           </div>
         </div>
         <!-- /page content -->
+				<!-- footer content -->
+				<footer>
+					<div class="pull-right">
+						<?php echo FOOTER_COPY; ?> by CTPALM <a href="http://www.cfe.gob.mx/" target="_blank">Colorlib</a>
+					</div>
+					<div class="clearfix"></div>
+				</footer>
+				<!-- /footer content -->
+				</div>
+				</div>
+				<!-- jQuery -->
+<script src="views/vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="views/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="views/vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="views/vendors/nprogress/nprogress.js"></script>
+<!-- jQuery Smart Wizard -->
+<script src="views/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
+<!-- validator -->
+<script src="views/vendors/validator/validator.js"></script>
 
-<?php include 'html/overall/container_base_footer.php'; ?>
+<!-- Alertify -->
+<script src="views/build/alertify/lib/alertify.min.js"></script>
+
+<!-- funciones rutas -->
+<script src="views/app/js/url.js"></script>
+<!-- funciones generales-->
+<script src="views/app/js/funciones.js"></script>
+
 <script src="views/build/datepicker/moment.min.js"></script>
 <script src="views/build/datepicker/daterangepicker.js"></script>
 
-		<!-- /bootstrap-daterangepicker -->
-<script>
-	$(document).ready(function() {
-		$('#wizard').smartWizard({
-          transitionEffect: 'slide'
-        });
-		$('.buttonNext').addClass('btn btn-success');
-		$('.buttonPrevious').addClass('btn btn-primary');
-		$('.buttonFinish').addClass('btn btn-default').on('click',function(e){
-        //deshabilitar el envio por default
-        e.preventDefault();
+<!-- Custom Theme Scripts -->
+<script src="views/build/js/custom.min.js"></script>
 
-        $.ajax({
-                //antes de que se envie la peticion
-                beforeSend: function() {
-                    // $("#status").html('<span class="glyphicon glyphicon-hourglass label-success"></span>');
-                },
-                //ruta archivo php
-                url: 'peticion.php',
-                //typo o metodo de envio
-                type: 'post',
-                //envio de datos
-                data:$(".empleado").serialize(),
-                //suscectible
-                success: function(respuesta) {
-                  console.log(respuesta);
-                },
-                //ejecuta cuando hay un error en la peticion
-                error: function(jqXHR,estado,error) {
-                    // $("#status").html('<span class="glyphicon glyphicon-remove-circle label-warning"></span>');
-                    console.log("estado "+ estado );
-                    console.log("error"+ error );
-                },
-                //ejecuta al completar exitosamente la peticion
-                complete: function(jqXHR,estado) {
-                    console.log("complete "+estado);
-                },
-                timeout: 1000
-            });
-		});
-	});
-</script>
-<!-- /jQuery Smart Wizard -->
+<script src="views/app/js/empleado/empleado.js"></script>
 
-<script>
-	$(document).ready(function() {
-		$('.calendario').daterangepicker({
-			singleDatePicker: true,
-			showDropdowns: true
-		});
-	});
-</script>
 </body>
 </html>

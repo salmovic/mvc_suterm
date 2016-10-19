@@ -91,7 +91,7 @@
                     <h3>Delegados</h3>
 										<div class="ln_solid"></div>
 
-                    <table class="table table-striped table-bordered">
+                    <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                         <tr>
                           <th>RPE</th>

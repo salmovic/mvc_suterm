@@ -85,6 +85,12 @@ if($_POST){
 			require('core/bin/ajax/delegado/refresh.php');
 		break;
 
+		/*****************
+		* RUTA EMPEADOS  *
+		*****************/
+		case 'empleado':
+			 require('core/bin/ajax/empleado/empleado.php');
+		break;
     default:
       echo "ruta no especificada.";
     break;

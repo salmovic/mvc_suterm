@@ -49,8 +49,6 @@
 	<div class="menu_section">
 		<h3>Config</h3>
 		<ul class="nav side-menu">
-
-			</li>
 		</ul>
 	</div>
 

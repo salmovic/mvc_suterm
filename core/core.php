@@ -43,4 +43,5 @@ $centroTrabajo = new CentroTrabajo();
 $departamento = new Departamentos();
 $empleado = new Empleado();
 $delegado = new Delegado();
+
 ?>
