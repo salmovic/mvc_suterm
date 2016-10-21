@@ -94,6 +94,10 @@ if($_POST){
     default:
       echo "ruta no especificada.";
     break;
+
+		case 'busquedaemp':
+		require('html/movimientos/informacion.php');
+		break;
   }
 }else
 {
