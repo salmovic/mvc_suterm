@@ -94,9 +94,17 @@ if($_POST){
     default:
       echo "ruta no especificada.";
     break;
-
+		/********************
+		* RUTA MOVIMIENTOS  *
+		********************/
+		case 'modalmovimiento':
+		require('html/movimientos/modalreemplazo.php');
+		break;
 		case 'busquedaemp':
 		require('html/movimientos/informacion.php');
+		break;
+		case 'tbmovimiento':
+		require('html/movimientos/dttabla.php');
 		break;
   }
 }else

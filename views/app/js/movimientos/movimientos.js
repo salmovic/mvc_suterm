@@ -18,10 +18,43 @@ $(document).ready(function()
                 alert("error petición ajax");
             },
             success: function(data) {
-                $("#resultado").empty();
-                $("#resultado").append(data);
-								console.log('hol');
-            }
+                $("#dtsSolicitante").empty();
+                $("#dtsSolicitante").append(data);
+            },
+						complete:function(jqXHR,estado)
+						{
+							$.ajax({
+								type: "POST",
+		            url: "ajax.php?mode=tbmovimiento",
+		            data:$('#frmmovimiento').serialize(),
+		            dataType: "html",
+		            /*beforeSend: function(){
+		                $("#resultado").html("<spam class='glyphicon glyphicon-hourglass'></spam>");
+		            },*/
+		             error: function() {
+		                 alert("error petición ajax");
+		             },
+		             success: function(data) {
+		                 $("#tbMovimiento").empty();
+		                 $("#tbMovimiento").append(data);
+		             }
+							});
+						}
+
        });
     });
 });
+function modalMovimiento(id,div)
+{
+	$.ajax({
+		type: "POST",
+		url: "ajax.php?mode=modalmovimiento",
+		data: $('#frmmovimiento').serialize(),
+		dataType: "html",
+		success: function(respuesta) {
+			console.log(respuesta);
+			$('#'+div+'').html(respuesta);
+		}
+
+	});
+}

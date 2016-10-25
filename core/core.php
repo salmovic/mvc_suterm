@@ -7,7 +7,6 @@ NUCLEO DE LA APLICACION llamamos a todos los recursos de la aplicacion
 *Define la zona horaria
 */
 date_default_timezone_set('America/Mexico_City');
-
 /*
 CONSTANTES DE LA BASE DE DATOS
 */

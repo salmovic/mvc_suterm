@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
 <?php include HTML_DIR.'/overall/head.inc' ?>
-
 </head>
 <body class="nav-md">
 			<?php include 'html/overall/container_base_head.php'; ?>
@@ -48,7 +47,6 @@
 														?>
 														<option value="<?php echo $dts->rpe_empleado; ?>"><?php echo $dts->nombre." ".$dts->apellidos; ?></option>
 														<?php } ?>
-
                           </select>
                         </div>
                       </div>
