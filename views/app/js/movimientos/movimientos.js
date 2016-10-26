@@ -9,7 +9,7 @@ $(document).ready(function()
        $.ajax({
            type: "POST",
            url: "ajax.php?mode=busquedaemp",
-           data: "id="+consulta,
+           data: "rpe_emp="+consulta,
            dataType: "html",
            /*beforeSend: function(){
                $("#resultado").html("<spam class='glyphicon glyphicon-hourglass'></spam>");

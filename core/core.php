@@ -34,6 +34,7 @@ require('core/models/class.Departamentos.php');
 require('core/models/class.Empleado.php');
 require('core/models/class.Delegado.php');
 require('core/models/class.Movimientos.php');
+require('core/models/class.TipoPermiso.php');
 
 /*
 Inicializando variables de clase global
@@ -44,6 +45,6 @@ $departamento = new Departamentos();
 $empleado = new Empleado();
 $delegado = new Delegado();
 $movimientos = new Movimientos();
-
+$tipoPermiso = new TipoPermiso();
 
 ?>

@@ -19,7 +19,7 @@
                     <input type="text" class="form-control" placeholder="Search for...">
                     <span class="input-group-btn">
                               <button class="btn btn-default" type="button">Go!</button>
-                          </span>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -56,9 +56,11 @@
 		                        <label for="tipoperm" class="col-sm-3 control-label">Tipo de Permiso:</label>
 		                        <div class="col-sm-5">
 		                         <select class="form-control" name="tipo_perm">
-		                            <option value="1">Choose option</option>
-		                            <option value="2">Option one</option>
-		                            <option value="3">Option two</option>
+		                            <?php
+																$tipoPerm = $tipoPermiso->getTipoPermiso();
+																 foreach ($tipoPerm as $dts ): ?>
+																 <option><?php echo $dts->nombre; ?></option>
+		                            <?php endforeach; ?>
 		                          </select>
 		                      </div>
                         </div>
@@ -134,19 +136,7 @@
 															</tr>
 														</thead>
 														<tbody id="tbMovimiento">
-															<tr>
-																<th scope="row">3223</th>
-																	<td>Salvador Morales Vicente</td>
-																	<td>Dibujante</td>
-																	<td>Jefe Departamento</td>
-																	<td>p223</td>
-																	<td>10/32/4</td>
-																	<td>23/43/2</td>
-																	<td align="center">
-																	  <button type="button" data-toggle="modal" data-target="#upMovimiento" title="Editar" class="btn btn-success" onclick="modalMovimiento(2,'upMovimiento');"
-																		><i class="fa fa-edit"></i></button>
-																	</td>
-															</tr>
+
 														</tbody>
 														</table>
 													</div>

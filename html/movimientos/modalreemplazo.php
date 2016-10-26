@@ -20,15 +20,13 @@
 				<div class="ln_solid"></div>
 				<!-- rpe_empleado -->
 				<div class="form-group">
-					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="rpe_empleado">No. Departamento<span class="required">*</span>
+					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="rpe_empleado">Empleado:<span class="required">*</span>
 					</label>
 					<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-						<select class="form-control">
-							 <option>Choose option</option>
-							 <option>Option one</option>
-							 <option>Option two</option>
-							 <option>Option three</option>
-							 <option>Option four</option>
+						<select class="form-control" name="rpe_empleado">
+
+								<option>Choose option</option>
+
 						 </select>
 					</div>
 				</div>
