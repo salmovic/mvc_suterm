@@ -4,6 +4,7 @@
  */
 class TipoPermiso extends Connection
 {
+	/*Funcion que permite obtener los tipo de permi.*/ 
 	public function getTipoPermiso()
 	{
 		$sql = "SELECT id_tipo_permiso, nombre, descripcion FROM tipo_permiso;";
