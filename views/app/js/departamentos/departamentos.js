@@ -14,7 +14,8 @@ $(document).ready(function()
 				//suscectible
 				success: function(respuesta) {
 					if(respuesta==1){
-						alertify.success("Se cargó correctamente");
+						alertify.success("La operacion se ha realizado correctamente");
+						resetForm('frmDepartamento');
 						carga_ajax(null,'ajax.php?mode=refresh_depto','tb_depto');
 					}else{
 						alertify.error("No se pudo cargar "+respuesta);
@@ -45,9 +46,9 @@ function eliminarDepto( id )
 					//envio de datos
 					data:"id="+id,
 					//suscectible
-					success: function(respuesta) {						
+					success: function(respuesta) {
 						if(respuesta==1){
-							alertify.success("Se cargó correctamente");
+							alertify.success("La información se ha actualizado correctamente");
 						 carga_ajax(null,'ajax.php?mode=refresh_depto','tb_depto');
 						}else{
 							alertify.error("No se pudo cargar "+respuesta);

@@ -3,8 +3,7 @@ $allCt = $centroTrabajo->getCentroTrabajo();
 foreach ($allCt as $dts)
 {
 ?>
-<tr>
-	<td><?php echo $dts->id_centro_trabajo; ?></td>
+<tr>	
 	<td><?php echo $dts->nombre; ?></td>
 	<td><?php echo $dts->domicilio; ?></td>
 	<td><?php echo $dts->codigo_postal; ?></td>

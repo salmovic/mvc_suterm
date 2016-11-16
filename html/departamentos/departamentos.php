@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
 <?php include HTML_DIR.'/overall/head.inc' ?>
-
 </head>
 <body class="nav-md">
 			<?php include 'html/overall/container_base_head.php'; ?>
@@ -21,7 +20,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
 								<div class="x_panel">
                   <div class="x_title">
-                    <h2>Agregar un centro de trabajo </h2>
+                    <h2>Agregar un nuevo departamennto de trabajo</h2>
                     <ul class="nav navbar-right panel_toolbox">
 											<li><a >&nbsp;</a></li>
 											<li><a >&nbsp;</a></li>
@@ -33,40 +32,22 @@
                   <div class="x_content">
 										<!-- form -->
 										<form class="form-horizontal form-label-left" novalidate method="post" id="frmDepartamento">
-											<!-- id departamente -->
-											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="id_departamento">No. Departamento<span class="required">*</span>
-												</label>
-												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="id_departamento" name="id_departamento" placeholder="Numero de plaza">
-													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-												</div>
-											</div>
 											<!-- Nombre -->
 											<div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Nombre<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="nombre" name="nombre" placeholder="Eje. Profesionista">
-													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-												</div>
-											</div>
-											<!-- Responsable -->
-											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="responsable">Nombre<span class="required">*</span>
-												</label>
-												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="responsable" name="responsable" placeholder="Eje. Profesionista">
-													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+													<input type="text" class="form-control has-feedback-left" id="nombre" name="nombre" placeholder="Nombre del departamento">
+													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
 											<!-- Extencion -->
 											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="extencion">Extencion<span class="required">*</span>
+												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="extencion">Extención<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="extencion" name="extencion" placeholder="Grupo Organico">
-													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+													<input type="text" class="form-control has-feedback-left" id="extencion" name="extencion" placeholder="Numero de Extencion">
+													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
 											<!-- Telefono -->
@@ -75,7 +56,7 @@
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
 													<input type="text" class="form-control has-feedback-left" id="telefono" name="telefono" placeholder="Nivel de desempeño">
-													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
 											<!-- token -->
@@ -111,9 +92,8 @@
                     <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>ID</th>
+                          <th>No. Departamento</th>
                           <th>Nombre</th>
-                          <th>Responsable</th>
                           <th>Extencion</th>
 													<th>Telefono</th>
 													<th>Operaciones</th>
@@ -128,17 +108,13 @@
                         <tr>
                           <td><?php echo $dts->id_departamento; ?></td>
                           <td><?php echo $dts->nombre; ?></td>
-                          <td><?php echo $dts->responsable; ?></td>
-													<td><?php echo $dts->extencion; ?></td>
+													<td><?php echo $dts->no_extencion; ?></td>
                           <td><?php echo $dts->telefono; ?></td>
 													<td align="center">
-
 														<button type="button" data-toggle="modal" data-target="#updateDepto" onclick="carga_ajax(<?php echo $dts->id_departamento; ?>,'ajax.php?mode=modaldpto','updateDepto');"
 															title="Editar" class="btn btn-success"><i class="fa fa-edit"></i></button>
-
 															 <button type="button" onclick="eliminarDepto(<?php echo $dts->id_departamento; ?>);"
 															 title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-
 													</td>
                         </tr>
 												<?php }; ?>

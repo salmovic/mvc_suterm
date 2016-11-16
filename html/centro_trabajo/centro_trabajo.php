@@ -36,20 +36,11 @@
 										<form class="form-horizontal form-label-left" novalidate method="post" id="frmCenTrabajo">
 											<!-- Nomnbre -->
 											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="id_centro_trabajo">Id Centro de Trabajo<span class="required">*</span>
+												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Nombre<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="id_centro_trabajo" name="id_centro_trabajo" placeholder="Numero de plaza">
-													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-												</div>
-											</div>
-											<!-- Nomnbre -->
-											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Nombre Centro de Trabajo<span class="required">*</span>
-												</label>
-												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="nombre" name="nombre" placeholder="Numero de plaza">
-													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+													<input type="text" class="form-control has-feedback-left" id="nombre" name="nombre" placeholder="Nombre del centro de trabajo">
+													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
 											<!-- Domicilio -->
@@ -57,8 +48,8 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="domicilio">Domicilio<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="domicilio" name="domicilio" placeholder="Eje. Profesionista">
-													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+													<input type="text" class="form-control has-feedback-left" id="domicilio" name="domicilio" placeholder="Domicilio">
+													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
 											<!-- Código Postal -->
@@ -66,8 +57,8 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="codigo_postal">Código Postal<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="codigo_postal" name="codigo_postal" placeholder="Plaza Actual">
-													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+													<input type="text" class="form-control has-feedback-left" id="codigo_postal" name="codigo_postal" placeholder="Codigo Postal">
+													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
 											<!-- Municipio -->
@@ -75,8 +66,8 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="municipio">Municipio<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="municipio" name="municipio" placeholder="Grupo Organico">
-													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+													<input type="text" class="form-control has-feedback-left" id="municipio" name="municipio" placeholder="Municipio">
+													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
 											<!-- Entidad Federativa -->
@@ -84,8 +75,8 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="entidad_fed">Entidad Federativa<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="entidad_fed" name="entidad_fed" placeholder="Nivel de desempeño">
-													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+													<input type="text" class="form-control has-feedback-left" id="entidad_fed" name="entidad_fed" placeholder="Entidad Federativa">
+													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
 											<!-- Numero de telefono -->
@@ -94,7 +85,7 @@
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
 													<input type="text" class="form-control has-feedback-left" id="telefono" name="telefono" placeholder="Nivel de remuneración">
-													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
 											<!-- token -->
@@ -113,7 +104,7 @@
 								<!-- Panel Categorias -->
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Lista de Categorías </h2>
+                    <h2>Lista de Centros de Trabajo</h2>
                     <ul class="nav navbar-right panel_toolbox">
 											<li><a >&nbsp;</a></li>
 											<li><a >&nbsp;</a></li>
@@ -127,8 +118,7 @@
                     <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>ID</th>
-                          <th>Nombre</th>
+                          <th>Nombre Centro de Trabajo</th>
                           <th>Domicilio</th>
                           <th>Código Postal</th>
 													<th>Municipio</th>
@@ -144,7 +134,6 @@
 												{
 												?>
                         <tr>
-                          <td><?php echo $dts->id_centro_trabajo; ?></td>
                           <td><?php echo $dts->nombre; ?></td>
                           <td><?php echo $dts->domicilio; ?></td>
 													<td><?php echo $dts->codigo_postal; ?></td>

@@ -4,27 +4,27 @@ if($_POST){
 	require('core/core.php');
 	switch (isset($_GET['mode']) ? $_GET['mode'] : null)
 	{
-		/*RUTA CATEGORIAS*/
+		/*RUTA PLAZA*/
 
 		/*establecer*/
-    case 'categoria':
-      require('core/bin/ajax/categorias/categorias.php');
+    case 'plaza':
+      require('core/bin/ajax/plazas/plazas.php');
     break;
 		/*Actualizar categoria*/
-		case 'update_cat':
-			require('core/bin/ajax/categorias/categorias.php');
+		case 'update_plaza':
+			require('core/bin/ajax/plazas/plazas.php');
     break;
 		/*cargar ventana modal categoria update*/
-    case 'mod_update_cat':
-			require('html/categorias/modal_update.php');
+    case 'modal_plaza':
+			require('html/plazas/modal_update.php');
     break;
 		/*elimiar categoria*/
-		case 'delete_cat':
-			require('core/bin/ajax/categorias/delcategorias.php');
+		case 'delete_plaza':
+			require('core/bin/ajax/plazas/delplaza.php');
     break;
 		/*actualizar tabala*/
-		case 'refresh_cat':
-			require('core/bin/ajax/categorias/refresh_categoria.php');
+		case 'refresh_plaza':
+			require('core/bin/ajax/plazas/refresh_plaza.php');
     break;
 
 		/*******************

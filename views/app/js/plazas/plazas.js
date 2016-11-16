@@ -2,26 +2,25 @@ $(document).ready(function(){
 	/*Establecer valores alertify español*/
 	resetAlertify();
 /*
-* Enviar formualario categoria
+* Enviar formualario Plazas
 */
-	$('#enviar_cat').on('click',function(e)
+	$('#enviar_plaza').on('click',function(e)
 	{
 		e.preventDefault();
 		$.ajax({
-		    beforeSend: function() {
-		        // $("#status").html('<span class="glyphicon glyphicon-hourglass label-success"></span>');
-		    },
 		    //ruta archivo php
-		    url: 'ajax.php?mode=categoria',
+		    url: 'ajax.php?mode=plaza',
 		    //typo o metodo de envio
 		    type: 'post',
 		    //envio de datos
-		    data:$("#frmcat").serialize(),
+		    data:$("#frmplaza").serialize(),
 		    //suscectible
 		    success: function(respuesta) {
+					console.log(respuesta);
 					if(respuesta==1){
 						alertify.success("Se cargó correctamente");
-						carga_ajax(null,'ajax.php?mode=refresh_cat','tb_categoria');
+						resetForm('frmplaza');
+						carga_ajax(null,'ajax.php?mode=refresh_plaza','tb_plaza');
 					}else{
 						alertify.error("No se pudo cargar guardar la categoria");
 					}
@@ -39,20 +38,21 @@ $(document).ready(function(){
 /*
 * Funcion que permite eliminar una categoria
 */
-function elimiarCat(id)
+function eliminarPlaza(id)
 {
 	alertify.confirm("Esta seguro que desea eliminar", function (e)
 	{
     if (e) {
 			$.ajax({
 			    //ruta archivo php
-			    url: 'ajax.php?mode=delete_cat',
+			    url: 'ajax.php?mode=delete_plaza',
 			    type: 'post',
-			    data:'id_categorias='+id,
+			    data:'idplaza='+id,
 			    success: function(respuesta) {
+						console.log(respuesta);
 						if(respuesta==1){
-							alertify.error("Se elimino correctamente");
-							carga_ajax(null,'ajax.php?mode=refresh_cat','tb_categoria');
+							alertify.success("Se elimino correctamente");
+							carga_ajax(null,'ajax.php?mode=refresh_plaza','tb_plaza');
 						}else{
 							alertify.error("No se pudo eliminar");
 						}

@@ -101,10 +101,9 @@ $myCt=$centroTrabajo->getCentroTrabajoById($_POST['id']);
  		 url: 'ajax.php?mode=updatecentrab',
  		 type: 'post',
  		 data:$('#frmUpCenTrabajo').serialize(),
- 		 success: function(respuesta) {
- 			 console.log(respuesta);
+ 		 success: function(respuesta) { 			 
  			 if(respuesta==1){
- 				 alertify.success('Muy bien');
+ 				 alertify.success('La informacion se ha actualizado correctamente');
  				carga_ajax(null,'ajax.php?mode=refresh_centrab','refresh_centrab');
 
  			 }else{

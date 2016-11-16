@@ -17,8 +17,8 @@ $depto=$departamento->getDepartamentosById($_POST['id']);
 					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="id_departamento">No. Departamento<span class="required">*</span>
 					</label>
 					<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-						<input type="text" class="form-control has-feedback-left" id="id_departamento" name="id_departamento" value="<?php echo $depto[0]->id_departamento; ?>">
-						<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+						<input type="text" class="form-control has-feedback-left" id="id_departamento" name="id_departamento" value="<?php echo $depto[0]->id_departamento; ?>" readonly="">
+						<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 					</div>
 				</div>
 				<!-- Nombre -->
@@ -27,16 +27,7 @@ $depto=$departamento->getDepartamentosById($_POST['id']);
 					</label>
 					<div class="col-md-6 col-sm-6 col-xs-12 form-group">
 						<input type="text" class="form-control has-feedback-left" id="nombre" name="nombre" onfocus="true" value="<?php echo $depto[0]->nombre; ?>">
-						<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-					</div>
-				</div>
-				<!-- Responsable -->
-				<div class="form-group">
-					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="responsable">Nombre<span class="required">*</span>
-					</label>
-					<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-						<input type="text" class="form-control has-feedback-left" id="responsable" name="responsable" value="<?php echo $depto[0]->responsable; ?>">
-						<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+						<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 					</div>
 				</div>
 				<!-- Extencion -->
@@ -44,8 +35,8 @@ $depto=$departamento->getDepartamentosById($_POST['id']);
 					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="extencion">Extencion<span class="required">*</span>
 					</label>
 					<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-						<input type="text" class="form-control has-feedback-left" id="extencion" name="extencion" value="<?php echo $depto[0]->extencion; ?>">
-						<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+						<input type="text" class="form-control has-feedback-left" id="extencion" name="extencion" value="<?php echo $depto[0]->no_extencion; ?>">
+						<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 					</div>
 				</div>
 				<!-- Telefono -->
@@ -54,7 +45,7 @@ $depto=$departamento->getDepartamentosById($_POST['id']);
 					</label>
 					<div class="col-md-6 col-sm-6 col-xs-12 form-group">
 						<input type="text" class="form-control has-feedback-left" id="telefono" name="telefono" value="<?php echo $depto[0]->telefono; ?>">
-						<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+						<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 					</div>
 				</div>
 				<!-- token -->

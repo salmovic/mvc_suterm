@@ -14,8 +14,13 @@ $(document).ready(function()
 				type: 'post',
 				data: $('#frmCenTrabajo').serialize(),
 				success: function(resp){
-					alertify.success(resp);
-					carga_ajax(null,'ajax.php?mode=refresh_centrab','refresh_centrab');
+
+					if( resp == 1)
+					{
+						alertify.success('La informacion se ha guardado correctamente');
+						resetForm('frmCenTrabajo');
+						carga_ajax(null,'ajax.php?mode=refresh_centrab','refresh_centrab');
+					}
 				},
 				error: function(jqXHR,estado,error){
 					console.log(error);
@@ -43,7 +48,7 @@ function delCenTrab(id)
 					if (resp==1) {
 						carga_ajax(null,'ajax.php?mode=refresh_centrab','refresh_centrab');
 					}else{
-					 alertify.error('No se pudo elimiar');	
+					 alertify.error('No se pudo elimiar');
 					}
 				},
 				error:function(jqXHR,estado,error){

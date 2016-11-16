@@ -13,7 +13,6 @@ class CentroTrabajo extends Connection
 		$this->setConnection();
 
 		/*Escapendo caracteres especiales*/
-		$id_centrab = $_POST['id_centro_trabajo'];
 		 $nombre = $this->con->real_escape_string($_POST['nombre']);
 		 $domicilio = $this->con->real_escape_string($_POST['domicilio']);
 		 $codigo_postal = $this->con->real_escape_string($_POST['codigo_postal']);
@@ -23,9 +22,9 @@ class CentroTrabajo extends Connection
 
 		/*Sentencia sql*/
 		$sql = "INSERT INTO centro_de_trabajo
-				(id_centro_trabajo, nombre, domicilio, codigo_postal, municipio, entidad_fed, telefono)
+				(nombre, domicilio, codigo_postal, municipio, entidad_fed, telefono)
 			 		VALUES
-					($id_centrab,'{$nombre}','{$domicilio}','{$codigo_postal}',
+					('{$nombre}','{$domicilio}','{$codigo_postal}',
 						'{$municipio}','{$entidad_fed}','{$telefono}')";
 
 		$exito = $this->con->query( $sql );

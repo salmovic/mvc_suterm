@@ -4,7 +4,7 @@ $(document).ready(function()
 	_url( '#home', '?views=index' );
 
 	// caterorias
-	_url( '#categoria', '?views=categoria' );
+	_url( '#plaza', '?views=plaza' );
 
 	// Centro de trabajo
 	_url( '#centroTrabajo', '?views=centrotrabajo' );

@@ -10,18 +10,14 @@ class Departamentos extends Connection
 			$this->setConnection();
 
 			$nombre = $this->con->real_escape_string($_POST['nombre']);
-			$responsable = $this->con->real_escape_string($_POST['responsable']);
-			$extencion = $this->con->real_escape_string($_POST['extencion']);
+			$no_extencion = $this->con->real_escape_string($_POST['extencion']);
 			$telefono = $this->con->real_escape_string($_POST['telefono']);
 
 			$sql = "INSERT INTO
-					departamento(id_departamento, nombre, responsable, extencion, telefono)
-					VALUES (0,'{$nombre}','{$responsable}','{$extencion}','{$telefono}');";
-
+					departamento(id_departamento, nombre, no_extencion, telefono)
+					VALUES (0,'{$nombre}','{$no_extencion}','{$telefono}');";
 			$exito = $this->con->query($sql);
-
 			$this->unsetConnection();
-
       return $exito;
 
 		}
@@ -32,11 +28,9 @@ class Departamentos extends Connection
 		public function getDepartamentos()
 		{
 			$sql = "SELECT
-							id_departamento, nombre, responsable, extencion, telefono
+							id_departamento, nombre, no_extencion, telefono
 								FROM departamento";
-
 			$this->setConnection();
-
 			 $datos = $this->con->query( $sql );
         $arreglo = array();
         while ( $reg= $datos->fetch_object() )
@@ -56,7 +50,7 @@ class Departamentos extends Connection
 		public function getDepartamentosById( $id )
 		{
 			$sql = "SELECT
-							id_departamento, nombre, responsable, extencion, telefono
+							id_departamento, nombre, no_extencion, telefono
 								FROM departamento
 						  WHERE id_departamento={$id}";
 
@@ -83,13 +77,11 @@ class Departamentos extends Connection
 
 			$id = $this->con->real_escape_string($_POST['id_departamento']);
 			$nombre = $this->con->real_escape_string($_POST['nombre']);
-			$responsable = $this->con->real_escape_string($_POST['responsable']);
-			$extencion = $this->con->real_escape_string($_POST['extencion']);
+			$no_extencion = $this->con->real_escape_string($_POST['extencion']);
 			$telefono = $this->con->real_escape_string($_POST['telefono']);
-
 			$sql = "UPDATE departamento
-				SET nombre='{$nombre}',responsable='{$responsable}',
-					extencion='{$extencion}',telefono='{$telefono}'
+				SET nombre='{$nombre}',
+					no_extencion='{$no_extencion}',telefono='{$telefono}'
 						WHERE id_departamento={$id};";
 
 			$exito = $this->con->query($sql);

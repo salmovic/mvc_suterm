@@ -28,18 +28,19 @@ define('APP_URL', 'http://localhost/mvc_suterm/');
 Estrcuctura requerida
 */
 require_once('core/models/class.Connection.php');
-require('core/models/class.Categorias.php');
+require('core/models/class.Plazas.php');
 require('core/models/class.CentroTrabajo.php');
 require('core/models/class.Departamentos.php');
 require('core/models/class.Empleado.php');
 require('core/models/class.Delegado.php');
 require('core/models/class.Movimientos.php');
 require('core/models/class.TipoPermiso.php');
-
+// funciones
+require('core/bin/functions/functionConvertPlaza.php');
 /*
 Inicializando variables de clase global
 */
-$categoria = new Categorias();
+$plazas = new Plazas();
 $centroTrabajo = new CentroTrabajo();
 $departamento = new Departamentos();
 $empleado = new Empleado();

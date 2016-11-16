@@ -2,34 +2,32 @@
 /*
 *Clase que extiende a una clase padre {Connection}
 */
-class Categorias extends Connection
+class Plazas extends Connection
 {
 	/**
 	* Establecer una nueva categoria
 	*/
 
-	public function setCategorias()
+	public function setPlazas()
 	{
 		/*establecer conexion con la BD*/
 		$this->setConnection();
 
 		/*Escapando caracteres espciales*/
 		$no_plaza = $this-> con-> real_escape_string($_POST['no_plaza']);
-		$categoria = $this-> con-> real_escape_string($_POST['categoria']);
-		$plaza_actual = $this-> con-> real_escape_string($_POST['plaza_actual']);
-		$grupo_organico = $this-> con-> real_escape_string($_POST['grupo_organico']);
-		$nivel_desempenio = $this-> con-> real_escape_string($_POST['nivel_desempenio']);
-		$nivel_remuneracion = $this-> con-> real_escape_string($_POST['nivel_remuneracion']);
-		$grupo_nivel = $this-> con-> real_escape_string($_POST['grupo_nivel']);
+		$nombre_cat = $this-> con-> real_escape_string($_POST['nombre_cat']);
+		$grupo_organico = $_POST['grupo_organico'];
+		$nivel_desempenio = $_POST['nivel_desempenio'];
+		$nivel_remuneracion = $_POST['nivel_remuneracion'];
+		$grupo_nivel = $_POST['grupo_nivel']; //(go+nd)
 		$plan_carrera = $this-> con-> real_escape_string($_POST['plan_carrera']);
-
+		$grupo =$this-> con-> real_escape_string( $_POST['grupo']);
+		$unidad = $this-> con-> real_escape_string($_POST['unidad']);
 		/*Sentencia sql*/
-		$sql = "INSERT INTO
-			categorias(id_categorias, no_plaza, categoria, plaza_actual, grupo_organico,
-				 nivel_desempenio, nivel_remuneracion, grupo_nivel, plan_carrera)
-				 	VALUES
-			(0,'{$no_plaza}','{$categoria}','{$plaza_actual}','{$grupo_organico}',
-			'{$nivel_desempenio}','{$nivel_remuneracion}','{$grupo_nivel}','{$plan_carrera}');";
+		$sql = "INSERT INTO plazas(no_plaza, nombre_cat, grupo_organico,
+			 nivel_desempenio, nivel_remuneracion, grupo_nivel, plan_carrera, grupo, unidad)
+			  VALUES ('{$no_plaza}','{$nombre_cat}',{$grupo_organico},{$nivel_desempenio},
+					{$nivel_remuneracion},{$grupo_nivel},'{$plan_carrera}','{$grupo}','{$unidad}')";
 
 		/*Ejecuta la sentencia sql*/
 		$exit = $this->con->query( $sql );
@@ -43,12 +41,11 @@ class Categorias extends Connection
 	/**
 	*Obtener todas las categorias
 	*/
-	public function getCategorias()
+	public function getPlazas()
 	{
-		$sql = "SELECT
-		id_categorias, no_plaza, categoria, plaza_actual, grupo_organico,
-			 nivel_desempenio, nivel_remuneracion, grupo_nivel, plan_carrera
-							FROM categorias";
+		$sql = "SELECT no_plaza, nombre_cat, grupo_organico,
+		 nivel_desempenio, nivel_remuneracion, grupo_nivel,
+		  plan_carrera, grupo, unidad FROM plazas WHERE 1";
 
 		$this->setConnection();
 
@@ -67,31 +64,25 @@ class Categorias extends Connection
 	* Obtener una categoria por id
 	* @param id_categorias
 	*/
-	public function getCategoriasById( $id )
+	public function getPlazasById( $id )
 	{
-		$sql = "SELECT
-		id_categorias, no_plaza, categoria, plaza_actual, grupo_organico,
-			 nivel_desempenio, nivel_remuneracion, grupo_nivel, plan_carrera
-							FROM categorias WHERE id_categorias={$id} LIMIT 1";
-
+		$sql = "SELECT no_plaza, nombre_cat, grupo_organico, nivel_desempenio, nivel_remuneracion,
+		 grupo_nivel, plan_carrera, grupo, unidad FROM plazas WHERE no_plaza = '{$id}' LIMIT 1";
 		 $this->setConnection();
-
 		 $datos = $this->con->query( $sql );
 			$arreglo = array();
 			while ( $reg= $datos->fetch_object() )
 			{
 					$arreglo[] = $reg;
 			}
-
 			$this->unsetConnection();
-
 			return $arreglo;
-	}
+		}
 	/*
 	* Actualizar categorias
 	* @param id_categorias
 	*/
-	public function updateCategorias()
+	public function updatePlazas()
 	{
 		/*establecer conexion con la BD*/
 		$this->setConnection();
@@ -126,11 +117,10 @@ class Categorias extends Connection
 	* Eliminar una categoria
 	* @param id_categorias
 	*/
-	public function deleteCategorias( $id )
+	public function deletePlazas( $id )
 	{
-		$sql = "DELETE FROM
-								categorias
-								 	 WHERE id_categorias = {$id};";
+		$sql = "DELETE FROM plazas
+								 	 WHERE no_plaza = '{$id}';";
 		$this->setConnection();
 
 		$exito = $this-> con ->query($sql);

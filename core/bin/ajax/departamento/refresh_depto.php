@@ -6,8 +6,7 @@ foreach ($allDep as $dts)
 <tr>
 	<td><?php echo $dts->id_departamento; ?></td>
 	<td><?php echo $dts->nombre; ?></td>
-	<td><?php echo $dts->responsable; ?></td>
-	<td><?php echo $dts->extencion; ?></td>
+	<td><?php echo $dts->no_extencion; ?></td>
 	<td><?php echo $dts->telefono; ?></td>
 	<td align="center">
 
