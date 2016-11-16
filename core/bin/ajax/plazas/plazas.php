@@ -17,8 +17,8 @@ if( isset( $_POST['token'] ))
 		}
 		break;
 		/*UPDATE CATEGORIAS*/
-		case 'updatecat':
-			echo $categoria -> updateCategorias();
+		case 'updateplaza':
+			echo $plazas->updatePlazas();
 		break;
 		default:
 			echo -1;

@@ -59,41 +59,22 @@
 													<!-- <input type="text" class="form-control has-feedback-left" id="grupo_organico" name="grupo_organico" placeholder="Nivel de desempeño"> -->
 													<select class="form-control has-feedback-left" name="grupo_organico">
 														<option value="-1">--Grupo Orgánico--</option>
-													 	<option value="1">I</option>
-													 	<option value="2">II</option>
-													 	<option value="3">III</option>
-													 	<option value="4">IV</option>
-													 	<option value="5">V</option>
-													 	<option value="6">VI</option>
-													 	<option value="7">VII</option>
-													 	<option value="8">VIII</option>
-													 	<option value="9">IX</option>
-													 	<option value="10">X</option>
-													 	<option value="11">XI</option>
-													 	<option value="12">XII</option>
-													 	<option value="13">XIII</option>
-													 	<option value="14">XIV</option>
-													 	<option value="15">XV</option>
-													 	<option value="16">XVI</option>
+															<?php for ($i=1; $i <=16; $i++) {
+																?>
+																	<option value="<?php echo $i; ?>"><?php echo grupoOrganico($i); ?></option>
+																<?php
+															} ?>
 													</select>
 													<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
 												</div>
 												<div class="col-md-3 col-sm-3 col-xs-3 form-group">
 													<select class="form-control has-feedback-left" name="nivel_desempenio">
 														<option value="-1">--Nivel de Desempeño--</option>
-													 	<option value="1">Uno</option>
-													 	<option value="2">Dos</option>
-													 	<option value="3">Tres</option>
-													 	<option value="4">Cuatro</option>
-													 	<option value="5">Cinco</option>
-													 	<option value="6">Seis</option>
-													 	<option value="7">Siete</option>
-													 	<option value="8">Ocho</option>
-													 	<option value="9">Nueve</option>
-													 	<option value="10">Diez</option>
-													 	<option value="11">Once</option>
-													 	<option value="12">Doce</option>
-													 	<option value="13">Trece</option>
+														<?php for ($i=1; $i <=13; $i++) {
+															?>
+																<option value="<?php echo $i; ?>"><?php echo nivelDesempenio($i); ?></option>
+															<?php
+														} ?>
 													</select>
 													<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
 												</div>

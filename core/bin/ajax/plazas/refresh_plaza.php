@@ -13,9 +13,8 @@
 	<td><?php echo $dts->grupo; ?></td>
 	<td><?php echo $dts->unidad; ?></td>
 	<td align="center">
-		<button type="button" data-toggle="modal" data-target="#myModal" onclick="carga_ajax(<?php echo $dts->no_plaza; ?>,'ajax.php?mode=mod_update_cat','myModal');"
+		<button type="button" data-toggle="modal" data-target="#myModal" onclick="carga_ajax('<?php echo $dts->no_plaza; ?>','ajax.php?mode=modal_plaza','myModal');"
 		title="Editar" class="btn btn-success"> <i class="fa fa-edit"></i> </button>
-
 		 <button type="button" onclick="eliminarPlaza('<?php echo $dts->no_plaza; ?>');"
 			title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></button>
 	</td>
