@@ -37,3 +37,12 @@ function resetForm(id)
 {
 	document.getElementById(id).reset();
 }
+resetAlertify();
+
+/**
+* Convertir caracteres a mayuscula
+*/
+function minToMayuscula( e ){
+    var e = $('#'+e+'');
+    e.val(e.val().toUpperCase());
+}
