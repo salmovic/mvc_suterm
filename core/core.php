@@ -35,8 +35,9 @@ require('core/models/class.Empleado.php');
 require('core/models/class.Delegado.php');
 require('core/models/class.Movimientos.php');
 require('core/models/class.TipoPermiso.php');
+require('core/models/class.Categorias.php');
 // funciones
-require('core/bin/functions/functionConvertPlaza.php');
+require('core/bin/functions/functionConvert.php');
 /*
 Inicializando variables de clase global
 */
@@ -47,5 +48,6 @@ $empleado = new Empleado();
 $delegado = new Delegado();
 $movimientos = new Movimientos();
 $tipoPermiso = new TipoPermiso();
+$categoria = new Categorias();
 
 ?>

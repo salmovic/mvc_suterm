@@ -463,7 +463,7 @@
 		                          <input id="idioma" type="type" name="idioma" data-validate-length="6,8" class="form-control has-feedback-left" required="required" placeholder="Separar los idiomas por (,)">
 															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
-		                      </div>
+		                      </div>													
 													<!-- Token -->
 													<input type="hidden" name="token" value="setempleado">
 													</div>

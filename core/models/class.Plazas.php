@@ -5,8 +5,7 @@
 class Plazas extends Connection
 {
 	/**
-	* Establecer una nueva categoria
-	*/
+	* Establecer una nueva plaza	*/
 
 	public function setPlazas()
 	{
@@ -39,7 +38,7 @@ class Plazas extends Connection
 		return $exit;
 	}
 	/**
-	*Obtener todas las categorias
+	*Obtener todas las plaza
 	*/
 	public function getPlazas()
 	{
@@ -61,8 +60,8 @@ class Plazas extends Connection
 		return $arreglo;
 	}
  /*
-	* Obtener una categoria por id
-	* @param id_categorias
+	* Obtener una plazapor id
+	* @param id_plaza
 	*/
 	public function getPlazasById( $id )
 	{
@@ -79,8 +78,8 @@ class Plazas extends Connection
 			return $arreglo;
 		}
 	/*
-	* Actualizar categorias
-	* @param id_categorias
+	* Actualizar plaza
+	* @param id_plaza
 	*/
 	public function updatePlazas()
 	{
@@ -113,8 +112,7 @@ class Plazas extends Connection
 		return $exit;
 	}
 	/*
-	* Eliminar una categoria
-	* @param id_categorias
+	* Eliminar una plaza	* @param id_plaza
 	*/
 	public function deletePlazas( $id )
 	{

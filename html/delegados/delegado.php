@@ -94,7 +94,8 @@
                         <tr>
                           <th>RPE</th>
                           <th>Nombre</th>
-                          <th>Descripcion</th>
+													<th>Departamento</th>
+                          <th>Descripcion Delegado</th>
                           <th>Operacion</th>
                         </tr>
                       </thead>
@@ -103,9 +104,10 @@
 												$allDelg = $delegado->getDelegados();
 												foreach ($allDelg as $dts) {
 												 ?>
-                        <tr>
-													<td><?php echo $dts->id_delegado; ?></td>
+                        <tr>													
+													<td><?php echo $dts->rpe_empleado; ?></td>
 													<td><?php echo $dts->nombre; ?></td>
+													<td><?php echo $dts->no_dep; ?></td>
 													<td><?php echo $dts->descripcion; ?></td>
 													<td align="center">
 														<button type="button" data-toggle="modal" data-target="#modaldeleg" onclick="carga_ajax(<?php echo $dts->id_delegado; ?>,'ajax.php?mode=modaldeleg','modaldeleg');"

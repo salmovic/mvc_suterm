@@ -28,10 +28,12 @@ class Delegado extends Connection
 	*/
 	public function getDelegados()
 	{
-		$sql = "SELECT del.id_delegado,concat(emp.nombre,' ',emp.apellidos) as nombre, del.descripcion
-		FROM delegados as del
-			INNER JOIN empleados as emp
-		on del.rpe_delegado = emp.rpe_empleado;";
+		$sql = "SELECT d.id_delegado,e.rpe_empleado,concat(e.nombre,' ',e.apellidos) as nombre, dp.nombre as no_dep, d.descripcion
+						FROM delegados d
+							INNER JOIN  empleados e
+						    	on d.rpe_delegado = e.rpe_empleado
+						    INNER JOIN departamento dp
+						        on e.id_departamento = dp.id_departamento";		
 
 		$this->setConnection();
 

@@ -102,4 +102,18 @@ function nivelDesempenio( $n )
 			break;
 	}
 }
+function estatus( $i )
+{
+	switch ( $i ) {
+		case 0:
+			return "APTITUD";
+			break;
+			case 1:
+				return "BASE";
+				break;
+		default:
+			return "";
+			break;
+	}
+}
 ?>

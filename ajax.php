@@ -106,6 +106,22 @@ if($_POST){
 		case 'tbmovimiento':
 		require('html/movimientos/dttabla.php');
 		break;
+
+		/******************
+		*   CATEGORIAS     *
+		*******************/
+		case 'categoria':
+			require('core/bin/ajax/categorias/categorias.php');
+		break;
+		case 'modalcat':
+			require('html/categorias/upcategorias.php');
+		break;
+		case 'refreshCat':
+			require('core/bin/ajax/categorias/refresh.php');
+		break;
+		case 'deletecat':
+			require('core/bin/ajax/categorias/delcategoria.php');
+		break;
   }
 }else
 {

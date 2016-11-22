@@ -22,6 +22,9 @@ $(document).ready(function()
 	//Centor trabajo
 	_url('#centrab','?views=centrotrabajo');
 
+	// categorias
+	_url('#categorias','?views=categoria');
+
 
 
 	//funcion url

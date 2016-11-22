@@ -10,115 +10,133 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Departamentos</h3>
+                <h3>Agregar Categorias</h3>
               </div>
             </div>
             <div class="clearfix"></div>
-
             <div class="row">
-
               <div class="col-md-12 col-sm-12 col-xs-12">
-								<div class="x_panel">
+								<!-- Add delegados -->
+                <div class="x_panel">
                   <div class="x_title">
-                    <h2>Agregar un nuevo departamennto de trabajo</h2>
+                    <h2>Agregar una Categoria </h2>
                     <ul class="nav navbar-right panel_toolbox">
 											<li><a >&nbsp;</a></li>
 											<li><a >&nbsp;</a></li>
 											<li><a >&nbsp;</a></li>
-											<li><a class="collapse-link" data-toggle="tooltip" data-placement="top" title="Ocultar / Mostrar"><i class="fa fa-chevron-up"></i></a></li>
+											<li><a class="collapse-link" data-toggle="tooltip" title="Ocultar / Mostrar"><i class="fa fa-chevron-up"></i></a></li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-										<!-- form -->
-										<form class="form-horizontal form-label-left" novalidate method="post" id="frmDepartamento">
-											<!-- Nombre -->
+										<!-- formulario -->
+										<form class="form-horizontal form-label-left" novalidate method="post" id="frmCategorias">
+											<!--rpe Empleado -->
 											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Nombre<span class="required">*</span>
+												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="rpe">Empleado<span class="required">*</span>
 												</label>
-												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="nombre" name="nombre" placeholder="Nombre del departamento">
-													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select  class="form-control has-feedback-left" name="rpe_empleado" autofocus="">
+														<option value="-1">--Seleccione un empleado--</option>
+														<?php
+														 $allEmp = $empleado->getEmpleados();
+														 foreach ($allEmp as $dts) {
+														?>
+														<option value="<?php echo $dts->rpe_empleado; ?>"><?php echo $dts->nombre." ".$dts->apellidos; ?></option>
+														<?php } ?>
+                          </select>
+													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                        </div>
+                      </div>
+											<!-- Numero de Plaza -->
+											<div class="item form-group">
+												<label for="no_plaza" class="control-label col-md-3">Plaza<span class="required">*</span></label>
+												<div class="col-md-6 col-sm-6 col-xs-12">
+													<select class="form-control has-feedback-left" name="no_plaza">
+														<option value="-1">--Seleccionar Plaza--</option>
+														<?php
+														 $allPlaza = $plazas->getPlazas();
+														 foreach ($allPlaza as $dts) {
+														?>
+														<option value="<?php echo $dts->no_plaza; ?>"><?php echo $dts->no_plaza." | ".$dts->nombre_cat; ?></option>
+														<?php } ?>
+													</select>
+													<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
-											<!-- Extencion -->
-											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="extencion">Extención<span class="required">*</span>
-												</label>
-												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="extencion" name="extencion" placeholder="Numero de Extencion">
-													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
+											<div class="item form-group">
+												<label for="no_plaza" class="control-label col-md-3">Estado en el puesto<span class="required">*</span></label>
+												<div class="col-md-6 col-sm-6 col-xs-12">
+													<label for="status" class="radio-inline">
+														<input type="radio" name="status" value="0" checked=""> Aptitud
+													</label>
+													<label for="status" class="radio-inline">
+														<input type="radio" name="status" value="1"> Base
+													</label>
 												</div>
 											</div>
-											<!-- Telefono -->
-											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="telefono">Telefono<span class="required">*</span>
-												</label>
-												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="telefono" name="telefono" placeholder="Numero de Telefono">
-													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
-												</div>
-											</div>
-											<!-- token -->
-											<input type="hidden" name="token" value="set_departamento">
-											<!-- Botones -->
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
-                          <button type="button" class="btn btn-primary" onclick="resetForm('frmDepartamento');">Cancel</button>
-                          <button id="setDepartamentos" type="submit" class="btn btn-success">Submit</button>
+													<input type="hidden" name="token" value="setcategoria">
+                          <button type="button" class="btn btn-primary" onclick="resetForm('frmCategorias');">Cancel</button>
+                          <button id="setCat" type="button" class="btn btn-success">Submit</button>
                         </div>
                       </div>
                     </form>
+									</div>
 										<!-- End form -->
+										<div id="resp"></div>
+
                   </div>
                 </div>
-
-									<!-- TE QUIERO MUCHO MI AMOR  -->
-
-								<!-- Panel Categorias -->
-                <div class="x_panel">
+								<!-- Lista Categorias -->
+								<div class="x_panel">
                   <div class="x_title">
-                    <h2>Lista de Categorías </h2>
+                    <h2>Lista de Categorias </h2>
                     <ul class="nav navbar-right panel_toolbox">
 											<li><a >&nbsp;</a></li>
 											<li><a >&nbsp;</a></li>
 											<li><a >&nbsp;</a></li>
-											<li><a class="collapse-link" data-toggle="tooltip" data-placement="top" title="Ocultar / Mostrar"><i class="fa fa-chevron-up"></i></a></li>
+											<li><a class="collapse-link" data-toggle="tooltip" title="Ocultar / Mostrar"><i class="fa fa-chevron-up"></i></a></li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
-
 									<div class="x_content">
+                    <h3>Categorias</h3>
+										<div class="ln_solid"></div>
+
                     <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>No. Departamento</th>
+                          <th>RPE</th>
                           <th>Nombre</th>
-                          <th>Extencion</th>
-													<th>Telefono</th>
-													<th>Operaciones</th>
+                          <th>No. Plaza</th>
+                          <th>Nombre Categoria</th>
+													<th>Estado en el puesto</th>
+                          <th>Operaciones</th>
                         </tr>
                       </thead>
-                      <tbody id="tb_depto">
+                      <tbody id="tb_cat">
 												<?php
-												$allDep = $departamento->getDepartamentos();
-												foreach ($allDep as $dts)
-												{
-											 ?>
+												$allCat = $categoria->getCategorias();
+												foreach ($allCat as $dts) {
+												 ?>
                         <tr>
-                          <td><?php echo $dts->id_departamento; ?></td>
-                          <td><?php echo $dts->nombre; ?></td>
-													<td><?php echo $dts->no_extencion; ?></td>
-                          <td><?php echo $dts->telefono; ?></td>
+													<td><?php echo $dts->rpe; ?></td>
+													<td><?php echo $dts->nombre; ?></td>
+													<td><?php echo $dts->no_plaza; ?></td>
+													<td><?php echo $dts->nombre_cat; ?></td>
+													<td><?php echo estatus($dts->estatus); ?></td>
 													<td align="center">
-														<button type="button" data-toggle="modal" data-target="#updateDepto" onclick="carga_ajax(<?php echo $dts->id_departamento; ?>,'ajax.php?mode=modaldpto','updateDepto');"
+														<button type="button" data-toggle="modal" data-target="#modalcat" onclick="carga_ajax(<?php echo $dts->id; ?>,'ajax.php?mode=modalcat','modalcat');"
 															title="Editar" class="btn btn-success"><i class="fa fa-edit"></i></button>
-															 <button type="button" onclick="eliminarDepto(<?php echo $dts->id_departamento; ?>);"
-															 title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+
+													 <button type="button" onclick="eliminarCategoria(<?php echo $dts->id; ?>);"
+													 title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+													 </td>
 													</td>
                         </tr>
 												<?php }; ?>
-
                       </tbody>
                     </table>
                   </div>
@@ -128,14 +146,16 @@
           </div>
         </div>
         <!-- /page content -->
-				<!-- modal update -->
-				<div id="updateDepto" class="modal fade" role="dialog">
+				<!-- update del -->
+				<div id="modalcat" class="modal fade" role="dialog">
 
 				</div>
-				<?php include 'html/overall/container_base_footer.php'; ?>
-				<!-- script all -->
-				<script src="views/app/js/departamentos/departamentos.js"></script>
 
+	 <?php include 'html/overall/container_base_footer.php'; ?>
+	 <script src="views/app/js/categorias/categorias.js"></script>
+
+
+		<!-- jQuery Smart Wizard -->
 <script>
 	$(document).ready(function() {
 		$('#wizard').smartWizard({

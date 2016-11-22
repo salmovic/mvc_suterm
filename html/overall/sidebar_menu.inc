@@ -14,6 +14,11 @@
 					<li><a href="javascript:void(0);">Buscar</a></li>
 				</ul>
 			</li>
+			<li><a><i class="fa fa-user"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
+				<ul class="nav child_menu">
+					<li><a href="javascript:void(0);" id="usuario">Agregar</a></li>										
+				</ul>
+			</li>
 			<li><a><i class="fa fa-desktop"></i> Delegados <span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
 					<li><a href="javascript:void(0);"  id="delegado">Delegados</a></li>
@@ -27,6 +32,13 @@
 			<li><a><i class="fa fa-bug"></i> Plaza <span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
 					<li><a  href="javascript:void(0);" id="plaza">Configuración</a></li>
+				</ul>
+			</li>
+		</ul>
+		<ul class="nav side-menu">
+			<li><a><i class="fa fa-bug"></i> Categorias <span class="fa fa-chevron-down"></span></a>
+				<ul class="nav child_menu">
+					<li><a  href="javascript:void(0);" id="categorias">Agregar Categorias</a></li>
 				</ul>
 			</li>
 		</ul>
