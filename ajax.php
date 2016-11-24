@@ -122,6 +122,18 @@ if($_POST){
 		case 'deletecat':
 			require('core/bin/ajax/categorias/delcategoria.php');
 		break;
+		/***************
+		* USUARIOS     *
+		****************/
+		case 'usr':
+		require('core/bin/ajax/usuarios/usuario.php');
+		break;
+		/*********
+		* LOGIN  *
+		**********/
+		case 'login':
+		require('core/bin/ajax/login/login.php');
+			break;
   }
 }else
 {

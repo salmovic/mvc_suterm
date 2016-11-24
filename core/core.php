@@ -36,6 +36,8 @@ require('core/models/class.Delegado.php');
 require('core/models/class.Movimientos.php');
 require('core/models/class.TipoPermiso.php');
 require('core/models/class.Categorias.php');
+require('core/models/class.Usuarios.php');
+require('core/models/class.Login.php');
 // funciones
 require('core/bin/functions/functionConvert.php');
 /*
@@ -49,5 +51,6 @@ $delegado = new Delegado();
 $movimientos = new Movimientos();
 $tipoPermiso = new TipoPermiso();
 $categoria = new Categorias();
-
+$usr = new Usuarios();
+$login = new Login();
 ?>

@@ -16,7 +16,7 @@
 			</li>
 			<li><a><i class="fa fa-user"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
-					<li><a href="javascript:void(0);" id="usuario">Agregar</a></li>										
+					<li><a href="javascript:void(0);" id="usuario">Agregar</a></li>
 				</ul>
 			</li>
 			<li><a><i class="fa fa-desktop"></i> Delegados <span class="fa fa-chevron-down"></span></a>
@@ -53,7 +53,6 @@
 			<li><a><i class="fa fa-bug"></i> Departamentos <span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
 					<li><a href="javascript:void(0);" id="departamento">Departamento</a></li>
-					<!-- <li><a href="javascript:void(0);" id="centrab">Centro de Trabajo</a></li> -->
 				</ul>
 			</li>
 		</ul>
