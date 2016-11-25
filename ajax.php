@@ -133,7 +133,10 @@ if($_POST){
 		**********/
 		case 'login':
 		require('core/bin/ajax/login/login.php');
-			break;
+		break;
+		case 'salir':
+				require('core/bin/ajax/login/out.php');
+		break;
   }
 }else
 {

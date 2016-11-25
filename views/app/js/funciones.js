@@ -46,3 +46,17 @@ function minToMayuscula( e ){
     var e = $('#'+e+'');
     e.val(e.val().toUpperCase());
 }
+// Cerrar Session
+function cerrarSession() {
+	alertify.confirm("Esta seguro que desea salir",function( e ){
+			if ( !e ) return;
+			$.ajax({
+				url:'ajax.php?mode=salir',
+				type:'post',
+				data:"token=out",
+				success:function( resp ) {
+					$(location).attr('href','index.php');
+				}
+			});
+	});
+}

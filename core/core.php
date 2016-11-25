@@ -2,7 +2,7 @@
 /*
 NUCLEO DE LA APLICACION llamamos a todos los recursos de la aplicacion
 */
-
+session_start();
 /*
 *Define la zona horaria
 */

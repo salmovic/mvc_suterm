@@ -33,5 +33,5 @@
 		</div>
 
 		<!-- top navigation -->
-		<?php include HTML_DIR.'overall/top_navigation.inc'; ?>
+		<?php include HTML_DIR.'overall/top_navigation.php'; ?>
 		<!-- /top navigation -->
