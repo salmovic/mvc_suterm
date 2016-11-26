@@ -11,10 +11,15 @@ if ( isset($_GET['views']) )
 		include ('core/controllers/'.strtolower($_GET['views']).'Controller.php');
 	} else
 	{
-		include 'core/controllers/errorController.php';
+		if($_SESSION['tipo_usr'] ==1 ) {
+			header("Location: ?views=movimientos");
+			return;
+		}
+		header("Location: ?views=addempleado");
 	}
 } else
 {
+	session_destroy();
 	include 'core/controllers/indexController.php';
 }
  ?>

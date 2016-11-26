@@ -19,11 +19,14 @@
 					</div>
 				</div>
 				<!-- /menu profile quick info -->
-
 				<br />
 
 				<!-- sidebar menu -->
-				<?php include HTML_DIR.'overall/sidebar_menu.inc'; ?>
+				<?php
+				if($_SESSION['tipo_usr']==1) {include HTML_DIR.'overall/sidebar_menu.inc';}
+				else
+				include HTML_DIR.'overall/sidebar_menu2.inc';
+				?>
 				<!-- /sidebar menu -->
 
 				<!-- /menu footer buttons -->

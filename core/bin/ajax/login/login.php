@@ -13,7 +13,7 @@ if (isset($_POST['token']) && $_POST['token']=='login')
 		 $_SESSION['foto'] = $lg->foto;
 		 $_SESSION['tipo_usr'] = $lg->tipo_usuario;
 	 }
-	 echo $lg->cont;
+	 echo $lg->tipo_usuario;
 }else
 {echo 'error de ruta';}
 ?>

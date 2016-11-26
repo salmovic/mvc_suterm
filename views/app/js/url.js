@@ -1,7 +1,7 @@
 $(document).ready(function()
 {
 	// index
-	_url( '#home', '?views=index' );
+	_url( '#home', '?views=movimientos' );
 
 	// caterorias
 	_url( '#plaza', '?views=plaza' );

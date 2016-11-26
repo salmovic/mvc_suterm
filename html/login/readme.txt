@@ -1,1 +1,0 @@
-Directorio que almacena plantillas de las vistas.

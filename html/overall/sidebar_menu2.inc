@@ -2,26 +2,11 @@
 	<div class="menu_section">
 		<h3>General</h3>
 		<ul class="nav side-menu">
-			<li><a><i class="fa fa-home"></i> Inicio <span class="fa fa-chevron-down"></span></a>
-				<ul class="nav child_menu">
-					<li><a href="javascript:void(0);" id="home">Generar Permiso</a></li>
-				</ul>
-			</li>
 			<li><a><i class="fa fa-user"></i> Empleado <span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
 					<li><a href="javascript:void(0);" id="addempleado">Agregar</a></li>
 					<li><a href="javascript:void(0);" id="updateempleado">Acutalizar</a></li>
 					<li><a href="javascript:void(0);">Buscar</a></li>
-				</ul>
-			</li>
-			<li><a><i class="fa fa-user"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
-				<ul class="nav child_menu">
-					<li><a href="javascript:void(0);" id="usuario">Agregar</a></li>
-				</ul>
-			</li>
-			<li><a><i class="fa fa-desktop"></i> Delegados <span class="fa fa-chevron-down"></span></a>
-				<ul class="nav child_menu">
-					<li><a href="javascript:void(0);"  id="delegado">Delegados</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -32,13 +17,6 @@
 			<li><a><i class="fa fa-bug"></i> Plaza <span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
 					<li><a  href="javascript:void(0);" id="plaza">Configuración</a></li>
-				</ul>
-			</li>
-		</ul>
-		<ul class="nav side-menu">
-			<li><a><i class="fa fa-bug"></i> Categorias <span class="fa fa-chevron-down"></span></a>
-				<ul class="nav child_menu">
-					<li><a  href="javascript:void(0);" id="categorias">Agregar Categorias</a></li>
 				</ul>
 			</li>
 		</ul>
