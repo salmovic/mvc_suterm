@@ -6,7 +6,7 @@ class Login extends Connection
 {
 	public function getLogin($usr, $pass, $tus)
 	{
-		$sql = "SELECT u.tipo_usuario,u.foto, e.nombre, count(*) as cont
+		$sql = "SELECT u.tipo_usuario,u.foto, e.nombre,concat(e.nombre,' ',e.apellidos) as nomComp, count(*) as cont
 		FROM usuario u
 		INNER JOIN empleados as e
 		on u.rpe_emp = e.rpe_empleado

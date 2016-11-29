@@ -85,9 +85,7 @@
 				</div>
 
 				<input type="hidden" name="token" value="login">
-				<button type="button" class="btn btn-primary" id="login">
-					Iniciar Sesión
-				</button>
+				<input type="submit" class="btn btn-primary" id="login" value="Iniciar Sesion">
 				<button type="button" onclick="resetForm('frmLogin')" class="pull-right btn btn-success"><span class="glyphicon glyphicon-remove"></span> Cancelar </button>
 			</form>
 			<div id="resp"></div>

@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	$('#login').on('click',function(e){
-		$('#resp').text($('#frmLogin').serialize());
+		e.preventDefault();
+		// $('#resp').text($('#frmLogin').serialize());
 		$.ajax({
 			url:'ajax.php?mode=login',
 			type:'post',
@@ -18,7 +19,6 @@ $(document).ready(function(){
 					alertify.alert( "Verifique que los datos sean correctos!" );
 						break;
 				}
-
 			},
 			error:function(jqXHR,estado,error) {
 				console.log(error);
@@ -26,7 +26,6 @@ $(document).ready(function(){
 		});
 	});
 });
-
 function resetForm(id)
 {
 	document.getElementById(id).reset();

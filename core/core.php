@@ -38,6 +38,8 @@ require('core/models/class.TipoPermiso.php');
 require('core/models/class.Categorias.php');
 require('core/models/class.Usuarios.php');
 require('core/models/class.Login.php');
+// mpdf
+require('vendors/mpdf/mpdf.php');
 // funciones
 require('core/bin/functions/functionConvert.php');
 /*
@@ -53,7 +55,7 @@ $tipoPermiso = new TipoPermiso();
 $categoria = new Categorias();
 $usr = new Usuarios();
 $login = new Login();
+$mpdf = new mPDF();
 // Nuero de folio de movimiento
 define('FOLIO',  $movimientos->getIdMaxMov());
-
 ?>

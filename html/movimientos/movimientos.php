@@ -85,7 +85,7 @@
     										<div class="col-xs-4">
     										 Delegado Departamental
 													<select class="form-control dtsMovimiento" name="tipo_perm">
-														<option value="1">--Seleccione el Tipo de Permiso--</option>
+														<option value="1">--Seleccionar Delegado--</option>
 														<?php
 														$allDel = $delegado->getDelegados();
 														foreach ($allDel as $dts) {?>

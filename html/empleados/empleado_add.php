@@ -110,7 +110,7 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Nombres <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="nombre" name="nombre" required="required" class="optional form-control has-feedback-left" placeholder="Nombre(s) del empleado">
+		                          <input type="text" id="nombre" name="nombre" required="required" class="optional form-control has-feedback-left" placeholder="Nombre(s) del empleado" onkeyup="minToMayuscula('nombre')">
 															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
@@ -119,7 +119,7 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="apellidos">Apellidos <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="apellidos" name="apellidos" data-validate-linked="text" required="required" class="optional form-control has-feedback-left" placeholder="Ingrese los apelidos.">
+		                          <input type="text" id="apellidos" name="apellidos" data-validate-linked="text" required="required" class="optional form-control has-feedback-left" placeholder="Ingrese los apelidos." onkeyup="minToMayuscula('apellidos')">
 															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
@@ -128,7 +128,7 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="rfc">RFC <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="rfc" name="rfc" required="required" data-validate-minmax="10,100" class="optional form-control has-feedback-left" placeholder="Registro Federal de Contribuyentes.">
+		                          <input type="text" id="rfc" name="rfc" required="required" data-validate-minmax="10,100" class="optional form-control has-feedback-left" placeholder="Registro Federal de Contribuyentes." onkeyup="minToMayuscula('rfc')">
 															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
@@ -137,7 +137,7 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="curp">CURP <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="curp" name="curp" required="required" class="optional form-control has-feedback-left" placeholder="Ingrese la CURP.">
+		                          <input type="text" id="curp" name="curp" required="required" class="optional form-control has-feedback-left" placeholder="Ingrese la CURP." onkeyup="minToMayuscula('curp')">
 															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
@@ -150,7 +150,7 @@
 															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 														<div class="col-md-3 col-sm-3 col-xs-6">
-		                          <input id="tipo_sangre" type="type" name="tipo_sangre" data-validate-length="6,8" class="form-control has-feedback-left" required="required" placeholder="Ingrese el tipo de sangre (Ej. O+)">
+		                          <input id="tipo_sangre" type="type" name="tipo_sangre" data-validate-length="6,8" class="form-control has-feedback-left" required="required" placeholder="Ingrese el tipo de sangre (Ej. O+)" onkeyup="minToMayuscula('tipo_sangre')">
 															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 														</div>
 		                      </div>
@@ -177,7 +177,7 @@
 													<div class="item form-group">
 		                        <label for="entidad_federativa_nac" class="control-label col-md-3">Entidad federativa nac.</label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input id="entidad_federativa_nac" type="type" name="entidad_federativa_nac" data-validate-length="6,8" class="form-control has-feedback-left" required="required" placeholder="Entidad federativa nacimineto.">
+		                          <input id="entidad_federativa_nac" type="type" name="entidad_federativa_nac" data-validate-length="6,8" class="form-control has-feedback-left" required="required" placeholder="Entidad federativa nacimineto." onkeyup="minToMayuscula('entidad_federativa_nac')">
 															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
@@ -463,7 +463,7 @@
 		                          <input id="idioma" type="type" name="idioma" data-validate-length="6,8" class="form-control has-feedback-left" required="required" placeholder="Separar los idiomas por (,)">
 															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
-		                      </div>													
+		                      </div>
 													<!-- Token -->
 													<input type="hidden" name="token" value="setempleado">
 													</div>

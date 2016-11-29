@@ -39,4 +39,8 @@ $(document).ready(function()
 				$(location).attr('href',url);
 		});
 	}
+
+	$("#suterm").on('click',function(e){
+		e.preventDefault();
+	});
 });
