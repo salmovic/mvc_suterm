@@ -91,9 +91,6 @@ if($_POST){
 		case 'empleado':
 			 require('core/bin/ajax/empleado/empleado.php');
 		break;
-    default:
-      echo "ruta no especificada.";
-    break;
 		/********************
 		* RUTA MOVIMIENTOS  *
 		********************/
@@ -101,12 +98,14 @@ if($_POST){
 		require('html/movimientos/modalreemplazo.php');
 		break;
 		case 'busquedaemp':
-		require('html/movimientos/informacion.php');
+		require('html/movimientos/infEmpSol.php');
 		break;
 		case 'tbmovimiento':
 		require('html/movimientos/dttabla.php');
 		break;
-
+		case 'getcat_emp':
+			require('html/movimientos/categoria.php');
+		break;
 		/******************
 		*   CATEGORIAS     *
 		*******************/
@@ -137,6 +136,11 @@ if($_POST){
 		case 'salir':
 				require('core/bin/ajax/login/out.php');
 		break;
+
+
+    default:
+      echo "ruta no especificada.";
+    break;
   }
 }else
 {

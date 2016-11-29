@@ -3,7 +3,6 @@
 */
 function carga_ajax( id,url,div )
 {
-	console.log(id+' '+url+' '+div);
 	$.post
 	(
 		url,
@@ -60,3 +59,4 @@ function cerrarSession() {
 			});
 	});
 }
+// evento cerrar venta

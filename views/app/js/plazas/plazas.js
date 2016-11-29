@@ -24,14 +24,7 @@ $(document).ready(function(){
 					}else{
 						alertify.error("No se pudo cargar guardar la categoria");
 					}
-		    },
-		    //ejecuta cuando hay un error en la peticion
-		    error: function(jqXHR,estado,error) {
-		        alertify.error("Ocurrio un erro inesperado "+error);
-		    },
-		    //ejecuta al completar exitosamente la peticion
-		    complete: function(jqXHR,estado){},
-		    timeout: 10000
+		    }
 		});
 	});
 });

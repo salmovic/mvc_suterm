@@ -1,46 +1,29 @@
 $(document).ready(function()
 {
-	$('#rpe_empleado').focus();
+	$('#buscarSol').focus();
 	//comprobar si se pulsa una tecla
-    $("#rpe_empleado").keyup( function() {
+    $("#buscarSol").keyup( function() {
         //Obtenemos el texto del campo buscar
-        consulta = $("#rpe_empleado").val();
+        consulta = $("#buscarSol").val();
         //se realiza la peticion de busqueda por ajaz
+
+				if (consulta==" ") {
+					$("#dtsSolicitante").empty();
+					return;
+				}
        $.ajax({
            type: "POST",
            url: "ajax.php?mode=busquedaemp",
-           data: "rpe_emp="+consulta,
+           data: "txt="+consulta,
            dataType: "html",
-           /*beforeSend: function(){
-               $("#resultado").html("<spam class='glyphicon glyphicon-hourglass'></spam>");
-           },*/
-            error: function() {
-                alert("error petición ajax");
-            },
             success: function(data) {
+							if(data!= -1){
                 $("#dtsSolicitante").empty();
                 $("#dtsSolicitante").append(data);
-            },
-						complete:function(jqXHR,estado)
-						{
-							$.ajax({
-								type: "POST",
-		            url: "ajax.php?mode=tbmovimiento",
-		            data:$('#frmmovimiento').serialize(),
-		            dataType: "html",
-		            /*beforeSend: function(){
-		                $("#resultado").html("<spam class='glyphicon glyphicon-hourglass'></spam>");
-		            },*/
-		             error: function() {
-		                 alert("error petición ajax");
-		             },
-		             success: function(data) {
-		                 $("#tbMovimiento").empty();
-		                 $("#tbMovimiento").append(data);
-		             }
-							});
-						}
-
+								var rpe=$('#rpe_empleado').val();
+								carga_ajax(rpe,'ajax.php?mode=tbmovimiento','tbMovimiento');
+							}
+            }
        });
     });
 });
@@ -49,12 +32,16 @@ function modalMovimiento(id,div)
 	$.ajax({
 		type: "POST",
 		url: "ajax.php?mode=modalmovimiento",
-		data: $('#frmmovimiento').serialize(),
+		data: "rpe="+id,
 		dataType: "html",
 		success: function(respuesta) {
 			console.log(respuesta);
 			$('#'+div+'').html(respuesta);
 		}
-
 	});
 }
+/*/bootstrap-daterangepicker*/
+$('.calendario').daterangepicker({
+singleDatePicker: true,
+showDropdowns: true
+});

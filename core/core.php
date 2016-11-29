@@ -53,4 +53,7 @@ $tipoPermiso = new TipoPermiso();
 $categoria = new Categorias();
 $usr = new Usuarios();
 $login = new Login();
+// Nuero de folio de movimiento
+define('FOLIO',  $movimientos->getIdMaxMov());
+
 ?>

@@ -57,13 +57,10 @@
 		<div class="col-md-4">
 		</div>
 		<div class="col-md-4" id="sesion">
-
-			    <div id="imagen" align="center" class="img-responsive img-responsive" width=140 height=140>
-			        <img alt="Iniciar Sesión" src="views/app/images/koala.jpg" class="img-circle img-responsive">
+			    <div id="imagen" align="center" class="img-responsive img-responsive">
+			        <img alt="Iniciar Sesión" src="views/app/images/user.png" class="img-circle img-responsive">
 			    </div>
-
 			<form role="form" id='frmLogin'>
-
 				<!--  -->
 				<div class="form-group">
 					<label>
