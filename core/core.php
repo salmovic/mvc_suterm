@@ -7,6 +7,8 @@ session_start();
 *Define la zona horaria
 */
 date_default_timezone_set('America/Mexico_City');
+// Desactivar toda notificación de error
+error_reporting(0);
 /*
 CONSTANTES DE LA BASE DE DATOS
 */
@@ -58,4 +60,6 @@ $login = new Login();
 $mpdf = new mPDF();
 // Nuero de folio de movimiento
 define('FOLIO',  $movimientos->getIdMaxMov());
+// variable global
+$BAND_PDF = 0;
 ?>

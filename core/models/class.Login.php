@@ -6,11 +6,8 @@ class Login extends Connection
 {
 	public function getLogin($usr, $pass, $tus)
 	{
-		$sql = "SELECT u.tipo_usuario,u.foto, e.nombre,concat(e.nombre,' ',e.apellidos) as nomComp, count(*) as cont
-		FROM usuario u
-		INNER JOIN empleados as e
-		on u.rpe_emp = e.rpe_empleado
-		WHERE (u.rpe_emp = '{$usr}' or u.usr = '{$usr}') and (u.passwd='{$pass}' and u.tipo_usuario={$tus})";
+		$sql = "SELECT tipo_usuario, nombre, concat(nombre,' ',apellidos) as nomComp, foto, count(*) as cont FROM
+		usuario WHERE (rpe_emp = '{$usr}' or usr = '{$usr}') and passwd='{$pass}' and tipo_usuario ={$tus};";
 		$this->setConnection();
 
 		$datos = $this->con->query( $sql );

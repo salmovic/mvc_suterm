@@ -7,25 +7,25 @@ if($_POST){
 		/*RUTA PLAZA*/
 
 		/*establecer*/
-    case 'plaza':
-      require('core/bin/ajax/plazas/plazas.php');
-    break;
+		case 'plaza':
+		require('core/bin/ajax/plazas/plazas.php');
+		break;
 		/*Actualizar categoria*/
 		case 'update_plaza':
-			require('core/bin/ajax/plazas/plazas.php');
-    break;
+		require('core/bin/ajax/plazas/plazas.php');
+		break;
 		/*cargar ventana modal categoria update*/
-    case 'modal_plaza':
-			require('html/plazas/modal_update.php');
-    break;
+		case 'modal_plaza':
+		require('html/plazas/modal_update.php');
+		break;
 		/*elimiar categoria*/
 		case 'delete_plaza':
-			require('core/bin/ajax/plazas/delplaza.php');
-    break;
+		require('core/bin/ajax/plazas/delplaza.php');
+		break;
 		/*actualizar tabala*/
 		case 'refresh_plaza':
-			require('core/bin/ajax/plazas/refresh_plaza.php');
-    break;
+		require('core/bin/ajax/plazas/refresh_plaza.php');
+		break;
 
 		/*******************
 		* RUTA CENTRO_TRABAJO *
@@ -41,11 +41,11 @@ if($_POST){
 		break;
 		/*refrescar tabala*/
 		case 'refresh_centrab':
-			require('core/bin/ajax/centro_trabajo/refresh_ct.php');
+		require('core/bin/ajax/centro_trabajo/refresh_ct.php');
 		break;
 		/*cargar modal update*/
 		case 'modalcentrab':
-			require('html/centro_trabajo/update_ct.php');
+		require('html/centro_trabajo/update_ct.php');
 		break;
 		case 'updatecentrab':
 		require('core/bin/ajax/centro_trabajo/centro_trabajo.php');
@@ -59,10 +59,10 @@ if($_POST){
 		break;
 		/*Cargar modal update*/
 		case 'modaldpto':
-			require('html/departamentos/update_dep.php');
+		require('html/departamentos/update_dep.php');
 		break;
 		case'deldepto':
-			require('core/bin/ajax/departamento/deldepartamento.php');
+		require('core/bin/ajax/departamento/deldepartamento.php');
 		break;
 		case 'refresh_depto':
 		require('core/bin/ajax/departamento/refresh_depto.php');
@@ -73,16 +73,16 @@ if($_POST){
 		*****************/
 
 		case 'delegado':
-			require('core/bin/ajax/delegado/delegado.php');
+		require('core/bin/ajax/delegado/delegado.php');
 		break;
 		case 'modaldeleg':
-		  require('html/delegados/updelegado.php');
+		require('html/delegados/updelegado.php');
 		break;
 		case 'deldeleg':
-			require('core/bin/ajax/delegado/deldelegado.php');
+		require('core/bin/ajax/delegado/deldelegado.php');
 		break;
 		case 'refresh_deleg':
-			require('core/bin/ajax/delegado/refresh.php');
+		require('core/bin/ajax/delegado/refresh.php');
 		break;
 
 		/*****************
@@ -104,22 +104,31 @@ if($_POST){
 		require('html/movimientos/dttabla.php');
 		break;
 		case 'getcat_emp':
-			require('html/movimientos/categoria.php');
+		require('html/movimientos/categoria.php');
+		break;
+		case 'sustituto':
+		require('core/bin/ajax/movimiento/movimiento.php');
+		break;
+		case 'refresh_mov':
+		require('core/bin/ajax/movimiento/refresh_tabla.php');
+		break;
+		case 'deletesustituto':
+		require('core/bin/ajax/movimiento/delete_sustituto.php');
 		break;
 		/******************
 		*   CATEGORIAS     *
 		*******************/
 		case 'categoria':
-			require('core/bin/ajax/categorias/categorias.php');
+		require('core/bin/ajax/categorias/categorias.php');
 		break;
 		case 'modalcat':
-			require('html/categorias/upcategorias.php');
+		require('html/categorias/upcategorias.php');
 		break;
 		case 'refreshCat':
-			require('core/bin/ajax/categorias/refresh.php');
+		require('core/bin/ajax/categorias/refresh.php');
 		break;
 		case 'deletecat':
-			require('core/bin/ajax/categorias/delcategoria.php');
+		require('core/bin/ajax/categorias/delcategoria.php');
 		break;
 		/***************
 		* USUARIOS     *
@@ -134,9 +143,8 @@ if($_POST){
 		require('core/bin/ajax/login/login.php');
 		break;
 		case 'salir':
-				require('core/bin/ajax/login/out.php');
+		require('core/bin/ajax/login/out.php');
 		break;
-
 
     default:
       echo "ruta no especificada.";
@@ -144,6 +152,6 @@ if($_POST){
   }
 }else
 {
-	header('location: index.php');
+	echo "Error en la ruta!!!";
 }
  ?>

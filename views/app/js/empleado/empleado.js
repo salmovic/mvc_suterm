@@ -12,11 +12,10 @@ $(document).ready(function(){
 				type: 'post',
 				data:$('.set_empleado').serialize(),
 				success: function(respuesta) {
-					console.log(respuesta);
 					if(respuesta==1){
-						alertify.success("Se guardo coorectamente");
+						alertify.success("El registro se guardado correctamente.");
 					}else{
-						alertify.error("No se pudo eliminar");
+						alertify.error("No se pudo guardar el registro.");
 					}
 				},
 				//ejecuta cuando hay un error en la peticion

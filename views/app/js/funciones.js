@@ -64,4 +64,3 @@ function cerrarSession() {
 			});
 	});
 }
-// evento cerrar venta

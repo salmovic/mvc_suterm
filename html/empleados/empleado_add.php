@@ -189,7 +189,6 @@
 															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
-
 												</form>
                       </div>
 											<!-- Datos personales y familiar -->
@@ -486,8 +485,6 @@
 <script src="views/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- FastClick -->
 <script src="views/vendors/fastclick/lib/fastclick.js"></script>
-<!-- NProgress -->
-<!-- <script src="views/vendors/nprogress/nprogress.js"></script> -->
 <!-- jQuery Smart Wizard -->
 <script src="views/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
 <!-- validator -->
@@ -497,6 +494,7 @@
 <script src="views/build/alertify/lib/alertify.min.js"></script>
 
 <script src="views/build/datepicker/moment.min.js"></script>
+<script src="views/build/datepicker/momentES.js"></script>
 <script src="views/build/datepicker/daterangepicker.js"></script>
 
 <!-- Custom Theme Scripts -->

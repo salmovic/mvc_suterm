@@ -10,10 +10,10 @@
 		 </div>
 		 <div class="modal-body">
 			 <!-- form -->
-			<form class="form-horizontal form-label-left" novalidate>
+			<form class="form-horizontal form-label-left" novalidate id="setSustituto">
 				<!-- folio movimiento -->
 				<div class="form-group">
-						<input type="hidden" name="folio_mov" value="<?php echo $_POST['folio_mov']; ?>" readonly="">
+						<input type="hidden" name="folio_mov" value="<?php echo FOLIO; ?>" readonly="">
 				</div>
 				<!-- rpe_empleado -->
 				<div class="form-group">
@@ -79,23 +79,61 @@
 						<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 					</div>
 				</div>
+				<!-- token -->
+ 				<input type="hidden" name="token" value="setSustituto">
+ 				<div class="form-group">
+ 					<div class="col-md-6 col-md-offset-3">
+ 						<button type="button" data-dismiss="modal" class="btn btn-primary">Cancel</button>
+ 						<input type="submit" class="btn btn-success" id="sustituto" value="Guardar">
+ 					</div>
+ 				</div>
 			</form>
 	 		<!-- End form -->
+			<div id="resp">
+
+			</div>
 		 </div>
 		 <div class="modal-footer">
-			 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 		 </div>
 	 </div>
  </div>
  <script type="text/javascript">
- $("select[name='rpe_empleado']").on('change',function() {
-	var rpe = $("select[name='rpe_empleado']").val();
-	if (rpe==-1) return;
-	carga_ajax(rpe,'ajax.php?mode=getcat_emp','getCategoria');
- });
- // calendario
- $('.calendario').daterangepicker({
- singleDatePicker: true,
- showDropdowns: true
- });
+$(document).ready(function(){
+	/***
+	* guardar informacion del empleado sustituto
+	*/
+	$('#sustituto').on('click',function(e){
+		e.preventDefault();
+		var dts = $('#setSustituto').serialize();
+		$('#resp').text( dts );
+		$.ajax({
+			url:'ajax.php?mode=sustituto',
+			type:'POST',
+			data: dts,
+			success:function(resp) {
+				console.log(resp);
+				if( resp == 1 ) {
+					alertify.success('Se ha guardado correctamente');
+					 carga_ajax(null,'ajax.php?mode=refresh_mov','tbMovimiento');
+				 }
+			}
+		});
+	});
+	/**
+	* cargar imformacion del sustituto
+	*/
+	$("select[name='rpe_empleado']").on('change',function() {
+	 var rpe = $("select[name='rpe_empleado']").val();
+	 if (rpe==-1) return;
+	 carga_ajax(rpe,'ajax.php?mode=getcat_emp','getCategoria');
+	});
+	/***
+	* calendario
+	*/
+	$('.calendario').daterangepicker({
+	singleDatePicker: true,
+	showDropdowns: true
+	});
+});
  </script>

@@ -87,12 +87,11 @@
                     </ul>
                     <div class="clearfix"></div>
                   </div>
-
 									<div class="x_content">
                     <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>No. Departamento</th>
+                          <th>ID</th>
                           <th>Nombre</th>
                           <th>Extencion</th>
 													<th>Telefono</th>
@@ -118,7 +117,6 @@
 													</td>
                         </tr>
 												<?php }; ?>
-
                       </tbody>
                     </table>
                   </div>

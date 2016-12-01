@@ -68,20 +68,20 @@
 					</label>
 					<select class="form-control" name="tipo_usr">
 						<option value="0">Estandar</option>
-						<option value="1">Administrador</option>
+						<option value="1" selected="">Administrador</option>
 					</select>
 				</div>
 				<div class="form-group">
 					<label for="usr">
 						RPE ó Usr
 					</label>
-					<input type="text" class="form-control" id="usr" name="usr" placeholder="Ingrese su RPE o Nombre de usuario...">
+					<input type="text" class="form-control" id="usr" name="usr" placeholder="Ingrese su RPE o Nombre de usuario..." value="admin">
 				</div>
 				<div class="form-group">
 					<label for="exampleInputPassword1">
 						Contraseña
 					</label>
-					<input type="password" class="form-control" id="passwd" name="passwd" placeholder="Dijite su contraseña...">
+					<input type="password" class="form-control" id="passwd" name="passwd" placeholder="Dijite su contraseña..." value="root">
 				</div>
 
 				<input type="hidden" name="token" value="login">

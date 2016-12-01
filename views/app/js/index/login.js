@@ -7,7 +7,7 @@ $(document).ready(function(){
 			type:'post',
 			data: $('#frmLogin').serialize(),
 			success: function(resp){
-				console.log(resp +""+typeof(resp) );
+				console.log( resp );
 				switch (resp) {
 						case "0":
  					$(location).attr('href','?views=addempleado');

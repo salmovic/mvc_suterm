@@ -32,8 +32,8 @@
                   </div>
                   <div class="x_content">
                     <!-- Smart Wizard -->
-										<div id="wizard" class="form_wizard wizard_verticle">
-                      <ul class="list-unstyled wizard_steps">
+										<div id="wizard" class="form_wizard wizard_horizontal">
+                      <!-- <ul class="list-unstyled wizard_steps">
                         <li>
                           <a href="#step-11">
                             <span class="step_no">1</span>
@@ -52,6 +52,46 @@
                         <li>
                           <a href="#step-44">
                             <span class="step_no">4</span>
+                          </a>
+                        </li>
+                      </ul> -->
+											<ul class="list-unstyled wizard_steps">
+                        <li>
+													<a href="#step-11">
+                            <span class="step_no">1</span>
+                            <span class="step_descr">
+                                Paso 1<br />
+																<p>
+																	Datos Generales
+																</p>
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#step-22">
+														<span class="step_no">2</span>
+                            <span class="step_descr">
+                                Paso 2<br />
+																<p>Datos Personales</p>
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#step-33">
+														<span class="step_no">3</span>
+                            <span class="step_descr">
+                                Paso 3<br />
+																<p>Datos de empleado</p>
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#step-44">
+														<span class="step_no">4</span>
+                            <span class="step_descr">
+                                Paso 4<br />
+																<p>Datos Escolares</p>
+                            </span>
                           </a>
                         </li>
                       </ul>

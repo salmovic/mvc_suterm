@@ -26,7 +26,7 @@
 <!-- validator -->
 <script src="views/vendors/validator/validator.js"></script>
 <!-- Datatables -->
-<script src="views/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="views/vendors/datatables.net/js/jquery.dataTables.js"></script>
 
 <!-- Alertify -->
 <script src="views/build/alertify/lib/alertify.min.js"></script>
