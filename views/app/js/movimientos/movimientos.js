@@ -1,5 +1,8 @@
 $(document).ready(function()
 {
+	/**
+	* Buscar empleado solicitante
+	*/
 	$('#buscarSol').focus();
 	//comprobar si se pulsa una tecla
     $("#buscarSol").keyup( function() {
@@ -28,6 +31,26 @@ $(document).ready(function()
             }
        });
     });
+		/**
+		* Guardar informacion del movimiento a la base de datos.
+		*/
+		$("#sendmov").on('click',function(){
+			alertify.confirm("¿Esta seguro que los datos son correctos?",function(e){
+				if(!e) return;
+				var dts =$(".dtsMovimiento").serialize();
+				$('#resp').text( dts );
+				// Enviar informacion por $.ajax
+				$.ajax({
+					url:'ajax.php?mode=movimiento',
+					type:'post',
+					data: dts,
+					success: function( resp ) {
+						console.log( resp );
+					}
+				});
+			});
+		});
+
 });
 function modalMovimiento(id,div)
 {
@@ -64,6 +87,7 @@ function deleteSust( id ) {
 		}
 	});
 }
+
 /*/bootstrap-daterangepicker*/
 $('.calendario').daterangepicker({
 singleDatePicker: true,

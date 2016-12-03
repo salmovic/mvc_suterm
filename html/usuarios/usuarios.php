@@ -38,7 +38,7 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="rpe">Empleado<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12">
-													<select  class="form-control has-feedback-left" name="rpe" autofocus="">
+													<select  class="form-control has-feedback-left" name="rpe" id="rpe" autofocus="">
 														<option value="-1">--Seleccione un empleado--</option>
 														<?php
 														 $allEmp = $empleado->getEmpleados();
@@ -50,7 +50,11 @@
 													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
-											<!-- Nombre categoria -->
+
+											<div id="dtsPersonal">
+
+											</div>
+											<!-- Nombre Usuario -->
 											<div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="usr">Usuario<span class="required">*</span>
 												</label>
@@ -65,6 +69,14 @@
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
 													<input type="password" class="form-control has-feedback-left" id="passwd" name="passwd" placeholder="Escriba una contraseña">
+													<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="passwd2">Verificar Contraseña<span class="required">*</span>
+												</label>
+												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
+													<input type="password" class="form-control has-feedback-left" id="passwd2" name="passwd2" placeholder="Vuelva a escribir la contraseña">
 													<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>

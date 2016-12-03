@@ -84,7 +84,7 @@
 
     										<div class="col-xs-4">
     										 Delegado Departamental
-													<select class="form-control dtsMovimiento" name="tipo_perm">
+													<select class="form-control dtsMovimiento" name="delegado">
 														<option value="1">--Seleccionar Delegado--</option>
 														<?php
 														$allDel = $delegado->getDelegados();
@@ -109,7 +109,7 @@
 										<div class="col-xs-12">
 											<input type="hidden" name="token" value="setmomvimiento" class="dtsMovimiento">
 											<button type="button" id="sendmov" class="btn btn-primary">PDF</button>
-											<p>Res: <tt id="results"></tt></p>
+											<p>Res: <tt id="resp"></tt></p>
 										</div>
 									</div>
                 </div>

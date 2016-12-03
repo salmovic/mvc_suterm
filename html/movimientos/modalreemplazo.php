@@ -108,7 +108,7 @@ $(document).ready(function(){
 		var dts = $('#setSustituto').serialize();
 		$('#resp').text( dts );
 		$.ajax({
-			url:'ajax.php?mode=sustituto',
+			url:'ajax.php?mode=movimiento',
 			type:'POST',
 			data: dts,
 			success:function(resp) {

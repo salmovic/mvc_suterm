@@ -62,4 +62,6 @@ $mpdf = new mPDF();
 define('FOLIO',  $movimientos->getIdMaxMov());
 // variable global
 $BAND_PDF = 0;
+
+
 ?>

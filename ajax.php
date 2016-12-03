@@ -106,7 +106,7 @@ if($_POST){
 		case 'getcat_emp':
 		require('html/movimientos/categoria.php');
 		break;
-		case 'sustituto':
+		case 'movimiento':
 		require('core/bin/ajax/movimiento/movimiento.php');
 		break;
 		case 'refresh_mov':
@@ -135,6 +135,9 @@ if($_POST){
 		****************/
 		case 'usr':
 		require('core/bin/ajax/usuarios/usuario.php');
+		break;
+		case 'dts_usr':
+		require('html/usuarios/informacion.php');
 		break;
 		/*********
 		* LOGIN  *

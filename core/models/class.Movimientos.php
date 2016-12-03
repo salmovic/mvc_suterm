@@ -109,10 +109,21 @@ WHERE no_folio = '{$no_folio}' and cat.estatus = 1";
 	public function deleteSustituto( $id ) {
 		$sql = "DELETE FROM mov_sustituto WHERE id_mov_sust ={$id}";
 		$this->setConnection();
-		$exito = $this->con->query($sql);
+		$exito = $this->con->query( $sql );
 		$this->unsetConnection();
 		return $exito;
 	}
+	/**
+	* Guardar movmiento
+	*/
+	public function saveMovimiento() {
+		// Res: tipo_perm=1&folio_mov=1&rpe_empleado=20RCL&fechainicio=&fechafin=&sec_suterm=sa&delegado=20RCL&jefe_inmed=sa&descripcion=as&delegado=20RCL&token=setmomvimiento
+		$fechaSistema = date('y/m/d');
+		$sql = "INSERT INTO movimientos(no_folio, fecha, id_tipo_permiso, rpe_solicitante, fecha_inicio, fecha_fin, sec_suterm, id_delegado, jefe_inmediato, observaciones)
+		 VALUES ('{$_POST["folio_mov"]}','{$fechaSistema}',{$_POST["tipo_perm"]},'{$_POST[""]}','{$_POST[""]}','{$_POST[""]}','{$_POST[""]}','{$_POST[""]}','{$_POST[""]}','{$_POST[""]}'])";
+		$this->setConnection();
 
+		$this->unsetConnection();
+	}
 }
  ?>

@@ -81,7 +81,7 @@
 					<label for="exampleInputPassword1">
 						Contraseña
 					</label>
-					<input type="password" class="form-control" id="passwd" name="passwd" placeholder="Dijite su contraseña..." value="root">
+					<input type="password" class="form-control" id="passwd" name="passwd" placeholder="Dijite su contraseña..." value="123">
 				</div>
 
 				<input type="hidden" name="token" value="login">
