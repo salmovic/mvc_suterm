@@ -3,14 +3,15 @@ if (!isset($_POST['token'])) {echo -1; exit;}
 $token = $_POST['token'];
 switch ( $token ) {
 	case 'setSustituto':
+	// echo $movimientos->setSustituto();
 		echo 1;
 		break;
 		case 'setmomvimiento':
-			echo 1;
+			echo $movimientos->saveMovimiento();
 			break;
 	default:
-		# code...
+		echo "Token no valido";
 		break;
 }
-// echo $movimientos->setSustituto();
+
 ?>

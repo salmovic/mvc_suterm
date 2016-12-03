@@ -45,6 +45,7 @@ $(document).ready(function()
 					type:'post',
 					data: dts,
 					success: function( resp ) {
+						alertify.success(resp);
 						console.log( resp );
 					}
 				});
