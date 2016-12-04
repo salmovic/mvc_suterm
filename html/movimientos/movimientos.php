@@ -88,8 +88,8 @@
 														<option value="1">--Seleccionar Delegado--</option>
 														<?php
 														$allDel = $delegado->getDelegados();
-														foreach ($allDel as $dts) {?>
-														 <option value="<?php echo $dts->rpe_empleado; ?>"><?php echo $dts->nombre; ?></option>
+														foreach ($allDel as $dts) { ?>
+														 <option value="<?php echo $dts->id_delegado; ?>"><?php echo $dts->nombre; ?></option>
 														 <?php } ?>
 													</select>
     										</div>

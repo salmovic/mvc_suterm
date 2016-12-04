@@ -1,46 +1,19 @@
 <?php
-// $mov = $movimientos->getMovimiento(FOLIO-1);
-// $folio= $mov[0]->idmov;
-// $fechaactual=strtoupper($mov[0]->fecha);
-// $nombre =$mov[0]->nombre;
-// $rpe = $mov[0]->rpe_emp;
-// $categoria = $mov[0]->puesto;
-// $noplaza = $mov[0]->no_plaza;
-// $areaadscrita=$mov[0]->areaadscrita;
-// $fechain = $mov[0]->fechain;
-// $fechafin = $mov[0]->fechafin;
-// // checked
-//  $perSg="";
-//  $vac="";
-//  $faltaInj="";
-//  $perCg="";
-//  $comSin="";
-//  $incap="";
-//  $comCap="";
-//  $turAd="";
-// switch ($mov[0]->tipoperm) {
-// 	case '1': $perSg="checked=''"; break;
-// 	case '2': $vac="checked=''"; break;
-// 	case '3': $faltaInj="checked=''"; break;
-// 	case '4': $perCg="checked=''"; break;
-// 	case '5': $comSin="checked=''";	break;
-// 	case '6': $incap="checked=''"; break;
-// 	case '7': $comCap="checked=''";	break;
-// 	case '8': $turAd="checked=''"; break;
-// }
-// $secSut = strtoupper($mov[0]->sec_suterm);
-// $delegado = strtoupper($mov[0]->delegado);
-// $jefeinm = strtoupper($mov[0]->jefe_inmed);
-// $descripcion= strtoupper($mov[0]->descripcion);
-$folio='00';
-$fechaactual="009/23/2";
-$nombre = "Salska";
-$rpe = 'jopij';
-$categoria = 'jopij';
-$noplaza = 'jopij';
-$areaadscrita='jopij';
-$fechain = 'jopij';
-$fechafin = 'jopij';
+$mov = $movimientos->getMovimiento( FOLIO-1 );
+$emp = $movimientos->getEmpleadoSol( $mov->rpe_solicitante );
+$d = $delegado->getDelegadosById( $mov->id_delegado );
+$delegado = $movimientos->getEmpleadoSol( $d[0]->rpe_delegado );
+$folio=$mov->no_folio;
+$fechaactual= strtoupper($mov->fecha);
+$nombre = $emp[0]->nombre;
+$rpe = $emp[0]->rpe;
+$categoria = $emp[0]->categoria;
+$noplaza = $emp[0]->no_plaza;
+$areaadscrita=$emp[0]->area_adscrita;
+$grupo = $emp[0]->grupo;
+$unidad = $emp[0]->unidad;
+$fechain = $mov->fechain;
+$fechafin = $mov->fechafin;
 // checked
  $perSg="";
  $vac="";
@@ -50,7 +23,7 @@ $fechafin = 'jopij';
  $incap="";
  $comCap="";
  $turAd="";
-switch ('8') {
+switch ( $mov->id_tipo_permiso ) {
 	case '1': $perSg="checked=''"; break;
 	case '2': $vac="checked=''"; break;
 	case '3': $faltaInj="checked=''"; break;
@@ -60,10 +33,10 @@ switch ('8') {
 	case '7': $comCap="checked=''";	break;
 	case '8': $turAd="checked=''"; break;
 }
-$secSut = 'jjos';
-$delegado = 'jjos';
-$jefeinm = 'jjos';
-$descripcion= 'jjos';
+$secSut = $mov->sec_suterm;
+$delegado = $delegado[0]->nombre;
+$jefeinm = $mov->jefe_inmediato;
+$descripcion= $mov->observaciones;
 $html = '
 <html>
 <head>
@@ -77,7 +50,7 @@ body {font-family: Arial;
 <htmlpageheader name="myheader">
 <table width="100%">
 <tr>
-	<td width="20%"><img src="views/app/images/logo.png" whidth = 5; heigth=5> </td>
+	<td width="20%"><img src="views/app/images/logo.png" whidth = 5; heigth=5></td>
 	<td width="80%" style="text-align: center; font-size:10pt"><b>SINDICATO UNICO DE TRABAJADORES ELECTRICISTAS DE LA REPUBLICA MEXICANA C.T.P.A.L.M. SECCION No. 55 </b><br /></td>
 	<td width="15%" style="text-align: right; font-size:9pt;">FOLIO: <span style="color:red">'.$folio.' </span><br/></td>
 	</tr>
@@ -139,9 +112,9 @@ PAG. {PAGENO} DE {nb}
 			<th align="center" width="60px" style="font-weight:normal;">PLAZA No.</th>
 			<th align="left" width="70px" align="center" style="border-bottom: 1px solid #000000; text-align: center; font-weight:normal">'.$noplaza.'</th>
 			<th align="left" width="30px" align="center" style="font-weight:normal;">GRUPO:</th>
-			<th align="center" style="border-bottom: 1px solid #000000; text-align: center; font-weight:normal">  </th>
+			<th align="center" style="border-bottom: 1px solid #000000; text-align: center; font-weight:normal">'.$grupo.'</th>
 			<th align="left" width="30px" align="center" style="font-weight:normal;">UNIDAD:</th>
-			<th align="center" style="border-bottom: 1px solid #000000; text-align: center; font-weight:normal">  </th>
+			<th align="center" style="border-bottom: 1px solid #000000; text-align: center; font-weight:normal">'.$unidad.'</th>
 		</tr>
 </table> <br />
 <table border="0" width="100%" cellspacing="-1" bordercolor="black"
@@ -178,7 +151,6 @@ PAG. {PAGENO} DE {nb}
 			<th style="font-size:8pt">AL</th>
 		</tr>
 	</thead>
-
 	<tfoot>
 		<tr>
 			<th colspan="3" whidth="5%" style="font-size:8pt">PROPONE</th>
@@ -201,20 +173,20 @@ PAG. {PAGENO} DE {nb}
 		</tr>
 	</tfoot>
 	<tbody>';
-	// $allSust = $movimientos->getSustitutosByFolio( FOLIO-1 );
-	// foreach ($allSust as $dts){
+	$allSust = $movimientos->getSustitutos( FOLIO-1 );
+	foreach ($allSust as $dts){
 		$html.='
 		<tr>
-			<td style="font-size:8pt; text-align:center">'.$jefeinm.'</td>
-			<td style="font-size:8pt; text-align:center">'.$jefeinm.'</td>
-			<td style="font-size:8pt; text-align:center">'.$jefeinm.'</td>
-			<td style="font-size:8pt; text-align:center">'.$jefeinm.'</td>
-			<td style="font-size:8pt; text-align:center">'.$jefeinm.'</td>
-			<td style="font-size:8pt; text-align:center">'.$jefeinm.'</th>
-			<td style="font-size:8pt; text-align:center">'.$jefeinm.'</th>
+			<td style="font-size:8pt; text-align:center">'.$dts->rpe.'</td>
+			<td style="font-size:8pt; text-align:center">'.$dts->nombre.'</td>
+			<td style="font-size:8pt; text-align:center">'.$dts->cat_actual.'</td>
+			<td style="font-size:8pt; text-align:center">'.$dts->cat_propuesta.'</td>
+			<td style="font-size:8pt; text-align:center">'.$dts->no_plaza.'</td>
+			<td style="font-size:8pt; text-align:center">'.$dts->fecha_inicio.'</th>
+			<td style="font-size:8pt; text-align:center">'.$dts->fecha_fin.'</th>
 		</tr>
 		';
-		// }
+		}
 		$html.='
 	</tbody>
 </table>

@@ -1,4 +1,5 @@
-<?php /**
+<?php
+/**
  *
  */
 class Movimientos extends Connection
@@ -44,7 +45,7 @@ class Movimientos extends Connection
 		return $reg->folio+1;
 	}
 	/**
-	* Obtener filtro de sugerencias
+	* Obtener filtro de sugerencias que sean aptos por el numero de plaza
 	*/
 	public function getEmpleadoSugerido( $noPlaza ) {
 		$sql = "SELECT e.rpe_empleado as rpe,concat(e.nombre,' ',e.apellidos) as nombre,
@@ -123,11 +124,28 @@ WHERE no_folio = '{$no_folio}' and cat.estatus = 1";
 
 		$sql = "INSERT INTO movimientos(no_folio, fecha, id_tipo_permiso, rpe_solicitante, fecha_inicio, fecha_fin, sec_suterm, id_delegado, jefe_inmediato, observaciones)
 		 VALUES ('{$_POST["folio_mov"]}','{$fechaSistema}',{$_POST["tipo_perm"]},'{$_POST["rpe_empleado"]}',
-			 '{$f_inicio}','{$f_fin}','{$_POST["sec_suterm"]}',{$_POST["delegado"]},'{$_POST["jefe_inmed"]}','{$_POST["descripcion"]}');";
+			 '{$f_inicio}','{$f_fin}','{$_POST["sec_suterm"]}','{$_POST["delegado"]}','{$_POST["jefe_inmed"]}','{$_POST["descripcion"]}');";
 		$this->setConnection();
 		$exito = $this->con->query( $sql );
 		$this->unsetConnection();
-		return $fechaSistema;
+		return $exito;
+	}
+	/**
+	* Obtener un movimiento
+	* @param no_folio
+	*/
+	public function getMovimiento( $folio ) {
+		$format = "SET lc_time_names = 'es_MX'";
+		$sql="SELECT no_folio, date_format(fecha,'%W %d de %M de %Y') AS fecha,
+		 id_tipo_permiso, rpe_solicitante, date_format(fecha_inicio,'%W %d de %M de %Y')AS fechain,date_format( fecha_fin,'%W %d de %M de %Y') as fechafin, sec_suterm, id_delegado, jefe_inmediato, observaciones
+			FROM movimientos
+			WHERE no_folio = {$folio} LIMIT 1";
+		$this->setConnection();
+					 $this->con->query( $format );
+		$arr = $this->con->query( $sql );
+		$dtsMov = $arr->fetch_object();
+		$this->unsetConnection();
+		return $dtsMov;
 	}
 }
  ?>

@@ -33,28 +33,6 @@
                   <div class="x_content">
                     <!-- Smart Wizard -->
 										<div id="wizard" class="form_wizard wizard_horizontal">
-                      <!-- <ul class="list-unstyled wizard_steps">
-                        <li>
-                          <a href="#step-11">
-                            <span class="step_no">1</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#step-22">
-                            <span class="step_no">2</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#step-33">
-                            <span class="step_no">3</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#step-44">
-                            <span class="step_no">4</span>
-                          </a>
-                        </li>
-                      </ul> -->
 											<ul class="list-unstyled wizard_steps">
                         <li>
 													<a href="#step-11">
@@ -113,7 +91,7 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Nombre <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="nombre" name="nombre" required="required" class="form-control col-md-7 col-xs-12">
+		                          <input type="text" id="nombre" name="nombre" required="required" class="form-control col-md-7 col-xs-12" value="HOla mundo">
 		                        </div>
 		                      </div>
 													<!-- apellidos -->
@@ -121,7 +99,7 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="apellidos">Apellidos <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="apellidos" name="apellidos" data-validate-linked="text" required="required" class="form-control col-md-7 col-xs-12">
+		                          <input type="text" id="apellidos" name="apellidos" data-validate-linked="text" required="required" class="form-control col-md-7 col-xs-12" value="HOla mundo">
 		                        </div>
 		                      </div>
 													<!-- rfc -->
@@ -129,7 +107,7 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="rfc">RFC <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="rfc" name="rfc" required="required" data-validate-minmax="10,100" class="form-control col-md-7 col-xs-12">
+		                          <input type="text" id="rfc" name="rfc" required="required" data-validate-minmax="10,100" class="form-control col-md-7 col-xs-12" value="HOla mundo">
 		                        </div>
 		                      </div>
 													<!-- curp -->
@@ -137,7 +115,7 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="curp">CURP <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="curp" name="curp" required="required" placeholder="Curp" class="form-control col-md-7 col-xs-12">
+		                          <input type="text" id="curp" name="curp" required="required" placeholder="Curp" class="form-control col-md-7 col-xs-12" value="HOla mundo">
 		                        </div>
 		                      </div>
 													<!-- no. seguro -->
@@ -145,7 +123,7 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="noseguro">No. Seguro <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input id="noseguro" type="text" name="noseguro" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12">
+		                          <input id="noseguro" type="text" name="noseguro" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12" value="HOla mundo">
 		                        </div>
 		                      </div>
 													<!-- tipo de sangre -->
@@ -204,7 +182,7 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="colonia">Colonia <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="colonia" name="colonia" required="required" class="form-control col-md-7 col-xs-12">
+		                          <input type="text" id="colonia" name="colonia" required="required" class="form-control col-md-7 col-xs-12" value="HOla mundo">
 		                        </div>
 		                      </div>
 													<!-- codigo postal -->
@@ -212,7 +190,7 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="codigo_postal">Código Postal <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="codigo_postal" name="codigo_postal" data-validate-linked="text" required="required" class="form-control col-md-7 col-xs-12">
+		                          <input type="text" id="codigo_postal" name="codigo_postal" data-validate-linked="text" required="required" class="form-control col-md-7 col-xs-12" value="HOla mundo">
 		                        </div>
 		                      </div>
 													<!-- municipio domicilio -->
@@ -220,7 +198,7 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="municipio">Municipio <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="municipio" name="municipio" required="required" data-validate-minmax="10,100" class="form-control col-md-7 col-xs-12">
+		                          <input type="text" id="municipio" name="municipio" required="required" data-validate-minmax="10,100" class="form-control col-md-7 col-xs-12" value="HOla mundo">
 		                        </div>
 		                      </div>
 													<!-- Entidad federativa dom -->
@@ -228,7 +206,7 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="entidad_fed_dom">Entidad federativa dom <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="entidad_fed_dom" name="entidad_fed_dom" required="required" placeholder="Entidad federeativa domicilio." class="form-control col-md-7 col-xs-12">
+		                          <input type="text" id="entidad_fed_dom" name="entidad_fed_dom" required="required" placeholder="Entidad federeativa domicilio." class="form-control col-md-7 col-xs-12" value="HOla mundo">
 		                        </div>
 		                      </div>
 													<!-- E-Mail -->
@@ -236,7 +214,7 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Correo Electrónico <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input id="email" type="text" name="email" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12">
+		                          <input id="email" type="text" name="email" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12" value="HOla mundo">
 		                        </div>
 		                      </div>
 													<!-- Telefono -->
@@ -303,7 +281,7 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="tipo_contrato">Tipo Contrato <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="tipo_contrato" name="tipo_contrato" required="required" data-validate-minmax="10,100" class="form-control col-md-7 col-xs-12">
+		                          <input type="text" id="tipo_contrato" name="tipo_contrato" required="required" data-validate-minmax="10,100" class="form-control col-md-7 col-xs-12" value="HOla mundo">
 		                        </div>
 		                      </div>
 

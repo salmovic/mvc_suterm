@@ -45,14 +45,20 @@ $(document).ready(function()
 					type:'post',
 					data: dts,
 					success: function( resp ) {
-						alertify.success(resp);
-						console.log( resp );
+						console.log(resp);
+						if( resp != 1 ) {
+							alertify.error('No se pudo guardar el movimeinto');
+							return;
+						}
+						window.open('index.php?views=pdf', '_blank');
 					}
 				});
 			});
 		});
-
 });
+/**
+* Fncion para cargar ventana modal
+*/
 function modalMovimiento(id,div)
 {
 	$.ajax({

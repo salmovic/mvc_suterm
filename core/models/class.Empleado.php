@@ -9,7 +9,6 @@ class Empleado extends Connection
 		$sql = "SELECT
 				 rpe_empleado, nombre, apellidos
 						FROM empleados;";
-
 		$this->setConnection();
 
 		 $datos = $this->con->query( $sql );

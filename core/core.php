@@ -60,8 +60,7 @@ $login = new Login();
 $mpdf = new mPDF();
 // Nuero de folio de movimiento
 define('FOLIO',  $movimientos->getIdMaxMov());
-// variable global
-$BAND_PDF = 0;
+
 
 
 ?>

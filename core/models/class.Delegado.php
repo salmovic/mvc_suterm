@@ -12,10 +12,8 @@ class Delegado extends Connection
 		$this->setConnection();
 		$rpe_delegado = $this->con->real_escape_string($_POST['rpe_delegado']);
 		$descripcion = $this->con->real_escape_string($_POST['descripcion']);
-
 		$sql = "INSERT INTO delegados (id_delegado, rpe_delegado, descripcion)
 					VALUES (0, '{$rpe_delegado}', '{$descripcion}');";
-
 		$exito = $this->con->query($sql);
 
 		$this->unsetConnection();
@@ -33,7 +31,7 @@ class Delegado extends Connection
 							INNER JOIN  empleados e
 						    	on d.rpe_delegado = e.rpe_empleado
 						    INNER JOIN departamento dp
-						        on e.id_departamento = dp.id_departamento";		
+						        on e.id_departamento = dp.id_departamento";
 
 		$this->setConnection();
 
@@ -52,7 +50,7 @@ class Delegado extends Connection
 	* Obtener delegados por id
 	* @param $id
 	*/
-	public function getDelegadosById($id)
+	public function getDelegadosById( $id )
 	{
 		$sql = "SELECT id_delegado, rpe_delegado, descripcion
 			FROM delegados
