@@ -17,7 +17,7 @@ $(document).ready(function()
 
 	//Empleado
 	_url( '#addempleado', '?views=addempleado' );
-	_url( '#updateempleado', '?views=updateempleado' );
+	_url( '#buscarempleado', '?views=searchemp' );
 
 	// usuarios
 	_url( '#usuario', '?views=usuario' );

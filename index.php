@@ -19,6 +19,7 @@ if ( isset($_GET['views']) )
 	}
 } else
 {
+	// ELiminar los datos de la sesion
 	session_destroy();
 	include 'core/controllers/indexController.php';
 }

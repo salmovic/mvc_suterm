@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {	
 // jQuery Smart Wizard
 	$('#wizard').smartWizard({
 				transitionEffect: 'slide'

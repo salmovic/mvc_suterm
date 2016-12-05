@@ -4,17 +4,19 @@
  */
 class Empleado extends Connection
 {
-	public function getEmpleados()
-	{
-		$sql = "SELECT
-				 rpe_empleado, nombre, apellidos
-						FROM empleados;";
+	public function getEmpleados() {
+		$sql = "SELECT emp.rpe_empleado AS rpe, concat(emp.nombre,' ',emp.apellidos)AS nombre, emp.curp,
+						emp.email, emp.celular, emp.fecha_ingreso_empresa AS in_empresa, emp.fecha_ingreso_suterm AS in_suterm,
+						  dep.nombre AS departamento, emp.nivel_escolaridad AS niv_esc,
+						 emp.cedula_profesional AS ced_prof FROM empleados AS emp
+						 INNER JOIN departamento AS dep
+						 ON emp.id_departamento = dep.id_departamento
+						 WHERE 1";
 		$this->setConnection();
 
 		 $datos = $this->con->query( $sql );
 	    $arreglo = array();
-	    while ( $reg= $datos->fetch_object() )
-	    {
+	    while ( $reg= $datos->fetch_object() ) {
 	        $arreglo[] = $reg;
 	    }
 
@@ -83,8 +85,24 @@ class Empleado extends Connection
 	return $exito;
 
 	}
-	public function getEmpleadoById($id)
-	{}
+	public function getEmpleadoById( $rpe ) {
+		$sql = "SELECT emp.rpe_empleado, emp.nombre, emp.apellidos, emp.rfc, emp.curp, emp.no_seguro, emp.tipo_sangre, emp.fecha_nacimiento, emp.lugar_nacimiento,
+ emp.entidad_federativa_nac, emp.nacionalidad, emp.domicilio, emp.colonia, emp.codigo_postal, emp.municipio_dom, emp.entidad_federativa_dom,
+  emp.email, emp.telefono, emp.celular, emp.estado_civil, emp.nombre_conyugue, emp.dom_conyugue, emp.fecha_nac_conyugue, emp.num_depen_econ,
+	 emp.tipo_contrato, emp.fecha_ingreso_empresa, emp.fecha_ingreso_suterm, emp.fecha_ing_sector_electrico, emp.antiguedad,
+ ct.nombre AS centrab, dep.nombre AS depto, emp.nivel_escolaridad, emp.escuela_egresado, emp.cedula_profesional, emp.idioma
+  FROM empleados AS emp
+  INNER JOIN departamento AS dep
+  ON emp.id_departamento = dep.id_departamento
+  INNER JOIN centro_de_trabajo AS ct
+  ON emp.id_centro_trabajo = ct.id_centro_trabajo
+  WHERE emp.rpe_empleado= '{$rpe}'";
+	$this->setConnection();
+	$reg = $this->con->query( $sql );
+	$datos = $reg->fetch_object();
+	$this->unsetConnection();
+	return $datos;
+	}
 	public function deleteEmpleado($id)
 	{}
 	public function updateEmpleado()

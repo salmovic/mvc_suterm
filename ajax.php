@@ -89,7 +89,10 @@ if($_POST){
 		* RUTA EMPEADOS  *
 		*****************/
 		case 'empleado':
-			 require('core/bin/ajax/empleado/empleado.php');
+		require('core/bin/ajax/empleado/empleado.php');
+		break;
+		case 'upempleado':
+		require('core/bin/ajax/empleado/updateemp.php');		
 		break;
 		/********************
 		* RUTA MOVIMIENTOS  *

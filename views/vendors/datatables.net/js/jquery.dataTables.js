@@ -11340,7 +11340,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previo"
+				"sPrevious": "Anterior"
 			},
 
 			/**
