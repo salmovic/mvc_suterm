@@ -9,12 +9,15 @@
 					<label for="tipoperm" class="col-sm-3 control-label">Tipo de Permiso:</label>
 					<div class="col-sm-9">
 					 <select class="form-control dtsMovimiento" name="tipo_perm">
-						 <option value="1">--Seleccione el Tipo de Permiso--</option>
-						 <?php
-						 $allTp=$tipoPermiso->getTipoPermiso();
-						 foreach ($allTp as $dts) {?>
-							<option value="<?php echo $dts->id_tipo_permiso; ?>"><?php echo $dts->nombre; ?></option>
-							<?php } ?>
+						 <option value="1">PERMISO S/GOCE</option>
+						 <option value="2">VACACIONES DIAS</option>
+						 <option value="3">FALTA INJUSTIFICADA</option>
+						 <option value="4">PERMISO C/GOCE</option>
+						 <option value="5">COMISION SINDICAL</option>
+						 <option value="6">INCAPACIDAD</option>
+						 <option value="7">COMISION CAPACITACION</option>
+						 <option value="8">TURNO ADICIONAL</option>
+						 <option value="8">OTRO</option>
 					 </select>
 				</div>
 			 </div>

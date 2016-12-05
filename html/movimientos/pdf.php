@@ -23,7 +23,7 @@ $fechafin = $mov->fechafin;
  $incap="";
  $comCap="";
  $turAd="";
-switch ( $mov->id_tipo_permiso ) {
+switch ( $mov->tipo_permiso ) {
 	case '1': $perSg="checked=''"; break;
 	case '2': $vac="checked=''"; break;
 	case '3': $faltaInj="checked=''"; break;

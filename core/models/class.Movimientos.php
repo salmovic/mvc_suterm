@@ -89,12 +89,12 @@ class Movimientos extends Connection
 	public function getSustitutos( $no_folio ) {
 		$sql = "SELECT ms.id_mov_sust as id,em.rpe_empleado as rpe, concat(em.nombre,' ',em.apellidos) as nombre,
 		ms.cat_actual, ms.cat_propuesta, ms.no_plaza, ms.fecha_inicio, ms.fecha_fin, cat.id_plaza as plazaactual
-FROM mov_sustituto	AS ms
-		INNER JOIN empleados as em
-        	on ms.rpe_emp = em.rpe_empleado
-        INNER JOIN categorias as cat
-        	on em.rpe_empleado= cat.rpe_empleado
-WHERE no_folio = '{$no_folio}' and cat.estatus = 1";
+		FROM mov_sustituto	AS ms
+				INNER JOIN empleados as em
+		        	on ms.rpe_emp = em.rpe_empleado
+		        INNER JOIN categorias as cat
+		        	on em.rpe_empleado= cat.rpe_empleado
+		WHERE no_folio = '{$no_folio}' and cat.estatus = 1";
 		$this->setConnection();
 		$dts = $this->con->query( $sql );
 		$arr = array();
@@ -122,7 +122,7 @@ WHERE no_folio = '{$no_folio}' and cat.estatus = 1";
 		$f_inicio= date('Y-m-d',strtotime($_POST['fechainicio']));
 		$f_fin= date('Y-m-d',strtotime($_POST['fechafin']));
 
-		$sql = "INSERT INTO movimientos(no_folio, fecha, id_tipo_permiso, rpe_solicitante, fecha_inicio, fecha_fin, sec_suterm, id_delegado, jefe_inmediato, observaciones)
+		$sql = "INSERT INTO movimientos(no_folio, fecha, tipo_permiso, rpe_solicitante, fecha_inicio, fecha_fin, sec_suterm, id_delegado, jefe_inmediato, observaciones)
 		 VALUES ('{$_POST["folio_mov"]}','{$fechaSistema}',{$_POST["tipo_perm"]},'{$_POST["rpe_empleado"]}',
 			 '{$f_inicio}','{$f_fin}','{$_POST["sec_suterm"]}','{$_POST["delegado"]}','{$_POST["jefe_inmed"]}','{$_POST["descripcion"]}');";
 		$this->setConnection();
@@ -137,7 +137,7 @@ WHERE no_folio = '{$no_folio}' and cat.estatus = 1";
 	public function getMovimiento( $folio ) {
 		$format = "SET lc_time_names = 'es_MX'";
 		$sql="SELECT no_folio, date_format(fecha,'%W %d de %M de %Y') AS fecha,
-		 id_tipo_permiso, rpe_solicitante, date_format(fecha_inicio,'%W %d de %M de %Y')AS fechain,date_format( fecha_fin,'%W %d de %M de %Y') as fechafin, sec_suterm, id_delegado, jefe_inmediato, observaciones
+		 tipo_permiso, rpe_solicitante, date_format(fecha_inicio,'%W %d de %M de %Y')AS fechain,date_format( fecha_fin,'%W %d de %M de %Y') as fechafin, sec_suterm, id_delegado, jefe_inmediato, observaciones
 			FROM movimientos
 			WHERE no_folio = {$folio} LIMIT 1";
 		$this->setConnection();
