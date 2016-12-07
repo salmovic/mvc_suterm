@@ -1,6 +1,9 @@
 <?php
-function grupoOrganico( $go )
-{
+/**
+* Funciones para convertir un tipo de dato numerico a cadena de texto
+* Para su mayor coprension.
+*/
+function grupoOrganico( $go ) {
 	switch ( $go ) {
 		case 1: return "I";break;
 		case 2: return "II";break;
@@ -22,8 +25,7 @@ function grupoOrganico( $go )
 		return "NONE";break;
 	}
 }
-function nivelDesempenio( $n )
-{
+function nivelDesempenio( $n ) {
 	switch ( $n ) {
 			case 1: return "UNO";	break;
 			case 2: return "DOS";	break;
@@ -42,13 +44,11 @@ function nivelDesempenio( $n )
 			return "NONE";	break;
 	}
 }
-function estatus( $i )
-{
+function estatus( $i ) {
 	switch ( $i ) {
 		case 0: return "APTITUD";	break;
-			case 1: return "BASE"; break;
-		default:
-			return "";	break;
-	}
+		case 1: return "BASE"; break;
+		default: return "";	break;
+	}	
 }
 ?>

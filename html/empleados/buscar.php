@@ -10,7 +10,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Busqueda</h3>
+                <h3>Busqueda Avanzada</h3>
               </div>
             </div>
             <div class="clearfix"></div>
@@ -21,7 +21,7 @@
 								<!-- Lista Empleados -->
 								<div class="x_panel">
                   <div class="x_title">
-                    <h2>Lista de delegados </h2>
+                    <h2>Lista de Empleados</h2>
                     <ul class="nav navbar-right panel_toolbox">
 											<li><a >&nbsp;</a></li>
 											<li><a >&nbsp;</a></li>
@@ -31,9 +31,6 @@
                     <div class="clearfix"></div>
                   </div>
 									<div class="x_content">
-                    <h3>Delegados</h3>
-										<div class="ln_solid"></div>
-
                     <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                         <tr>

@@ -1,4 +1,4 @@
-$(document).ready(function() {	
+$(document).ready(function() {
 // jQuery Smart Wizard
 	$('#wizard').smartWizard({
 				transitionEffect: 'slide'
@@ -12,6 +12,7 @@ $(document).ready(function() {
 				type: 'post',
 				data:$('.set_empleado').serialize(),
 				success: function(respuesta) {
+					console.log(respuesta);
 					if(respuesta==1){
 						alertify.success("El registro se guardado correctamente.");
 					}else{

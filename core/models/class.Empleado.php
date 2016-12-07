@@ -86,17 +86,13 @@ class Empleado extends Connection
 
 	}
 	public function getEmpleadoById( $rpe ) {
-		$sql = "SELECT emp.rpe_empleado, emp.nombre, emp.apellidos, emp.rfc, emp.curp, emp.no_seguro, emp.tipo_sangre, emp.fecha_nacimiento, emp.lugar_nacimiento,
- emp.entidad_federativa_nac, emp.nacionalidad, emp.domicilio, emp.colonia, emp.codigo_postal, emp.municipio_dom, emp.entidad_federativa_dom,
-  emp.email, emp.telefono, emp.celular, emp.estado_civil, emp.nombre_conyugue, emp.dom_conyugue, emp.fecha_nac_conyugue, emp.num_depen_econ,
-	 emp.tipo_contrato, emp.fecha_ingreso_empresa, emp.fecha_ingreso_suterm, emp.fecha_ing_sector_electrico, emp.antiguedad,
- ct.nombre AS centrab, dep.nombre AS depto, emp.nivel_escolaridad, emp.escuela_egresado, emp.cedula_profesional, emp.idioma
-  FROM empleados AS emp
-  INNER JOIN departamento AS dep
-  ON emp.id_departamento = dep.id_departamento
-  INNER JOIN centro_de_trabajo AS ct
-  ON emp.id_centro_trabajo = ct.id_centro_trabajo
-  WHERE emp.rpe_empleado= '{$rpe}'";
+		$sql = "SELECT rpe_empleado, nombre, apellidos, rfc, curp, no_seguro, tipo_sangre, fecha_nacimiento, lugar_nacimiento,
+ entidad_federativa_nac, nacionalidad, domicilio, colonia, codigo_postal, municipio_dom, entidad_federativa_dom,
+  email, telefono, celular, estado_civil, nombre_conyugue, dom_conyugue, fecha_nac_conyugue, num_depen_econ,
+	 tipo_contrato, fecha_ingreso_empresa, fecha_ingreso_suterm, fecha_ing_sector_electrico, antiguedad,
+ id_centro_trabajo, id_departamento, nivel_escolaridad, escuela_egresado, cedula_profesional, idioma
+  FROM empleados
+  WHERE rpe_empleado= '{$rpe}'";
 	$this->setConnection();
 	$reg = $this->con->query( $sql );
 	$datos = $reg->fetch_object();
@@ -106,7 +102,22 @@ class Empleado extends Connection
 	public function deleteEmpleado($id)
 	{}
 	public function updateEmpleado()
-	{}
+	{
+		$this->setConnection();
+
+		$fecha_nacimiento = date('Y-m-d',strtotime($_POST['fecha_nacimiento']));
+		$fecha_nac_conyugue = date('Y-m-d',strtotime($_POST['fecha_nac_conyugue']));
+		$fecha_ingreso_empresa = date('Y-m-d',strtotime($_POST['fecha_ingreso_empresa']));
+		$fecha_ingreso_suterm = date('Y-m-d',strtotime($_POST['fecha_ingreso_suterm']));
+		$fecha_ing_sector_electrico = date('Y-m-d',strtotime($_POST['fecha_ing_sector_electrico']));
+
+		$sql="UPDATE empleados SET nombre='{$_POST["nombre"]}',apellidos='{$_POST["apellidos"]}',rfc='{$_POST["rfc"]}',curp='{$_POST["curp"]}',no_seguro='{$_POST["no_seguro"]}',tipo_sangre='{$_POST["tipo_sangre"]}',fecha_nacimiento='{$fecha_nacimiento}',lugar_nacimiento='{$_POST["lugar_nacimiento"]}',entidad_federativa_nac='{$_POST["entidad_federativa_nac"]}',nacionalidad='{$_POST["nacionalidad"]}',domicilio='{$_POST["domicilio"]}',colonia='{$_POST["colonia"]}',codigo_postal='{$_POST["codigo_postal"]}',municipio_dom='{$_POST["municipio_dom"]}',entidad_federativa_dom='{$_POST["entidad_federativa_dom"]}',email='{$_POST["email"]}',telefono='{$_POST["telefono"]}',celular='{$_POST["celular"]}',estado_civil='{$_POST["estado_civil"]}',nombre_conyugue='{$_POS_POST["nombre_conyugue"]}',dom_conyugue='{$_POST["dom_conyugue"]}',fecha_nac_conyugue='{$fecha_nac_conyugue}',num_depen_econ={$_POST["num_depen_econ"]},tipo_contrato='{$_POST["tipo_contrato"]}',fecha_ingreso_empresa='{$fecha_ingreso_empresa}',fecha_ingreso_suterm='{$fecha_ingreso_suterm}',fecha_ing_sector_electrico='{$fecha_ing_sector_electrico}',antiguedad={$_POST["antiguedad"]},id_centro_trabajo={$_POST["id_centro_trabajo"]},id_departamento={$_POST["id_departamento"]},nivel_escolaridad='{$_POST["nivel_escolaridad"]}',escuela_egresado='{$_POST["escuela_egresado"]}',cedula_profesional='{$_POST["cedula_profesional"]}',idioma='{$_POST["idioma"]}' WHERE rpe_empleado='{$_POST["rpe_empleado"]}'";
+
+		// $exito = $this->con->query( $sql );
+
+		$this->unsetConnection();
+		return $sql;
+	}
 }
 
  ?>
