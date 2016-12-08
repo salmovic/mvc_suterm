@@ -6,7 +6,7 @@ if (isset($_POST['token']))
  		echo $empleado->setEmpleado();
  		break;
 	case 'upempleado':
-		echo 1;
+		echo $empleado->updateEmpleado();
 		break;
  	default:
  		echo 'error de ruta';

@@ -92,7 +92,7 @@ if($_POST){
 		require('core/bin/ajax/empleado/empleado.php');
 		break;
 		case 'upempleado':
-		require('core/bin/ajax/empleado/updateemp.php');		
+		require('core/bin/ajax/empleado/updateemp.php');
 		break;
 		/********************
 		* RUTA MOVIMIENTOS  *
@@ -142,6 +142,15 @@ if($_POST){
 		case 'dts_usr':
 		require('html/usuarios/informacion.php');
 		break;
+		case 'modal_usr':
+		require('html/usuarios/modal_update.php');
+		break;
+		case 'refresh_usr':
+		 require('core/bin/ajax/usuarios/refresh_usr.php');
+		break;
+		case 'del_usr':
+			require('core/bin/ajax/usuarios/delete.php');
+			break;
 		/*********
 		* LOGIN  *
 		**********/

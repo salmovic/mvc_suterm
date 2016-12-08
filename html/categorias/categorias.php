@@ -42,7 +42,7 @@
 														 $allEmp = $empleado->getEmpleados();
 														 foreach ($allEmp as $dts) {
 														?>
-														<option value="<?php echo $dts->rpe_empleado; ?>"><?php echo $dts->nombre." ".$dts->apellidos; ?></option>
+														<option value="<?php echo $dts->rpe; ?>"><?php echo $dts->rpe." | ".$dts->nombre." ".$dts->apellidos; ?></option>
 														<?php } ?>
                           </select>
 													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>

@@ -8,8 +8,11 @@ $(document).ready(function(){
 			type:'post',
 			data:$('#frmUsuario').serialize(),
 			success: function(resp){
-				console.log(resp);
-				alertify.success(resp);
+				if(resp!=1) {
+					alertify.error('No se pudo establecer el usuario');
+					return;} else
+				alertify.success("Se establecio correctamente");
+				carga_ajax( null, 'ajax.php?mode=refresh_usr','tb_usr' );
 			},
 			error: function( jqXHR, estado, error ) {
 				alertify.error( error );
@@ -33,3 +36,25 @@ $(document).ready(function(){
 		$('#passwd2').css({border: "1px solid green" });
 	});
 });
+/**
+* Funcion para eliminar un usuario
+*/
+function delUsr( id ) {
+	alertify.confirm('¿Está seguro que desea elinar el usuario?', function( e ){
+		if(e){
+			$.ajax({
+				url:'ajax.php?mode=del_usr',
+				type:'post',
+				data:'id='+id,
+				success:function( resp ) {
+					if(resp!=1){
+						alertify.error("No se pudo realizar la operacion.");
+						return;
+					}
+					alertify.success('El usuario ha eliminado correctamente.');
+					carga_ajax( null, 'ajax.php?mode=refresh_usr','tb_usr' );
+				}
+			});
+		}
+	});
+}

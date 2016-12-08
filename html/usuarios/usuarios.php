@@ -44,7 +44,7 @@
 														 $allEmp = $empleado->getEmpleados();
 														 foreach ($allEmp as $dts) {
 														?>
-														<option value="<?php echo $dts->rpe_empleado; ?>"><?php echo $dts->nombre." ".$dts->apellidos; ?></option>
+														<option value="<?php echo $dts->rpe; ?>"><?php echo $dts->rpe." | ". $dts->nombre." ".$dts->apellidos; ?></option>
 														<?php } ?>
 													</select>
 													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
@@ -53,6 +53,19 @@
 
 											<div id="dtsPersonal">
 
+											</div>
+											<!--Tipo de Usuario -->
+											<div class="form-group">
+												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="tipo_usr">Tipo de usuario<span class="required">*</span>
+												</label>
+												<div class="col-md-6 col-sm-6 col-xs-12">
+													<select  class="form-control has-feedback-left" name="tipo_usr" autofocus="">
+														<option value="-1">--Tipo de Usuario--</option>
+														<option value="0">Estandar</option>
+														<option value="1">Administrador</option>
+													</select>
+													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+												</div>
 											</div>
 											<!-- Nombre Usuario -->
 											<div class="form-group">
@@ -80,19 +93,7 @@
 													<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
-											<!--Tipo de Usuario -->
-											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="tipo_usr">Tipo de usuario<span class="required">*</span>
-												</label>
-												<div class="col-md-6 col-sm-6 col-xs-12">
-													<select  class="form-control has-feedback-left" name="tipo_usr" autofocus="">
-														<option value="-1">--Tipo de Usuario--</option>
-														<option value="0">Estandar</option>
-														<option value="1">Administrador</option>
-													</select>
-													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-												</div>
-											</div>
+
 
 											<div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="foto">Fotografia<span class="required">*</span>
@@ -136,38 +137,30 @@
                     <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>Plaza</th>
-                          <th>Categoria</th>
-													<th>Grupo Organico</th>
-													<th>Niv. Desempeño</th>
-													<th>Niv. Remuneración</th>
-													<th>Grupo Nivel</th>
-													<th>Plan de Carrera</th>
-													<th>Grupo</th>
-													<th>Unidad</th>
+                          <th>Usuario/RPE</th>
+                          <th>Nombre</th>
+													<th>E-Mail</th>
+													<th>Contraseña</th>
+													<th>Tipo Usuario</th>
 													<th>Operacion</th>
                         </tr>
                       </thead>
-                      <tbody id="tb_plaza">
+                      <tbody id="tb_usr">
 												<?php
-													$allCat= $plazas->getPlazas();
-													foreach ($allCat as $dts) {
+													$allUsr= $usr->getUsuarios();
+													foreach ($allUsr as $dts) {
 												 ?>
                         <tr>
-													<td><?php echo $dts->no_plaza; ?></td>
-                          <td><?php echo $dts->nombre_cat; ?></td>
-                          <td><?php echo grupoOrganico($dts->grupo_organico); ?></td>
-													<td><?php echo nivelDesempenio($dts->nivel_desempenio); ?></td>
-                          <td><?php echo "$ ".$dts->nivel_remuneracion; ?></td>
-													<td><?php echo $dts->grupo_nivel; ?></td>
-                          <td><?php echo $dts->plan_carrera; ?></td>
-													<td><?php echo $dts->grupo; ?></td>
-													<td><?php echo $dts->unidad; ?></td>
+													<td><?php echo $dts->rpe_emp; ?></td>
+													<td><?php echo $dts->nombre; ?></td>
+													<td><?php echo $dts->email; ?></td>
+													<td><?php echo $dts->passwd; ?></td>
+													<td><?php echo $dts->tipo_usuario==0?"ESTANDAR":"ADMINISTRADOR"; ?></td>
 													<td align="center">
-														<button type="button" data-toggle="modal" data-target="#myModal" onclick="carga_ajax('<?php echo $dts->no_plaza; ?>','ajax.php?mode=modal_plaza','myModal');"
+														<button type="button" data-toggle="modal" data-target="#myModal" onclick="carga_ajax('<?php echo $dts->id_usuario; ?>','ajax.php?mode=modal_usr','myModal');"
 														title="Editar" class="btn btn-success"> <i class="fa fa-edit"></i> </button>
 
-														 <button type="button" onclick="eliminarPlaza('<?php echo $dts->no_plaza; ?>');"
+														 <button type="button" onclick="delUsr('<?php echo $dts->id_usuario; ?>');"
 														 	title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></button>
 													</td>
                         </tr>

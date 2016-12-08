@@ -1,6 +1,6 @@
 <?php
 /**
-* Iniciar sesiion 
+* Iniciar sesiion
 */
 if (isset($_POST['token']) && $_POST['token']=='login')
 {

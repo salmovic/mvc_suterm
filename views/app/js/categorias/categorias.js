@@ -1,8 +1,7 @@
 $(document).ready(function(){
 	$('#setCat').on('click',function(e){
 		$('#resp').text($('#frmCategorias').serialize());
-		$.ajax({
-			beforeSend:function(){},
+		$.ajax({			
 			url:'ajax.php?mode=categoria',
 			type:'post',
 			data:$('#frmCategorias').serialize(),
@@ -23,7 +22,9 @@ $(document).ready(function(){
 		});
 	});
 });
-
+/*
+* Funcion que permite eliminar una categoria.
+*/
 function eliminarCategoria( id )
 {
 	$.ajax({

@@ -1,117 +1,81 @@
 <?php
-$myPlaza=$plazas->getPlazasById($_POST['id']);
+	$myUsr=$usr->getUsuarioById($_POST['id']);
  ?>
  <div class="modal-dialog">
 	 <!-- Modal content-->
 	 <div class="modal-content">
 		 <div class="modal-header">
 			 <button type="button" class="close" data-dismiss="modal">&times;</button>
-			 <h4 class="modal-title">Actualizar Categoria</h4>
+			 <h4 class="modal-title">Actualizar Usuario</h4>
 		 </div>
 		 <div class="modal-body">
-			 <!-- form -->
-			 <form class="form-horizontal form-label-left" novalidate id="frmplaza_update">
- 				<!-- Numro plaza -->
- 				<div class="form-group">
- 					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="no_plaza">Numero Plaza<span class="required">*</span>
- 					</label>
- 					<div class="col-md-6 col-sm-6 col-xs-12 form-group">
- 						<input type="text" class="form-control has-feedback-left" id="no_plaza" name="no_plaza" value="<?php echo $myPlaza[0]->no_plaza;?>" readonly="">
- 						<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
- 					</div>
- 				</div>
- 				<!-- Nombre categoria -->
- 				<div class="form-group">
- 					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre_cat">Nombre Categoria<span class="required">*</span>
- 					</label>
- 					<div class="col-md-6 col-sm-6 col-xs-12 form-group">
- 						<input type="text" class="form-control has-feedback-left" id="nombre_cat" name="nombre_cat" value="<?php echo $myPlaza[0]->nombre_cat;?>">
- 						<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
- 					</div>
- 				</div>
- 				<!-- Grupo Organico -->
- 				<div class="form-group">
- 					<label class="control-label col-md-3 col-sm-3 col-xs-6" for="grupo_organico">Grupo Organico / Nivel de Desempleño<span class="required">*</span>
- 					</label>
- 					<div class="col-md-3 col-sm-3 col-xs-3">
- 						<select class="form-control has-feedback-left" name="grupo_organico">
- 							<option value="-1">--Grupo Orgánico--</option>
-							<?php for ($i=1; $i <= 16; $i++) {
-								if ($myPlaza[0]->grupo_organico==$i) {
-								?>
-										<option value="<?php echo $i; ?>" selected=""><?php echo grupoOrganico($i); ?></option>
-									<?php
-								}
-									?>
-									<option value="<?php echo $i; ?>"><?php echo grupoOrganico($i); ?></option>
-									<?php
-								}?>
- 						</select>
- 						<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
- 					</div>
- 					<div class="col-md-3 col-sm-3 col-xs-3 ">
- 						<select class="form-control has-feedback-left" name="nivel_desempenio">
- 							<option value="-1">--Nivel de Desempeño--</option>
-							<?php for ($i=1; $i <= 16; $i++) {
-								if ($myPlaza[0]->nivel_desempenio==$i) {
-								?>
-										<option value="<?php echo $i; ?>" selected=""><?php echo nivelDesempenio($i); ?></option>
-									<?php
-								}
-									?>
-									<option value="<?php echo $i; ?>"><?php echo nivelDesempenio($i); ?></option>
-									<?php
-								}?>
- 						</select>
- 						<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
- 					</div>
- 				</div>
- 				<!-- Nivel de remuneracion -->
- 				<div class="form-group">
- 					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nivel_remuneracion">Nivel de remuneracion<span class="required">*</span>
- 					</label>
- 					<div class="col-md-6 col-sm-6 col-xs-12 form-group">
- 						<input type="text" class="form-control has-feedback-left" id="nivel_remuneracion" name="nivel_remuneracion" placeholder="Nivel de remuneración ( $ )"
-						value="<?php echo $myPlaza[0]->nivel_remuneracion;?>">
- 						<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
- 					</div>
- 				</div>
- 				<!-- Grupo Nivel -->
- 				<div class="form-group">
- 					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="grupo_nivel">Grupo Nivel<span class="required">*</span>
- 					</label>
- 					<div class="col-md-6 col-sm-6 col-xs-12 form-group">
- 						<input type="text" class="form-control has-feedback-left" id="grupo_nivel" name="grupo_nivel" placeholder="Grupo Nivel" value="<?php echo $myPlaza[0]->grupo_nivel;?>">
- 						<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
- 					</div>
- 				</div>
- 				<!-- Plan Carrera -->
- 				<div class="form-group">
- 					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="plan_carrera">Plan de Carrera / Grupo / Unidad<span class="required">*</span>
- 					</label>
- 					<div class="col-md-2 col-sm-2 col-xs-12 form-group">
- 						<input type="text" class="form-control has-feedback-left" id="plan_carrera" name="plan_carrera" placeholder="Numero de plan de carrera" value="<?php echo $myPlaza[0]->plan_carrera;?>">
- 						<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
- 					</div>
- 					<div class="col-md-2 col-sm-2 col-xs-12 form-group">
- 						<input type="text" class="form-control has-feedback-left" id="grupo" name="grupo" placeholder="Grupo" value="<?php echo $myPlaza[0]->grupo;?>">
- 						<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
- 					</div>
- 					<div class="col-md-2 col-sm-2 col-xs-12 form-group">
- 						<input type="text" class="form-control has-feedback-left" id="unidad" name="unidad" placeholder="Unidad" value="<?php echo $myPlaza[0]->grupo;?>">
- 						<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
- 					</div>
- 				</div>
- 				<!-- token -->
- 				<input type="hidden" name="token" value="updateplaza">
- 				<div class="form-group">
- 					<div class="col-md-6 col-md-offset-3">
- 						<button type="button" data-dismiss="modal" class="btn btn-primary">Cancel</button>
- 						<button type="submit" class="btn btn-success" id="updateplaza">Enviar</button>
- 					</div>
- 				</div>
- 			</form>
-	 		<!-- End form -->
+			 <form class="form-horizontal form-label-left" novalidate id="frmUpUsuario" enctype="multipart/form-data">
+				 <input type="hidden" name="id" value="<?php echo $_POST['id'];?>">
+				 <!--rpe Empleado -->
+				 <div class="form-group">
+					 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="rpe">Empleado<span class="required">*</span>
+					 </label>
+					 <div class="col-md-6 col-sm-6 col-xs-12">
+						 <input  class="form-control has-feedback-left" name="rpe" id="rpe"  readonly="" value="<?php echo $myUsr->rpe_emp; ?>">
+						 <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+					 </div>
+				 </div>
+				 <!--Tipo de Usuario -->
+				<div class="form-group">
+					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="tipo_usr">Tipo de usuario<span class="required">*</span>
+					</label>
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<select  class="form-control has-feedback-left" name="tipo_usr" autofocus="">
+							<?php
+							$tipoUsr = array(0=>'Estandar',1=>'Administrador');
+							foreach($tipoUsr as $key=>$tus) {
+								if( $key == $myUsr->tipo_usuario){ ?>
+							<option selected="" value="<?php echo $key; ?>"><?php echo $tus; ?></option>
+							<?php } else {?>
+							<option value="<?php echo $key; ?>" ><?php echo $tus; ?></option>
+							<?php }} ?>
+						</select>
+						<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+					</div>
+				</div>
+				 <!-- Nombre Usuario -->
+				 <div class="form-group">
+					 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="usr">Usuario<span class="required">*</span>
+					 </label>
+					 <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+						 <input type="text" class="form-control has-feedback-left" id="usr" name="usr" placeholder="Ingrese un nombre de usuario" value="<?php echo $myUsr->usr; ?>">
+						 <span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
+					 </div>
+				 </div>
+				 <!-- Password -->
+				 <div class="form-group">
+					 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="passwd">Contraseña<span class="required">*</span>
+					 </label>
+					 <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+						 <input type="password" class="form-control has-feedback-left" id="passwd" name="passwd" placeholder="Escriba una nueva contraseña">
+						 <span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
+					 </div>
+				 </div>
+				 <div class="form-group">
+					 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="passwd2">Verificar Contraseña<span class="required">*</span>
+					 </label>
+					 <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+						 <input type="password" class="form-control has-feedback-left" id="passwd2" name="passwd2" placeholder="Confirmar Contraseña">
+						 <span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
+					 </div>
+				 </div>
+
+				 <!-- token -->
+				 <input type="hidden" name="token" value="upUsr">
+				 <div class="form-group">
+					 <div class="col-md-6 col-md-offset-3">
+						 <button type="button"  class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+						 <button type="button" class="btn btn-success" id="upUsr">Enviar</button>
+					 </div>
+				 </div>
+			 </form>
+			 <!-- prueba -->
+
 		 <div>
 		 <div class="modal-footer">
 			 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -120,20 +84,19 @@ $myPlaza=$plazas->getPlazasById($_POST['id']);
  </div>
  <script type="text/javascript">
  /*Actualizar categorias*/
- $('#updateplaza').on('click',function(e)
+ $('#upUsr').on('click',function(e)
  {
 	 e.preventDefault();
 	 $.ajax({
 			 //ruta archivo php
-			 url: 'ajax.php?mode=update_plaza',
+			 url: 'ajax.php?mode=usr',
 			 type: 'post',
-			 data:$('#frmplaza_update').serialize(),
+			 data:$('#frmUpUsuario').serialize(),
 			 success: function(respuesta) {
 				 console.log(respuesta);
 				 if(respuesta==1){
 					 alertify.success('Se ha actualizado correctamente');
-					carga_ajax(null,'ajax.php?mode=refresh_plaza','tb_plaza');
-
+					// carga_ajax(null,'ajax.php?mode=refresh_plaza','tb_usr');
 				 }else{
 					 alertify.error("No se pudo actualizar");
 				 }
