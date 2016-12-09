@@ -7,7 +7,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li class="">
 					<a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-						<img src="views/app/images/user.png" alt=""><?php echo $_SESSION['nombreComp']; ?>
+						<img src="views/app/fotos/<?php echo $_SESSION['foto']; ?>" alt=""><?php echo $_SESSION['nombreComp']; ?>
 						<span class=" fa fa-angle-down"></span>
 					</a>
 					<ul class="dropdown-menu dropdown-usermenu pull-right">

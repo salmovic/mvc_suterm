@@ -9,7 +9,7 @@
 				<!-- menu profile quick info -->
 				<div class="profile">
 					<div class="profile_pic">
-						<img src="views/app/images/user.png" class="img-circle profile_img">
+						<img src="views/app/fotos/<?php echo $_SESSION['foto']; ?>" class="img-circle profile_img">
 					</div>
 					<div class="profile_info">
 						<span>Privilegios: <?php echo $_SESSION['tipo_usr']==1?"Admin":"Estandar";?></span>

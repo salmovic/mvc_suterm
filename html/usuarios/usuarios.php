@@ -32,7 +32,7 @@
                   </div>
                   <div class="x_content">
 										<!-- form -->
-										<form class="form-horizontal form-label-left" novalidate id="frmUsuario" enctype="multipart/form-data">
+										<form class="form-horizontal form-label-left" novalidate id="frmUsuario" >
 											<!--rpe Empleado -->
 											<div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="rpe">Empleado<span class="required">*</span>

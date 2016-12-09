@@ -2,14 +2,14 @@ $(document).ready(function(){
 	resetAlertify();
 	// Establecer usuario
 	$('#sendUsr').on('click', function() {
-		$('#resp').text(  $('#frmUsuario').serialize() );
+		$('#resp').text( $('#frmUsuario').serialize() );
 		$.ajax({
 			url:'ajax.php?mode=usr',
 			type:'post',
 			data:$('#frmUsuario').serialize(),
-			success: function(resp){
+			success: function(resp) {
 				if(resp!=1) {
-					alertify.error('No se pudo establecer el usuario');
+					alertify.error('Error: '+resp);
 					return;} else
 				alertify.success("Se establecio correctamente");
 				carga_ajax( null, 'ajax.php?mode=refresh_usr','tb_usr' );
@@ -34,6 +34,29 @@ $(document).ready(function(){
 			return;
 		}
 		$('#passwd2').css({border: "1px solid green" });
+	});
+	/**
+	* Cargar foto de perfil.
+	*/
+  $("input[name='foto']").on("change",function(){
+		var formData = new FormData($('#frmUsuario')[0]);
+		var ruta = "ajax.php?mode=foto_perfil";
+		$.ajax({
+			url:ruta,
+      type:'POST',
+      data:formData,
+      contentType:false,
+      processData: false,
+			success:function( resp ) {
+				console.log(resp);
+				if( resp != 1) {
+					alertify.error('Error: '+resp);
+					return;
+				}
+				alertify.success('la imagen se ha cargado correctamente.');
+			},
+			timeout: 10000
+		});
 	});
 });
 /**

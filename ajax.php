@@ -149,8 +149,11 @@ if($_POST){
 		 require('core/bin/ajax/usuarios/refresh_usr.php');
 		break;
 		case 'del_usr':
-			require('core/bin/ajax/usuarios/delete.php');
-			break;
+		require('core/bin/ajax/usuarios/delete.php');
+		break;
+		case 'foto_perfil':		
+		require('core/bin/ajax/usuarios/procesa_foto.php');
+		break;
 		/*********
 		* LOGIN  *
 		**********/
