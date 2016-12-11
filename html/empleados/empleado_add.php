@@ -101,7 +101,7 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="rpe">RPE<span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-															<input id="rpe" type="text" name="rpe" data-validate-length-range="5,20" class="optional form-control has-feedback-left" placeholder="Ingrese el RPE del Empleado" onkeyup="minToMayuscula('rpe')">
+															<input id="rpe" type="text" name="rpe"  class="optional form-control has-feedback-left" placeholder="Ingrese un RPE para el empleado" onblur="_rpe(this);" >
 															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 														</div>
 		                      </div>
@@ -110,7 +110,7 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Nombres <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="nombre" name="nombre" required="required" class="optional form-control has-feedback-left" placeholder="Nombre(s) del empleado" onkeyup="minToMayuscula('nombre')">
+		                          <input type="text" id="nombre" name="nombre" required="required" class="optional form-control has-feedback-left" placeholder="Ingrese el nombre del empleado." onblur="_nombre(this);">
 															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
@@ -119,7 +119,7 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="apellidos">Apellidos <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="apellidos" name="apellidos" data-validate-linked="text" required="required" class="optional form-control has-feedback-left" placeholder="Ingrese los apelidos." onkeyup="minToMayuscula('apellidos')">
+		                          <input type="text" id="apellidos" name="apellidos" data-validate-linked="text" required="required" class="optional form-control has-feedback-left" placeholder="Ingrese los apellidos." onblur="_apellidos(this)">
 															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
@@ -128,7 +128,7 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="rfc">RFC <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="rfc" name="rfc" required="required" data-validate-minmax="10,100" class="optional form-control has-feedback-left" placeholder="Registro Federal de Contribuyentes." onkeyup="minToMayuscula('rfc')">
+		                          <input type="text" id="rfc" name="rfc" required="required" data-validate-minmax="10,100" class="optional form-control has-feedback-left" placeholder="Registro Federal de Contribuyentes." onblur="_rfc(this)">
 															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
@@ -137,13 +137,13 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="curp">CURP <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="curp" name="curp" required="required" class="optional form-control has-feedback-left" placeholder="Ingrese la CURP." onkeyup="minToMayuscula('curp')">
+		                          <input type="text" id="curp" name="curp" required="required" class="optional form-control has-feedback-left" placeholder="Ingrese la CURP." onblur="_curp(this)">
 															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- no. seguro -->
 		                      <div class="item form-group">
-		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="no_seguro">No. Seguro | Tipo de Sangre <span class="required">*</span>
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="no_seguro">No. Seguro | Tipo de Sangre pendiente<span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-3 col-sm-3 col-xs-6">
 		                          <input id="no_seguro" type="text" name="no_seguro" data-validate-length-range="5,20" class="optional form-control has-feedback-left" placeholder="Ingrese el No. de Seguro Social">
@@ -159,7 +159,7 @@
 														 <label for="fecha_nacimiento" class="control-label col-md-3">Fecha de Nacimiento</label>
 	                            <div class="controls">
 	                              <div class="col-md-6 col-sm-6 col-xs-12">
-	                                <input type="text" class="form-control has-feedback-left calendario" id="calendario" placeholder="Fecha de Nacimiento" aria-describedby="inputSuccess2Status4" name="fecha_nacimiento">
+	                                <input type="text" class="form-control has-feedback-left calendario" id="calendario" placeholder="Fecha de Nacimiento" aria-describedby="inputSuccess2Status4" name="fecha_nacimiento" onblur="_fecha(this)">
 	                                <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 	                                <span id="inputSuccess2Status4" class="sr-only">(success)</span>
 	                              </div>
@@ -169,7 +169,7 @@
 													<div class="item form-group">
 		                        <label for="lugar_nacimiento" class="control-label col-md-3">Lugar nacimiento</label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input id="lugar_nacimiento" type="type" name="lugar_nacimiento" data-validate-length="6,8" class="form-control has-feedback-left" required="required" placeholder="Lugar de nacimiento">
+		                          <input id="lugar_nacimiento" type="type" name="lugar_nacimiento" class="form-control has-feedback-left" required="required" placeholder="Lugar de nacimiento" onblur="_lug_nac(this)">
 															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
@@ -504,7 +504,8 @@
 <script src="views/app/js/url.js"></script>
 <!-- funciones generales-->
 <script src="views/app/js/funciones.js"></script>
-
+<!-- validaciones de formulario -->
+<script src="views/app/js/empleado/validaciones.js"></script>
 <script src="views/app/js/empleado/empleado.js"></script>
 </body>
 </html>
