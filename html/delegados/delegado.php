@@ -45,7 +45,7 @@
 														 $allEmp = $empleado->getEmpleados();
 														 foreach ($allEmp as $dts) {
 														?>
-														<option value="<?php echo $dts->rpe_empleado; ?>"><?php echo $dts->nombre." ".$dts->apellidos; ?></option>
+														<option value="<?php echo $dts->rpe; ?>"><?php echo $dts->nombre." ".$dts->apellidos; ?></option>
 														<?php } ?>
                           </select>
                         </div>
@@ -104,7 +104,7 @@
 												$allDelg = $delegado->getDelegados();
 												foreach ($allDelg as $dts) {
 												 ?>
-                        <tr>													
+                        <tr>
 													<td><?php echo $dts->rpe_empleado; ?></td>
 													<td><?php echo $dts->nombre; ?></td>
 													<td><?php echo $dts->no_dep; ?></td>

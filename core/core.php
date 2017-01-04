@@ -8,15 +8,15 @@ session_start();
 */
 date_default_timezone_set('America/Mexico_City');
 // Desactivar toda notificación de error
-// error_reporting(0);
+error_reporting(0);
 
 /*
 CONSTANTES DE LA BASE DE DATOS
 */
 
 define('DB_HOST','localhost');
-define('DB_USER','root');
-define('DB_PASS','');
+define('DB_USER','salvador');
+define('DB_PASS','1217v0034');
 define('DB_NAME','suterm');
 
 /*

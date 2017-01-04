@@ -15,7 +15,7 @@ class Usuarios extends Connection
 
 		$sql = "INSERT INTO usuario(id_usuario, rpe_emp, nombre, apellidos, email, usr, passwd, tipo_usuario, foto)
 								VALUES (0,'{$_POST["rpe"]}','{$_POST["nombre"]}','{$_POST["app"]}','{$_POST["email"]}','{$_POST["usr"]}',
-									'{$pass}','{$_POST["tipo_usr"]}','{$_SESSION["nom_foto"]}')";
+									'{$pass}',{$_POST["tipo_usr"]},'{$_SESSION["nom_foto"]}')";
 		$this->setConnection();
 		$exito = $this->con->query( $sql );
 		$this->unsetConnection();

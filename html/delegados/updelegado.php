@@ -65,7 +65,7 @@ $myDel=$delegado->getDelegadosById($_POST['id']);
  		 success: function(respuesta) {
  			 console.log(respuesta);
  			 if(respuesta==1){
- 				 alertify.success('Muy bien');
+ 				 alertify.success('Se actualizo correctamente');
  				carga_ajax(null,'ajax.php?mode=refresh_deleg','tb_deleg');
  			 }else{
  				 alertify.error("No se pudo actualizar");

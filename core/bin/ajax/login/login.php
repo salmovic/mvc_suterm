@@ -3,12 +3,11 @@
 * Iniciar sesiion
 */
 if (isset($_POST['token']) && $_POST['token']=='login')
-{
-	 $tip_us= $_POST['tipo_usr'];
+{	 
 	 $usr= $_POST['usr'];
 	 $pass= $_POST['passwd'];
 
-	 $log =$login->getLogin( $usr, $tip_us );
+	 $log =$login->getLogin( $usr );
 
 	 $has = $log->passwd;
 

@@ -21,6 +21,7 @@
 							 <option value="-1">--Seleccione un empleado--</option>
 							 <?php
 								$allEmp = $empleado->getEmpleados();
+								echo $myCat[0]->rpe
 								foreach ($allEmp as $dts) {
 									if( $dts->rpe_empleado == $myCat[0]->rpe ){
 							 ?>

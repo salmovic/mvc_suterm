@@ -6,7 +6,7 @@ if (isset( $_POST['token'] )) {
 				echo "Debe seleccionar una imagen";
 				return;
 			}
-			 echo $usr->setUsuarios();
+			 echo $usr->setUsuarios();			
 			break;
 			case 'upUsr':
 		 echo $usr->updateUsuario();

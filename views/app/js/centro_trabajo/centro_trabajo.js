@@ -9,7 +9,6 @@ $(document).ready(function()
 			e.preventDefault();
 			$.ajax(
 			{
-				beforeSend:function(){/*Antes de enviar*/},
 				url: 'ajax.php?mode=set_centrab',
 				type: 'post',
 				data: $('#frmCenTrabajo').serialize(),

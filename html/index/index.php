@@ -60,17 +60,7 @@
 			    <div id="imagen" align="center" class="img-responsive img-responsive">
 			        <img alt="Iniciar Sesión" src="views/app/images/user.png" class="img-circle img-responsive">
 			    </div>
-			<form role="form" id='frmLogin'>
-				<!--  -->
-				<div class="form-group">
-					<label>
-						Tipo de Usuario
-					</label>
-					<select class="form-control" name="tipo_usr">
-						<option value="0">Estandar</option>
-						<option value="1" selected="">Administrador</option>
-					</select>
-				</div>
+			<form role="form" id='frmLogin'>				
 				<div class="form-group">
 					<label for="usr">
 						RPE ó Usr
