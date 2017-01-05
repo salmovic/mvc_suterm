@@ -26,9 +26,6 @@
 				?>
 				<!-- /sidebar menu -->
 
-				<!-- /menu footer buttons -->
-				<?php include HTML_DIR.'overall/menu_footer_buttons.inc' ?>
-				<!-- /menu footer buttons -->
 			</div>
 		</div>
 

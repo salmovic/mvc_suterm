@@ -173,7 +173,14 @@ if($_POST){
 		case 'salir':
 		require('core/bin/ajax/login/out.php');
 		break;
+		// modal foto
+		case 'modal_foto':
+		require('core/bin/ajax/login/foto_perfil.php');
+		break;
 
+		/**
+		* Default
+		*/
     default:
       echo "ruta no especificada.";
     break;

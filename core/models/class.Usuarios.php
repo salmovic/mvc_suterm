@@ -85,5 +85,15 @@ class Usuarios extends Connection
 		$this->unsetConnection();
 		return $exito;
 	}
+	/**
+	* Actualizar foto de perfil
+	*/
+	public function updateFotoPerfil($nomfoto,$id){
+		$sql = "UPDATE usuario SET foto='{$nomfoto}' WHERE id_usuario='{$id}';";
+		$this->setConnection();
+		$exito=$this->con->query($sql);
+		$this->unsetConnection();
+		return $exito;
+	}
 }
 ?>

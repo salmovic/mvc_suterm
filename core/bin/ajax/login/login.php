@@ -3,7 +3,7 @@
 * Iniciar sesiion
 */
 if (isset($_POST['token']) && $_POST['token']=='login')
-{	 
+{
 	 $usr= $_POST['usr'];
 	 $pass= $_POST['passwd'];
 
@@ -12,6 +12,7 @@ if (isset($_POST['token']) && $_POST['token']=='login')
 	 $has = $log->passwd;
 
 	 if( password_verify( $pass, $has )) {
+		 $_SESSION['id'] = $log->id_usuario;
 		 	$_SESSION['usr'] = $log->nombre;
 			$_SESSION['tipo_usr'] = $log->tipo_usuario;
 			$_SESSION['nombreComp'] = $log->nomComp;
