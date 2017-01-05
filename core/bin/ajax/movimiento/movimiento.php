@@ -6,7 +6,16 @@ switch ( $token ) {
 		echo $movimientos->setSustituto();
 		break;
 		case 'setmomvimiento':
-		echo $movimientos->saveMovimiento();
+		/*Gurdar el movimiento a la base de datos como historial*/
+			$folio = $_POST["folio_mov"];
+			$m = $movimientos->saveMovimiento();
+			if($m!=1) {
+				echo $m;
+				return;
+			}
+			/*Si se guardo crrectamente el movimiento se crea una variable de sesion para poder ejecutar posteriormente el reporte en PDF*/
+			$_SESSION['folio_pdf']=$folio;
+			echo $m;
 		break;
 	default:
 		echo "Token no valido";

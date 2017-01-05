@@ -147,5 +147,55 @@ class Movimientos extends Connection
 		$this->unsetConnection();
 		return $dtsMov;
 	}
+	/**
+	* Obtener todos los usuarios administradores
+	*/
+	public function getUsrAdmin() {
+		$sql = "SELECT concat(nombre,' ',apellidos) as nombre FROM usuario WHERE tipo_usuario = '1'";
+		$this->setConnection();
+		$dts = $this->con->query($sql);
+		$arrAdmin= array();
+		while($i = $dts->fetch_object()) {
+			$arrAdmin[]= $i;
+		}
+		$this->unsetConnection();
+		return $arrAdmin;
+	}
+	/**
+	* Obtener el historial de todos los movimientos
+	*/
+	public function getHistorial() {
+		$format = "SET lc_time_names = 'es_MX'";
+		$sql="SELECT mv.no_folio,mv.fecha,mv.tipo_permiso,concat(emp.nombre,' ',emp.apellidos) AS solicitante, concat(
+date_format(mv.fecha,'%d de %M de %Y'),' A ',date_format(mv.fecha,'%d de %M de %Y')) AS periodo
+FROM movimientos AS mv
+	INNER JOIN empleados AS emp
+    	on mv.rpe_solicitante = emp.rpe_empleado";
+		$this->setConnection();
+					 $this->con->query( $format );
+		$arr = $this->con->query( $sql );
+		$dtsMov = array();
+		while($i = $arr->fetch_object()){
+			$dtsMov[]=$i;
+		}
+		$this->unsetConnection();
+		return $dtsMov;
+	}
+	/**
+	* Eliminar un movimiento
+	* @param folio movimiento
+	*/
+	public function deleteMovimiento($folio) {
+		$mov = "DELETE FROM movimientos WHERE no_folio = '{$folio}';";
+		$sus = "DELETE FROM mov_sustituto WHERE no_folio = '{$folio}';";
+		$this->setConnection();
+		$a = $this->con->query($mov);
+		$b = $this->con->query($sus);
+		$this->unsetConnection();
+		if($mov!=1 && $sus!=1){
+			return 1;
+		}
+		return 0;
+	}
 }
  ?>

@@ -79,13 +79,20 @@
     									<div class="row">
     										<div class="col-xs-4">
     										 Secretario de Trabajo Seccion 55 SUTERM
-    											<input type="text" class="form-control" name="sec_suterm" placeholder="Categoría" value="">
+												 <select class="form-control" name="sec_suterm">
+													 <option value="-1">--Seleccionar Secretario de Trabajo--</option>
+													 <?php
+													 $secT = $movimientos->getUsrAdmin();
+													 foreach ($secT as $dts) { ?>
+														<option value="<?php echo $dts->nombre; ?>"><?php echo $dts->nombre; ?></option>
+														<?php } ?>
+												 </select>
     										</div>
 
     										<div class="col-xs-4">
     										 Delegado Departamental
-													<select class="form-control dtsMovimiento" name="delegado">
-														<option value="1">--Seleccionar Delegado--</option>
+													<select class="form-control" name="delegado">
+														<option value="-1">--Seleccionar Delegado--</option>
 														<?php
 														$allDel = $delegado->getDelegados();
 														foreach ($allDel as $dts) { ?>

@@ -118,6 +118,16 @@ if($_POST){
 		case 'deletesustituto':
 		require('core/bin/ajax/movimiento/delete_sustituto.php');
 		break;
+		// imprimirPDF
+		case 'showpdf':
+		require('core/bin/ajax/movimiento/showpdf.php');
+		break;
+		case 'delete_mov':
+		require('core/bin/ajax/movimiento/delete_mov.php');
+		break;
+		case 'refresh_buscar':
+		require('core/bin/ajax/movimiento/refresh_historial.php');
+		break;
 		/******************
 		*   CATEGORIAS     *
 		*******************/
@@ -151,7 +161,7 @@ if($_POST){
 		case 'del_usr':
 		require('core/bin/ajax/usuarios/delete.php');
 		break;
-		case 'foto_perfil':		
+		case 'foto_perfil':
 		require('core/bin/ajax/usuarios/procesa_foto.php');
 		break;
 		/*********

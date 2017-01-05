@@ -1,5 +1,9 @@
 <?php
-$mov = $movimientos->getMovimiento( FOLIO-1 );
+$noFolio = $_SESSION['folio_pdf'];
+// ELiminar variabel de sesion
+unset($_SESSION['folio_pdf']);
+
+$mov = $movimientos->getMovimiento( $noFolio );
 $emp = $movimientos->getEmpleadoSol( $mov->rpe_solicitante );
 $d = $delegado->getDelegadosById( $mov->id_delegado );
 $delegado = $movimientos->getEmpleadoSol( $d[0]->rpe_delegado );
