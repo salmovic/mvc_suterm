@@ -23,8 +23,7 @@ function deleteMovimiento(id) {
 				url:'ajax.php?mode=delete_mov',
 				type:'post',
 				data:'id='+id,
-				success:function(resp){
-					console.log(resp);
+				success:function(resp){					
 					if(resp!=1){
 						alertify.error('No se pudo eliminar el movimiento'+resp);
 						return;

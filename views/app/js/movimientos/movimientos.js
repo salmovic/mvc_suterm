@@ -23,7 +23,6 @@ $(document).ready(function()
 									$("#dtsSolicitante").empty();
 	                $("#dtsSolicitante").append(data);
 									var rpe=$('#rpe_empleado').val();
-									console.log(rpe);
 									carga_ajax(rpe,'ajax.php?mode=tbmovimiento','tbMovimiento');
 								} else {
 									$("#dtsSolicitante").empty();
@@ -38,14 +37,12 @@ $(document).ready(function()
 			alertify.confirm("¿Esta seguro que los datos son correctos?",function(e){
 				if(!e) return;
 				var dts =$(".dtsMovimiento").serialize();
-				$('#resp').text( dts );
-				// Enviar informacion por $.ajax
+				// Enviar informacion por $ajax
 				$.ajax({
 					url:'ajax.php?mode=movimiento',
 					type:'post',
 					data: dts,
 					success: function( resp ) {
-						console.log(resp);
 						if( resp != 1 ) {
 							alertify.error('No se pudo guardar el movimeinto');
 							return;
@@ -81,8 +78,7 @@ function deleteSust( id ) {
 				url:'ajax.php?mode=deletesustituto',
 				type:'post',
 				data:'idsus='+id,
-				success:function(resp) {
-					console.log(resp);
+				success:function(resp) {					
 					if( resp != 1 ){
 						alertify.error('No se pudo eliminar');
 						return;

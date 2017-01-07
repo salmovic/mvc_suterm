@@ -73,7 +73,7 @@
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
 													<input type="text" class="form-control has-feedback-left" id="usr" name="usr" placeholder="Ingrese un nombre de usuario">
-													<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
+													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
 											<!-- Password -->
@@ -82,7 +82,7 @@
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
 													<input type="password" class="form-control has-feedback-left" id="passwd" name="passwd" placeholder="Escriba una contraseña">
-													<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
+													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
 											<div class="form-group">
@@ -90,7 +90,7 @@
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
 													<input type="password" class="form-control has-feedback-left" id="passwd2" name="passwd2" placeholder="Vuelva a escribir la contraseña">
-													<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
+													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
 
@@ -100,7 +100,7 @@
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
 													<input type="file" class="form-control has-feedback-left" id="foto" name="foto" placeholder="Escriba una contraseña">
-													<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
+													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
 
@@ -113,10 +113,6 @@
                         </div>
                       </div>
                     </form>
-										<!-- prueba -->
-										<div id="resp">
-
-										</div>
 										<!-- End form -->
                   </div>
                 </div>
@@ -137,10 +133,10 @@
                     <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>Usuario/RPE</th>
+                          <th>RPE</th>
                           <th>Nombre</th>
+													<th>Usuario</th>
 													<th>E-Mail</th>
-													<th>Contraseña</th>
 													<th>Tipo Usuario</th>
 													<th>Operacion</th>
                         </tr>
@@ -153,8 +149,8 @@
                         <tr>
 													<td><?php echo $dts->rpe_emp; ?></td>
 													<td><?php echo $dts->nombre; ?></td>
+													<td><?php echo $dts->usr; ?></td>
 													<td><?php echo $dts->email; ?></td>
-													<td><?php echo $dts->passwd; ?></td>
 													<td><?php echo $dts->tipo_usuario==0?"ESTANDAR":"ADMINISTRADOR"; ?></td>
 													<td align="center">
 														<button type="button" data-toggle="modal" data-target="#myModal" onclick="carga_ajax('<?php echo $dts->id_usuario; ?>','ajax.php?mode=modal_usr','myModal');"

@@ -44,7 +44,7 @@
 					 </label>
 					 <div class="col-md-6 col-sm-6 col-xs-12 form-group">
 						 <input type="text" class="form-control has-feedback-left" id="usr" name="usr" placeholder="Ingrese un nombre de usuario" value="<?php echo $myUsr->usr; ?>">
-						 <span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
+						 <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 					 </div>
 				 </div>
 				 <!-- Password -->
@@ -53,7 +53,7 @@
 					 </label>
 					 <div class="col-md-6 col-sm-6 col-xs-12 form-group">
 						 <input type="password" class="form-control has-feedback-left" id="passwd" name="passwd" placeholder="Escriba una nueva contraseña">
-						 <span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
+						 <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 					 </div>
 				 </div>
 				 <div class="form-group">
@@ -61,7 +61,7 @@
 					 </label>
 					 <div class="col-md-6 col-sm-6 col-xs-12 form-group">
 						 <input type="password" class="form-control has-feedback-left" id="passwd2" name="passwd2" placeholder="Confirmar Contraseña">
-						 <span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
+						 <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 					 </div>
 				 </div>
 

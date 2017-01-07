@@ -61,7 +61,7 @@
 														<option value="<?php echo $dts->no_plaza; ?>"><?php echo $dts->no_plaza." | ".$dts->nombre_cat; ?></option>
 														<?php } ?>
 													</select>
-													<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
 											<div class="item form-group">
@@ -128,10 +128,10 @@
 													<td><?php echo $dts->nombre_cat; ?></td>
 													<td><?php echo estatus($dts->estatus); ?></td>
 													<td align="center">
-														<button type="button" data-toggle="modal" data-target="#modalcat" onclick="carga_ajax(<?php echo $dts->id; ?>,'ajax.php?mode=modalcat','modalcat');"
+														<button type="button" data-toggle="modal" data-target="#modalcat" onclick="carga_ajax('<?php echo $dts->id; ?>','ajax.php?mode=modalcat','modalcat');"
 															title="Editar" class="btn btn-success"><i class="fa fa-edit"></i></button>
 
-													 <button type="button" onclick="eliminarCategoria(<?php echo $dts->id; ?>);"
+													 <button type="button" onclick="eliminarCategoria('<?php echo $dts->id; ?>');"
 													 title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></button>
 													 </td>
 													</td>

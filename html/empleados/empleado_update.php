@@ -1,7 +1,6 @@
 <?php
 $rpe = $_SESSION['rpe_emp'];
 $dtsEmp = $empleado->getEmpleadoById( $rpe );
-// unset( $_SESSION['rpe_emp'] );
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -14,7 +13,8 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Titulo -->
 	<title><?php echo APP_TITLE; ?></title>
-
+	<!-- Icon -->
+	<link rel="shortcut icon" type="image/png" href="views/app/images/favicon.png"/>
 	<!-- Bootstrap -->
 	<link href="views/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Font Awesome -->
@@ -25,7 +25,7 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 	<link rel="stylesheet" href="views/build/alertify/themes/alertify.default.css" id="toggleCSS" />
 
 	<!-- Custom Theme Style -->
-	<link href="views/build/css/custom.min.css" rel="stylesheet">
+	<link href="views/build/css/custom.css" rel="stylesheet">
 </head>
 <body class="nav-md">
 	<?php include 'html/overall/container_base_head.php'; ?>

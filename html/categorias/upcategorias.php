@@ -1,5 +1,6 @@
 <?php
 	$myCat = $categoria->getCategoriasById( $_POST['id'] );
+	echo $myCat->rpe;
  ?>
  <div class="modal-dialog">
 	 <!-- Modal content-->
@@ -21,13 +22,13 @@
 							 <option value="-1">--Seleccione un empleado--</option>
 							 <?php
 								$allEmp = $empleado->getEmpleados();
-								echo $myCat[0]->rpe
+								echo $myCat->rpe;
 								foreach ($allEmp as $dts) {
-									if( $dts->rpe_empleado == $myCat[0]->rpe ){
+									if( $dts->rpe == $myCat->rpe ){
 							 ?>
-							 <option selected="" value="<?php echo $dts->rpe_empleado; ?>"><?php echo $dts->nombre." ".$dts->apellidos; ?></option>
+							 <option selected="" value="<?php echo $dts->rpe; ?>"><?php echo $dts->nombre." ".$dts->apellidos; ?></option>
 							 <?php }else{?>
-								 <option value="<?php echo $dts->rpe_empleado; ?>"><?php echo $dts->nombre." ".$dts->apellidos; ?></option>
+								 <option value="<?php echo $dts->rpe; ?>"><?php echo $dts->nombre." ".$dts->apellidos; ?></option>
 								 <?php } }?>
 							</select>
 						 <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
@@ -42,7 +43,7 @@
 							 <?php
 								$allPlaza = $plazas->getPlazas();
 								foreach ($allPlaza as $dts) {
-									if( $dts->no_plaza == $myCat[0]->no_plaza ){
+									if( $dts->no_plaza == $myCat->no_plaza ){
 							 ?>
 							 <option selected="" value="<?php echo $dts->no_plaza; ?>"><?php echo $dts->no_plaza." | ".$dts->nombre_cat; ?></option>
 							 <?php }else{?>
@@ -56,7 +57,7 @@
 					 <label for="no_plaza" class="control-label col-md-3">Estado en el puesto<span class="required">*</span></label>
 					 <div class="col-md-6 col-sm-6 col-xs-12">
 						 <?php $aptitud=""; $base="";
-						 	if($myCat[0]->estatus==0){ $aptitud='checked';}
+						 	if($myCat->estatus==0){ $aptitud='checked';}
 							else { $base='checked';}
 						 ?>
 							 <label for="status" class="radio-inline">

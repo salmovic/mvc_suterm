@@ -5,8 +5,8 @@
 <tr>
 	<td><?php echo $dts->rpe_emp; ?></td>
 	<td><?php echo $dts->nombre; ?></td>
+	<td><?php echo $dts->usr; ?></td>
 	<td><?php echo $dts->email; ?></td>
-	<td><?php echo $dts->passwd; ?></td>
 	<td><?php echo $dts->tipo_usuario==0?"ESTANDAR":"ADMINISTRADOR"; ?></td>
 	<td align="center">
 		<button type="button" data-toggle="modal" data-target="#myModal" onclick="carga_ajax('<?php echo $dts->id_usuario; ?>','ajax.php?mode=modal_usr','myModal');"

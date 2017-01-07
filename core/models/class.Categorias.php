@@ -62,14 +62,10 @@ class Categorias extends Connection
 		 INNER JOIN empleados AS emp
 		  on cat.rpe_empleado = emp.rpe_empleado
 			INNER JOIN plazas AS p
-			on cat.id_plaza = p.no_plaza WHERE cat.id_categorias= {$id}";
+			on cat.id_plaza = p.no_plaza WHERE cat.id_categorias= {$id} LIMIT 1";
 		$this->setConnection();
 		 $datos = $this->con->query( $sql );
-			$arreglo = array();
-			while ( $reg= $datos->fetch_object() )
-			{
-				$arreglo[] = $reg;
-			}
+			$arreglo = $datos->fetch_object();			
 			$this->unsetConnection();
 			return $arreglo;
 		}

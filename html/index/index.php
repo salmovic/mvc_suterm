@@ -9,7 +9,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Titulo -->
 	<title><?php echo APP_TITLE; ?></title>
-
+	<!-- Icon -->
+	<link rel="shortcut icon" type="image/png" href="views/app/images/favicon.png"/>
 	<!-- Bootstrap -->
 	<link href="views/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Font Awesome -->
@@ -20,7 +21,7 @@
 	<link rel="stylesheet" href="views/build/alertify/themes/alertify.default.css" id="toggleCSS" />
 	<style>
         body {
-            background-color: gray;
+            background-color: #b92b27;
             padding: 1.5em;
             margin: 2.5em;
         }
@@ -60,7 +61,7 @@
 			    <div id="imagen" align="center" class="img-responsive img-responsive">
 			        <img alt="Iniciar Sesión" src="views/app/images/user.png" class="img-circle img-responsive">
 			    </div>
-			<form role="form" id='frmLogin'>				
+			<form role="form" id='frmLogin'>
 				<div class="form-group">
 					<label for="usr">
 						RPE ó Usr

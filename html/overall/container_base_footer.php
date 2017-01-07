@@ -1,7 +1,7 @@
 <!-- footer content -->
 <footer>
 	<div class="pull-right">
-		<?php echo FOOTER_COPY; ?> by CTPALM <a href="http://www.cfe.gob.mx/" target="_blank">Colorlib</a>
+		<?php echo FOOTER_COPY; ?> por CTPALM <a href="http://www.cfe.gob.mx/" target="_blank">CFE</a>
 	</div>
 	<div class="clearfix"></div>
 </footer>

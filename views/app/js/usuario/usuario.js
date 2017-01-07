@@ -2,7 +2,7 @@ $(document).ready(function(){
 	resetAlertify();
 	// Establecer usuario
 	$('#sendUsr').on('click', function() {
-		$('#resp').text( $('#frmUsuario').serialize() );
+		// $('#resp').text( $('#frmUsuario').serialize() );
 		$.ajax({
 			url:'ajax.php?mode=usr',
 			type:'post',
@@ -53,7 +53,7 @@ $(document).ready(function(){
 					alertify.error('Error: '+resp);
 					return;
 				}
-				alertify.success('la imagen se ha cargado correctamente.');
+				alertify.success('La imagen se ha cargado correctamente.');
 			},
 			timeout: 10000
 		});
@@ -63,7 +63,7 @@ $(document).ready(function(){
 * Funcion para eliminar un usuario
 */
 function delUsr( id ) {
-	alertify.confirm('¿Está seguro que desea elinar el usuario?', function( e ){
+	alertify.confirm('¿Está seguro que desea eliminar el usuario?', function( e ){
 		if(e){
 			$.ajax({
 				url:'ajax.php?mode=del_usr',

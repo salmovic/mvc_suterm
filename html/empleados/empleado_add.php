@@ -9,7 +9,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Titulo -->
 	<title><?php echo APP_TITLE; ?></title>
-
+	<!-- Icon -->
+	<link rel="shortcut icon" type="image/png" href="views/app/images/favicon.png"/>
 	<!-- Bootstrap -->
 	<link href="views/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Font Awesome -->
@@ -20,7 +21,7 @@
 	<link rel="stylesheet" href="views/build/alertify/themes/alertify.default.css" id="toggleCSS" />
 
 	<!-- Custom Theme Style -->
-	<link href="views/build/css/custom.min.css" rel="stylesheet">
+	<link href="views/build/css/custom.css" rel="stylesheet">
 </head>
 <body class="nav-md">
 	<?php include 'html/overall/container_base_head.php'; ?>
@@ -77,7 +78,7 @@
 														<span class="step_no">3</span>
                             <span class="step_descr">
                                 Paso 3<br />
-																<p>Datos de empleado</p>
+																<p>Datos referentes a la empresa</p>
                             </span>
                           </a>
                         </li>
@@ -86,7 +87,7 @@
 														<span class="step_no">4</span>
                             <span class="step_descr">
                                 Paso 4<br />
-																<p>Datos Escolares</p>
+																<p>Datos Profesionales</p>
                             </span>
                           </a>
                         </li>
@@ -101,8 +102,8 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="rpe">RPE<span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-															<input id="rpe" type="text" name="rpe"  class="optional form-control has-feedback-left" placeholder="Ingrese un RPE para el empleado" onblur="_rpe(this);" >
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<input id="rpe" type="text" name="rpe"  class="optional form-control has-feedback-left" placeholder="Ingrese un RPE para el empleado." onblur="_rpe(this);" >
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 														</div>
 		                      </div>
 													<!-- nombre	 -->
@@ -111,7 +112,7 @@
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input type="text" id="nombre" name="nombre" required="required" class="optional form-control has-feedback-left" placeholder="Ingrese el nombre del empleado." onblur="_nombre(this);">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- apellidos -->
@@ -120,7 +121,7 @@
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input type="text" id="apellidos" name="apellidos" data-validate-linked="text" required="required" class="optional form-control has-feedback-left" placeholder="Ingrese los apellidos." onblur="_apellidos(this)">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- rfc -->
@@ -129,7 +130,7 @@
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input type="text" id="rfc" name="rfc" required="required" data-validate-minmax="10,100" class="optional form-control has-feedback-left" placeholder="Registro Federal de Contribuyentes." onblur="_rfc(this)">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- curp -->
@@ -138,7 +139,7 @@
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input type="text" id="curp" name="curp" required="required" class="optional form-control has-feedback-left" placeholder="Ingrese la CURP." onblur="_curp(this)">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- no. seguro -->
@@ -147,11 +148,11 @@
 		                        </label>
 		                        <div class="col-md-3 col-sm-3 col-xs-6">
 		                          <input id="no_seguro" type="text" name="no_seguro" data-validate-length-range="5,20" class="optional form-control has-feedback-left" placeholder="Ingrese el No. de Seguro Social">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 														<div class="col-md-3 col-sm-3 col-xs-6">
 		                          <input id="tipo_sangre" type="type" name="tipo_sangre" data-validate-length="6,8" class="form-control has-feedback-left" required="required" placeholder="Ingrese el tipo de sangre (Ej. O+)" onkeyup="minToMayuscula('tipo_sangre')">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 														</div>
 		                      </div>
 													<!-- fecha nacimiento -->
@@ -170,7 +171,7 @@
 		                        <label for="lugar_nacimiento" class="control-label col-md-3">Lugar nacimiento</label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="lugar_nacimiento" type="type" name="lugar_nacimiento" class="form-control has-feedback-left" required="required" placeholder="Lugar de nacimiento" onblur="_lug_nac(this)">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- entidad federativa nacimiento -->
@@ -178,7 +179,7 @@
 		                        <label for="entidad_federativa_nac" class="control-label col-md-3">Entidad federativa nac.</label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="entidad_federativa_nac" type="type" name="entidad_federativa_nac" data-validate-length="6,8" class="form-control has-feedback-left" required="required" placeholder="Entidad federativa nacimineto." onkeyup="minToMayuscula('entidad_federativa_nac')">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- nacionalidad -->
@@ -186,7 +187,7 @@
 		                        <label for="nacionalidad" class="control-label col-md-3">Nacionalidad</label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="nacionalidad" type="type" name="nacionalidad" data-validate-length="6,8" class="form-control has-feedback-left" required="required" placeholder="Nacionalida">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 												</form>
@@ -201,8 +202,8 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="rpe">Domicilio <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input id="domicilio" class="form-control has-feedback-left" data-validate-length-range="10" data-validate-words="1" name="domicilio" placeholder="Domicilio" required="required" type="text">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+		                          <input id="domicilio" class="form-control has-feedback-left" data-validate-length-range="10" data-validate-words="1" name="domicilio" placeholder="Ingrese un domicilio." required="required" type="text">
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- colonia	 -->
@@ -210,8 +211,8 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="colonia">Colonia <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="colonia" name="colonia" required="required" class="form-control has-feedback-left">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+		                          <input type="text" id="colonia" name="colonia" placeholder="Ingrese la colonia del empleado." required="required" class="form-control has-feedback-left">
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- codigo postal -->
@@ -219,17 +220,18 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="codigo_postal">Código Postal <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="codigo_postal" name="codigo_postal" data-validate-linked="text" required="required" class="form-control has-feedback-left">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+		                          <input type="text" id="codigo_postal" name="codigo_postal" placeholder="Ingrese el código postal." data-validate-linked="text" required="required" class="form-control has-feedback-left">
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- municipio domicilio -->
 		                      <div class="item form-group">
-		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="municipio_dom">Municipio <span class="required">*</span>
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="municipio_dom">Municipio<span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input type="text" id="municipio_dom" name="municipio_dom" required="required" data-validate-minmax="10,100" class="form-control has-feedback-left">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+		                          <input type="text" id="municipio_dom"
+															placeholder="Ingrese el municipio." name="municipio_dom" required="required" data-validate-minmax="10,100" class="form-control has-feedback-left">
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- Entidad federativa dom -->
@@ -238,7 +240,7 @@
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input type="text" id="entidad_federativa_dom" name="entidad_federativa_dom" required="required" placeholder="Entidad federeativa domicilio." class="form-control has-feedback-left">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- E-Mail -->
@@ -246,8 +248,8 @@
 		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Correo Electrónico <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <input id="email" type="text" name="email" data-validate-length-range="5,20" class="optional form-control has-feedback-left">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+		                          <input id="email" type="text" name="email" placeholder="Ingrese una direccion de correo electronico." data-validate-length-range="5,20" class="optional form-control has-feedback-left">
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- Telefono -->
@@ -255,7 +257,7 @@
 		                        <label for="telefono" class="control-label col-md-3">Telefono</label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="telefono" type="type" name="telefono" data-validate-length="6,8" class="form-control has-feedback-left" required="required">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- Celular -->
@@ -263,7 +265,7 @@
 		                        <label for="celular" class="control-label col-md-3">Celular</label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="celular" type="type" name="celular" data-validate-length="6,8" class="form-control has-feedback-left" required="required">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-mobile form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- estado civil -->
@@ -278,7 +280,7 @@
 																<option value="DIVORCIADO(A)">DIVORCIADO(A)</option>
 																<option value="VIUDO(A)">VIUDO(A)</option>
 															</select>
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- nombre conyugue -->
@@ -286,7 +288,7 @@
 		                        <label for="nombre_conyugue" class="control-label col-md-3">Nombree Conyugue</label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="nombre_conyugue" type="type" name="nombre_conyugue" data-validate-length="6,8" class="form-control has-feedback-left" required="required">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- dom conyugue -->
@@ -294,7 +296,7 @@
 														<label for="dom_conyugue" class="control-label col-md-3">Domicilio Conyugue</label>
 														<div class="col-md-6 col-sm-6 col-xs-12">
 															<input id="dom_conyugue" type="type" name="dom_conyugue" data-validate-length="6,8" class="form-control has-feedback-left" required="required">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 														</div>
 													</div>
 													<!-- nacimiento conyugue -->
@@ -303,7 +305,7 @@
 	                            <div class="controls">
 	                              <div class="col-md-6 col-sm-6 col-xs-12">
 	                                <input type="text" class="form-control has-feedback-left calendario" id="calendario" placeholder="Fecha de Nacimiento" aria-describedby="inputSuccess2Status4" name="fecha_nac_conyugue">
-	                                <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+	                                <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 	                                <span id="inputSuccess2Status4" class="sr-only">(success)</span>
 	                              </div>
 	                            </div>
@@ -313,7 +315,7 @@
 		                        <label for="num_depen_econ" class="control-label col-md-3">No. Dependientes economicos</label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="num_depen_econ" type="type" name="num_depen_econ" data-validate-length="6,8" class="form-control has-feedback-left" required="required">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 
@@ -335,7 +337,7 @@
 	                                	<option value="TEMPORAL">TEMPORAL</option>
 																		<option value="BASE">BASE</option>
 	                                </select>
-	                                <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+	                                <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 	                                <span id="inputSuccess2Status4" class="sr-only">(success)</span>
 	                              </div>
 	                            </div>
@@ -379,7 +381,7 @@
 		                        <label for="antiguedad" class="control-label col-md-3">Antigüedad</label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="antiguedad" type="type" name="antiguedad" data-validate-length="6,8" class="form-control has-feedback-left" required="required">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- id centro trabajo -->
@@ -394,7 +396,7 @@
 			                            <option value="<?php echo $dts->id_centro_trabajo; ?>"> <?php echo $dts->nombre; ?></option>
 																	<?php }; ?>
 			                          </select>
-																<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+																<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- departamento -->
@@ -411,7 +413,7 @@
 			                            <option value="<?php echo $dts->id_departamento; ?>"><?php echo $dts->nombre; ?></option>
 																	<?php }; ?>
 			                          </select>
-																<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+																<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 
@@ -427,7 +429,6 @@
 													<div class="item form-group">
 		                        <label for="nivel_escolaridad" class="control-label col-md-3">Nivel Escolaridad</label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
-		                          <!-- <input id="nivel_escolaridad" type="type" name="nivel_escolaridad" data-validate-length="6,8"  required="required"> -->
 															<select class="form-control has-feedback-left" name="nivel_escolaridad">
 																<option value="PRIMARIA">PRIMARIA</option>
 																<option value="SECUNDARIA">SECUNDARIA</option>
@@ -436,7 +437,7 @@
 																<option value="MAESTRIA">MESTRIA</option>
 																<option value="DOCTORADO">DOCTORADO</option>
 															</select>
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- Esc egresado -->
@@ -444,7 +445,7 @@
 		                        <label for="escuela_egresado" class="control-label col-md-3">Escuela Egresado</label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="escuela_egresado" type="type" name="escuela_egresado" data-validate-length="6,8" class="form-control has-feedback-left" required="required">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- cedula_profesional -->
@@ -452,7 +453,7 @@
 		                        <label for="cedula_profesional" class="control-label col-md-3">Cédula porofesional</label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="cedula_profesional" type="type" name="cedula_profesional" data-validate-length="6,8" class="form-control has-feedback-left" required="required">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- Idiomas -->
@@ -460,7 +461,7 @@
 		                        <label for="idioma" class="control-label col-md-3">Idiomas</label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="idioma" type="type" name="idioma" data-validate-length="6,8" class="form-control has-feedback-left" required="required" placeholder="Separar los idiomas por (,)">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- Token -->

@@ -6,21 +6,21 @@
 			<li><a><i class="fa fa-home"></i> Movimientos <span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
 					<li><a href="javascript:void(0);" id="home">Permisos</a></li>
-					<li><a href="javascript:void(0);" id="historial">Historial Movimiento</a></li>
+					<li><a href="javascript:void(0);" id="historial">Historial</a></li>
 				</ul>
 			</li>
-			<li><a><i class="fa fa-user"></i> Empleado <span class="fa fa-chevron-down"></span></a>
+			<li><a><i class="fa fa-male"></i> Empleado <span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
 					<li><a href="javascript:void(0);" id="addempleado">Agregar</a></li>
 					<li><a href="javascript:void(0);" id="buscarempleado">Buscar</a></li>
 				</ul>
 			</li>
-			<li><a><i class="fa fa-user"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
+			<li><a><i class="fa fa-users"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
 					<li><a href="javascript:void(0);" id="usuario">Agregar</a></li>
 				</ul>
 			</li>
-			<li><a><i class="fa fa-desktop"></i> Delegados <span class="fa fa-chevron-down"></span></a>
+			<li><a><i class="fa fa-user"></i> Delegados <span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
 					<li><a href="javascript:void(0);"  id="delegado">Delegados</a></li>
 					<li><a  href="javascript:void(0);" id="categorias">Categorias</a></li>
@@ -29,9 +29,9 @@
 		</ul>
 	</div>
 	<div class="menu_section">
-		<h3>Live On</h3>
+		<h3>Datos</h3>
 		<ul class="nav side-menu">
-			<li><a><i class="fa fa-bug"></i>Agregar Datos<span class="fa fa-chevron-down"></span></a>
+			<li><a><i class="fa fa-archive"></i>Agregar Datos<span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
 					<li><a  href="javascript:void(0);" id="plaza">Plazas</a></li>
 					<li><a href="javascript:void(0);" id="departamento">Departamentos</a></li>

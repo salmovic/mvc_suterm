@@ -38,7 +38,7 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="rpe">Empleado<span class="required">*</span>
 												</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select class="form-control"  class="form-control has-feedback-left" name="rpe_delegado">
+                          <select class="form-control has-feedback-left"  class="form-control has-feedback-left" name="rpe_delegado">
 														<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 														<option value="-1">--Seleccione un empleado--</option>
 														<?php
@@ -48,6 +48,7 @@
 														<option value="<?php echo $dts->rpe; ?>"><?php echo $dts->nombre." ".$dts->apellidos; ?></option>
 														<?php } ?>
                           </select>
+													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                         </div>
                       </div>
 											<!-- Descripcion -->
