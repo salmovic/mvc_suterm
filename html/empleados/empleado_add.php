@@ -99,7 +99,7 @@
 												<form class="form-horizontal form-label-left set_empleado" method="post">
 													<!-- rpe -->
 		                      <div class="item form-group">
-		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="rpe">RPE<span class="required">*</span>
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="rpe">RPE <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 															<input id="rpe" type="text" name="rpe"  class="optional form-control has-feedback-left" placeholder="Ingrese un RPE para el empleado." onblur="_rpe(this);" >
@@ -144,7 +144,7 @@
 		                      </div>
 													<!-- no. seguro -->
 		                      <div class="item form-group">
-		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="no_seguro">No. Seguro | Tipo de Sangre pendiente<span class="required">*</span>
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="no_seguro">No. Seguro | Tipo de Sangre pendiente <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-3 col-sm-3 col-xs-6">
 		                          <input id="no_seguro" type="text" name="no_seguro" class="optional form-control has-feedback-left" placeholder="No. de Seguro Social" onblur="_noseguro(this)">
@@ -157,7 +157,7 @@
 		                      </div>
 													<!-- fecha nacimiento -->
 													<div class="item form-group">
-														 <label for="fecha_nacimiento" class="control-label col-md-3">Fecha de Nacimiento</label>
+														 <label for="fecha_nacimiento" class="control-label col-md-3">Fecha de Nacimiento <span class="required">*</span></label>
 	                            <div class="controls">
 	                              <div class="col-md-6 col-sm-6 col-xs-12">
 	                                <input type="text" class="form-control has-feedback-left calendario" id="calendario" placeholder="Fecha de Nacimiento" aria-describedby="inputSuccess2Status4" name="fecha_nacimiento" onblur="_fecha(this)">
@@ -168,7 +168,7 @@
 													 </div>
 													<!-- lugar de nacimiento -->
 													<div class="item form-group">
-		                        <label for="lugar_nacimiento" class="control-label col-md-3">Lugar nacimiento</label>
+		                        <label for="lugar_nacimiento" class="control-label col-md-3">Lugar nacimiento <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="lugar_nacimiento" type="type" name="lugar_nacimiento" class="form-control has-feedback-left" placeholder="Lugar de nacimiento" onblur="_lug_nac(this)">
 															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
@@ -176,7 +176,7 @@
 		                      </div>
 													<!-- entidad federativa nacimiento -->
 													<div class="item form-group">
-		                        <label for="entidad_federativa_nac" class="control-label col-md-3">Entidad federativa nac.</label>
+		                        <label for="entidad_federativa_nac" class="control-label col-md-3">Entidad federativa nac. <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="entidad_federativa_nac" type="type" name="entidad_federativa_nac" class="form-control has-feedback-left" placeholder="Entidad federativa nacimineto." onblur="_entidad_federativa_nac(this)">
 															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
@@ -184,7 +184,7 @@
 		                      </div>
 													<!-- nacionalidad -->
 													<div class="item form-group">
-		                        <label for="nacionalidad" class="control-label col-md-3">Nacionalidad</label>
+		                        <label for="nacionalidad" class="control-label col-md-3">Nacionalidad <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="nacionalidad" type="type" name="nacionalidad" class="form-control has-feedback-left" placeholder="Ingrese una nacionalidad" onblur="_nacionalidad(this)">
 															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
@@ -226,7 +226,7 @@
 		                      </div>
 													<!-- municipio domicilio -->
 		                      <div class="item form-group">
-		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="municipio_dom">Municipio<span class="required">*</span>
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="municipio_dom">Municipio <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input type="text" id="municipio_dom" placeholder="Ingrese el municipio." name="municipio_dom" class="form-control has-feedback-left" onblur="_municipio_dom(this)">
@@ -253,7 +253,7 @@
 		                      </div>
 													<!-- Telefono -->
 		                      <div class="item form-group">
-		                        <label for="telefono" class="control-label col-md-3">Teléfono<span class="required">*</span></label>
+		                        <label for="telefono" class="control-label col-md-3">Teléfono <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="telefono" type="type" name="telefono" class="form-control has-feedback-left" placeholder='Ingrese un número de teléfono.' onblur="_telefono(this)">
 															<span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
@@ -261,7 +261,7 @@
 		                      </div>
 													<!-- Celular -->
 													<div class="item form-group">
-		                        <label for="celular" class="control-label col-md-3">Celular<span class="required">*</span></label>
+		                        <label for="celular" class="control-label col-md-3">Celular <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="celular" type="type" name="celular" class="form-control has-feedback-left" placeholder="Ingrese un número de teléfono celular." onblur="_celular(this)">
 															<span class="fa fa-mobile form-control-feedback left" aria-hidden="true"></span>
@@ -284,7 +284,7 @@
 		                      </div>
 													<!-- nombre conyugue -->
 													<div class="item form-group">
-		                        <label for="nombre_conyugue" class="control-label col-md-3">Nombre Cónyugue</label>
+		                        <label for="nombre_conyugue" class="control-label col-md-3">Nombre Cónyugue <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="nombre_conyugue" type="type" name="nombre_conyugue" class="form-control has-feedback-left" placeholder="Ingrese el nombre completo de cónyugue." onblur="_nombre_conyugue(this)">
 															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
@@ -292,7 +292,7 @@
 		                      </div>
 													<!-- dom conyugue -->
 													<div class="item form-group">
-														<label for="dom_conyugue" class="control-label col-md-3">Domicilio Cónyugue</label>
+														<label for="dom_conyugue" class="control-label col-md-3">Domicilio Cónyugue <span class="required">*</span></label>
 														<div class="col-md-6 col-sm-6 col-xs-12">
 															<input id="dom_conyugue" type="type" name="dom_conyugue" class="form-control has-feedback-left" placeholder="Ingrese un domicilio." onblur="_dom_conyugue(this)">
 															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
@@ -300,7 +300,7 @@
 													</div>
 													<!-- nacimiento conyugue -->
 													<div class="item form-group">
-														 <label for="fecha_nac_conyugue" class="control-label col-md-3">Fecha Nacimiento Cónyugue</label>
+														 <label for="fecha_nac_conyugue" class="control-label col-md-3">Fecha Nacimiento Cónyugue <span class="required">*</span></label>
 	                            <div class="controls">
 	                              <div class="col-md-6 col-sm-6 col-xs-12">
 	                                <input type="text" class="form-control has-feedback-left calendario" id="fecha_nac_conyugue" placeholder="Fecha de Nacimiento." aria-describedby="inputSuccess2Status4" name="fecha_nac_conyugue" onblur="_fechaCon(this)">
@@ -311,7 +311,7 @@
 													 </div>
 													<!-- Dependientes economicos -->
 													<div class="item form-group">
-		                        <label for="num_depen_econ" class="control-label col-md-3">No. Dependientes económicos</label>
+		                        <label for="num_depen_econ" class="control-label col-md-3">No. Dependientes económicos <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="num_depen_econ" type="type" name="num_depen_econ" class="form-control has-feedback-left" placeholder="Ingrese el numero de dependientes económicos." onblur="_num_depen_econ(this)">
 															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
@@ -344,7 +344,7 @@
 
 													<!-- Fecha ingreso empresa -->
 													<div class="item form-group">
-														 <label for="fecha_ingreso_empresa" class="control-label col-md-3">Fecha de Ingreso Empresa<span class="required">*</span></label>
+														 <label for="fecha_ingreso_empresa" class="control-label col-md-3">Fecha de Ingreso Empresa <span class="required">*</span></label>
 	                            <div class="controls">
 	                              <div class="col-md-6 col-sm-6 col-xs-12">
 	                                <input type="text" class="form-control has-feedback-left calendario" id="fecha_ingreso_empresa" placeholder="Fecha de ingreso a la empresa." aria-describedby="inputSuccess2Status4" name="fecha_ingreso_empresa" onblur="_fecha(this)">
@@ -366,7 +366,7 @@
 													 </div>
 													<!-- Fecha ingreso empresa sector elctrico-->
 													<div class="item form-group">
-														 <label for="fecha_ing_sector_electrico" class="control-label col-md-3">Fecha de Ingreso Sector Electrico<span class="required">*</span></label>
+														 <label for="fecha_ing_sector_electrico" class="control-label col-md-3">Fecha de Ingreso Sector Electrico <span class="required">*</span></label>
 	                            <div class="controls">
 	                              <div class="col-md-6 col-sm-6 col-xs-12">
 	                                <input type="text" class="form-control has-feedback-left calendario" id="fecha_ing_sector_electrico" placeholder="Fecha de ingreso al sector eléctrico." aria-describedby="inputSuccess2Status4" name="fecha_ing_sector_electrico" onblur="_fecha(this)">
@@ -377,7 +377,7 @@
 													 </div>
 													<!-- Antiguedad-->
 													<div class="item form-group">
-		                        <label for="antiguedad" class="control-label col-md-3">Antigüedad<span class="required">*</span></label>
+		                        <label for="antiguedad" class="control-label col-md-3">Antigüedad <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="antiguedad" type="type" name="antiguedad" placeholder="Tiempo de Antigüedad en años." class="form-control has-feedback-left" onblur="_antiguedad(this)">
 															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
@@ -401,7 +401,7 @@
 		                      </div>
 													<!-- departamento -->
 													<div class="item form-group">
-		                        <label for="id_departamento" class="control-label col-md-3">Departamentos<span class="required">*</span></label>
+		                        <label for="id_departamento" class="control-label col-md-3">Departamentos <span class="required">*</span></label>
 															<div class="col-md-6 col-sm-6 col-xs-12">
 			                          <select class="form-control has-feedback-left"  name="id_departamento" onblur="validarSelect(this)">
 
@@ -427,7 +427,7 @@
 													<div class="ln_solid"></div>
 													<!-- nivel escolaridad -->
 													<div class="item form-group">
-		                        <label for="nivel_escolaridad" class="control-label col-md-3">Nivel Escolaridad<span class="required">*</span></label>
+		                        <label for="nivel_escolaridad" class="control-label col-md-3">Nivel Escolaridad <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 															<select class="form-control has-feedback-left" name="nivel_escolaridad" onblur="validarSelect(this)">
 																<option value="-1">--Seleccione el nivel de escolaridad--</option>
@@ -443,7 +443,7 @@
 		                      </div>
 													<!-- Esc egresado -->
 													<div class="item form-group">
-		                        <label for="escuela_egresado" class="control-label col-md-3">Escuela Egresado<span class="required">*</span></label>
+		                        <label for="escuela_egresado" class="control-label col-md-3">Escuela Egresado <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="escuela_egresado" type="type" name="escuela_egresado" placeholder="Escuela Egresado" class="form-control has-feedback-left" onblur="_escuela_egresado(this)">
 															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
@@ -451,7 +451,7 @@
 		                      </div>
 													<!-- cedula_profesional -->
 													<div class="item form-group">
-		                        <label for="cedula_profesional" class="control-label col-md-3">Cédula porofesional<span class="required">*</span></label>
+		                        <label for="cedula_profesional" class="control-label col-md-3">Cédula porofesional <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="cedula_profesional" type="type" name="cedula_profesional" placeholder="Cédula Profesional" class="form-control has-feedback-left" onblur="_cedula_profesional(this)">
 															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
@@ -459,7 +459,7 @@
 		                      </div>
 													<!-- Idiomas -->
 													<div class="item form-group">
-		                        <label for="idioma" class="control-label col-md-3">Idiomas<span class="required">*</span></label>
+		                        <label for="idioma" class="control-label col-md-3">Idiomas <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="idioma" type="type" name="idioma" class="form-control has-feedback-left" placeholder="Separar los idiomas por (,)" onblur="_idioma(this)">
 															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>

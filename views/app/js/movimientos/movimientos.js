@@ -48,6 +48,7 @@ $(document).ready(function()
 							return;
 						}
 						window.open('index.php?views=pdf', '_blank');
+						window.open('index.php?views=pdf2', '_blank');
 					}
 				});
 			});
@@ -78,7 +79,7 @@ function deleteSust( id ) {
 				url:'ajax.php?mode=deletesustituto',
 				type:'post',
 				data:'idsus='+id,
-				success:function(resp) {					
+				success:function(resp) {
 					if( resp != 1 ){
 						alertify.error('No se pudo eliminar');
 						return;

@@ -1,7 +1,7 @@
 <?php
-$noFolio = $_SESSION['folio_pdf'];
+$noFolio = $_SESSION['folio_pdf2'];
 // ELiminar variabel de sesion
-unset($_SESSION['folio_pdf']);
+unset($_SESSION['folio_pdf2']);
 
 $mov = $movimientos->getMovimiento( $noFolio );
 $emp = $movimientos->getEmpleadoSol( $mov->rpe_solicitante );
@@ -210,7 +210,7 @@ PAG. {PAGENO} DE {nb}
 $mpdf->SetProtection(array('print'));
 $mpdf->SetTitle("SUTERM");
 $mpdf->SetAuthor("Acme Trading Co.");
- $mpdf->SetWatermarkText("ORIGINAL");
+ $mpdf->SetWatermarkText("COPIA");
 $mpdf->showWatermarkText = true;
 $mpdf->watermark_font = 'Arial';
 $mpdf->watermarkTextAlpha = 0.1;

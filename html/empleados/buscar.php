@@ -46,6 +46,10 @@
                       </thead>
                       <tbody id="tb_deleg">
 												<?php
+												$desabilitar ="";
+											// deshabilitar btn eliminar si es usuario es estandar
+											if( $_SESSION['tipo_usr']==0 ) $desabilitar='disabled="true"';
+
 												$ellEmp = $empleado->getEmpleados();
 												foreach ($ellEmp as $dts) {
 												 ?>
@@ -59,9 +63,9 @@
 													<td><?php echo $dts->departamento; ?></td>
 													<td align="center">
 														<button type="button" onclick="updateEmpleado('<?php echo $dts->rpe; ?>');"
-															title="Editar" class="btn btn-success"><i class="fa fa-edit"></i></button>
+															title="Editar" class="btn btn-success" <?php echo $desabilitar; ?>><i class="fa fa-edit"></i></button>
 													 <button type="button" onclick="eliminarEmpleado('<?php echo $dts->rpe; ?>');"
-													 title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+													 title="Eliminar" class="btn btn-danger" <?php echo $desabilitar; ?>><i class="fa fa-trash"></i></button>
 													 </td>
 													</td>
                         </tr>

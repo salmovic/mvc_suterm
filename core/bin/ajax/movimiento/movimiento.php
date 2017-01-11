@@ -15,6 +15,7 @@ switch ( $token ) {
 			}
 			/*Si se guardo crrectamente el movimiento se crea una variable de sesion para poder ejecutar posteriormente el reporte en PDF*/
 			$_SESSION['folio_pdf']=$folio;
+			$_SESSION['folio_pdf2']=$folio;
 			echo $m;
 		break;
 	default:

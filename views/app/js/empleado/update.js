@@ -8,14 +8,14 @@ function updateEmpleado( rpe ) {
 			if( resp != 1 ) {
 				alertify.error( 'Eerror inesperado: '+resp );
 			}
-			window.open('index.php?views=updateemp', '_blank');
+			$(location).attr('href','index.php?views=updateemp');
 		}
 	});
 }
 
 //Eliminar un empleado
 function eliminarEmpleado( rpe ) {
-	alertify.confirm('¿Está seguro que desea eliminar?',function(e){
+	alertify.confirm('¿Está seguro que desea eliminar el registro?',function(e){
 		if(!e) return;
 		alertify.success('OK: '+rpe);
 	});
