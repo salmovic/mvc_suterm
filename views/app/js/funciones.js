@@ -19,7 +19,7 @@ resetAlertify();
 *Funcion que permite cargar ventanas modales con ajax
 */
 function carga_ajax( id,url,div )
-{	
+{
 	$.post
 	(
 		url,
@@ -37,6 +37,7 @@ function carga_ajax( id,url,div )
 function resetForm(id)
 {
 	document.getElementById(id).reset();
+	$('input').css('border',"");
 }
 
 

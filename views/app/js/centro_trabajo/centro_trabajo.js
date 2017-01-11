@@ -13,21 +13,16 @@ $(document).ready(function()
 				type: 'post',
 				data: $('#frmCenTrabajo').serialize(),
 				success: function(resp){
-
 					if( resp == 1)
 					{
-						alertify.success('La informacion se ha guardado correctamente');
+						alertify.success('Se ha guardado correctamente.');
 						resetForm('frmCenTrabajo');
+						$('input').css('border',"");
 						carga_ajax(null,'ajax.php?mode=refresh_centrab','refresh_centrab');
+						return;
 					}
-				},
-				error: function(jqXHR,estado,error){
-					console.log(error);
-				},
-				complete: function(jqXHR,estado){
-					console.log(estado);
-				},
-				timeout: 10000
+					alertify.error(resp);
+				}
 			});
 	});
 });
@@ -36,7 +31,7 @@ $(document).ready(function()
 */
 function delCenTrab(id)
 {
-	alertify.confirm("Estas seguro que deseas eliminar?",function(e){
+	alertify.confirm("¿Está seguro que desea eliminar?",function(e){
 		if (e) {
 			$.ajax({
 				beforeSend:function(){},
@@ -49,14 +44,7 @@ function delCenTrab(id)
 					}else{
 					 alertify.error('No se pudo elimiar');
 					}
-				},
-				error:function(jqXHR,estado,error){
-					alertify.error('Ocurrio un error '+error);
-				},
-				complete:function(jqXHR,estado){
-					console.log(estado);
-				},
-				timeout:10000
+				}
 			});
 		}
 	});

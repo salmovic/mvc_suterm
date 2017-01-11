@@ -238,7 +238,7 @@ $('#municipio_dom').keyup(function(e) {
  lockTeclado(dom);
 });
 function _municipio_dom(campo) {
-	var exR = /^([A-ZÑ\s.,]){3,25}$/;
+	var exR = /^([A-ZÑ\s.,]){3,45}$/;
 	var msj = "Ingrese solo caracteres alfabeticos.";
 	regExPattern(campo,exR,msj);
 }

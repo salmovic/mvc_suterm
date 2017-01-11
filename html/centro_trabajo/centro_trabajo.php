@@ -39,7 +39,7 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Nombre<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="nombre" name="nombre" placeholder="Nombre del centro de trabajo">
+													<input type="text" class="form-control has-feedback-left" id="nombre" name="nombre" placeholder="Nombre del centro de trabajo" onblur="_nombre(this)">
 													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
@@ -48,7 +48,7 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="domicilio">Domicilio<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="domicilio" name="domicilio" placeholder="Domicilio">
+													<input type="text" class="form-control has-feedback-left" id="domicilio" name="domicilio" placeholder="Ingrese un domicilio." onblur="_domicilio(this)">
 													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
@@ -57,7 +57,7 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="codigo_postal">Código Postal<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="codigo_postal" name="codigo_postal" placeholder="Codigo Postal">
+													<input type="text" class="form-control has-feedback-left" id="codigo_postal" name="codigo_postal" placeholder="Ingrese un Codigo Postal" onblur="_codigo_postal(this)">
 													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
@@ -66,7 +66,7 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="municipio">Municipio<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="municipio" name="municipio" placeholder="Municipio">
+													<input type="text" class="form-control has-feedback-left" id="municipio" name="municipio" placeholder="Municipio" onblur="_municipio(this)">
 													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
@@ -75,16 +75,16 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="entidad_fed">Entidad Federativa<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="entidad_fed" name="entidad_fed" placeholder="Entidad Federativa">
+													<input type="text" class="form-control has-feedback-left" id="entidad_fed" name="entidad_fed" placeholder="Ingrese la Entidad Federativa." onblur="_entidad_fed(this)">
 													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
 											<!-- Numero de telefono -->
 											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="telefono">Telefono<span class="required">*</span>
+												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="telefono">Teléfono<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="telefono" name="telefono" placeholder="Nivel de remuneración">
+													<input type="text" class="form-control has-feedback-left" id="telefono" name="telefono" placeholder="Ingrese un número de teléfono." onblur="_telefono(this)">
 													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
@@ -165,52 +165,8 @@
 		<?php include 'html/overall/container_base_footer.php'; ?>
 
 		<!-- funciones centro de trabajo -->
+		<script src="views/app/js/centro_trabajo/validaciones.js"></script>
 		<script src="views/app/js/centro_trabajo/centro_trabajo.js"></script>
-
-		<!-- jQuery Smart Wizard -->
-<script>
-	$(document).ready(function() {
-		$('#wizard').smartWizard({
-          transitionEffect: 'slide'
-        });
-		$('.buttonNext').addClass('btn btn-success');
-		$('.buttonPrevious').addClass('btn btn-primary');
-		$('.buttonFinish').addClass('btn btn-default');
-	});
-</script>
-<!-- /jQuery Smart Wizard -->
-
-<!-- validator -->
-    <script>
-      // initialize the validator function
-      validator.message.date = 'not a real date';
-
-      // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
-      $('form')
-        .on('blur', 'input[required], input.optional, select.required', validator.checkField)
-        .on('change', 'select.required', validator.checkField)
-        .on('keypress', 'input[required][pattern]', validator.keypress);
-
-      $('.multi.required').on('keyup blur', 'input', function() {
-        validator.checkField.apply($(this).siblings().last()[0]);
-      });
-
-      $('form').submit(function(e) {
-        e.preventDefault();
-        var submit = true;
-
-        // evaluate the form using generic validaing
-        if (!validator.checkAll($(this))) {
-          submit = false;
-        }
-
-        if (submit)
-          this.submit();
-
-        return false;
-      });
-    </script>
-    <!-- /validator -->
 
 		<!-- Datatables -->
     <script>
