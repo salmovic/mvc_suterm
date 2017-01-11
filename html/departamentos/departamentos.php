@@ -20,7 +20,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
 								<div class="x_panel">
                   <div class="x_title">
-                    <h2>Agregar un nuevo departamennto de trabajo</h2>
+                    <h2>Agregar un nuevo departamennto.</h2>
                     <ul class="nav navbar-right panel_toolbox">
 											<li><a >&nbsp;</a></li>
 											<li><a >&nbsp;</a></li>
@@ -34,28 +34,28 @@
 										<form class="form-horizontal form-label-left" novalidate method="post" id="frmDepartamento">
 											<!-- Nombre -->
 											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Nombre<span class="required">*</span>
+												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Nombre <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="nombre" name="nombre" placeholder="Nombre del departamento">
+													<input type="text" class="form-control has-feedback-left" id="nombre" name="nombre" placeholder="Nombre del departamento" onblur="_nombre(this)">
 													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
 											<!-- Extencion -->
 											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="extencion">Extención<span class="required">*</span>
+												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="extencion">Extención <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="extencion" name="extencion" placeholder="Numero de Extencion">
+													<input type="text" class="form-control has-feedback-left" id="extencion" name="extencion" placeholder="Número de Extención" onblur="_extencion(this)">
 													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
 											<!-- Telefono -->
 											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="telefono">Telefono<span class="required">*</span>
+												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="telefono">Teléfono <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="telefono" name="telefono" placeholder="Numero de Telefono">
+													<input type="text" class="form-control has-feedback-left" id="telefono" name="telefono" placeholder="Número de Teléfono" onblur="_telefono(this)">
 													<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
@@ -64,8 +64,8 @@
 											<!-- Botones -->
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
-                          <button type="button" class="btn btn-primary" onclick="resetForm('frmDepartamento');">Cancel</button>
-                          <button id="setDepartamentos" type="submit" class="btn btn-success">Submit</button>
+                          <button type="button" class="btn btn-primary" onclick="resetForm('frmDepartamento');">Cancelar</button>
+                          <button id="setDepartamentos" type="submit" class="btn btn-success">Guardar</button>
                         </div>
                       </div>
                     </form>
@@ -73,12 +73,10 @@
                   </div>
                 </div>
 
-									<!-- TE QUIERO MUCHO MI AMOR  -->
-
-								<!-- Panel Categorias -->
+								<!-- Panel departamento-->
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Lista de Categorías </h2>
+                    <h2>Lista de Departamentos. </h2>
                     <ul class="nav navbar-right panel_toolbox">
 											<li><a >&nbsp;</a></li>
 											<li><a >&nbsp;</a></li>
@@ -93,8 +91,8 @@
                         <tr>
                           <th>ID</th>
                           <th>Nombre</th>
-                          <th>Extencion</th>
-													<th>Telefono</th>
+                          <th>Extención</th>
+													<th>Teléfono</th>
 													<th>Operaciones</th>
                         </tr>
                       </thead>
@@ -132,51 +130,8 @@
 				</div>
 				<?php include 'html/overall/container_base_footer.php'; ?>
 				<!-- script all -->
+				<script src="views/app/js/departamentos/validaciones.js"></script>
 				<script src="views/app/js/departamentos/departamentos.js"></script>
-
-<script>
-	$(document).ready(function() {
-		$('#wizard').smartWizard({
-          transitionEffect: 'slide'
-        });
-		$('.buttonNext').addClass('btn btn-success');
-		$('.buttonPrevious').addClass('btn btn-primary');
-		$('.buttonFinish').addClass('btn btn-default');
-	});
-</script>
-<!-- /jQuery Smart Wizard -->
-
-<!-- validator -->
-    <script>
-      // initialize the validator function
-      validator.message.date = 'not a real date';
-
-      // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
-      $('form')
-        .on('blur', 'input[required], input.optional, select.required', validator.checkField)
-        .on('change', 'select.required', validator.checkField)
-        .on('keypress', 'input[required][pattern]', validator.keypress);
-
-      $('.multi.required').on('keyup blur', 'input', function() {
-        validator.checkField.apply($(this).siblings().last()[0]);
-      });
-
-      $('form').submit(function(e) {
-        e.preventDefault();
-        var submit = true;
-
-        // evaluate the form using generic validaing
-        if (!validator.checkAll($(this))) {
-          submit = false;
-        }
-
-        if (submit)
-          this.submit();
-
-        return false;
-      });
-    </script>
-    <!-- /validator -->
 
 		<!-- Datatables -->
     <script>
