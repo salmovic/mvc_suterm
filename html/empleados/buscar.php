@@ -41,8 +41,6 @@
                           <th>Ingr. Empresa</th>
 													<th>Ingr. Suterm</th>
                           <th>Departamento</th>
-													<th>Escolaridad</th>
-                          <th>Cédula Profesional</th>
                           <th>Operacion</th>
                         </tr>
                       </thead>
@@ -59,12 +57,10 @@
 													<td><?php echo $dts->in_empresa; ?></td>
 													<td><?php echo $dts->in_suterm; ?></td>
 													<td><?php echo $dts->departamento; ?></td>
-													<td><?php echo $dts->niv_esc; ?></td>
-													<td><?php echo $dts->ced_prof; ?></td>
 													<td align="center">
 														<button type="button" onclick="updateEmpleado('<?php echo $dts->rpe; ?>');"
 															title="Editar" class="btn btn-success"><i class="fa fa-edit"></i></button>
-													 <button type="button" onclick="eliminarDelegado(<?php echo $dts->id_delegado; ?>);"
+													 <button type="button" onclick="eliminarEmpleado('<?php echo $dts->rpe; ?>');"
 													 title="Eliminar" class="btn btn-danger"><i class="fa fa-trash"></i></button>
 													 </td>
 													</td>

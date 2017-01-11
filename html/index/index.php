@@ -20,12 +20,18 @@
 	<link rel="stylesheet" href="views/build/alertify/themes/alertify.core.css" />
 	<link rel="stylesheet" href="views/build/alertify/themes/alertify.default.css" id="toggleCSS" />
 	<style>
+				html {
+					opacity: 0.8;
+				}
         body {
-            background-color: #b92b27;
+            /*background-color: #b92b27;*/
+						background-image: url(views/app/images/fondo.png);
+						background-repeat: no-repeat;
+						background-size: cover;
             padding: 1.5em;
             margin: 2.5em;
         }
-        h2 {
+        h1 {
             color: black !important;
             font-size: 2.5em;
             font-weight: bold;
@@ -47,9 +53,6 @@
 		<div class="col-md-4">
 		</div>
 		<div class="col-md-4">
-			<h2 class="text-center text-primary">
-				INICIAR SESIÓN
-			</h2>
 		</div>
 		<div class="col-md-4">
 		</div>
@@ -58,8 +61,11 @@
 		<div class="col-md-4">
 		</div>
 		<div class="col-md-4" id="sesion">
+					<h1 class="text-center text-primary">
+						INICIAR SESIÓN
+					</h1>
 			    <div id="imagen" align="center" class="img-responsive img-responsive">
-			        <img alt="Iniciar Sesión" src="views/app/images/user.png" class="img-circle img-responsive">
+			        <img alt="Iniciar Sesión" src="views/app/images/user.jpg" class="img-circle img-responsive">
 			    </div>
 			<form role="form" id='frmLogin'>
 				<div class="form-group">

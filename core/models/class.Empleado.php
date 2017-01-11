@@ -4,6 +4,9 @@
  */
 class Empleado extends Connection
 {
+	/**
+	* Funcion para obtener todos los empleados
+	*/
 	public function getEmpleados() {
 		$sql = "SELECT emp.rpe_empleado AS rpe, concat(emp.nombre,' ',emp.apellidos)AS nombre, emp.curp,
 						emp.email, emp.celular, emp.fecha_ingreso_empresa AS in_empresa, emp.fecha_ingreso_suterm AS in_suterm,
@@ -85,6 +88,10 @@ class Empleado extends Connection
 	return $exito;
 
 	}
+	/**
+	* Funcion para obtener un empleado
+	* @param rpe
+	*/
 	public function getEmpleadoById( $rpe ) {
 		$sql = "SELECT rpe_empleado, nombre, apellidos, rfc, curp, no_seguro, tipo_sangre, fecha_nacimiento, lugar_nacimiento,
  entidad_federativa_nac, nacionalidad, domicilio, colonia, codigo_postal, municipio_dom, entidad_federativa_dom,
@@ -99,8 +106,19 @@ class Empleado extends Connection
 	$this->unsetConnection();
 	return $datos;
 	}
-	public function deleteEmpleado($id)
-	{}
+	/**
+	* Funcion para eliminar un empleado
+	* @param rpe
+	*/
+	public function deleteEmpleado( $rpe ) {
+		$sql = "";
+		$this->setConnection();
+		$this->unsetConnection();
+
+	}
+	/**
+	* Funcion para acutalizar un empleado
+	*/
 	public function updateEmpleado()
 	{
 		$this->setConnection();

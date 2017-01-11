@@ -103,11 +103,11 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 												<form class="form-horizontal form-label-left set_empleado" method="post">
 													<!-- rpe -->
 		                      <div class="item form-group">
-		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="rpe">RPE<span class="required">*</span>
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="rpe">RPE <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 															<input id="rpe" type="text" name="rpe" data-validate-length-range="5,20" class="optional form-control has-feedback-left" placeholder="Ingrese el RPE del Empleado" onkeyup="minToMayuscula('rpe')" readonly="" value="<?php echo $dtsEmp->rpe_empleado; ?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 														</div>
 		                      </div>
 													<!-- nombre	 -->
@@ -116,7 +116,7 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input type="text" id="nombre" name="nombre" required="required" class="optional form-control has-feedback-left" placeholder="Nombre(s) del empleado" onkeyup="minToMayuscula('nombre')" value="<?php echo $dtsEmp->nombre; ?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- apellidos -->
@@ -125,7 +125,7 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input type="text" id="apellidos" name="apellidos" data-validate-linked="text" required="required" class="optional form-control has-feedback-left" placeholder="Ingrese los apelidos." onkeyup="minToMayuscula('apellidos')" value="<?php echo $dtsEmp->apellidos; ?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- rfc -->
@@ -134,7 +134,7 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input type="text" id="rfc" name="rfc" required="required" data-validate-minmax="10,100" class="optional form-control has-feedback-left" placeholder="Registro Federal de Contribuyentes." onkeyup="minToMayuscula('rfc')" value="<?php echo $dtsEmp->rfc; ?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- curp -->
@@ -143,7 +143,7 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input type="text" id="curp" name="curp" required="required" class="optional form-control has-feedback-left" placeholder="Ingrese la CURP." onkeyup="minToMayuscula('curp')" value="<?php echo $dtsEmp->curp; ?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- no. seguro -->
@@ -152,16 +152,16 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 		                        </label>
 		                        <div class="col-md-3 col-sm-3 col-xs-6">
 		                          <input id="no_seguro" type="text" name="no_seguro" data-validate-length-range="5,20" class="optional form-control has-feedback-left" placeholder="Ingrese el No. de Seguro Social" value="<?php echo $dtsEmp->no_seguro; ?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 														<div class="col-md-3 col-sm-3 col-xs-6">
 		                          <input id="tipo_sangre" type="type" name="tipo_sangre" data-validate-length="6,8" class="form-control has-feedback-left" required="required" placeholder="Ingrese el tipo de sangre (Ej. O+)" onkeyup="minToMayuscula('tipo_sangre')" value="<?php echo $dtsEmp->tipo_sangre; ?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 														</div>
 		                      </div>
 													<!-- fecha nacimiento -->
 													<div class="item form-group">
-														 <label for="fecha_nacimiento" class="control-label col-md-3">Fecha de Nacimiento</label>
+														 <label for="fecha_nacimiento" class="control-label col-md-3">Fecha de Nacimiento <span class="required">*</span></label>
 	                            <div class="controls">
 	                              <div class="col-md-6 col-sm-6 col-xs-12">
 	                                <input type="text" class="form-control has-feedback-left calendario" id="calendario" placeholder="Fecha de Nacimiento" aria-describedby="inputSuccess2Status4" name="fecha_nacimiento" value="<?php echo $dtsEmp->fecha_nacimiento; ?>">
@@ -172,33 +172,33 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 													 </div>
 													<!-- lugar de nacimiento -->
 													<div class="item form-group">
-		                        <label for="lugar_nacimiento" class="control-label col-md-3">Lugar nacimiento</label>
+		                        <label for="lugar_nacimiento" class="control-label col-md-3">Lugar nacimiento <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="lugar_nacimiento" type="type" name="lugar_nacimiento" data-validate-length="6,8" class="form-control has-feedback-left" required="required" placeholder="Lugar de nacimiento" value="<?php echo $dtsEmp->lugar_nacimiento;?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- entidad federativa nacimiento -->
 													<div class="item form-group">
-		                        <label for="entidad_federativa_nac" class="control-label col-md-3">Entidad federativa nac.</label>
+		                        <label for="entidad_federativa_nac" class="control-label col-md-3">Entidad federativa nac. <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="entidad_federativa_nac" type="type" name="entidad_federativa_nac" data-validate-length="6,8" class="form-control has-feedback-left" required="required" placeholder="Entidad federativa nacimineto." onkeyup="minToMayuscula('entidad_federativa_nac')"value="<?php echo $dtsEmp->entidad_federativa_nac;?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- nacionalidad -->
 													<div class="item form-group">
-		                        <label for="nacionalidad" class="control-label col-md-3">Nacionalidad</label>
+		                        <label for="nacionalidad" class="control-label col-md-3">Nacionalidad <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="nacionalidad" type="type" name="nacionalidad" data-validate-length="6,8" class="form-control has-feedback-left" required="required" placeholder="Nacionalida" value="<?php echo $dtsEmp->nacionalidad;?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 												</form>
                       </div>
 											<!-- Datos personales y familiar -->
 											<div id="step-22">
-												<h2 class="StepTitle">Paso 1 | Datos Personales</h2>
+												<h2 class="StepTitle">Paso 2 | Datos Personales</h2>
 												<form class="form-horizontal form-label-left set_empleado" novalidate method="post">
 													<div class="ln_solid"></div>
 													<!-- Domicilio -->
@@ -207,16 +207,16 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="domicilio" class="form-control has-feedback-left" data-validate-length-range="10" data-validate-words="1" name="domicilio" placeholder="Domicilio" required="required" type="text" value="<?php echo $dtsEmp->domicilio; ?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- colonia	 -->
 													<div class="item form-group">
-		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="colonia">Colonia<span class="required">*</span>
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="colonia">Colonia <span class="required">*</span>
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input type="text" id="colonia" name="colonia" required="required" class="form-control has-feedback-left" value="<?php echo $dtsEmp->colonia; ?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- codigo postal -->
@@ -225,7 +225,7 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input type="text" id="codigo_postal" name="codigo_postal" data-validate-linked="text" required="required" class="form-control has-feedback-left" value="<?php echo $dtsEmp->codigo_postal; ?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- municipio domicilio -->
@@ -234,7 +234,7 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input type="text" id="municipio_dom" name="municipio_dom" required="required" data-validate-minmax="10,100" class="form-control has-feedback-left" value="<?php echo $dtsEmp->municipio_dom; ?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- Entidad federativa dom -->
@@ -243,7 +243,7 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input type="text" id="entidad_federativa_dom" name="entidad_federativa_dom" required="required" placeholder="Entidad federeativa domicilio." class="form-control has-feedback-left" value="<?php echo $dtsEmp->entidad_federativa_dom; ?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- E-Mail -->
@@ -252,28 +252,28 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 		                        </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="email" type="text" name="email" data-validate-length-range="5,20" class="optional form-control has-feedback-left" value="<?php echo $dtsEmp->email; ?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- Telefono -->
 		                      <div class="item form-group">
-		                        <label for="telefono" class="control-label col-md-3">Telefono</label>
+		                        <label for="telefono" class="control-label col-md-3">Telefono <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="telefono" type="type" name="telefono" data-validate-length="6,8" class="form-control has-feedback-left" required="required" value="<?php echo $dtsEmp->telefono; ?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- Celular -->
 													<div class="item form-group">
-		                        <label for="celular" class="control-label col-md-3">Celular</label>
+		                        <label for="celular" class="control-label col-md-3">Celular <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="celular" type="type" name="celular" data-validate-length="6,8" class="form-control has-feedback-left" required="required" value="<?php echo $dtsEmp->celular; ?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-mobile form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- estado civil -->
 													<div class="item form-group">
-		                        <label for="estado_civil" class="control-label col-md-3">Estado Civil</label>
+		                        <label for="estado_civil" class="control-label col-md-3">Estado Civil <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 															<select class="form-control has-feedback-left" name="estado_civil">
 																<?php
@@ -286,42 +286,42 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 																	<option value="<?php echo $dts; ?>"><?php echo $dts; ?></option>
 																	<?php }} ?>
 															</select>
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- nombre conyugue -->
 													<div class="item form-group">
-		                        <label for="nombre_conyugue" class="control-label col-md-3">Nombre Conyugue</label>
+		                        <label for="nombre_conyugue" class="control-label col-md-3">Nombre Conyugue <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="nombre_conyugue" type="type" name="nombre_conyugue" data-validate-length="6,8" class="form-control has-feedback-left" required="required" value="<?php echo $dtsEmp->nombre_conyugue; ?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- dom conyugue -->
 													<div class="item form-group">
-														<label for="dom_conyugue" class="control-label col-md-3">Domicilio Conyugue</label>
+														<label for="dom_conyugue" class="control-label col-md-3">Domicilio Conyugue <span class="required">*</span></label>
 														<div class="col-md-6 col-sm-6 col-xs-12">
 															<input id="dom_conyugue" type="type" name="dom_conyugue" data-validate-length="6,8" class="form-control has-feedback-left" required="required" value="<?php echo $dtsEmp->dom_conyugue;?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 														</div>
 													</div>
 													<!-- nacimiento conyugue -->
 													<div class="item form-group">
-														 <label for="fecha_nac_conyugue" class="control-label col-md-3">Fecha Nacimiento Conyugue</label>
+														 <label for="fecha_nac_conyugue" class="control-label col-md-3">Fecha Nacimiento Conyugue <span class="required">*</span></label>
 	                            <div class="controls">
 	                              <div class="col-md-6 col-sm-6 col-xs-12">
 	                                <input type="text" class="form-control has-feedback-left calendario" id="fecha_nac_conyugue" placeholder="Fecha de Nacimiento" aria-describedby="inputSuccess2Status4" name="fecha_nac_conyugue" value="<?php echo $dtsEmp->fecha_nac_conyugue;?>">
-	                                <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+	                                <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 	                                <span id="inputSuccess2Status4" class="sr-only">(success)</span>
 	                              </div>
 	                            </div>
 													 </div>
 													<!-- Dependientes economicos. -->
 													<div class="item form-group">
-		                        <label for="num_depen_econ" class="control-label col-md-3">No. Dependientes economicos</label>
+		                        <label for="num_depen_econ" class="control-label col-md-3">No. Dependientes economicos <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="num_depen_econ" type="type" name="num_depen_econ" data-validate-length="6,8" class="form-control has-feedback-left" required="required" value="<?php echo $dtsEmp->num_depen_econ;?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 
@@ -336,7 +336,7 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 
 													<!-- tipo de contrato -->
 													<div class="item form-group">
-														 <label for="tipo_contrato" class="control-label col-md-3">Tipo de Contrato</label>
+														 <label for="tipo_contrato" class="control-label col-md-3">Tipo de Contrato <span class="required">*</span></label>
 	                            <div class="controls">
 	                              <div class="col-md-6 col-sm-6 col-xs-12">
 	                                <select class="form-control has-feedback-left" name="tipo_contrato">
@@ -350,7 +350,7 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 																		<option value="<?php echo $dts; ?>"><?php echo $dts; ?></option>
 																		<?php }}?>
 	                                </select>
-	                                <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+	                                <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 	                                <span id="inputSuccess2Status4" class="sr-only">(success)</span>
 	                              </div>
 	                            </div>
@@ -358,7 +358,7 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 
 													<!-- Fecha ingreso empresa -->
 													<div class="item form-group">
-														 <label for="fecha_ingreso_empresa" class="control-label col-md-3">Fecha de Ingreso Empresa</label>
+														 <label for="fecha_ingreso_empresa" class="control-label col-md-3">Fecha de Ingreso Empresa <span class="required">*</span></label>
 	                            <div class="controls">
 	                              <div class="col-md-6 col-sm-6 col-xs-12">
 	                                <input type="text" class="form-control has-feedback-left calendario" id="fecha_ingreso_empresa" placeholder="Fecha de Nacimiento" aria-describedby="inputSuccess2Status4" name="fecha_ingreso_empresa" value="<?php echo $dtsEmp->fecha_ingreso_empresa;?>">
@@ -369,7 +369,7 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 													 </div>
 													<!-- Fecha ingreso suterm -->
 													<div class="item form-group">
-														 <label for="fecha_ingreso_suterm" class="control-label col-md-3">Fecha de Ingreso SUTERM</label>
+														 <label for="fecha_ingreso_suterm" class="control-label col-md-3">Fecha de Ingreso SUTERM <span class="required">*</span></label>
 	                            <div class="controls">
 	                              <div class="col-md-6 col-sm-6 col-xs-12">
 	                                <input type="text" class="form-control has-feedback-left calendario" name="fecha_ingreso_suterm" id="fecha_ingreso_suterm" placeholder="Fecha de Nacimiento" aria-describedby="inputSuccess2Status4" value="<?php echo $dtsEmp->fecha_ingreso_suterm;?>">
@@ -380,7 +380,7 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 													 </div>
 													<!-- Fecha ingreso empresa sector elctrico-->
 													<div class="item form-group">
-														 <label for="fecha_ing_sector_electrico" class="control-label col-md-3">Fecha de Ingreso Sector Electrico</label>
+														 <label for="fecha_ing_sector_electrico" class="control-label col-md-3">Fecha de Ingreso Sector Electrico <span class="required">*</span></label>
 	                            <div class="controls">
 	                              <div class="col-md-6 col-sm-6 col-xs-12">
 	                                <input type="text" class="form-control has-feedback-left calendario" id="fecha_ing_sector_electrico" placeholder="Fecha de Nacimiento" aria-describedby="inputSuccess2Status4" name="fecha_ing_sector_electrico" value="<?php echo $dtsEmp->fecha_ing_sector_electrico;?>">
@@ -391,15 +391,15 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 													 </div>
 													<!-- Antiguedad-->
 													<div class="item form-group">
-		                        <label for="antiguedad" class="control-label col-md-3">Antigüedad</label>
+		                        <label for="antiguedad" class="control-label col-md-3">Antigüedad <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="antiguedad" type="type" name="antiguedad" data-validate-length="6,8" class="form-control has-feedback-left" required="required" value="<?php echo $dtsEmp->antiguedad;?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- id centro trabajo -->
 													<div class="item form-group">
-		                        <label for="id_centro_trabajo" class="control-label col-md-3">Centro de Trabajo</label>
+		                        <label for="id_centro_trabajo" class="control-label col-md-3">Centro de Trabajo <span class="required">*</span></label>
 															<div class="col-md-6 col-sm-6 col-xs-12">
 			                          <select class="form-control has-feedback-left"  name="id_centro_trabajo">
 																	<?php $allCt=$centroTrabajo->getCentroTrabajo();
@@ -412,12 +412,12 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 																		<option value="<?php echo $dts->id_centro_trabajo; ?>"> <?php echo $dts->nombre;?></option>
 																		<?php }}?>
 			                          </select>
-																<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+																<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- departamento -->
 													<div class="item form-group">
-		                        <label for="id_departamento" class="control-label col-md-3">Departamentos</label>
+		                        <label for="id_departamento" class="control-label col-md-3">Departamentos <span class="required">*</span></label>
 															<div class="col-md-6 col-sm-6 col-xs-12">
 			                          <select class="form-control has-feedback-left"  name="id_departamento">
 
@@ -432,7 +432,7 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 																		<option value="<?php echo $dts->id_departamento; ?>"><?php echo $dtsEmp->id_departamento; ?></option>
 																		<?php }} ?>
 			                          </select>
-																<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+																<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 
@@ -446,7 +446,7 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 													<div class="ln_solid"></div>
 													<!-- nivel escolaridad -->
 													<div class="item form-group">
-		                        <label for="nivel_escolaridad" class="control-label col-md-3">Nivel Escolaridad</label>
+		                        <label for="nivel_escolaridad" class="control-label col-md-3">Nivel Escolaridad <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 															<select class="form-control has-feedback-left" name="nivel_escolaridad">
 																<?php $esc = ['PRIMARIA','SECUNDARIA','PREPARATORIA','LICENCIATURA','MAESTRIA','DOCTORADO'];
@@ -458,31 +458,31 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 																<option value="<?php echo $dts; ?>" ><?php echo $dts;?></option>
 																<?php }} ?>
 															</select>
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- Esc egresado -->
 													<div class="item form-group">
-		                        <label for="escuela_egresado" class="control-label col-md-3">Escuela Egresado</label>
+		                        <label for="escuela_egresado" class="control-label col-md-3">Escuela Egresado <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="escuela_egresado" type="type" name="escuela_egresado" data-validate-length="6,8" class="form-control has-feedback-left" required="required" value="<?php echo $dtsEmp->escuela_egresado;?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- cedula_profesional -->
 													<div class="item form-group">
-		                        <label for="cedula_profesional" class="control-label col-md-3">Cédula porofesional</label>
+		                        <label for="cedula_profesional" class="control-label col-md-3">Cédula porofesional <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="cedula_profesional" type="text" name="cedula_profesional" data-validate-length="6,8" class="form-control has-feedback-left" required="required" value="<?php echo $dtsEmp->cedula_profesional;?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- Idiomas -->
 													<div class="item form-group">
-		                        <label for="idioma" class="control-label col-md-3">Idiomas</label>
+		                        <label for="idioma" class="control-label col-md-3">Idiomas <span class="required">*</span></label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="idioma" type="text" name="idioma" data-validate-length="6,8" class="form-control has-feedback-left" required="required" placeholder="Separar los idiomas por (,)" value="<?php echo $dtsEmp->idioma;?>">
-															<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 		                        </div>
 		                      </div>
 													<!-- Token -->
@@ -510,8 +510,7 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 <script src="views/vendors/fastclick/lib/fastclick.js"></script>
 <!-- jQuery Smart Wizard -->
 <script src="views/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
-<!-- validator -->
-<script src="views/vendors/validator/validator.js"></script>
+
 <!-- Alertify -->
 <script src="views/build/alertify/lib/alertify.min.js"></script>
 
@@ -527,6 +526,7 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 <!-- funciones generales-->
 <script src="views/app/js/funciones.js"></script>
 
+<script src="views/app/js/empleado/validaciones.js"></script>
 <script src="views/app/js/empleado/empleado.js"></script>
 </body>
 </html>

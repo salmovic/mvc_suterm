@@ -23,8 +23,6 @@
 <script src="views/vendors/nprogress/nprogress.js"></script>
 <!-- jQuery Smart Wizard -->
 <script src="views/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
-<!-- validator -->
-<script src="views/vendors/validator/validator.js"></script>
 <!-- Datatables -->
 <script src="views/vendors/datatables.net/js/jquery.dataTables.js"></script>
 
