@@ -18,7 +18,7 @@
 					 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="rpe">Empleado<span class="required">*</span>
 					 </label>
 						<div class="col-md-6 col-sm-6 col-xs-12">
-							<select  class="form-control has-feedback-left" name="rpe_empleado" autofocus="">
+							<select  class="form-control has-feedback-left" name="rpe_empleado" autofocus="" onblur="validarSelect(this)">
 							 <option value="-1">--Seleccione un empleado--</option>
 							 <?php
 								$allEmp = $empleado->getEmpleados();
@@ -38,7 +38,7 @@
 				 <div class="item form-group">
 					 <label for="no_plaza" class="control-label col-md-3">Plaza<span class="required">*</span></label>
 					 <div class="col-md-6 col-sm-6 col-xs-12">
-						 <select class="form-control has-feedback-left" name="no_plaza">
+						 <select class="form-control has-feedback-left" name="no_plaza" onblur="validarSelect(this)">
 							 <option value="-1">--Seleccionar Plaza--</option>
 							 <?php
 								$allPlaza = $plazas->getPlazas();
@@ -84,6 +84,7 @@
 		 </div>
 	 </div>
  </div>
+ <script src="views/app/js/categorias/categorias.js"></script>
  <script type="text/javascript">
  /*Actualizar centro de trabajo*/
  $('#upCat').on('click',function(e)
