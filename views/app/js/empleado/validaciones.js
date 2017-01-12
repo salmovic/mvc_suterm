@@ -379,7 +379,7 @@ function _antiguedad(campo) {
 function validarSelect( campo ) {
 	if(campo.value==-1){
 		campo.style.border="1px solid red";
-		alertify.error('Seleccione una opcion');
+		alertify.error('Debe seleccionar una opción.');
 		campo.focus();
 		return;
 	}

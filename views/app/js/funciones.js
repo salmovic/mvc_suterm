@@ -38,6 +38,7 @@ function resetForm(id)
 {
 	document.getElementById(id).reset();
 	$('input').css('border',"");
+	$('select').css('border',"");
 }
 
 

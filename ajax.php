@@ -8,7 +8,7 @@ if($_POST){
 
 		/*establecer*/
 		case 'plaza':
-		require('core/bin/ajax/plazas/plazas.php');
+		require('core/bin/ajax/plazas/plazas.php');		
 		break;
 		/*Actualizar categoria*/
 		case 'update_plaza':

@@ -4,8 +4,7 @@ $(document).ready(function(){
 /*
 * Enviar formualario Plazas
 */
-	$('#enviar_plaza').on('click',function(e)
-	{
+	$('#enviar_plaza').on('click',function(e)	{
 		e.preventDefault();
 		$.ajax({
 		    //ruta archivo php
@@ -16,14 +15,13 @@ $(document).ready(function(){
 		    data:$("#frmplaza").serialize(),
 		    //suscectible
 		    success: function(respuesta) {
-					console.log(respuesta);
 					if(respuesta==1){
-						alertify.success("Se cargó correctamente");
-						resetForm('frmplaza');
+						alertify.success("El registro se completó exitosamente.");
+						resetForm('frmplaza');												
 						carga_ajax(null,'ajax.php?mode=refresh_plaza','tb_plaza');
-					}else{
-						alertify.error("No se pudo cargar guardar la categoria");
+						return;
 					}
+					alertify.error(respuesta);
 		    }
 		});
 	});
@@ -33,7 +31,7 @@ $(document).ready(function(){
 */
 function eliminarPlaza(id)
 {
-	alertify.confirm("Esta seguro que desea eliminar", function (e)
+	alertify.confirm("¿Está seguro que desea eliminar?", function (e)
 	{
     if (e) {
 			$.ajax({
@@ -42,24 +40,14 @@ function eliminarPlaza(id)
 			    type: 'post',
 			    data:'idplaza='+id,
 			    success: function(respuesta) {
-						console.log(respuesta);
 						if(respuesta==1){
 							alertify.success("Se elimino correctamente");
 							carga_ajax(null,'ajax.php?mode=refresh_plaza','tb_plaza');
 						}else{
 							alertify.error("No se pudo eliminar");
 						}
-			    },
-			    //ejecuta cuando hay un error en la peticion
-			    error: function(jqXHR,estado,error) {
-			        alertify.error('Ocurrio un error '+error);
-			    },
-			    //ejecuta al completar exitosamente la peticion
-			    complete: function(jqXHR,estado) {},
-			    timeout: 10000
+			    }
 			});
-    } else {
-        alertify.error("No quiso elimiar "+id);
     }
 	});
 }

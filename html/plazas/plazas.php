@@ -21,7 +21,7 @@
 								<!-- Panel Categorias -->
 								<div class="x_panel">
                   <div class="x_title">
-                    <h2>Agregar Plazas</h2>
+                    <h2>Agregar una nueva Plaza.</h2>
                     <ul class="nav navbar-right panel_toolbox">
 											<li><a >&nbsp;</a></li>
 											<li><a >&nbsp;</a></li>
@@ -35,29 +35,29 @@
 										<form class="form-horizontal form-label-left" novalidate id="frmplaza">
 											<!-- Numro plaza -->
 											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="no_plaza">Numero Plaza<span class="required">*</span>
+												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="no_plaza">Número Plaza<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="no_plaza" name="no_plaza" placeholder="Numero de plaza">
+													<input type="text" class="form-control has-feedback-left" id="no_plaza" name="no_plaza" placeholder="Número de plaza." onblur="_no_plaza(this)">
 													<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
 											<!-- Nombre categoria -->
 											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre_cat">Nombre Categoria<span class="required">*</span>
+												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre_cat">Nombre Categoría<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="nombre_cat" name="nombre_cat" placeholder="Nombre categoria">
+													<input type="text" class="form-control has-feedback-left" id="nombre_cat" name="nombre_cat" placeholder="Nombre categoria" onblur="_nombre_cat(this)">
 													<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
 											<!-- Grupo Organico -->
 											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-6" for="grupo_organico">Grupo Organico / Nivel de Desempleño<span class="required">*</span>
+												<label class="control-label col-md-3 col-sm-3 col-xs-6" for="grupo_organico">Grupo Orgánico / Nivel de Desempleño<span class="required">*</span>
 												</label>
 												<div class="col-md-3 col-sm-3 col-xs-3 form-group">
 													<!-- <input type="text" class="form-control has-feedback-left" id="grupo_organico" name="grupo_organico" placeholder="Nivel de desempeño"> -->
-													<select class="form-control has-feedback-left" name="grupo_organico">
+													<select class="form-control has-feedback-left" name="grupo_organico" onblur="validarSelect(this)">
 														<option value="-1">--Grupo Orgánico--</option>
 															<?php for ($i=1; $i <=16; $i++) {
 																?>
@@ -68,7 +68,7 @@
 													<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
 												</div>
 												<div class="col-md-3 col-sm-3 col-xs-3 form-group">
-													<select class="form-control has-feedback-left" name="nivel_desempenio">
+													<select class="form-control has-feedback-left" name="nivel_desempenio" onblur="validarSelect(this)">
 														<option value="-1">--Nivel de Desempeño--</option>
 														<?php for ($i=1; $i <=13; $i++) {
 															?>
@@ -81,10 +81,10 @@
 											</div>
 											<!-- Nivel de remuneracion -->
 											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nivel_remuneracion">Nivel de remuneracion<span class="required">*</span>
+												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nivel_remuneracion">Nivel de remuneración<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="nivel_remuneracion" name="nivel_remuneracion" placeholder="Nivel de remuneración ( $ )">
+													<input type="text" class="form-control has-feedback-left" id="nivel_remuneracion" name="nivel_remuneracion" placeholder="Nivel de remuneración ( $ )" onblur="_nivel_remuneracion(this)">
 													<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
@@ -93,7 +93,7 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="grupo_nivel">Grupo Nivel<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="grupo_nivel" name="grupo_nivel" placeholder="Grupo Nivel">
+													<input type="text" class="form-control has-feedback-left" id="grupo_nivel" name="grupo_nivel" placeholder="Grupo Nivel" onblur="_grupo_nivel(this)">
 													<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
@@ -102,15 +102,15 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="plan_carrera">Plan de Carrera / Grupo / Unidad<span class="required">*</span>
 												</label>
 												<div class="col-md-2 col-sm-2 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="plan_carrera" name="plan_carrera" placeholder="Numero de plan de carrera">
+													<input type="text" class="form-control has-feedback-left" id="plan_carrera" name="plan_carrera" placeholder="No. Plan de carrera" onblur="_plan_carrera(this)">
 													<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
 												</div>
 												<div class="col-md-2 col-sm-2 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="grupo" name="grupo" placeholder="Grupo">
+													<input type="text" class="form-control has-feedback-left" id="grupo" name="grupo" placeholder="Grupo" onblur="_grupo(this)">
 													<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
 												</div>
 												<div class="col-md-2 col-sm-2 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="unidad" name="unidad" placeholder="Unidad">
+													<input type="text" class="form-control has-feedback-left" id="unidad" name="unidad" placeholder="Unidad" onblur="_unidad(this)">
 													<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
@@ -118,8 +118,8 @@
 											<input type="hidden" name="token" value="setplaza">
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
-                          <button type="button" onclick="resetForm('frmplaza');" class="btn btn-primary">Cancel</button>
-                          <button type="submit" class="btn btn-success" id="enviar_plaza">Enviar</button>
+                          <button type="button" onclick="resetForm('frmplaza');" class="btn btn-primary">Cancelar</button>
+                          <button type="submit" class="btn btn-success" id="enviar_plaza">Guardar</button>
                         </div>
                       </div>
                     </form>
@@ -145,14 +145,14 @@
                         <tr>
                           <th>Plaza</th>
                           <th>Categoria</th>
-													<th>Grupo Organico</th>
+													<th>Grupo Orgánico</th>
 													<th>Niv. Desempeño</th>
 													<th>Niv. Remuneración</th>
 													<th>Grupo Nivel</th>
 													<th>Plan de Carrera</th>
 													<th>Grupo</th>
 													<th>Unidad</th>
-													<th>Operacion</th>
+													<th>Operación</th>
                         </tr>
                       </thead>
                       <tbody id="tb_plaza">
@@ -194,51 +194,8 @@
 				<!-- end modal -->
 				<?php include 'html/overall/container_base_footer.php'; ?>
 				<!-- Script Categorias -->
+				<script src="views/app/js/plazas/validaciones.js"></script>
 				<script src="views/app/js/plazas/plazas.js"></script>
-		<!-- jQuery Smart Wizard -->
-<script>
-	$(document).ready(function() {
-		$('#wizard').smartWizard({
-          transitionEffect: 'slide'
-        });
-		$('.buttonNext').addClass('btn btn-success');
-		$('.buttonPrevious').addClass('btn btn-primary');
-		$('.buttonFinish').addClass('btn btn-default');
-	});
-</script>
-<!-- /jQuery Smart Wizard -->
-
-<!-- validator -->
-    <script>
-      // initialize the validator function
-      validator.message.date = 'not a real date';
-
-      // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
-      $('form')
-        .on('blur', 'input[required], input.optional, select.required', validator.checkField)
-        .on('change', 'select.required', validator.checkField)
-        .on('keypress', 'input[required][pattern]', validator.keypress);
-
-      $('.multi.required').on('keyup blur', 'input', function() {
-        validator.checkField.apply($(this).siblings().last()[0]);
-      });
-
-      $('form').submit(function(e) {
-        e.preventDefault();
-        var submit = true;
-
-        // evaluate the form using generic validaing
-        if (!validator.checkAll($(this))) {
-          submit = false;
-        }
-
-        if (submit)
-          this.submit();
-
-        return false;
-      });
-    </script>
-    <!-- /validator -->
 
 		<!-- Datatables -->
     <script>
