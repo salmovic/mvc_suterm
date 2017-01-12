@@ -8,23 +8,39 @@ function validarSelect( campo ) {
 	}
 	campo.style.border="1px solid green";
 }
-//descripcion
-$('#descripcion').keyup(function(e) {
-	var dom = $( this );
-	minToMayuscula('descripcion');
-	if( dom.val().length < 100) {
-		dom.unbind('keypress');
-	 	if(dom.val()!="") return;
-	 	return;
-	}
-	lockTeclado(dom);
+
+//usr
+$('#usr').keyup(function(e) {
+ var dom = $(this);
+ if( dom.val().length < 25) {
+	dom.unbind('keypress');
+ if(dom.val()!="") return;
+ return;
+ }
+ lockTeclado(dom);
 });
-function _descripcion(campo) {
-		var exR = /^([A-Z0-9Ñ\s.,#-]){3,100}$/;
-		var msj = "Algunos caracteres ingresados no son validos. Longitud máxima 100 caracteres.";
-		regExPattern(campo,exR,msj);
+function _usr(campo) {
+	var exR = /^([a-zA-Z\d]){2,25}$/;
+	var msj = "Solo son validos letras y números.";
+	regExPattern(campo,exR,msj);
 }
-//-----
+//passwd
+$('#passwd').keyup(function(e) {
+ var dom = $(this);
+ if( dom.val().length < 25) {
+	dom.unbind('keypress');
+ if(dom.val()!="") return;
+ return;
+ }
+ lockTeclado(dom);
+});
+function _passwd(campo) {
+	var exR = /^([a-zA-Z\d]){4,25}$/;
+	var msj = "Solo son validos letras y numeros. Debe contener como mínimo 4 caracteres.";
+	regExPattern(campo,exR,msj);
+}
+//----- END
+
 /**
 *Bloquear teclado
 * @param target objeto Dom
@@ -36,7 +52,6 @@ function lockTeclado(target) {
 				}
 		});
 }
-
 /**
 * Funcion para evaluar una expresion regular
 *@param campo input
@@ -51,8 +66,4 @@ function regExPattern(campo,rex,mensaje) {
 	campo.style.border="1px solid red";
 	campo.focus();
 	alertify.error(mensaje);
-}
-function minToMayuscula( e ) {
-    var e = $('#'+e+'');
-    e.val(e.val().toUpperCase());
 }

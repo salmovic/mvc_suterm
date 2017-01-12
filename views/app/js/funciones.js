@@ -40,6 +40,7 @@ function resetForm(id)
 	$('input').css('border',"");
 	$('select').css('border',"");
 	$('textarea').css('border',"");
+	$("#dtsPersonal").empty();
 }
 
 

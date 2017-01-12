@@ -48,8 +48,7 @@ $(document).ready(function(){
 			data:formData,
 			contentType:false,
 			processData:false,
-		 success:function( resp ) {
-			 console.log(resp);
+		 success:function( resp ) {			 
 			 if( resp != 1) {
 				 alertify.error('Error: '+resp);
 				 target.css({border: "1px solid red" });

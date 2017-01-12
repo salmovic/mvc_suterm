@@ -25,7 +25,7 @@
 					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="tipo_usr">Tipo de usuario<span class="required">*</span>
 					</label>
 					<div class="col-md-6 col-sm-6 col-xs-12">
-						<select  class="form-control has-feedback-left" name="tipo_usr" autofocus="">
+						<select  class="form-control has-feedback-left" name="tipo_usr">
 							<?php
 							$tipoUsr = array(0=>'Estandar',1=>'Administrador');
 							foreach($tipoUsr as $key=>$tus) {
@@ -43,7 +43,7 @@
 					 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="usr">Usuario<span class="required">*</span>
 					 </label>
 					 <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-						 <input type="text" class="form-control has-feedback-left" id="usr" name="usr" placeholder="Ingrese un nombre de usuario" value="<?php echo $myUsr->usr; ?>">
+						 <input type="text" class="form-control has-feedback-left" id="usr" name="usr" placeholder="Ingrese un nombre de usuario" value="<?php echo $myUsr->usr; ?>" onblur="_usr(this)">
 						 <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 					 </div>
 				 </div>
@@ -52,7 +52,7 @@
 					 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="passwd">Contraseña<span class="required">*</span>
 					 </label>
 					 <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-						 <input type="password" class="form-control has-feedback-left" id="passwd" name="passwd" placeholder="Escriba una nueva contraseña">
+						 <input type="password" class="form-control has-feedback-left" id="passwd" name="passwd" placeholder="Escriba una nueva contraseña" onblur="_passwd(this)">
 						 <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 					 </div>
 				 </div>
@@ -60,7 +60,7 @@
 					 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="passwd2">Verificar Contraseña<span class="required">*</span>
 					 </label>
 					 <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-						 <input type="password" class="form-control has-feedback-left" id="passwd2" name="passwd2" placeholder="Confirmar Contraseña">
+						 <input type="password" class="form-control has-feedback-left" id="passwd2" name="passwd2" placeholder="Confirmar Contraseña" onblur="pass2(this)">
 						 <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 					 </div>
 				 </div>
@@ -70,7 +70,7 @@
 				 <div class="form-group">
 					 <div class="col-md-6 col-md-offset-3">
 						 <button type="button"  class="btn btn-primary" data-dismiss="modal">Cancelar</button>
-						 <button type="button" class="btn btn-success" id="upUsr">Enviar</button>
+						 <button type="button" class="btn btn-success" id="upUsr">Actualizar</button>
 					 </div>
 				 </div>
 			 </form>
@@ -78,10 +78,11 @@
 
 		 <div>
 		 <div class="modal-footer">
-			 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			 <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
 		 </div>
 	 </div>
  </div>
+ <script src="views/app/js/usuario/validaciones.js"></script>
  <script type="text/javascript">
  /*Actualizar categorias*/
  $('#upUsr').on('click',function(e)
@@ -93,22 +94,13 @@
 			 type: 'post',
 			 data:$('#frmUpUsuario').serialize(),
 			 success: function(respuesta) {
-				 console.log(respuesta);
 				 if(respuesta==1){
 					 alertify.success('Se ha actualizado correctamente');
-					// carga_ajax(null,'ajax.php?mode=refresh_plaza','tb_usr');
+					carga_ajax( null, 'ajax.php?mode=refresh_usr','tb_usr' );
 				 }else{
-					 alertify.error("No se pudo actualizar");
+					 alertify.error(respuesta);
 				 }
-			 },
-			 //ejecuta cuando hay un error en la peticion
-			 error: function(jqXHR,estado,error) {
-					 alertify.error('Ocurrio un error '+error);
-			 },
-			 //ejecuta al completar exitosamente la peticion
-			 complete: function(jqXHR,estado) {
-			 },
-			 timeout: 10000
+			 }
 	 });
  });
  </script>

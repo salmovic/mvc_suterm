@@ -9,9 +9,10 @@ $(document).ready(function(){
 			data:$('#frmUsuario').serialize(),
 			success: function(resp) {
 				if(resp!=1) {
-					alertify.error('Error: '+resp);
-					return;} else
-				alertify.success("Se establecio correctamente");
+					alertify.error(resp);
+					return;}
+				alertify.success("Se establecio correctamente.");
+				resetForm('frmUsuario');
 				carga_ajax( null, 'ajax.php?mode=refresh_usr','tb_usr' );
 			},
 			error: function( jqXHR, estado, error ) {
@@ -39,6 +40,7 @@ $(document).ready(function(){
 	* Cargar foto de perfil.
 	*/
   $("input[name='foto']").on("change",function(){
+		var target = $(this);
 		var formData = new FormData($('#frmUsuario')[0]);
 		var ruta = "ajax.php?mode=foto_perfil";
 		$.ajax({
@@ -51,8 +53,10 @@ $(document).ready(function(){
 				console.log(resp);
 				if( resp != 1) {
 					alertify.error('Error: '+resp);
+					target.css({border: "1px solid red" });
 					return;
 				}
+				target.css({border: "1px solid green" });
 				alertify.success('La imagen se ha cargado correctamente.');
 			},
 			timeout: 10000

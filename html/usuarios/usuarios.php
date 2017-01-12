@@ -21,7 +21,7 @@
 								<!-- Panel Categorias -->
 								<div class="x_panel">
                   <div class="x_title">
-                    <h2>Agregar Usuarios</h2>
+                    <h2>Agregar un nuevo usuario</h2>
                     <ul class="nav navbar-right panel_toolbox">
 											<li><a >&nbsp;</a></li>
 											<li><a >&nbsp;</a></li>
@@ -38,7 +38,7 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="rpe">Empleado<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12">
-													<select  class="form-control has-feedback-left" name="rpe" id="rpe" autofocus="">
+													<select  class="form-control has-feedback-left" name="rpe" id="rpe" onblur="validarSelect(this)">
 														<option value="-1">--Seleccione un empleado--</option>
 														<?php
 														 $allEmp = $empleado->getEmpleados();
@@ -59,9 +59,9 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="tipo_usr">Tipo de usuario<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12">
-													<select  class="form-control has-feedback-left" name="tipo_usr" autofocus="">
+													<select  class="form-control has-feedback-left" name="tipo_usr" onblur="validarSelect(this)">
 														<option value="-1">--Tipo de Usuario--</option>
-														<option value="0">Estandar</option>
+														<option value="0">Estándar</option>
 														<option value="1">Administrador</option>
 													</select>
 													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
@@ -72,7 +72,7 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="usr">Usuario<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="text" class="form-control has-feedback-left" id="usr" name="usr" placeholder="Ingrese un nombre de usuario">
+													<input type="text" class="form-control has-feedback-left" id="usr" name="usr" placeholder="Ingrese un nombre de usuario" onblur="_usr(this)">
 													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
@@ -81,7 +81,7 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="passwd">Contraseña<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="password" class="form-control has-feedback-left" id="passwd" name="passwd" placeholder="Escriba una contraseña">
+													<input type="password" class="form-control has-feedback-left" id="passwd" name="passwd" placeholder="Escriba una contraseña" onblur="_passwd(this)">
 													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
@@ -99,7 +99,7 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="foto">Fotografia<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-													<input type="file" class="form-control has-feedback-left" id="foto" name="foto" placeholder="Escriba una contraseña">
+													<input type="file" class="form-control has-feedback-left" id="foto" name="foto" >
 													<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 												</div>
 											</div>
@@ -108,8 +108,8 @@
 											<input type="hidden" name="token" value="setUsr">
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
-                          <button type="button" onclick="resetForm('frmUsuario');" class="btn btn-primary">Cancel</button>
-                          <button type="button" class="btn btn-success" id="sendUsr">Enviar</button>
+                          <button type="button" onclick="resetForm('frmUsuario');" class="btn btn-primary">Cancelar</button>
+                          <button type="button" class="btn btn-success" id="sendUsr">Guardar</button>
                         </div>
                       </div>
                     </form>
@@ -175,52 +175,10 @@
 				 </div>
 				<!-- end modal -->
 				<?php include 'html/overall/container_base_footer.php'; ?>
-				<!-- Script Categorias -->
+				<!-- Script user -->
+				<script src="views/app/js/usuario/validaciones.js"></script>
 				<script src="views/app/js/usuario/usuario.js"></script>
-		<!-- jQuery Smart Wizard -->
-<script>
-	$(document).ready(function() {
-		$('#wizard').smartWizard({
-          transitionEffect: 'slide'
-        });
-		$('.buttonNext').addClass('btn btn-success');
-		$('.buttonPrevious').addClass('btn btn-primary');
-		$('.buttonFinish').addClass('btn btn-default');
-	});
-</script>
-<!-- /jQuery Smart Wizard -->
 
-<!-- validator -->
-    <script>
-      // initialize the validator function
-      validator.message.date = 'not a real date';
-
-      // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
-      $('form')
-        .on('blur', 'input[required], input.optional, select.required', validator.checkField)
-        .on('change', 'select.required', validator.checkField)
-        .on('keypress', 'input[required][pattern]', validator.keypress);
-
-      $('.multi.required').on('keyup blur', 'input', function() {
-        validator.checkField.apply($(this).siblings().last()[0]);
-      });
-
-      $('form').submit(function(e) {
-        e.preventDefault();
-        var submit = true;
-
-        // evaluate the form using generic validaing
-        if (!validator.checkAll($(this))) {
-          submit = false;
-        }
-
-        if (submit)
-          this.submit();
-
-        return false;
-      });
-    </script>
-    <!-- /validator -->
 
 		<!-- Datatables -->
     <script>
