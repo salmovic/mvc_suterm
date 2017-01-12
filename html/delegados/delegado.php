@@ -38,7 +38,7 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="rpe">Empleado<span class="required">*</span>
 												</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select class="form-control has-feedback-left"  class="form-control has-feedback-left" name="rpe_delegado">
+                          <select class="form-control has-feedback-left"  class="form-control has-feedback-left" name="rpe_delegado" onblur="validarSelect(this)">
 														<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 														<option value="-1">--Seleccione un empleado--</option>
 														<?php
@@ -53,18 +53,18 @@
                       </div>
 											<!-- Descripcion -->
 											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="descripcion">Descripcion <span class="required">*</span>
+												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="descripcion">Descripción <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-	                        <input type="text" class="form-control has-feedback-left" id="descripcion" name="descripcion" placeholder="Descripcion">
-	                        <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+	                        <!-- <input type="text" class="form-control has-feedback-left" id="descripcion" name="descripcion" placeholder="Descripcion"> -->
+													<textarea name="descripcion" id="descripcion" rows="3" cols="5" class="form-control" placeholder="Agregar una descripción" onblur="_descripcion(this)"></textarea>
 	                      </div>
 											</div>
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
 													<input type="hidden" name="token" value="setdeleg">
-                          <button type="button" class="btn btn-primary" onclick="resetForm('frmDeleg');">Cancel</button>
-                          <button id="setdeleg" type="submit" class="btn btn-success">Submit</button>
+                          <button type="button" class="btn btn-primary" onclick="resetForm('frmDeleg');">Cancelar</button>
+                          <button id="setdeleg" type="submit" class="btn btn-success">Guardar</button>
                         </div>
                       </div>
                     </form>
@@ -77,7 +77,7 @@
 								<!-- Lista delegados -->
 								<div class="x_panel">
                   <div class="x_title">
-                    <h2>Lista de delegados </h2>
+                    <h2>Lista de Delegados </h2>
                     <ul class="nav navbar-right panel_toolbox">
 											<li><a >&nbsp;</a></li>
 											<li><a >&nbsp;</a></li>
@@ -87,9 +87,6 @@
                     <div class="clearfix"></div>
                   </div>
 									<div class="x_content">
-                    <h3>Delegados</h3>
-										<div class="ln_solid"></div>
-
                     <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                         <tr>
@@ -135,54 +132,8 @@
 				</div>
 
 	 <?php include 'html/overall/container_base_footer.php'; ?>
+	 <script src="views/app/js/delegado/validaciones.js"></script>
 	 <script src="views/app/js/delegado/delegado.js"></script>
-
-
-		<!-- jQuery Smart Wizard -->
-<script>
-	$(document).ready(function() {
-		$('#wizard').smartWizard({
-          transitionEffect: 'slide'
-        });
-		$('.buttonNext').addClass('btn btn-success');
-		$('.buttonPrevious').addClass('btn btn-primary');
-		$('.buttonFinish').addClass('btn btn-default');
-	});
-</script>
-<!-- /jQuery Smart Wizard -->
-
-<!-- validator -->
-    <script>
-      // initialize the validator function
-      validator.message.date = 'not a real date';
-
-      // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
-      $('form')
-        .on('blur', 'input[required], input.optional, select.required', validator.checkField)
-        .on('change', 'select.required', validator.checkField)
-        .on('keypress', 'input[required][pattern]', validator.keypress);
-
-      $('.multi.required').on('keyup blur', 'input', function() {
-        validator.checkField.apply($(this).siblings().last()[0]);
-      });
-
-      $('form').submit(function(e) {
-        e.preventDefault();
-        var submit = true;
-
-        // evaluate the form using generic validaing
-        if (!validator.checkAll($(this))) {
-          submit = false;
-        }
-
-        if (submit)
-          this.submit();
-
-        return false;
-      });
-    </script>
-    <!-- /validator -->
-
 		<!-- Datatables -->
     <script>
       $(document).ready(function() {

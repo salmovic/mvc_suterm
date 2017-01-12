@@ -36,7 +36,7 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="rpe">Empleado<span class="required">*</span>
 												</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select  class="form-control has-feedback-left" name="rpe_empleado" autofocus="true" onblur="validarSelect(this)">
+                          <select  class="form-control has-feedback-left" name="rpe_empleado" onblur="validarSelect(this)">
 														<option value="-1">--Seleccione un empleado--</option>
 														<?php
 														 $allEmp = $empleado->getEmpleados();
@@ -78,8 +78,8 @@
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
 													<input type="hidden" name="token" value="setcategoria">
-                          <button type="button" class="btn btn-primary" onclick="resetForm('frmCategorias');">Cancel</button>
-                          <button id="setCat" type="button" class="btn btn-success">Submit</button>
+                          <button type="button" class="btn btn-primary" onclick="resetForm('frmCategorias');">Cancelar</button>
+                          <button id="setCat" type="button" class="btn btn-success">Guardar</button>
                         </div>
                       </div>
                     </form>

@@ -101,7 +101,7 @@
     										</div>
     										<div class="col-xs-12">
     											Descripcion
-    											<textarea name="descripcion" rows="3" cols="5" class="form-control" placeholder="Agregar una descripcion"></textarea>
+    											<textarea name="descripcion" id="descripcion" rows="3" cols="5" class="form-control" placeholder="Agregar una descripcion"></textarea>
     										</div>
     									</div>
                     </form>

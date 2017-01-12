@@ -6,7 +6,7 @@ $myDel=$delegado->getDelegadosById($_POST['id']);
 	 <div class="modal-content">
 		 <div class="modal-header">
 			 <button type="button" class="close" data-dismiss="modal">&times;</button>
-			 <h4 class="modal-title">Actualizar Delegado </h4>
+			 <h4 class="modal-title">Actualizar Delegado <small>(Debe activar las teclas mayúsculas.)</small></h4>
 		 </div>
 		 <div class="modal-body">
 			 <!-- form -->
@@ -28,15 +28,15 @@ $myDel=$delegado->getDelegadosById($_POST['id']);
  						<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
  					</div>
  				</div>
- 				<!-- Descripcion -->
- 				<div class="form-group">
- 					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="descripcion">Descripcion <span class="required">*</span>
- 					</label>
- 					<div class="col-md-6 col-sm-6 col-xs-12 form-group">
- 						<input type="text" class="form-control has-feedback-left" id="descripcion" name="descripcion" placeholder="Descripcion" value="<?php echo $myDel[0]->descripcion; ?>">
- 						<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
- 					</div>
- 				</div>
+				<!-- Descripcion -->
+				<div class="form-group">
+					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="descripcion">Descripción <span class="required">*</span>
+					</label>
+					<div class="col-md-6 col-sm-6 col-xs-12 form-group">
+						<!-- <input type="text" class="form-control has-feedback-left" id="descripcion" name="descripcion" placeholder="Descripcion"> -->
+						<textarea name="descripcion" id="descripcion" rows="3" cols="5" class="form-control" placeholder="Agregar una descripción" onblur="_descripcion(this)"><?php echo $myDel[0]->descripcion; ?></textarea>
+					</div>
+				</div>
  				<div class="form-group">
  					<div class="col-md-6 col-md-offset-3">
  						<input type="hidden" name="token" value="updatedeleg">
@@ -65,21 +65,12 @@ $myDel=$delegado->getDelegadosById($_POST['id']);
  		 success: function(respuesta) {
  			 console.log(respuesta);
  			 if(respuesta==1){
- 				 alertify.success('Se actualizo correctamente');
+ 				 alertify.success('El registro se actualizo correctamente');
  				carga_ajax(null,'ajax.php?mode=refresh_deleg','tb_deleg');
  			 }else{
- 				 alertify.error("No se pudo actualizar");
+ 				 alertify.error(respuesta);
  			 }
- 		 },
- 		 //ejecuta cuando hay un error en la peticion
- 		 error: function(jqXHR,estado,error) {
- 				 alertify.error('Ocurrio un error '+error);
- 		 },
- 		 //ejecuta al completar exitosamente la peticion
- 		 complete: function(jqXHR,estado) {
-
- 		 },
- 		 timeout: 10000
+ 		 }
   });
  });
  </script>
