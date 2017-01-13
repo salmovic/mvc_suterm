@@ -83,8 +83,8 @@
  				<input type="hidden" name="token" value="setSustituto">
  				<div class="form-group">
  					<div class="col-md-6 col-md-offset-3">
- 						<button type="button" data-dismiss="modal" class="btn btn-primary">Cancel</button>
- 						<input type="submit" class="btn btn-success" id="sustituto" value="Guardar">
+ 						<button type="button" data-dismiss="modal" class="btn btn-primary">Cancelar</button>
+ 						<input type="submit" class="btn btn-success" id="sustituto" value="Agregar">
  					</div>
  				</div>
 			</form>
@@ -94,7 +94,7 @@
 			</div>
 		 </div>
 		 <div class="modal-footer">
-			 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+			 <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
 		 </div>
 	 </div>
  </div>
@@ -106,17 +106,17 @@ $(document).ready(function(){
 	$('#sustituto').on('click',function(e){
 		e.preventDefault();
 		var dts = $('#setSustituto').serialize();
-		$('#resp').text( dts );
 		$.ajax({
 			url:'ajax.php?mode=movimiento',
 			type:'POST',
 			data: dts,
 			success:function(resp) {
-				console.log(resp);
 				if( resp == 1 ) {
 					alertify.success('Se ha guardado correctamente');
 					 carga_ajax(null,'ajax.php?mode=refresh_mov','tbMovimiento');
+					 return;
 				 }
+				 	alertify.error(resp);
 			}
 		});
 	});
@@ -136,4 +136,13 @@ $(document).ready(function(){
 	showDropdowns: true
 	});
 });
+
+//Fechas
+onlyNumbers('.calendario');
+// Solo numeros
+function onlyNumbers(target){
+	$(target).keypress(function( e ) {
+		if(e.charCode < 48 || e.charCode > 57) return false;
+});
+}
  </script>

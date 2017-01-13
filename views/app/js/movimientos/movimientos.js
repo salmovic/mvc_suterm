@@ -44,9 +44,13 @@ $(document).ready(function()
 					data: dts,
 					success: function( resp ) {
 						if( resp != 1 ) {
-							alertify.error('No se pudo guardar el movimeinto');
+							alertify.error(resp);
 							return;
 						}
+						$('#buscarSol').val("");
+						$("#dtsSolicitante").empty();
+						$("#tbMovimiento").empty();						
+						$('.dtsMovimiento').trigger('reset');
 						window.open('index.php?views=pdf', '_blank');
 						window.open('index.php?views=pdf2', '_blank');
 					}

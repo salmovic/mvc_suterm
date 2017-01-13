@@ -22,8 +22,14 @@ function validacion() {
 		return false;
 	}
 	//validar descripcion
-	$descripcion = "/^([A-Z0-9Ñ\s.,#-]){3,100}$/";
+	$descripcion = "/^([A-Z0-9Ñ\s.,#-;:]){3,255}$/";
 	if(!preg_match($descripcion, $_POST['descripcion']) || empty($_POST['descripcion'])) {
+		echo "Algunos caracteres ingresados en la descripcion no son válidos. Longitud máxima 100 caracteres.";
+		return false;
+	}
+	//validar descripcion
+	$descripcion = "/^([A-Z0-9Ñ\s.,#-;:]){3,255}$/";
+	if(!preg_match($descripcion, $_POST['descripcion'])) {
 		echo "Algunos caracteres ingresados en la descripcion no son válidos. Longitud máxima 100 caracteres.";
 		return false;
 	}

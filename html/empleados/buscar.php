@@ -10,7 +10,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Busqueda Avanzada</h3>
+                <h3>Búsqueda Avanzada</h3>
               </div>
             </div>
             <div class="clearfix"></div>

@@ -9,6 +9,7 @@
 					<label for="tipoperm" class="col-sm-3 control-label">Tipo de Permiso:</label>
 					<div class="col-sm-9">
 					 <select class="form-control dtsMovimiento" name="tipo_perm">
+						 <option value="-1">--Seleccionar Tipo de Permiso--</option>
 						 <option value="1">PERMISO S/GOCE</option>
 						 <option value="2">VACACIONES DIAS</option>
 						 <option value="3">FALTA INJUSTIFICADA</option>
@@ -169,7 +170,7 @@
 							<label for="fecha_nacimiento" class="control-label col-md-3">Inicio</label>
 							<div class="controls">
 								<div class="col-md-9 col-sm-9 col-xs-12">
-									<input type="text" class="form-control has-feedback-left calendario dtsMovimiento" placeholder="Fecha de Inicio" aria-describedby="inputSuccess2Status4" name="fechainicio">
+									<input type="text" class="form-control has-feedback-left calendario dtsMovimiento" placeholder="Fecha de Inicio" aria-describedby="inputSuccess2Status4" name="fechainicio" onblur="_fecha(this)">
 									<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 									<span id="inputSuccess2Status4" class="sr-only">(success)</span>
 								</div>
@@ -181,7 +182,7 @@
 				 <label for="fecha_nacimiento" class="control-label col-md-4">Fecha Fin</label>
 							<div class="controls">
 								<div class="col-md-8 col-sm-8 col-xs-12">
-									<input type="text" class="form-control has-feedback-left calendario dtsMovimiento" placeholder="Fecha Fin" aria-describedby="inputSuccess2Status4" name="fechafin">
+									<input type="text" class="form-control has-feedback-left calendario dtsMovimiento" placeholder="Fecha Fin" aria-describedby="inputSuccess2Status4" name="fechafin" onblur="_fecha(this)">
 									<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 									<span id="inputSuccess2Status4" class="sr-only">(success)</span>
 								</div>
@@ -197,5 +198,36 @@
 	singleDatePicker: true,
 	showDropdowns: true
 	});
-
+	//Validar opcion multiple
+	function validarSelect( campo ) {
+		if(campo.value==-1){
+			campo.style.border="1px solid red";
+			alertify.error('Debe seleccionar una opción.');
+			campo.focus();
+			return;
+		}
+		campo.style.border="1px solid green";
+	}
+	//Fechas
+  onlyNumbers('.calendario');
+  function _fecha(campo) {
+  	 var exR = /^([0-9]){2}([/]){1}([0-9]){2}([/]){1}([0-9]){4}$/;
+ 	 var msj = "El formato de fecha no es válido.";
+ 	 regExPattern(campo,exR,msj);
+  }
+	function regExPattern(campo,rex,mensaje) {
+		if ( (campo.value.match(rex)) && (campo.value!='') ) {
+				campo.style.border="1px solid green";
+				return;
+		}
+		campo.style.border="1px solid red";
+		campo.focus();
+		alertify.error(mensaje);
+	}
+	// Solo numeros
+	function onlyNumbers(target){
+		$(target).keypress(function( e ) {
+			if(e.charCode < 48 || e.charCode > 57) return false;
+	});
+	}
 	</script>

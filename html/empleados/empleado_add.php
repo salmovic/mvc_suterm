@@ -284,7 +284,7 @@
 		                      </div>
 													<!-- nombre conyugue -->
 													<div class="item form-group">
-		                        <label for="nombre_conyugue" class="control-label col-md-3">Nombre Cónyugue <span class="required">*</span></label>
+		                        <label for="nombre_conyugue" class="control-label col-md-3">Nombre Cónyugue </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="nombre_conyugue" type="type" name="nombre_conyugue" class="form-control has-feedback-left" placeholder="Ingrese el nombre completo de cónyugue." onblur="_nombre_conyugue(this)">
 															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
@@ -292,7 +292,7 @@
 		                      </div>
 													<!-- dom conyugue -->
 													<div class="item form-group">
-														<label for="dom_conyugue" class="control-label col-md-3">Domicilio Cónyugue <span class="required">*</span></label>
+														<label for="dom_conyugue" class="control-label col-md-3">Domicilio Cónyugue </label>
 														<div class="col-md-6 col-sm-6 col-xs-12">
 															<input id="dom_conyugue" type="type" name="dom_conyugue" class="form-control has-feedback-left" placeholder="Ingrese un domicilio." onblur="_dom_conyugue(this)">
 															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
@@ -300,7 +300,7 @@
 													</div>
 													<!-- nacimiento conyugue -->
 													<div class="item form-group">
-														 <label for="fecha_nac_conyugue" class="control-label col-md-3">Fecha Nacimiento Cónyugue <span class="required">*</span></label>
+														 <label for="fecha_nac_conyugue" class="control-label col-md-3">Fecha Nacimiento Cónyugue </label>
 	                            <div class="controls">
 	                              <div class="col-md-6 col-sm-6 col-xs-12">
 	                                <input type="text" class="form-control has-feedback-left calendario" id="fecha_nac_conyugue" placeholder="Fecha de Nacimiento." aria-describedby="inputSuccess2Status4" name="fecha_nac_conyugue" onblur="_fechaCon(this)">
@@ -311,7 +311,7 @@
 													 </div>
 													<!-- Dependientes economicos -->
 													<div class="item form-group">
-		                        <label for="num_depen_econ" class="control-label col-md-3">No. Dependientes económicos <span class="required">*</span></label>
+		                        <label for="num_depen_econ" class="control-label col-md-3">No. Dependientes económicos </label>
 		                        <div class="col-md-6 col-sm-6 col-xs-12">
 		                          <input id="num_depen_econ" type="type" name="num_depen_econ" class="form-control has-feedback-left" placeholder="Ingrese el numero de dependientes económicos." onblur="_num_depen_econ(this)">
 															<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>

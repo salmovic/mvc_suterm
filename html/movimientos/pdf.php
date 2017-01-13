@@ -198,7 +198,7 @@ PAG. {PAGENO} DE {nb}
 
 <p style="font-size:8pt">OBSERVACIONES</p>
 <textarea name="authors" rows="5" cols="100" wrap="virtual" style="font-size:8pt">
-	'.$descripcion.'
+	 '.$descripcion.'
 </textarea>
 
 </body>
