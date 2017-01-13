@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	
 	$('#login').on('click',function(e){
 		e.preventDefault();
 		// $('#resp').text($('#frmLogin').serialize());
@@ -15,7 +16,7 @@ $(document).ready(function(){
 						$(location).attr('href','?views=movimientos');
 						break;
 						default:
-					alertify.alert( "Verifique que los datos sean correctos!" );
+					alertify.alert( "Verifique que el usuario y la contraseña ingresada sean correctos!" );
 						break;
 				}
 			},

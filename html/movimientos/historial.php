@@ -42,6 +42,7 @@
                       </thead>
                       <tbody id="tb_historial">
 												<?php
+												if( $_SESSION['tipo_usr']==0 ) $desabilitar='disabled="true"';
 												$allMov = $movimientos->getHistorial();
 												foreach ($allMov as $dts) {
 												 ?>
@@ -52,7 +53,7 @@
 													<td><?php echo $dts->periodo; ?></td>
 													<td align="center">
 														<button type="button"  onclick="imprimirPDF('<?php echo $dts->no_folio;?>');"
-															title="Ver PDF" class="btn btn-success"><i class="fa fa-eye"></i></button>
+															title="Ver PDF" class="btn btn-success" <?php echo $desabilitar; ?>><i class="fa fa-eye"></i></button>
 													<button type="button" onclick="deleteMovimiento('<?php echo $dts->no_folio; ?>');"
 													 title="Eliminar" class="btn btn-danger" <?php echo $desabilitar; ?>><i class="fa fa-trash"></i></button>
 

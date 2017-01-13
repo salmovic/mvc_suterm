@@ -70,15 +70,15 @@
 			<form role="form" id='frmLogin'>
 				<div class="form-group">
 					<label for="usr">
-						RPE ó Usr
+						RPE ó Usr <span class="required">*</span>
 					</label>
-					<input type="text" class="form-control" id="usr" name="usr" placeholder="Ingrese su RPE o Nombre de usuario..." value="sa">
+					<input type="text" class="form-control" id="usr" name="usr" placeholder="Ingrese su RPE o Nombre de usuario..." >
 				</div>
 				<div class="form-group">
 					<label for="exampleInputPassword1">
-						Contraseña
+						Contraseña <span class="required">*</span>
 					</label>
-					<input type="password" class="form-control" id="passwd" name="passwd" placeholder="Dijite su contraseña..." value="root">
+					<input type="password" class="form-control" id="passwd" name="passwd" placeholder="Dijite su contraseña..." >
 				</div>
 
 				<input type="hidden" name="token" value="login">
@@ -103,6 +103,7 @@
 <script src="views/build/alertify/lib/alertify.min.js"></script>
 
 <script src="views/app/js/index/login.js"></script>
+<script src="views/app/js/funciones.js"></script>
 
 </body>
 

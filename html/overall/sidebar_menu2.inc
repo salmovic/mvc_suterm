@@ -2,6 +2,12 @@
 	<div class="menu_section">
 		<h3>General</h3>
 		<ul class="nav side-menu">
+			<li><a><i class="fa fa-home"></i> Movimientos <span class="fa fa-chevron-down"></span></a>
+				<ul class="nav child_menu">
+					<li><a href="javascript:void(0);" id="home">Permisos</a></li>
+					<li><a href="javascript:void(0);" id="historial">Historial</a></li>
+				</ul>
+			</li>
 			<li><a><i class="fa fa-user"></i> Empleado <span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
 						<li><a href="javascript:void(0);" id="addempleado">Agregar</a></li>

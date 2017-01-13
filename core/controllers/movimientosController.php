@@ -1,6 +1,7 @@
 <?php
-if($_SESSION['tipo_usr']==0){
-	header('Location:?views=addempleado');
-} else
+if( !isset($_SESSION['usr'] ) ) {
+	header('location: index.php');
+	exit;
+}
 include 'html/movimientos/movimientos.php';
  ?>

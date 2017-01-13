@@ -491,7 +491,6 @@ $dtsEmp = $empleado->getEmpleadoById( $rpe );
 		                      </div>
 													<!-- Token -->
 													<input type="hidden" name="token" value="upempleado">
-
 													</div>
 												</form>
                       </div>

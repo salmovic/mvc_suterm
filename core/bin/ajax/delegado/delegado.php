@@ -4,8 +4,6 @@ if ( isset($_POST['token']) ) {
 	switch ($opcion) {
 		case 'setdeleg':
 		if(!validacion()) return;
-		echo "1";
-		return;
 		 echo $delegado->setDelegado();
 			break;
 		case 'updatedeleg':
