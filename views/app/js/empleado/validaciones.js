@@ -413,8 +413,8 @@ $('#cedula_profesional').keyup(function(e) {
 	lockTeclado(dom);
 });
 function _cedula_profesional(campo) {
-		var exR = /^([0-9\s]){0,15}$/;
-		var msj = "Ingrese solo numeros de maximo 15 caracteres.";
+		var exR = /^([0-9\s]){0,9}$/;
+		var msj = "Ingrese solo numeros de maximo 9 caracteres.";
 		regExPatternConyugue(campo,exR,msj);
 }
 //idioma

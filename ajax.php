@@ -8,7 +8,7 @@ if($_POST){
 
 		/*establecer*/
 		case 'plaza':
-		require('core/bin/ajax/plazas/plazas.php');		
+		require('core/bin/ajax/plazas/plazas.php');
 		break;
 		/*Actualizar categoria*/
 		case 'update_plaza':
@@ -93,6 +93,9 @@ if($_POST){
 		break;
 		case 'upempleado':
 		require('core/bin/ajax/empleado/updateemp.php');
+		break;
+		case 'deleteemp':
+		require('core/bin/ajax/empleado/delete.php');
 		break;
 		/********************
 		* RUTA MOVIMIENTOS  *

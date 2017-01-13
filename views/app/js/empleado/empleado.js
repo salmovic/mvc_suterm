@@ -52,7 +52,7 @@ $(document).ready(function() {
 			$('#fecha_nac_conyugue').css('border',"");
 			$('#fecha_nac_conyugue').attr('readonly','true');
 
-			$('#num_depen_econ').val('');
+			$('#num_depen_econ').val('0');
 			$('#num_depen_econ').css('border',"");
 			$('#num_depen_econ').attr('readonly','true');
 			return;

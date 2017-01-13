@@ -111,10 +111,13 @@ class Empleado extends Connection
 	* @param rpe
 	*/
 	public function deleteEmpleado( $rpe ) {
-		$sql = "";
+		$sql="DELETE FROM empleados WHERE rpe_empleado='{$rpe}'";
+		$sql2="DELETE FROM usuario WHERE rpe_emp='{$rpe}'";
 		$this->setConnection();
+		$emp = $this->con->query( $sql );
+		$usr = $this->con->query( $sql2 );
 		$this->unsetConnection();
-
+		return $emp;
 	}
 	/**
 	* Funcion para acutalizar un empleado

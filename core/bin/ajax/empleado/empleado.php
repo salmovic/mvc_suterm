@@ -16,9 +16,11 @@ if (isset($_POST['token']))
 		if(!validarCampos())return;
 		$exit = $empleado->updateEmpleado();
 		if($exit==1){
+			// imprime 2 para capturar la opcion de update en JS
 			echo 2;
 			exit;
 		}
+		echo "Ocurrio un erro.";
 		break;
  	default:
  		echo 'error de ruta';
@@ -204,7 +206,7 @@ function validarCampos() {
 		return false;
 	}
 	//validar cedula_profesional
-	$cedula_profesional="/^([0-9\s]){0,15}$/";
+	$cedula_profesional="/^([0-9\s]){0,9}$/";
 	if(!preg_match($cedula_profesional, $_POST['cedula_profesional']) || empty($_POST['cedula_profesional'])) {
 		echo "Verifique que la cedula profesional sea valido!.";
 		return false;
