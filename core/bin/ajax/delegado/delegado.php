@@ -4,9 +4,15 @@ if ( isset($_POST['token']) ) {
 	switch ($opcion) {
 		case 'setdeleg':
 		if(!validacion()) return;
-		 echo $delegado->setDelegado();
+		 $m = $delegado->setDelegado();
+		 if($m!=1){
+			 echo "Empleado ya ha sido agregado como delegado.";
+			 return;
+		 }
+		 echo $m;
 			break;
 		case 'updatedeleg':
+		if(!validacion()) return;
 		  echo $delegado -> updateDelegado();
 		break;
 		default:
@@ -22,12 +28,6 @@ function validacion() {
 	//validar descripcion
 	$descripcion = "/^([A-Z0-9Ñ\s.,#-;:]){3,255}$/";
 	if(!preg_match($descripcion, $_POST['descripcion']) || empty($_POST['descripcion'])) {
-		echo "Algunos caracteres ingresados en la descripcion no son válidos. Longitud máxima 100 caracteres.";
-		return false;
-	}
-	//validar descripcion
-	$descripcion = "/^([A-Z0-9Ñ\s.,#-;:]){3,255}$/";
-	if(!preg_match($descripcion, $_POST['descripcion'])) {
 		echo "Algunos caracteres ingresados en la descripcion no son válidos. Longitud máxima 100 caracteres.";
 		return false;
 	}
