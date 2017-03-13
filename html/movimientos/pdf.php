@@ -55,7 +55,7 @@ body {font-family: Arial;
 <table width="100%">
 <tr>
 	<td width="20%"><img src="views/app/images/logo.png" whidth = 5; heigth=5></td>
-	<td width="80%" style="text-align: center; font-size:10pt"><b>SINDICATO UNICO DE TRABAJADORES ELECTRICISTAS DE LA REPUBLICA MEXICANA C.T.P.A.L.M. SECCION No. 55 </b><br /></td>
+	<td width="80%" style="text-align: center; font-size:10pt"><b>SINDICATO ÚNICO DE TRABAJADORES ELECTRICISTAS DE LA REPUBLICA MEXICANA C.T.P.A.L.M. SECCION No. 55 </b><br /></td>
 	<td width="15%" style="text-align: right; font-size:9pt;">FOLIO: <span style="color:red">'.$folio.' </span><br/></td>
 	</tr>
 </table>

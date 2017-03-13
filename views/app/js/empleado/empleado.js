@@ -16,7 +16,7 @@ $(document).ready(function() {
 						$('input').css('border',"");
 						$('select').css('border',"");
 						$('.set_empleado').trigger("reset");
-						alertify.confirm("Se ha registrado correctamente. ¿Desea ver todos registros?",function(e){
+						alertify.confirm("Se ha registrado correctamente. ¿Desea ver todos los registros?",function(e){
 							if(!e)return;
 							$(location).attr('href',"?views=searchemp");
 						});

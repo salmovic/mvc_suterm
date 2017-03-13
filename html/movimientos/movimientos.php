@@ -60,7 +60,7 @@
 																<th>No. Plaza</th>
 																<th>Periodo Inicio</th>
 																<th>Periodo Fin</th>
-																<th>Operacion</th>
+																<th>Operación</th>
 															</tr>
 														</thead>
 														<tbody id="tbMovimiento">

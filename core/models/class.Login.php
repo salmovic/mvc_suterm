@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Iniciar sesion
  */
 class Login extends Connection
 {

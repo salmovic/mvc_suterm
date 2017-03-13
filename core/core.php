@@ -1,13 +1,13 @@
 <?php
 /*
-NUCLEO DE LA APLICACION llamamos a todos los recursos de la aplicacion
+Raiz del sistema web
 */
 session_start();
 /*
 *Define la zona horaria
 */
 date_default_timezone_set('America/Mexico_City');
-// Desactivar toda notificación de error
+
 error_reporting(0);
 
 /*
@@ -23,7 +23,7 @@ define('DB_NAME','suterm');
  CONSTANTES DE LA VISTA
 */
 define('HTML_DIR','html/');
-define('APP_TITLE','SUTERM');
+define('APP_TITLE','SUTERM 55');
 define( 'FOOTER_COPY', 'Copy &copy; '.date( 'Y' ).' SUTERM' );
 define('APP_URL', 'http://localhost/mvc_suterm/');
 
