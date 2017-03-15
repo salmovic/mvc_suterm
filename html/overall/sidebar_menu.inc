@@ -38,6 +38,11 @@
 					<li><a  href="javascript:void(0);" id="centroTrabajo">Centro de Trabajo</a></li>
 				</ul>
 			</li>
+			<li><a><i class="fa fa-cloud-download"></i>Respaldo DB<span class="fa fa-chevron-down"></span></a>
+				<ul class="nav child_menu">
+					<li><a  href="javascript:void(0);" id="respaldo">Generar Respaldo</a></li>
+				</ul>
+			</li>
 		</ul>
 	</div>
 </div>

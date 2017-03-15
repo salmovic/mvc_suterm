@@ -29,6 +29,9 @@ $(document).ready(function()
 	// categorias
 	_url('#categorias','?views=categoria');
 
+// respaldo
+	_url('#respaldo','?views=respaldo');
+
 
 
 	//funcion url

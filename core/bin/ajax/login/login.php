@@ -7,10 +7,14 @@ if (isset($_POST['token']) && $_POST['token']=='login')
 	 $usr= $_POST['usr'];
 	 $pass= $_POST['passwd'];
 
+	 // Busca una coincidencia en la base de datos
 	 $log =$login->getLogin( $usr );
 
-	 $has = $log->passwd;
+	 // verifica que el usuario sea identico al usuario ingresado.
+	 if( $log->usr != $usr ) { echo -1; return; }
 
+	 $has = $log->passwd;
+	 // Verifica que la contraseña ingresada correcto.
 	 if( password_verify( $pass, $has )) {
 		 $_SESSION['id'] = $log->id_usuario;
 		 	$_SESSION['usr'] = $log->nombre;

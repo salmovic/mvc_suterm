@@ -59,7 +59,7 @@
 													<!-- <input type="text" class="form-control has-feedback-left" id="grupo_organico" name="grupo_organico" placeholder="Nivel de desempeño"> -->
 													<select class="form-control has-feedback-left" name="grupo_organico" onblur="validarSelect(this)">
 														<option value="-1">--Grupo Orgánico--</option>
-															<?php for ($i=1; $i <=16; $i++) {
+															<?php for ($i=1; $i <=10; $i++) {
 																?>
 																	<option value="<?php echo $i; ?>"><?php echo grupoOrganico($i); ?></option>
 																<?php
@@ -70,7 +70,7 @@
 												<div class="col-md-3 col-sm-3 col-xs-3 form-group">
 													<select class="form-control has-feedback-left" name="nivel_desempenio" onblur="validarSelect(this)">
 														<option value="-1">--Nivel de Desempeño--</option>
-														<?php for ($i=1; $i <=13; $i++) {
+														<?php for ($i=1; $i <=9; $i++) {
 															?>
 																<option value="<?php echo $i; ?>"><?php echo nivelDesempenio($i); ?></option>
 															<?php

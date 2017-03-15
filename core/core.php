@@ -1,6 +1,6 @@
 <?php
 /*
-Raiz del sistema web
+
 */
 session_start();
 /*
