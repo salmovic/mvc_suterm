@@ -176,11 +176,25 @@ if($_POST){
 		case 'salir':
 		require('core/bin/ajax/login/out.php');
 		break;
+
 		// modal foto
 		case 'modal_foto':
 		require('core/bin/ajax/login/foto_perfil.php');
 		break;
 
+		// modal importarbd
+		case 'importarbd':
+		require('html/respaldobd/importarbd.php');
+		break;
+
+		// backup de la base de datos
+		case 'backupbd':
+			require("html/respaldobd/procesa_zip.php");
+			break;
+		//cargar datos
+		case 'bd':
+			require("html/respaldobd/backup.php");
+			break;
 		/**
 		* Default
 		*/

@@ -41,6 +41,7 @@
 			<li><a><i class="fa fa-cloud-download"></i>Respaldo DB<span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
 					<li><a  href="javascript:void(0);" id="respaldo">Generar Respaldo</a></li>
+					<li><a  href="javascript:void(0);" onclick="carga_ajax(0,'ajax.php?mode=importarbd','importarbd');" data-toggle="modal" data-target="#importarbd">Importar BD</a></li>
 				</ul>
 			</li>
 		</ul>

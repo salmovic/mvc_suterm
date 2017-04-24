@@ -19,5 +19,4 @@ if($zip->open($salida_zip, ZIPARCHIVE::CREATE) == true ) {
 else {
 	echo "Error al convertir a un archivo .zip.";
 }
-
 ?>

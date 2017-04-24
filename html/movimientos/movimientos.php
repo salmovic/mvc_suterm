@@ -73,7 +73,7 @@
                   <form class="dtsMovimiento" >
     									<div class="row">
     										<div class="col-xs-4">
-    										 Secretario de Trabajo Seccion 55 SUTERM
+    										 Secretario de Trabajo Sección 55 SUTERM
 												 <select class="form-control" name="sec_suterm">
 													 <option value="-1">--Seleccionar Secretario de Trabajo--</option>
 													 <?php
@@ -100,7 +100,7 @@
     											<input type="text" class="form-control" name="jefe_inmed" id="jefe_inmed" placeholder="Ingrese el nombre completo." onkeyup="minToMayuscula('jefe_inmed')">
     										</div>
     										<div class="col-xs-12">
-    											Descripcion
+    											Descripción
     											<textarea name="descripcion" id="descripcion" rows="3" cols="5" class="form-control" placeholder="Agregar una descripcion" onkeyup="minToMayuscula('descripcion')"></textarea>
     										</div>
     									</div>

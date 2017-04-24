@@ -49,7 +49,7 @@ $(document).ready(function()
 						}
 						$('#buscarSol').val("");
 						$("#dtsSolicitante").empty();
-						$("#tbMovimiento").empty();						
+						$("#tbMovimiento").empty();
 						$('.dtsMovimiento').trigger('reset');
 						window.open('index.php?views=pdf', '_blank');
 						window.open('index.php?views=pdf2', '_blank');

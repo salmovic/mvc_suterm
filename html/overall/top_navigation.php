@@ -23,3 +23,6 @@
 <!-- modal -->
 		<div id="fotoperfil" class="modal fade" role="dialog">
 		</div>
+		<!-- modal -->
+				<div id="importarbd" class="modal fade" role="dialog">
+				</div>

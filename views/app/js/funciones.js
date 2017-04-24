@@ -68,3 +68,17 @@ function cerrarSession() {
 			});
 	});
 }
+
+// Cargar base de datos
+function cargarBD() {
+
+			$.ajax({
+				url:'ajax.php?mode=importarbd',
+				type:'post',
+				data:"token=sql",
+				success:function( resp ) {
+					// $(location).attr('href','index.php');
+					console.log(resp);
+				}
+			});
+}
