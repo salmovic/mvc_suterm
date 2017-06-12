@@ -64,7 +64,7 @@ class Usuarios extends Connection
 	* Actualizar datos del usuario
 	*/
 	public function updateUsuario() {
-		$contrasenia = $_POST['passwd'];
+		$contrasenia = $_POST['pass'];
 		// Encriptacion de la contrasenia
 		$pass = password_hash( $contrasenia, PASSWORD_DEFAULT );
 

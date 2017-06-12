@@ -49,18 +49,18 @@
 				 </div>
 				 <!-- Password -->
 				 <div class="form-group">
-					 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="passwd">Contraseña<span class="required">*</span>
+					 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="pass">Contraseña<span class="required">*</span>
 					 </label>
 					 <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-						 <input type="password" class="form-control has-feedback-left" id="passwd" name="passwd" placeholder="Escriba una nueva contraseña" onblur="_passwd(this)">
+						 <input type="password" class="form-control has-feedback-left" id="pass" name="pass" placeholder="Escriba una nueva contraseña" onblur="_passwd(this)">
 						 <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 					 </div>
 				 </div>
 				 <div class="form-group">
-					 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="passwd2">Verificar Contraseña<span class="required">*</span>
+					 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="pass2">Verificar Contraseña<span class="required">*</span>
 					 </label>
 					 <div class="col-md-6 col-sm-6 col-xs-12 form-group">
-						 <input type="password" class="form-control has-feedback-left" id="passwd2" name="passwd2" placeholder="Confirmar Contraseña" onblur="pass2(this)">
+						 <input type="password" class="form-control has-feedback-left" id="pass2" name="pass2" placeholder="Confirmar Contraseña">
 						 <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
 					 </div>
 				 </div>
@@ -102,5 +102,33 @@
 				 }
 			 }
 	 });
+ });
+ //passwd
+ $('#pass').keyup(function(e) {
+
+  var dom = $(this);
+  if( dom.val().length < 25) {
+ 	dom.unbind('keypress');
+  if(dom.val()!="") return;
+  return;
+  }
+  lockTeclado(dom);
+ });
+ function _passwd(campo) {
+ 	var exR = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{4,15}/;
+ 	var msj = "Debe contener mayúsculas, minusculas, numeros y al menos un caracter especial.";
+ 	regExPattern(campo,exR,msj);
+ }
+
+ // Verificar contrasenia
+ $('#pass2').keyup(function() {
+	 console.log(1);
+ 	var pass2 = $(this).val();
+ 	var pass = $("#pass").val();
+ 	if( pass2!=pass ) {
+ 		$('#pass2').css({border: "1px solid red" });
+ 		return;
+ 	}
+ 	$('#pass2').css({border: "1px solid green" });
  });
  </script>

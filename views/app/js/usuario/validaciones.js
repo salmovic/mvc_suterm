@@ -26,6 +26,7 @@ function _usr(campo) {
 }
 //passwd
 $('#passwd').keyup(function(e) {
+
  var dom = $(this);
  if( dom.val().length < 25) {
 	dom.unbind('keypress');
@@ -35,11 +36,13 @@ $('#passwd').keyup(function(e) {
  lockTeclado(dom);
 });
 function _passwd(campo) {
-	var exR = /^([a-zA-Z\d]){4,25}$/;
-	var msj = "Solo son validos letras y numeros. Debe contener como mínimo 4 caracteres.";
+	var exR = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{4,15}/;
+	var msj = "Debe contener mayúsculas, minusculas, numeros y al menos un caracter especial.";
 	regExPattern(campo,exR,msj);
 }
 //----- END
+
+
 
 /**
 *Bloquear teclado

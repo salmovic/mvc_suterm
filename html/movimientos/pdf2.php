@@ -55,7 +55,7 @@ body {font-family: Arial;
 <table width="100%">
 <tr>
 	<td width="20%"><img src="views/app/images/logo.png" whidth = 5; heigth=5></td>
-	<td width="80%" style="text-align: center; font-size:10pt"><b>SINDICATO UNICO DE TRABAJADORES ELECTRICISTAS DE LA REPUBLICA MEXICANA C.T.P.A.L.M. SECCION No. 55 </b><br /></td>
+	<td width="80%" style="text-align: center; font-size:10pt"><b>SINDICATO ÚNICO DE TRABAJADORES ELECTRICISTAS DE LA REPÚBLICA MEXICANA C.T.P.A.L.M. SECCIÓN No. 55 </b><br /></td>
 	<td width="15%" style="text-align: right; font-size:9pt;">FOLIO: <span style="color:red">'.$folio.' </span><br/></td>
 	</tr>
 </table>
@@ -84,15 +84,15 @@ PAG. {PAGENO} DE {nb}
 <form style="border: 0px solid black; font-weight:normal; font-size:8pt; text-align:justify;">
 	<div align="justify">
 		<input type="checkbox" value="ON" '.$perSg.'/> PERMISO S/GOCE &nbsp;
-		<input type="checkbox" value="ON" '.$vac.'/> VACACIONES DIAS &nbsp;
+		<input type="checkbox" value="ON" '.$vac.'/> VACACIONES DÍAS &nbsp;
 		<input type="checkbox" value="ON" '.$faltaInj.'/> FALTA INJUSTIFICADA &nbsp;
 		<input type="checkbox" value="ON" '.$perCg.'/> PERMISO C/GOCE
-		<input type="checkbox" value="ON" '.$comSin.'/> COMISION SINDICAL &nbsp;
+		<input type="checkbox" value="ON" '.$comSin.'/> COMISIÓN SINDICAL &nbsp;
 	</div>
 	<br/>
 	<div>
 		<input type="checkbox" value="ON" '.$incap.'/> INCAPACIDAD &nbsp;
-		<input type="checkbox" value="ON" '.$comCap.'/> COMISION "CAPACITACION" &nbsp;
+		<input type="checkbox" value="ON" '.$comCap.'/> COMISIÓN "CAPACITACIÓN" &nbsp;
 		<input type="checkbox" value="ON" '.$turAd.' /> TURNO ADICIONAL
 	</div>
 </form>
@@ -111,7 +111,7 @@ PAG. {PAGENO} DE {nb}
 <table border="0" width="100%" cellspacing="-1" bordercolor="black"
   cellpadding="0" style="font-size:8pt">
 		<tr>
-			<th align="left" width="115px" style="font-weight:normal;">CON CATEGORIA DE:</th>
+			<th align="left" width="115px" style="font-weight:normal;">CON CATEGORÍA DE:</th>
 			<th align="center" width="285px" style="border-bottom: 1px solid #000000; text-align: center; font-weight:normal">'.$categoria.'</th>
 			<th align="center" width="60px" style="font-weight:normal;">PLAZA No.</th>
 			<th align="left" width="70px" align="center" style="border-bottom: 1px solid #000000; text-align: center; font-weight:normal">'.$noplaza.'</th>
@@ -124,7 +124,7 @@ PAG. {PAGENO} DE {nb}
 <table border="0" width="100%" cellspacing="-1" bordercolor="black"
   cellpadding="0" style="font-size:8pt">
 		<tr>
-			<th align="left" width="135px" style="font-weight:normal;">ADSCRITO AL AREA DE:</th>
+			<th align="left" width="135px" style="font-weight:normal;">ADSCRITO AL ÁREA DE:</th>
 			<th align="center" style="border-bottom: 1px solid #000000; text-align: center; font-weight:normal">'.$areaadscrita.'</th>
 		</tr>
 </table> <br />
@@ -158,8 +158,8 @@ PAG. {PAGENO} DE {nb}
 	<tfoot>
 		<tr>
 			<th colspan="3" whidth="5%" style="font-size:8pt">PROPONE</th>
-			<th colspan="2" style="font-size:8pt">ELABORO</th>
-			<th colspan="2" style="font-size:8pt">AUTORIZO</th>
+			<th colspan="2" style="font-size:8pt">ELABORÓ</th>
+			<th colspan="2" style="font-size:8pt">AUTORIZÓ</th>
 		</tr>
 		<tr>
 			<td colspan="3" style="font-size:7pt; text-align:center; padding-top:7mm;">
@@ -168,7 +168,7 @@ PAG. {PAGENO} DE {nb}
 			</td>
 			<td colspan="2" style="font-size:7pt; text-align:center; padding-top:7mm;">
 				<p style="border-bottom: 1px solid #000000; text-align: center; font-weight:normal">'.$delegado.'</p>
-				<p style="font-size:6pt; font-weight:bold; ">DELEGADO DEPARTAMENTAL NOMBRE, R.P.E., FIRMA</p>
+				<p style="font-size:6pt; font-weight:bold; ">DELEGADO DEPARTAMENTAL, NOMBRE, R.P.E., FIRMA</p>
 			</td>
 			<td colspan="2" style="font-size:7pt; text-align:center; padding-top:7mm;">
 				<p style="border-bottom: 1px solid #000000; text-align: center; font-weight:normal">'.$jefeinm.'</p>
@@ -198,7 +198,7 @@ PAG. {PAGENO} DE {nb}
 
 <p style="font-size:8pt">OBSERVACIONES</p>
 <textarea name="authors" rows="5" cols="100" wrap="virtual" style="font-size:8pt">
-	'.$descripcion.'
+	 '.$descripcion.'
 </textarea>
 
 </body>
@@ -210,7 +210,7 @@ PAG. {PAGENO} DE {nb}
 $mpdf->SetProtection(array('print'));
 $mpdf->SetTitle("SUTERM");
 $mpdf->SetAuthor("Acme Trading Co.");
- $mpdf->SetWatermarkText("COPIA");
+ $mpdf->SetWatermarkText("CÓPIA");
 $mpdf->showWatermarkText = true;
 $mpdf->watermark_font = 'Arial';
 $mpdf->watermarkTextAlpha = 0.1;

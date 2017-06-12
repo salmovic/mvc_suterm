@@ -55,8 +55,8 @@
 															<tr>
 																<th>RPE</th>
 																<th>Nombre</th>
-																<th>Categoria Actual</th>
-																<th>Categoria Propuesta</th>
+																<th>Categoría Actual</th>
+																<th>Categoría Propuesta</th>
 																<th>No. Plaza</th>
 																<th>Periodo Inicio</th>
 																<th>Periodo Fin</th>

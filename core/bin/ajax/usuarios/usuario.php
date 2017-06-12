@@ -61,9 +61,9 @@ function validacion() {
 		return false;
 	}
 	//validar passwd
-	$passwd = "/^([a-zA-Z\d]){4,25}$/";
+	$passwd = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{4,15}/";
 	if(!preg_match($passwd, $_POST['passwd']) || empty($_POST['passwd'])) {
-		echo "Debe ingresar una contraseña váldio";
+		echo "Debe contener mayúsculas, minusculas, numeros y al menos un caracter especial.";
 		return false;
 	}
 	// verificar contraseña
