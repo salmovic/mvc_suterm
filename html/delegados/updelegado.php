@@ -6,7 +6,7 @@ $myDel=$delegado->getDelegadosById($_POST['id']);
 	 <div class="modal-content">
 		 <div class="modal-header">
 			 <button type="button" class="close" data-dismiss="modal">&times;</button>
-			 <h4 class="modal-title">Actualizar Delegado <small>(Debe activar las teclas mayúsculas.)</small></h4>
+			 <h4 class="modal-title">Actualizar Delegado.</h4>
 		 </div>
 		 <div class="modal-body">
 			 <!-- form -->
@@ -34,7 +34,7 @@ $myDel=$delegado->getDelegadosById($_POST['id']);
 					</label>
 					<div class="col-md-6 col-sm-6 col-xs-12 form-group">
 						<!-- <input type="text" class="form-control has-feedback-left" id="descripcion" name="descripcion" placeholder="Descripcion"> -->
-						<textarea name="descripcion" id="descripcion" rows="3" cols="5" class="form-control" placeholder="Agregar una descripción" onblur="_descripcion(this)"><?php echo $myDel[0]->descripcion; ?></textarea>
+						<textarea name="descripcion" id="descripcion1" rows="3" cols="5" class="form-control des" placeholder="Agregar una descripción" onblur="_descripcion(this)"><?php echo $myDel[0]->descripcion; ?></textarea>
 					</div>
 				</div>
  				<div class="form-group">
@@ -54,6 +54,15 @@ $myDel=$delegado->getDelegadosById($_POST['id']);
  </div>
  <script type="text/javascript">
  /*Actualizar centro de trabajo*/
+ function minToMayuscula( e ) {
+     var e = $('#'+e+'');
+     e.val(e.val().toUpperCase());
+
+ }
+ $('#descripcion1').keyup(function(e) {
+	minToMayuscula('descripcion1');
+ });
+
  $('#updatedeleg').on('click',function(e)
  {
   e.preventDefault();

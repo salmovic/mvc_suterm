@@ -7,7 +7,7 @@ $depto=$departamento->getDepartamentosById($_POST['id']);
 	 <div class="modal-content">
 		 <div class="modal-header">
 			 <button type="button" class="close" data-dismiss="modal">&times;</button>
-			 <h4 class="modal-title">Actualizar Departamento <small>(Debe activar las teclas mayusculas.)</small></h4>
+			 <h4 class="modal-title">Actualizar Departamento.</h4>
 		 </div>
 		 <div class="modal-body">
 			 <!-- form -->
@@ -26,7 +26,7 @@ $depto=$departamento->getDepartamentosById($_POST['id']);
 					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Nombre<span class="required">*</span>
 					</label>
 					<div class="col-md-6 col-sm-6 col-xs-12 form-group">
-						<input type="text" class="form-control has-feedback-left" id="nombre" name="nombre" onfocus="true" value="<?php echo $depto[0]->nombre; ?>" onblur="_nombre(this)">
+						<input type="text" class="form-control has-feedback-left" id="nombre1" name="nombre" onfocus="true" value="<?php echo $depto[0]->nombre; ?>" onblur="_nombre(this)">
 						<span class="fa fa-building form-control-feedback left" aria-hidden="true"></span>
 					</div>
 				</div>
@@ -66,6 +66,16 @@ $depto=$departamento->getDepartamentosById($_POST['id']);
 	 </div>
  </div>
  <script type="text/javascript">
+ function minToMayuscula( e ) {
+     var e = $('#'+e+'');
+     e.val(e.val().toUpperCase());
+
+ }
+ //
+ $('#nombre1').keyup(function(e) {
+
+	minToMayuscula('nombre1');
+ });
  /*Actualizar centro de trabajo*/
  $('#upDepto').on('click',function(e)
  {

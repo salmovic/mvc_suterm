@@ -6,7 +6,7 @@ $myCt=$centroTrabajo->getCentroTrabajoById($_POST['id']);
 	 <div class="modal-content">
 		 <div class="modal-header">
 			 <button type="button" class="close" data-dismiss="modal">&times;</button>
-			 <h4 class="modal-title">Actualizar Centro de Trabajo <small>(Debe activar las teclas Mayúsculas)</small></h4>
+			 <h4 class="modal-title">Actualizar Centro de Trabajo.</h4>
 		 </div>
 		 <div class="modal-body">
 			 <!-- form -->
@@ -25,7 +25,7 @@ $myCt=$centroTrabajo->getCentroTrabajoById($_POST['id']);
  					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Nombre Centro de Trabajo <span class="required">*</span>
  					</label>
  					<div class="col-md-6 col-sm-6 col-xs-12 form-group">
- 						<input type="text" class="form-control has-feedback-left" id="nombre" name="nombre" value="<?php echo $myCt[0]->nombre; ?>" onblur="_nombre(this)">
+ 						<input type="text" class="form-control has-feedback-left" id="nombre1" name="nombre" value="<?php echo $myCt[0]->nombre; ?>" onblur="_nombre(this)">
  						<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
  					</div>
  				</div>
@@ -34,7 +34,7 @@ $myCt=$centroTrabajo->getCentroTrabajoById($_POST['id']);
  					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="domicilio">Domicilio <span class="required">*</span>
  					</label>
  					<div class="col-md-6 col-sm-6 col-xs-12 form-group">
- 						<input type="text" class="form-control has-feedback-left" id="domicilio" name="domicilio" value="<?php echo $myCt[0]->domicilio; ?>" onblur="_domicilio(this)">
+ 						<input type="text" class="form-control has-feedback-left" id="domicilio1" name="domicilio" value="<?php echo $myCt[0]->domicilio; ?>" onblur="_domicilio(this)">
  						<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
  					</div>
  				</div>
@@ -52,7 +52,7 @@ $myCt=$centroTrabajo->getCentroTrabajoById($_POST['id']);
  					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="municipio">Municipio<span class="required">*</span>
  					</label>
  					<div class="col-md-6 col-sm-6 col-xs-12 form-group">
- 						<input type="text" class="form-control has-feedback-left" id="municipio" name="municipio" value="<?php echo $myCt[0]->municipio; ?>" onblur="_municipio(this)">
+ 						<input type="text" class="form-control has-feedback-left" id="municipio1" name="municipio" value="<?php echo $myCt[0]->municipio; ?>" onblur="_municipio(this)">
  						<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
  					</div>
  				</div>
@@ -61,7 +61,7 @@ $myCt=$centroTrabajo->getCentroTrabajoById($_POST['id']);
  					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="entidad_fed">Entidad Federativa<span class="required">*</span>
  					</label>
  					<div class="col-md-6 col-sm-6 col-xs-12 form-group">
- 						<input type="text" class="form-control has-feedback-left" id="entidad_fed" name="entidad_fed" value="<?php echo $myCt[0]->entidad_fed; ?>" onblur="_entidad_fed(this)">
+ 						<input type="text" class="form-control has-feedback-left" id="entidad_fed1" name="entidad_fed" value="<?php echo $myCt[0]->entidad_fed; ?>" onblur="_entidad_fed(this)">
  						<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
  					</div>
  				</div>
@@ -79,7 +79,7 @@ $myCt=$centroTrabajo->getCentroTrabajoById($_POST['id']);
  				<!-- Botones -->
  				<div class="form-group">
  					<div class="col-md-6 col-md-offset-3">
- 						<button type="button" data-dismiss="modal" class="btn btn-primary">Salir</button>
+ 						<button type="button" data-dismiss="modal" class="btn btn-primary">Cancelar</button>
  						<button id="updatect" type="submit" class="btn btn-success">Enviar</button>
  					</div>
  				</div>
@@ -93,6 +93,29 @@ $myCt=$centroTrabajo->getCentroTrabajoById($_POST['id']);
  </div>
  <script src="views/app/js/centro_trabajo/validaciones.js"></script>
  <script type="text/javascript">
+
+ function minToMayuscula( e ) {
+     var e = $('#'+e+'');
+     e.val(e.val().toUpperCase());
+
+ }
+ //
+ $('#nombre1').keyup(function(e) {
+
+	minToMayuscula('nombre1');
+ });
+ $('#domicilio1').keyup(function(e) {
+
+	minToMayuscula('domicilio1');
+ });
+ $('#entidad_fed1').keyup(function(e) {
+
+	minToMayuscula('entidad_fed1');
+ });
+ $('#municipio1').keyup(function(e) {
+
+	minToMayuscula('municipio1');
+ });
  /*Actualizar centro de trabajo*/
  $('#updatect').on('click',function(e)
  {

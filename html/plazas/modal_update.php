@@ -6,7 +6,7 @@ $myPlaza=$plazas->getPlazasById($_POST['id']);
 	 <div class="modal-content">
 		 <div class="modal-header">
 			 <button type="button" class="close" data-dismiss="modal">&times;</button>
-			 <h4 class="modal-title">Actualizar Categoría <small>(Debe activar las teclas mayusculas.)</small></h4>
+			 <h4 class="modal-title">Actualizar Categoría.</h4>
 		 </div>
 		 <div class="modal-body">
 			 <!-- form -->
@@ -25,7 +25,7 @@ $myPlaza=$plazas->getPlazasById($_POST['id']);
  					<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre_cat">Nombre Categoria<span class="required">*</span>
  					</label>
  					<div class="col-md-6 col-sm-6 col-xs-12 form-group">
- 						<input type="text" class="form-control has-feedback-left" id="nombre_cat" name="nombre_cat" value="<?php echo $myPlaza[0]->nombre_cat;?>" onblur="_nombre_cat(this)">
+ 						<input type="text" class="form-control has-feedback-left" id="nombre_cat1" name="nombre_cat" value="<?php echo $myPlaza[0]->nombre_cat;?>" onblur="_nombre_cat(this)">
  						<span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
  					</div>
  				</div>
@@ -120,6 +120,16 @@ $myPlaza=$plazas->getPlazasById($_POST['id']);
  </div>
  <script src="views/app/js/plazas/validaciones.js"></script>
  <script type="text/javascript">
+ function minToMayuscula( e ) {
+     var e = $('#'+e+'');
+     e.val(e.val().toUpperCase());
+
+ }
+ //
+ $('#nombre_cat1').keyup(function(e) {
+
+	minToMayuscula('nombre_cat1');
+ });
  /*Actualizar categorias*/
  $('#updateplaza').on('click',function(e)
  {
